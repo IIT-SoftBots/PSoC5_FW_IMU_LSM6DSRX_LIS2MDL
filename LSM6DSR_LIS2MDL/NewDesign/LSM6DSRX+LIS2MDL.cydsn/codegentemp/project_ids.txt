@@ -1,0 +1,6 @@
+C:\Users\mgnocco\Documents\ControlloDiVersione\LSM6DSR_LIS2MDL\NewDesign\LSM6DSRX+LIS2MDL.cydsn\LSM6DSRX+LIS2MDL.cyprj|288eb544-db52-4859-a4c3-1c61a75d67b5
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|e1668c89-584f-4c03-ab39-eeeeb58cad1f
+C:\Users\mgnocco\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|00a0ac54-42d3-4ddc-ba70-462545a9729f
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|184bb9f1-efed-4fd2-9baf-d34eefe15fb0
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|61cc5b01-a707-436f-b16f-2753b96be331
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|5529692d-1ab8-4a9e-a71e-04522c918e8d

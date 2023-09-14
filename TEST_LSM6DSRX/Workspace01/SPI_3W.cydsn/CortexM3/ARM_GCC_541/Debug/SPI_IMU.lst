@@ -1,0 +1,3566 @@
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccq1kucO.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"SPI_IMU.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.SPI_IMU_Enable,"ax",%progbits
+  20              		.align	2
+  21              		.global	SPI_IMU_Enable
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	SPI_IMU_Enable, %function
+  25              	SPI_IMU_Enable:
+  26              	.LFB1:
+  27              		.file 1 "Generated_Source\\PSoC5\\SPI_IMU.c"
+   1:Generated_Source\PSoC5/SPI_IMU.c **** /*******************************************************************************
+   2:Generated_Source\PSoC5/SPI_IMU.c **** * File Name: SPI_IMU.c
+   3:Generated_Source\PSoC5/SPI_IMU.c **** * Version 2.50
+   4:Generated_Source\PSoC5/SPI_IMU.c **** *
+   5:Generated_Source\PSoC5/SPI_IMU.c **** * Description:
+   6:Generated_Source\PSoC5/SPI_IMU.c **** *  This file provides all API functionality of the SPI Master component.
+   7:Generated_Source\PSoC5/SPI_IMU.c **** *
+   8:Generated_Source\PSoC5/SPI_IMU.c **** * Note:
+   9:Generated_Source\PSoC5/SPI_IMU.c **** *  None.
+  10:Generated_Source\PSoC5/SPI_IMU.c **** *
+  11:Generated_Source\PSoC5/SPI_IMU.c **** ********************************************************************************
+  12:Generated_Source\PSoC5/SPI_IMU.c **** * Copyright 2008-2015, Cypress Semiconductor Corporation.  All rights reserved.
+  13:Generated_Source\PSoC5/SPI_IMU.c **** * You may use this file only in accordance with the license, terms, conditions,
+  14:Generated_Source\PSoC5/SPI_IMU.c **** * disclaimers, and limitations in the end user license agreement accompanying
+  15:Generated_Source\PSoC5/SPI_IMU.c **** * the software package with which this file was provided.
+  16:Generated_Source\PSoC5/SPI_IMU.c **** *******************************************************************************/
+  17:Generated_Source\PSoC5/SPI_IMU.c **** 
+  18:Generated_Source\PSoC5/SPI_IMU.c **** #include "SPI_IMU_PVT.h"
+  19:Generated_Source\PSoC5/SPI_IMU.c **** 
+  20:Generated_Source\PSoC5/SPI_IMU.c **** #if(SPI_IMU_TX_SOFTWARE_BUF_ENABLED)
+  21:Generated_Source\PSoC5/SPI_IMU.c ****     volatile uint8 SPI_IMU_txBuffer[SPI_IMU_TX_BUFFER_SIZE];
+  22:Generated_Source\PSoC5/SPI_IMU.c ****     volatile uint8 SPI_IMU_txBufferFull;
+  23:Generated_Source\PSoC5/SPI_IMU.c ****     volatile uint8 SPI_IMU_txBufferRead;
+  24:Generated_Source\PSoC5/SPI_IMU.c ****     volatile uint8 SPI_IMU_txBufferWrite;
+  25:Generated_Source\PSoC5/SPI_IMU.c **** #endif /* (SPI_IMU_TX_SOFTWARE_BUF_ENABLED) */
+  26:Generated_Source\PSoC5/SPI_IMU.c **** 
+  27:Generated_Source\PSoC5/SPI_IMU.c **** #if(SPI_IMU_RX_SOFTWARE_BUF_ENABLED)
+  28:Generated_Source\PSoC5/SPI_IMU.c ****     volatile uint8 SPI_IMU_rxBuffer[SPI_IMU_RX_BUFFER_SIZE];
+  29:Generated_Source\PSoC5/SPI_IMU.c ****     volatile uint8 SPI_IMU_rxBufferFull;
+  30:Generated_Source\PSoC5/SPI_IMU.c ****     volatile uint8 SPI_IMU_rxBufferRead;
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccq1kucO.s 			page 2
+
+
+  31:Generated_Source\PSoC5/SPI_IMU.c ****     volatile uint8 SPI_IMU_rxBufferWrite;
+  32:Generated_Source\PSoC5/SPI_IMU.c **** #endif /* (SPI_IMU_RX_SOFTWARE_BUF_ENABLED) */
+  33:Generated_Source\PSoC5/SPI_IMU.c **** 
+  34:Generated_Source\PSoC5/SPI_IMU.c **** uint8 SPI_IMU_initVar = 0u;
+  35:Generated_Source\PSoC5/SPI_IMU.c **** 
+  36:Generated_Source\PSoC5/SPI_IMU.c **** volatile uint8 SPI_IMU_swStatusTx;
+  37:Generated_Source\PSoC5/SPI_IMU.c **** volatile uint8 SPI_IMU_swStatusRx;
+  38:Generated_Source\PSoC5/SPI_IMU.c **** 
+  39:Generated_Source\PSoC5/SPI_IMU.c **** 
+  40:Generated_Source\PSoC5/SPI_IMU.c **** /*******************************************************************************
+  41:Generated_Source\PSoC5/SPI_IMU.c **** * Function Name: SPI_IMU_Init
+  42:Generated_Source\PSoC5/SPI_IMU.c **** ********************************************************************************
+  43:Generated_Source\PSoC5/SPI_IMU.c **** *
+  44:Generated_Source\PSoC5/SPI_IMU.c **** * Summary:
+  45:Generated_Source\PSoC5/SPI_IMU.c **** *  Inits/Restores default SPIM configuration provided with customizer.
+  46:Generated_Source\PSoC5/SPI_IMU.c **** *
+  47:Generated_Source\PSoC5/SPI_IMU.c **** * Parameters:
+  48:Generated_Source\PSoC5/SPI_IMU.c **** *  None.
+  49:Generated_Source\PSoC5/SPI_IMU.c **** *
+  50:Generated_Source\PSoC5/SPI_IMU.c **** * Return:
+  51:Generated_Source\PSoC5/SPI_IMU.c **** *  None.
+  52:Generated_Source\PSoC5/SPI_IMU.c **** *
+  53:Generated_Source\PSoC5/SPI_IMU.c **** * Side Effects:
+  54:Generated_Source\PSoC5/SPI_IMU.c **** *  When this function is called it initializes all of the necessary parameters
+  55:Generated_Source\PSoC5/SPI_IMU.c **** *  for execution. i.e. setting the initial interrupt mask, configuring the
+  56:Generated_Source\PSoC5/SPI_IMU.c **** *  interrupt service routine, configuring the bit-counter parameters and
+  57:Generated_Source\PSoC5/SPI_IMU.c **** *  clearing the FIFO and Status Register.
+  58:Generated_Source\PSoC5/SPI_IMU.c **** *
+  59:Generated_Source\PSoC5/SPI_IMU.c **** * Reentrant:
+  60:Generated_Source\PSoC5/SPI_IMU.c **** *  No.
+  61:Generated_Source\PSoC5/SPI_IMU.c **** *
+  62:Generated_Source\PSoC5/SPI_IMU.c **** *******************************************************************************/
+  63:Generated_Source\PSoC5/SPI_IMU.c **** void SPI_IMU_Init(void) 
+  64:Generated_Source\PSoC5/SPI_IMU.c **** {
+  65:Generated_Source\PSoC5/SPI_IMU.c ****     /* Initialize the Bit counter */
+  66:Generated_Source\PSoC5/SPI_IMU.c ****     SPI_IMU_COUNTER_PERIOD_REG = SPI_IMU_BITCTR_INIT;
+  67:Generated_Source\PSoC5/SPI_IMU.c **** 
+  68:Generated_Source\PSoC5/SPI_IMU.c ****     /* Init TX ISR  */
+  69:Generated_Source\PSoC5/SPI_IMU.c ****     #if(0u != SPI_IMU_INTERNAL_TX_INT_ENABLED)
+  70:Generated_Source\PSoC5/SPI_IMU.c ****         CyIntDisable         (SPI_IMU_TX_ISR_NUMBER);
+  71:Generated_Source\PSoC5/SPI_IMU.c ****         CyIntSetPriority     (SPI_IMU_TX_ISR_NUMBER,  SPI_IMU_TX_ISR_PRIORITY);
+  72:Generated_Source\PSoC5/SPI_IMU.c ****         (void) CyIntSetVector(SPI_IMU_TX_ISR_NUMBER, &SPI_IMU_TX_ISR);
+  73:Generated_Source\PSoC5/SPI_IMU.c ****     #endif /* (0u != SPI_IMU_INTERNAL_TX_INT_ENABLED) */
+  74:Generated_Source\PSoC5/SPI_IMU.c **** 
+  75:Generated_Source\PSoC5/SPI_IMU.c ****     /* Init RX ISR  */
+  76:Generated_Source\PSoC5/SPI_IMU.c ****     #if(0u != SPI_IMU_INTERNAL_RX_INT_ENABLED)
+  77:Generated_Source\PSoC5/SPI_IMU.c ****         CyIntDisable         (SPI_IMU_RX_ISR_NUMBER);
+  78:Generated_Source\PSoC5/SPI_IMU.c ****         CyIntSetPriority     (SPI_IMU_RX_ISR_NUMBER,  SPI_IMU_RX_ISR_PRIORITY);
+  79:Generated_Source\PSoC5/SPI_IMU.c ****         (void) CyIntSetVector(SPI_IMU_RX_ISR_NUMBER, &SPI_IMU_RX_ISR);
+  80:Generated_Source\PSoC5/SPI_IMU.c ****     #endif /* (0u != SPI_IMU_INTERNAL_RX_INT_ENABLED) */
+  81:Generated_Source\PSoC5/SPI_IMU.c **** 
+  82:Generated_Source\PSoC5/SPI_IMU.c ****     /* Clear any stray data from the RX and TX FIFO */
+  83:Generated_Source\PSoC5/SPI_IMU.c ****     SPI_IMU_ClearFIFO();
+  84:Generated_Source\PSoC5/SPI_IMU.c **** 
+  85:Generated_Source\PSoC5/SPI_IMU.c ****     #if(SPI_IMU_RX_SOFTWARE_BUF_ENABLED)
+  86:Generated_Source\PSoC5/SPI_IMU.c ****         SPI_IMU_rxBufferFull  = 0u;
+  87:Generated_Source\PSoC5/SPI_IMU.c ****         SPI_IMU_rxBufferRead  = 0u;
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccq1kucO.s 			page 3
+
+
+  88:Generated_Source\PSoC5/SPI_IMU.c ****         SPI_IMU_rxBufferWrite = 0u;
+  89:Generated_Source\PSoC5/SPI_IMU.c ****     #endif /* (SPI_IMU_RX_SOFTWARE_BUF_ENABLED) */
+  90:Generated_Source\PSoC5/SPI_IMU.c **** 
+  91:Generated_Source\PSoC5/SPI_IMU.c ****     #if(SPI_IMU_TX_SOFTWARE_BUF_ENABLED)
+  92:Generated_Source\PSoC5/SPI_IMU.c ****         SPI_IMU_txBufferFull  = 0u;
+  93:Generated_Source\PSoC5/SPI_IMU.c ****         SPI_IMU_txBufferRead  = 0u;
+  94:Generated_Source\PSoC5/SPI_IMU.c ****         SPI_IMU_txBufferWrite = 0u;
+  95:Generated_Source\PSoC5/SPI_IMU.c ****     #endif /* (SPI_IMU_TX_SOFTWARE_BUF_ENABLED) */
+  96:Generated_Source\PSoC5/SPI_IMU.c **** 
+  97:Generated_Source\PSoC5/SPI_IMU.c ****     (void) SPI_IMU_ReadTxStatus(); /* Clear Tx status and swStatusTx */
+  98:Generated_Source\PSoC5/SPI_IMU.c ****     (void) SPI_IMU_ReadRxStatus(); /* Clear Rx status and swStatusRx */
+  99:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 100:Generated_Source\PSoC5/SPI_IMU.c ****     /* Configure TX and RX interrupt mask */
+ 101:Generated_Source\PSoC5/SPI_IMU.c ****     SPI_IMU_TX_STATUS_MASK_REG = SPI_IMU_TX_INIT_INTERRUPTS_MASK;
+ 102:Generated_Source\PSoC5/SPI_IMU.c ****     SPI_IMU_RX_STATUS_MASK_REG = SPI_IMU_RX_INIT_INTERRUPTS_MASK;
+ 103:Generated_Source\PSoC5/SPI_IMU.c **** }
+ 104:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 105:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 106:Generated_Source\PSoC5/SPI_IMU.c **** /*******************************************************************************
+ 107:Generated_Source\PSoC5/SPI_IMU.c **** * Function Name: SPI_IMU_Enable
+ 108:Generated_Source\PSoC5/SPI_IMU.c **** ********************************************************************************
+ 109:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 110:Generated_Source\PSoC5/SPI_IMU.c **** * Summary:
+ 111:Generated_Source\PSoC5/SPI_IMU.c **** *  Enable SPIM component.
+ 112:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 113:Generated_Source\PSoC5/SPI_IMU.c **** * Parameters:
+ 114:Generated_Source\PSoC5/SPI_IMU.c **** *  None.
+ 115:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 116:Generated_Source\PSoC5/SPI_IMU.c **** * Return:
+ 117:Generated_Source\PSoC5/SPI_IMU.c **** *  None.
+ 118:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 119:Generated_Source\PSoC5/SPI_IMU.c **** *******************************************************************************/
+ 120:Generated_Source\PSoC5/SPI_IMU.c **** void SPI_IMU_Enable(void) 
+ 121:Generated_Source\PSoC5/SPI_IMU.c **** {
+  28              		.loc 1 121 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 08B5     		push	{r3, lr}
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 3, -8
+  35              		.cfi_offset 14, -4
+ 122:Generated_Source\PSoC5/SPI_IMU.c ****     uint8 enableInterrupts;
+ 123:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 124:Generated_Source\PSoC5/SPI_IMU.c ****     enableInterrupts = CyEnterCriticalSection();
+  36              		.loc 1 124 0
+  37 0002 FFF7FEFF 		bl	CyEnterCriticalSection
+  38              	.LVL0:
+ 125:Generated_Source\PSoC5/SPI_IMU.c ****     SPI_IMU_COUNTER_CONTROL_REG |= SPI_IMU_CNTR_ENABLE;
+  39              		.loc 1 125 0
+  40 0006 094A     		ldr	r2, .L3
+  41 0008 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+  42 000a 43F02003 		orr	r3, r3, #32
+  43 000e 1370     		strb	r3, [r2]
+ 126:Generated_Source\PSoC5/SPI_IMU.c ****     SPI_IMU_TX_STATUS_ACTL_REG  |= SPI_IMU_INT_ENABLE;
+  44              		.loc 1 126 0
+  45 0010 FF32     		adds	r2, r2, #255
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccq1kucO.s 			page 4
+
+
+  46 0012 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+  47 0014 43F01003 		orr	r3, r3, #16
+  48 0018 1370     		strb	r3, [r2]
+ 127:Generated_Source\PSoC5/SPI_IMU.c ****     SPI_IMU_RX_STATUS_ACTL_REG  |= SPI_IMU_INT_ENABLE;
+  49              		.loc 1 127 0
+  50 001a A2F58072 		sub	r2, r2, #256
+  51 001e 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+  52 0020 43F01003 		orr	r3, r3, #16
+  53 0024 1370     		strb	r3, [r2]
+ 128:Generated_Source\PSoC5/SPI_IMU.c ****     CyExitCriticalSection(enableInterrupts);
+  54              		.loc 1 128 0
+  55 0026 FFF7FEFF 		bl	CyExitCriticalSection
+  56              	.LVL1:
+  57 002a 08BD     		pop	{r3, pc}
+  58              	.L4:
+  59              		.align	2
+  60              	.L3:
+  61 002c 97640040 		.word	1073767575
+  62              		.cfi_endproc
+  63              	.LFE1:
+  64              		.size	SPI_IMU_Enable, .-SPI_IMU_Enable
+  65              		.section	.text.SPI_IMU_Stop,"ax",%progbits
+  66              		.align	2
+  67              		.global	SPI_IMU_Stop
+  68              		.thumb
+  69              		.thumb_func
+  70              		.type	SPI_IMU_Stop, %function
+  71              	SPI_IMU_Stop:
+  72              	.LFB3:
+ 129:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 130:Generated_Source\PSoC5/SPI_IMU.c ****     #if(0u != SPI_IMU_INTERNAL_CLOCK)
+ 131:Generated_Source\PSoC5/SPI_IMU.c ****         SPI_IMU_IntClock_Enable();
+ 132:Generated_Source\PSoC5/SPI_IMU.c ****     #endif /* (0u != SPI_IMU_INTERNAL_CLOCK) */
+ 133:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 134:Generated_Source\PSoC5/SPI_IMU.c ****     SPI_IMU_EnableTxInt();
+ 135:Generated_Source\PSoC5/SPI_IMU.c ****     SPI_IMU_EnableRxInt();
+ 136:Generated_Source\PSoC5/SPI_IMU.c **** }
+ 137:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 138:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 139:Generated_Source\PSoC5/SPI_IMU.c **** /*******************************************************************************
+ 140:Generated_Source\PSoC5/SPI_IMU.c **** * Function Name: SPI_IMU_Start
+ 141:Generated_Source\PSoC5/SPI_IMU.c **** ********************************************************************************
+ 142:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 143:Generated_Source\PSoC5/SPI_IMU.c **** * Summary:
+ 144:Generated_Source\PSoC5/SPI_IMU.c **** *  Initialize and Enable the SPI Master component.
+ 145:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 146:Generated_Source\PSoC5/SPI_IMU.c **** * Parameters:
+ 147:Generated_Source\PSoC5/SPI_IMU.c **** *  None.
+ 148:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 149:Generated_Source\PSoC5/SPI_IMU.c **** * Return:
+ 150:Generated_Source\PSoC5/SPI_IMU.c **** *  None.
+ 151:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 152:Generated_Source\PSoC5/SPI_IMU.c **** * Global variables:
+ 153:Generated_Source\PSoC5/SPI_IMU.c **** *  SPI_IMU_initVar - used to check initial configuration, modified on
+ 154:Generated_Source\PSoC5/SPI_IMU.c **** *  first function call.
+ 155:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 156:Generated_Source\PSoC5/SPI_IMU.c **** * Theory:
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccq1kucO.s 			page 5
+
+
+ 157:Generated_Source\PSoC5/SPI_IMU.c **** *  Enable the clock input to enable operation.
+ 158:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 159:Generated_Source\PSoC5/SPI_IMU.c **** * Reentrant:
+ 160:Generated_Source\PSoC5/SPI_IMU.c **** *  No.
+ 161:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 162:Generated_Source\PSoC5/SPI_IMU.c **** *******************************************************************************/
+ 163:Generated_Source\PSoC5/SPI_IMU.c **** void SPI_IMU_Start(void) 
+ 164:Generated_Source\PSoC5/SPI_IMU.c **** {
+ 165:Generated_Source\PSoC5/SPI_IMU.c ****     if(0u == SPI_IMU_initVar)
+ 166:Generated_Source\PSoC5/SPI_IMU.c ****     {
+ 167:Generated_Source\PSoC5/SPI_IMU.c ****         SPI_IMU_Init();
+ 168:Generated_Source\PSoC5/SPI_IMU.c ****         SPI_IMU_initVar = 1u;
+ 169:Generated_Source\PSoC5/SPI_IMU.c ****     }
+ 170:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 171:Generated_Source\PSoC5/SPI_IMU.c ****     SPI_IMU_Enable();
+ 172:Generated_Source\PSoC5/SPI_IMU.c **** }
+ 173:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 174:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 175:Generated_Source\PSoC5/SPI_IMU.c **** /*******************************************************************************
+ 176:Generated_Source\PSoC5/SPI_IMU.c **** * Function Name: SPI_IMU_Stop
+ 177:Generated_Source\PSoC5/SPI_IMU.c **** ********************************************************************************
+ 178:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 179:Generated_Source\PSoC5/SPI_IMU.c **** * Summary:
+ 180:Generated_Source\PSoC5/SPI_IMU.c **** *  Disable the SPI Master component.
+ 181:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 182:Generated_Source\PSoC5/SPI_IMU.c **** * Parameters:
+ 183:Generated_Source\PSoC5/SPI_IMU.c **** *  None.
+ 184:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 185:Generated_Source\PSoC5/SPI_IMU.c **** * Return:
+ 186:Generated_Source\PSoC5/SPI_IMU.c **** *  None.
+ 187:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 188:Generated_Source\PSoC5/SPI_IMU.c **** * Theory:
+ 189:Generated_Source\PSoC5/SPI_IMU.c **** *  Disable the clock input to enable operation.
+ 190:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 191:Generated_Source\PSoC5/SPI_IMU.c **** *******************************************************************************/
+ 192:Generated_Source\PSoC5/SPI_IMU.c **** void SPI_IMU_Stop(void) 
+ 193:Generated_Source\PSoC5/SPI_IMU.c **** {
+  73              		.loc 1 193 0
+  74              		.cfi_startproc
+  75              		@ args = 0, pretend = 0, frame = 0
+  76              		@ frame_needed = 0, uses_anonymous_args = 0
+  77 0000 08B5     		push	{r3, lr}
+  78              		.cfi_def_cfa_offset 8
+  79              		.cfi_offset 3, -8
+  80              		.cfi_offset 14, -4
+ 194:Generated_Source\PSoC5/SPI_IMU.c ****     uint8 enableInterrupts;
+ 195:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 196:Generated_Source\PSoC5/SPI_IMU.c ****     enableInterrupts = CyEnterCriticalSection();
+  81              		.loc 1 196 0
+  82 0002 FFF7FEFF 		bl	CyEnterCriticalSection
+  83              	.LVL2:
+ 197:Generated_Source\PSoC5/SPI_IMU.c ****     SPI_IMU_TX_STATUS_ACTL_REG &= ((uint8) ~SPI_IMU_INT_ENABLE);
+  84              		.loc 1 197 0
+  85 0006 074A     		ldr	r2, .L7
+  86 0008 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+  87 000a 03F0EF03 		and	r3, r3, #239
+  88 000e 1370     		strb	r3, [r2]
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccq1kucO.s 			page 6
+
+
+ 198:Generated_Source\PSoC5/SPI_IMU.c ****     SPI_IMU_RX_STATUS_ACTL_REG &= ((uint8) ~SPI_IMU_INT_ENABLE);
+  89              		.loc 1 198 0
+  90 0010 A2F58072 		sub	r2, r2, #256
+  91 0014 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+  92 0016 03F0EF03 		and	r3, r3, #239
+  93 001a 1370     		strb	r3, [r2]
+ 199:Generated_Source\PSoC5/SPI_IMU.c ****     CyExitCriticalSection(enableInterrupts);
+  94              		.loc 1 199 0
+  95 001c FFF7FEFF 		bl	CyExitCriticalSection
+  96              	.LVL3:
+  97 0020 08BD     		pop	{r3, pc}
+  98              	.L8:
+  99 0022 00BF     		.align	2
+ 100              	.L7:
+ 101 0024 96650040 		.word	1073767830
+ 102              		.cfi_endproc
+ 103              	.LFE3:
+ 104              		.size	SPI_IMU_Stop, .-SPI_IMU_Stop
+ 105              		.section	.text.SPI_IMU_EnableTxInt,"ax",%progbits
+ 106              		.align	2
+ 107              		.global	SPI_IMU_EnableTxInt
+ 108              		.thumb
+ 109              		.thumb_func
+ 110              		.type	SPI_IMU_EnableTxInt, %function
+ 111              	SPI_IMU_EnableTxInt:
+ 112              	.LFB4:
+ 200:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 201:Generated_Source\PSoC5/SPI_IMU.c ****     #if(0u != SPI_IMU_INTERNAL_CLOCK)
+ 202:Generated_Source\PSoC5/SPI_IMU.c ****         SPI_IMU_IntClock_Disable();
+ 203:Generated_Source\PSoC5/SPI_IMU.c ****     #endif /* (0u != SPI_IMU_INTERNAL_CLOCK) */
+ 204:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 205:Generated_Source\PSoC5/SPI_IMU.c ****     SPI_IMU_DisableTxInt();
+ 206:Generated_Source\PSoC5/SPI_IMU.c ****     SPI_IMU_DisableRxInt();
+ 207:Generated_Source\PSoC5/SPI_IMU.c **** }
+ 208:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 209:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 210:Generated_Source\PSoC5/SPI_IMU.c **** /*******************************************************************************
+ 211:Generated_Source\PSoC5/SPI_IMU.c **** * Function Name: SPI_IMU_EnableTxInt
+ 212:Generated_Source\PSoC5/SPI_IMU.c **** ********************************************************************************
+ 213:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 214:Generated_Source\PSoC5/SPI_IMU.c **** * Summary:
+ 215:Generated_Source\PSoC5/SPI_IMU.c **** *  Enable internal Tx interrupt generation.
+ 216:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 217:Generated_Source\PSoC5/SPI_IMU.c **** * Parameters:
+ 218:Generated_Source\PSoC5/SPI_IMU.c **** *  None.
+ 219:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 220:Generated_Source\PSoC5/SPI_IMU.c **** * Return:
+ 221:Generated_Source\PSoC5/SPI_IMU.c **** *  None.
+ 222:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 223:Generated_Source\PSoC5/SPI_IMU.c **** * Theory:
+ 224:Generated_Source\PSoC5/SPI_IMU.c **** *  Enable the internal Tx interrupt output -or- the interrupt component itself.
+ 225:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 226:Generated_Source\PSoC5/SPI_IMU.c **** *******************************************************************************/
+ 227:Generated_Source\PSoC5/SPI_IMU.c **** void SPI_IMU_EnableTxInt(void) 
+ 228:Generated_Source\PSoC5/SPI_IMU.c **** {
+ 113              		.loc 1 228 0
+ 114              		.cfi_startproc
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccq1kucO.s 			page 7
+
+
+ 115              		@ args = 0, pretend = 0, frame = 0
+ 116              		@ frame_needed = 0, uses_anonymous_args = 0
+ 117              		@ link register save eliminated.
+ 118 0000 7047     		bx	lr
+ 119              		.cfi_endproc
+ 120              	.LFE4:
+ 121              		.size	SPI_IMU_EnableTxInt, .-SPI_IMU_EnableTxInt
+ 122 0002 00BF     		.section	.text.SPI_IMU_EnableRxInt,"ax",%progbits
+ 123              		.align	2
+ 124              		.global	SPI_IMU_EnableRxInt
+ 125              		.thumb
+ 126              		.thumb_func
+ 127              		.type	SPI_IMU_EnableRxInt, %function
+ 128              	SPI_IMU_EnableRxInt:
+ 129              	.LFB5:
+ 229:Generated_Source\PSoC5/SPI_IMU.c ****     #if(0u != SPI_IMU_INTERNAL_TX_INT_ENABLED)
+ 230:Generated_Source\PSoC5/SPI_IMU.c ****         CyIntEnable(SPI_IMU_TX_ISR_NUMBER);
+ 231:Generated_Source\PSoC5/SPI_IMU.c ****     #endif /* (0u != SPI_IMU_INTERNAL_TX_INT_ENABLED) */
+ 232:Generated_Source\PSoC5/SPI_IMU.c **** }
+ 233:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 234:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 235:Generated_Source\PSoC5/SPI_IMU.c **** /*******************************************************************************
+ 236:Generated_Source\PSoC5/SPI_IMU.c **** * Function Name: SPI_IMU_EnableRxInt
+ 237:Generated_Source\PSoC5/SPI_IMU.c **** ********************************************************************************
+ 238:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 239:Generated_Source\PSoC5/SPI_IMU.c **** * Summary:
+ 240:Generated_Source\PSoC5/SPI_IMU.c **** *  Enable internal Rx interrupt generation.
+ 241:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 242:Generated_Source\PSoC5/SPI_IMU.c **** * Parameters:
+ 243:Generated_Source\PSoC5/SPI_IMU.c **** *  None.
+ 244:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 245:Generated_Source\PSoC5/SPI_IMU.c **** * Return:
+ 246:Generated_Source\PSoC5/SPI_IMU.c **** *  None.
+ 247:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 248:Generated_Source\PSoC5/SPI_IMU.c **** * Theory:
+ 249:Generated_Source\PSoC5/SPI_IMU.c **** *  Enable the internal Rx interrupt output -or- the interrupt component itself.
+ 250:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 251:Generated_Source\PSoC5/SPI_IMU.c **** *******************************************************************************/
+ 252:Generated_Source\PSoC5/SPI_IMU.c **** void SPI_IMU_EnableRxInt(void) 
+ 253:Generated_Source\PSoC5/SPI_IMU.c **** {
+ 130              		.loc 1 253 0
+ 131              		.cfi_startproc
+ 132              		@ args = 0, pretend = 0, frame = 0
+ 133              		@ frame_needed = 0, uses_anonymous_args = 0
+ 134              		@ link register save eliminated.
+ 135 0000 7047     		bx	lr
+ 136              		.cfi_endproc
+ 137              	.LFE5:
+ 138              		.size	SPI_IMU_EnableRxInt, .-SPI_IMU_EnableRxInt
+ 139 0002 00BF     		.section	.text.SPI_IMU_DisableTxInt,"ax",%progbits
+ 140              		.align	2
+ 141              		.global	SPI_IMU_DisableTxInt
+ 142              		.thumb
+ 143              		.thumb_func
+ 144              		.type	SPI_IMU_DisableTxInt, %function
+ 145              	SPI_IMU_DisableTxInt:
+ 146              	.LFB6:
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccq1kucO.s 			page 8
+
+
+ 254:Generated_Source\PSoC5/SPI_IMU.c ****     #if(0u != SPI_IMU_INTERNAL_RX_INT_ENABLED)
+ 255:Generated_Source\PSoC5/SPI_IMU.c ****         CyIntEnable(SPI_IMU_RX_ISR_NUMBER);
+ 256:Generated_Source\PSoC5/SPI_IMU.c ****     #endif /* (0u != SPI_IMU_INTERNAL_RX_INT_ENABLED) */
+ 257:Generated_Source\PSoC5/SPI_IMU.c **** }
+ 258:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 259:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 260:Generated_Source\PSoC5/SPI_IMU.c **** /*******************************************************************************
+ 261:Generated_Source\PSoC5/SPI_IMU.c **** * Function Name: SPI_IMU_DisableTxInt
+ 262:Generated_Source\PSoC5/SPI_IMU.c **** ********************************************************************************
+ 263:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 264:Generated_Source\PSoC5/SPI_IMU.c **** * Summary:
+ 265:Generated_Source\PSoC5/SPI_IMU.c **** *  Disable internal Tx interrupt generation.
+ 266:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 267:Generated_Source\PSoC5/SPI_IMU.c **** * Parameters:
+ 268:Generated_Source\PSoC5/SPI_IMU.c **** *  None.
+ 269:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 270:Generated_Source\PSoC5/SPI_IMU.c **** * Return:
+ 271:Generated_Source\PSoC5/SPI_IMU.c **** *  None.
+ 272:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 273:Generated_Source\PSoC5/SPI_IMU.c **** * Theory:
+ 274:Generated_Source\PSoC5/SPI_IMU.c **** *  Disable the internal Tx interrupt output -or- the interrupt component itself.
+ 275:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 276:Generated_Source\PSoC5/SPI_IMU.c **** *******************************************************************************/
+ 277:Generated_Source\PSoC5/SPI_IMU.c **** void SPI_IMU_DisableTxInt(void) 
+ 278:Generated_Source\PSoC5/SPI_IMU.c **** {
+ 147              		.loc 1 278 0
+ 148              		.cfi_startproc
+ 149              		@ args = 0, pretend = 0, frame = 0
+ 150              		@ frame_needed = 0, uses_anonymous_args = 0
+ 151              		@ link register save eliminated.
+ 152 0000 7047     		bx	lr
+ 153              		.cfi_endproc
+ 154              	.LFE6:
+ 155              		.size	SPI_IMU_DisableTxInt, .-SPI_IMU_DisableTxInt
+ 156 0002 00BF     		.section	.text.SPI_IMU_DisableRxInt,"ax",%progbits
+ 157              		.align	2
+ 158              		.global	SPI_IMU_DisableRxInt
+ 159              		.thumb
+ 160              		.thumb_func
+ 161              		.type	SPI_IMU_DisableRxInt, %function
+ 162              	SPI_IMU_DisableRxInt:
+ 163              	.LFB7:
+ 279:Generated_Source\PSoC5/SPI_IMU.c ****     #if(0u != SPI_IMU_INTERNAL_TX_INT_ENABLED)
+ 280:Generated_Source\PSoC5/SPI_IMU.c ****         CyIntDisable(SPI_IMU_TX_ISR_NUMBER);
+ 281:Generated_Source\PSoC5/SPI_IMU.c ****     #endif /* (0u != SPI_IMU_INTERNAL_TX_INT_ENABLED) */
+ 282:Generated_Source\PSoC5/SPI_IMU.c **** }
+ 283:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 284:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 285:Generated_Source\PSoC5/SPI_IMU.c **** /*******************************************************************************
+ 286:Generated_Source\PSoC5/SPI_IMU.c **** * Function Name: SPI_IMU_DisableRxInt
+ 287:Generated_Source\PSoC5/SPI_IMU.c **** ********************************************************************************
+ 288:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 289:Generated_Source\PSoC5/SPI_IMU.c **** * Summary:
+ 290:Generated_Source\PSoC5/SPI_IMU.c **** *  Disable internal Rx interrupt generation.
+ 291:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 292:Generated_Source\PSoC5/SPI_IMU.c **** * Parameters:
+ 293:Generated_Source\PSoC5/SPI_IMU.c **** *  None.
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccq1kucO.s 			page 9
+
+
+ 294:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 295:Generated_Source\PSoC5/SPI_IMU.c **** * Return:
+ 296:Generated_Source\PSoC5/SPI_IMU.c **** *  None.
+ 297:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 298:Generated_Source\PSoC5/SPI_IMU.c **** * Theory:
+ 299:Generated_Source\PSoC5/SPI_IMU.c **** *  Disable the internal Rx interrupt output -or- the interrupt component itself.
+ 300:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 301:Generated_Source\PSoC5/SPI_IMU.c **** *******************************************************************************/
+ 302:Generated_Source\PSoC5/SPI_IMU.c **** void SPI_IMU_DisableRxInt(void) 
+ 303:Generated_Source\PSoC5/SPI_IMU.c **** {
+ 164              		.loc 1 303 0
+ 165              		.cfi_startproc
+ 166              		@ args = 0, pretend = 0, frame = 0
+ 167              		@ frame_needed = 0, uses_anonymous_args = 0
+ 168              		@ link register save eliminated.
+ 169 0000 7047     		bx	lr
+ 170              		.cfi_endproc
+ 171              	.LFE7:
+ 172              		.size	SPI_IMU_DisableRxInt, .-SPI_IMU_DisableRxInt
+ 173 0002 00BF     		.section	.text.SPI_IMU_SetTxInterruptMode,"ax",%progbits
+ 174              		.align	2
+ 175              		.global	SPI_IMU_SetTxInterruptMode
+ 176              		.thumb
+ 177              		.thumb_func
+ 178              		.type	SPI_IMU_SetTxInterruptMode, %function
+ 179              	SPI_IMU_SetTxInterruptMode:
+ 180              	.LFB8:
+ 304:Generated_Source\PSoC5/SPI_IMU.c ****     #if(0u != SPI_IMU_INTERNAL_RX_INT_ENABLED)
+ 305:Generated_Source\PSoC5/SPI_IMU.c ****         CyIntDisable(SPI_IMU_RX_ISR_NUMBER);
+ 306:Generated_Source\PSoC5/SPI_IMU.c ****     #endif /* (0u != SPI_IMU_INTERNAL_RX_INT_ENABLED) */
+ 307:Generated_Source\PSoC5/SPI_IMU.c **** }
+ 308:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 309:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 310:Generated_Source\PSoC5/SPI_IMU.c **** /*******************************************************************************
+ 311:Generated_Source\PSoC5/SPI_IMU.c **** * Function Name: SPI_IMU_SetTxInterruptMode
+ 312:Generated_Source\PSoC5/SPI_IMU.c **** ********************************************************************************
+ 313:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 314:Generated_Source\PSoC5/SPI_IMU.c **** * Summary:
+ 315:Generated_Source\PSoC5/SPI_IMU.c **** *  Configure which status bits trigger an interrupt event.
+ 316:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 317:Generated_Source\PSoC5/SPI_IMU.c **** * Parameters:
+ 318:Generated_Source\PSoC5/SPI_IMU.c **** *  intSrc: An or'd combination of the desired status bit masks (defined in the
+ 319:Generated_Source\PSoC5/SPI_IMU.c **** *  header file).
+ 320:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 321:Generated_Source\PSoC5/SPI_IMU.c **** * Return:
+ 322:Generated_Source\PSoC5/SPI_IMU.c **** *  None.
+ 323:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 324:Generated_Source\PSoC5/SPI_IMU.c **** * Theory:
+ 325:Generated_Source\PSoC5/SPI_IMU.c **** *  Enables the output of specific status bits to the interrupt controller.
+ 326:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 327:Generated_Source\PSoC5/SPI_IMU.c **** *******************************************************************************/
+ 328:Generated_Source\PSoC5/SPI_IMU.c **** void SPI_IMU_SetTxInterruptMode(uint8 intSrc) 
+ 329:Generated_Source\PSoC5/SPI_IMU.c **** {
+ 181              		.loc 1 329 0
+ 182              		.cfi_startproc
+ 183              		@ args = 0, pretend = 0, frame = 0
+ 184              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccq1kucO.s 			page 10
+
+
+ 185              		@ link register save eliminated.
+ 186              	.LVL4:
+ 330:Generated_Source\PSoC5/SPI_IMU.c ****     SPI_IMU_TX_STATUS_MASK_REG = intSrc;
+ 187              		.loc 1 330 0
+ 188 0000 014B     		ldr	r3, .L14
+ 189 0002 1870     		strb	r0, [r3]
+ 190 0004 7047     		bx	lr
+ 191              	.L15:
+ 192 0006 00BF     		.align	2
+ 193              	.L14:
+ 194 0008 86650040 		.word	1073767814
+ 195              		.cfi_endproc
+ 196              	.LFE8:
+ 197              		.size	SPI_IMU_SetTxInterruptMode, .-SPI_IMU_SetTxInterruptMode
+ 198              		.section	.text.SPI_IMU_SetRxInterruptMode,"ax",%progbits
+ 199              		.align	2
+ 200              		.global	SPI_IMU_SetRxInterruptMode
+ 201              		.thumb
+ 202              		.thumb_func
+ 203              		.type	SPI_IMU_SetRxInterruptMode, %function
+ 204              	SPI_IMU_SetRxInterruptMode:
+ 205              	.LFB9:
+ 331:Generated_Source\PSoC5/SPI_IMU.c **** }
+ 332:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 333:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 334:Generated_Source\PSoC5/SPI_IMU.c **** /*******************************************************************************
+ 335:Generated_Source\PSoC5/SPI_IMU.c **** * Function Name: SPI_IMU_SetRxInterruptMode
+ 336:Generated_Source\PSoC5/SPI_IMU.c **** ********************************************************************************
+ 337:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 338:Generated_Source\PSoC5/SPI_IMU.c **** * Summary:
+ 339:Generated_Source\PSoC5/SPI_IMU.c **** *  Configure which status bits trigger an interrupt event.
+ 340:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 341:Generated_Source\PSoC5/SPI_IMU.c **** * Parameters:
+ 342:Generated_Source\PSoC5/SPI_IMU.c **** *  intSrc: An or'd combination of the desired status bit masks (defined in the
+ 343:Generated_Source\PSoC5/SPI_IMU.c **** *  header file).
+ 344:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 345:Generated_Source\PSoC5/SPI_IMU.c **** * Return:
+ 346:Generated_Source\PSoC5/SPI_IMU.c **** *  None.
+ 347:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 348:Generated_Source\PSoC5/SPI_IMU.c **** * Theory:
+ 349:Generated_Source\PSoC5/SPI_IMU.c **** *  Enables the output of specific status bits to the interrupt controller.
+ 350:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 351:Generated_Source\PSoC5/SPI_IMU.c **** *******************************************************************************/
+ 352:Generated_Source\PSoC5/SPI_IMU.c **** void SPI_IMU_SetRxInterruptMode(uint8 intSrc) 
+ 353:Generated_Source\PSoC5/SPI_IMU.c **** {
+ 206              		.loc 1 353 0
+ 207              		.cfi_startproc
+ 208              		@ args = 0, pretend = 0, frame = 0
+ 209              		@ frame_needed = 0, uses_anonymous_args = 0
+ 210              		@ link register save eliminated.
+ 211              	.LVL5:
+ 354:Generated_Source\PSoC5/SPI_IMU.c ****     SPI_IMU_RX_STATUS_MASK_REG  = intSrc;
+ 212              		.loc 1 354 0
+ 213 0000 014B     		ldr	r3, .L17
+ 214 0002 1870     		strb	r0, [r3]
+ 215 0004 7047     		bx	lr
+ 216              	.L18:
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccq1kucO.s 			page 11
+
+
+ 217 0006 00BF     		.align	2
+ 218              	.L17:
+ 219 0008 86640040 		.word	1073767558
+ 220              		.cfi_endproc
+ 221              	.LFE9:
+ 222              		.size	SPI_IMU_SetRxInterruptMode, .-SPI_IMU_SetRxInterruptMode
+ 223              		.section	.text.SPI_IMU_ReadTxStatus,"ax",%progbits
+ 224              		.align	2
+ 225              		.global	SPI_IMU_ReadTxStatus
+ 226              		.thumb
+ 227              		.thumb_func
+ 228              		.type	SPI_IMU_ReadTxStatus, %function
+ 229              	SPI_IMU_ReadTxStatus:
+ 230              	.LFB10:
+ 355:Generated_Source\PSoC5/SPI_IMU.c **** }
+ 356:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 357:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 358:Generated_Source\PSoC5/SPI_IMU.c **** /*******************************************************************************
+ 359:Generated_Source\PSoC5/SPI_IMU.c **** * Function Name: SPI_IMU_ReadTxStatus
+ 360:Generated_Source\PSoC5/SPI_IMU.c **** ********************************************************************************
+ 361:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 362:Generated_Source\PSoC5/SPI_IMU.c **** * Summary:
+ 363:Generated_Source\PSoC5/SPI_IMU.c **** *  Read the Tx status register for the component.
+ 364:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 365:Generated_Source\PSoC5/SPI_IMU.c **** * Parameters:
+ 366:Generated_Source\PSoC5/SPI_IMU.c **** *  None.
+ 367:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 368:Generated_Source\PSoC5/SPI_IMU.c **** * Return:
+ 369:Generated_Source\PSoC5/SPI_IMU.c **** *  Contents of the Tx status register.
+ 370:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 371:Generated_Source\PSoC5/SPI_IMU.c **** * Global variables:
+ 372:Generated_Source\PSoC5/SPI_IMU.c **** *  SPI_IMU_swStatusTx - used to store in software status register,
+ 373:Generated_Source\PSoC5/SPI_IMU.c **** *  modified every function call - resets to zero.
+ 374:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 375:Generated_Source\PSoC5/SPI_IMU.c **** * Theory:
+ 376:Generated_Source\PSoC5/SPI_IMU.c **** *  Allows the user and the API to read the Tx status register for error
+ 377:Generated_Source\PSoC5/SPI_IMU.c **** *  detection and flow control.
+ 378:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 379:Generated_Source\PSoC5/SPI_IMU.c **** * Side Effects:
+ 380:Generated_Source\PSoC5/SPI_IMU.c **** *  Clear Tx status register of the component.
+ 381:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 382:Generated_Source\PSoC5/SPI_IMU.c **** * Reentrant:
+ 383:Generated_Source\PSoC5/SPI_IMU.c **** *  No.
+ 384:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 385:Generated_Source\PSoC5/SPI_IMU.c **** *******************************************************************************/
+ 386:Generated_Source\PSoC5/SPI_IMU.c **** uint8 SPI_IMU_ReadTxStatus(void) 
+ 387:Generated_Source\PSoC5/SPI_IMU.c **** {
+ 231              		.loc 1 387 0
+ 232              		.cfi_startproc
+ 233              		@ args = 0, pretend = 0, frame = 0
+ 234              		@ frame_needed = 0, uses_anonymous_args = 0
+ 235              		@ link register save eliminated.
+ 388:Generated_Source\PSoC5/SPI_IMU.c ****     uint8 tmpStatus;
+ 389:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 390:Generated_Source\PSoC5/SPI_IMU.c ****     #if(SPI_IMU_TX_SOFTWARE_BUF_ENABLED)
+ 391:Generated_Source\PSoC5/SPI_IMU.c ****         /* Disable TX interrupt to protect global veriables */
+ 392:Generated_Source\PSoC5/SPI_IMU.c ****         SPI_IMU_DisableTxInt();
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccq1kucO.s 			page 12
+
+
+ 393:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 394:Generated_Source\PSoC5/SPI_IMU.c ****         tmpStatus = SPI_IMU_GET_STATUS_TX(SPI_IMU_swStatusTx);
+ 395:Generated_Source\PSoC5/SPI_IMU.c ****         SPI_IMU_swStatusTx = 0u;
+ 396:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 397:Generated_Source\PSoC5/SPI_IMU.c ****         SPI_IMU_EnableTxInt();
+ 398:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 399:Generated_Source\PSoC5/SPI_IMU.c ****     #else
+ 400:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 401:Generated_Source\PSoC5/SPI_IMU.c ****         tmpStatus = SPI_IMU_TX_STATUS_REG;
+ 236              		.loc 1 401 0
+ 237 0000 014B     		ldr	r3, .L20
+ 238 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 239              	.LVL6:
+ 402:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 403:Generated_Source\PSoC5/SPI_IMU.c ****     #endif /* (SPI_IMU_TX_SOFTWARE_BUF_ENABLED) */
+ 404:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 405:Generated_Source\PSoC5/SPI_IMU.c ****     return(tmpStatus);
+ 406:Generated_Source\PSoC5/SPI_IMU.c **** }
+ 240              		.loc 1 406 0
+ 241 0004 7047     		bx	lr
+ 242              	.L21:
+ 243 0006 00BF     		.align	2
+ 244              	.L20:
+ 245 0008 66650040 		.word	1073767782
+ 246              		.cfi_endproc
+ 247              	.LFE10:
+ 248              		.size	SPI_IMU_ReadTxStatus, .-SPI_IMU_ReadTxStatus
+ 249              		.section	.text.SPI_IMU_ReadRxStatus,"ax",%progbits
+ 250              		.align	2
+ 251              		.global	SPI_IMU_ReadRxStatus
+ 252              		.thumb
+ 253              		.thumb_func
+ 254              		.type	SPI_IMU_ReadRxStatus, %function
+ 255              	SPI_IMU_ReadRxStatus:
+ 256              	.LFB11:
+ 407:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 408:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 409:Generated_Source\PSoC5/SPI_IMU.c **** /*******************************************************************************
+ 410:Generated_Source\PSoC5/SPI_IMU.c **** * Function Name: SPI_IMU_ReadRxStatus
+ 411:Generated_Source\PSoC5/SPI_IMU.c **** ********************************************************************************
+ 412:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 413:Generated_Source\PSoC5/SPI_IMU.c **** * Summary:
+ 414:Generated_Source\PSoC5/SPI_IMU.c **** *  Read the Rx status register for the component.
+ 415:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 416:Generated_Source\PSoC5/SPI_IMU.c **** * Parameters:
+ 417:Generated_Source\PSoC5/SPI_IMU.c **** *  None.
+ 418:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 419:Generated_Source\PSoC5/SPI_IMU.c **** * Return:
+ 420:Generated_Source\PSoC5/SPI_IMU.c **** *  Contents of the Rx status register.
+ 421:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 422:Generated_Source\PSoC5/SPI_IMU.c **** * Global variables:
+ 423:Generated_Source\PSoC5/SPI_IMU.c **** *  SPI_IMU_swStatusRx - used to store in software Rx status register,
+ 424:Generated_Source\PSoC5/SPI_IMU.c **** *  modified every function call - resets to zero.
+ 425:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 426:Generated_Source\PSoC5/SPI_IMU.c **** * Theory:
+ 427:Generated_Source\PSoC5/SPI_IMU.c **** *  Allows the user and the API to read the Rx status register for error
+ 428:Generated_Source\PSoC5/SPI_IMU.c **** *  detection and flow control.
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccq1kucO.s 			page 13
+
+
+ 429:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 430:Generated_Source\PSoC5/SPI_IMU.c **** * Side Effects:
+ 431:Generated_Source\PSoC5/SPI_IMU.c **** *  Clear Rx status register of the component.
+ 432:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 433:Generated_Source\PSoC5/SPI_IMU.c **** * Reentrant:
+ 434:Generated_Source\PSoC5/SPI_IMU.c **** *  No.
+ 435:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 436:Generated_Source\PSoC5/SPI_IMU.c **** *******************************************************************************/
+ 437:Generated_Source\PSoC5/SPI_IMU.c **** uint8 SPI_IMU_ReadRxStatus(void) 
+ 438:Generated_Source\PSoC5/SPI_IMU.c **** {
+ 257              		.loc 1 438 0
+ 258              		.cfi_startproc
+ 259              		@ args = 0, pretend = 0, frame = 0
+ 260              		@ frame_needed = 0, uses_anonymous_args = 0
+ 261              		@ link register save eliminated.
+ 439:Generated_Source\PSoC5/SPI_IMU.c ****     uint8 tmpStatus;
+ 440:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 441:Generated_Source\PSoC5/SPI_IMU.c ****     #if(SPI_IMU_RX_SOFTWARE_BUF_ENABLED)
+ 442:Generated_Source\PSoC5/SPI_IMU.c ****         /* Disable RX interrupt to protect global veriables */
+ 443:Generated_Source\PSoC5/SPI_IMU.c ****         SPI_IMU_DisableRxInt();
+ 444:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 445:Generated_Source\PSoC5/SPI_IMU.c ****         tmpStatus = SPI_IMU_GET_STATUS_RX(SPI_IMU_swStatusRx);
+ 446:Generated_Source\PSoC5/SPI_IMU.c ****         SPI_IMU_swStatusRx = 0u;
+ 447:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 448:Generated_Source\PSoC5/SPI_IMU.c ****         SPI_IMU_EnableRxInt();
+ 449:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 450:Generated_Source\PSoC5/SPI_IMU.c ****     #else
+ 451:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 452:Generated_Source\PSoC5/SPI_IMU.c ****         tmpStatus = SPI_IMU_RX_STATUS_REG;
+ 262              		.loc 1 452 0
+ 263 0000 014B     		ldr	r3, .L23
+ 264 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 265              	.LVL7:
+ 453:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 454:Generated_Source\PSoC5/SPI_IMU.c ****     #endif /* (SPI_IMU_RX_SOFTWARE_BUF_ENABLED) */
+ 455:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 456:Generated_Source\PSoC5/SPI_IMU.c ****     return(tmpStatus);
+ 457:Generated_Source\PSoC5/SPI_IMU.c **** }
+ 266              		.loc 1 457 0
+ 267 0004 7047     		bx	lr
+ 268              	.L24:
+ 269 0006 00BF     		.align	2
+ 270              	.L23:
+ 271 0008 66640040 		.word	1073767526
+ 272              		.cfi_endproc
+ 273              	.LFE11:
+ 274              		.size	SPI_IMU_ReadRxStatus, .-SPI_IMU_ReadRxStatus
+ 275              		.section	.text.SPI_IMU_WriteTxData,"ax",%progbits
+ 276              		.align	2
+ 277              		.global	SPI_IMU_WriteTxData
+ 278              		.thumb
+ 279              		.thumb_func
+ 280              		.type	SPI_IMU_WriteTxData, %function
+ 281              	SPI_IMU_WriteTxData:
+ 282              	.LFB12:
+ 458:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 459:Generated_Source\PSoC5/SPI_IMU.c **** 
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccq1kucO.s 			page 14
+
+
+ 460:Generated_Source\PSoC5/SPI_IMU.c **** /*******************************************************************************
+ 461:Generated_Source\PSoC5/SPI_IMU.c **** * Function Name: SPI_IMU_WriteTxData
+ 462:Generated_Source\PSoC5/SPI_IMU.c **** ********************************************************************************
+ 463:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 464:Generated_Source\PSoC5/SPI_IMU.c **** * Summary:
+ 465:Generated_Source\PSoC5/SPI_IMU.c **** *  Write a byte of data to be sent across the SPI.
+ 466:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 467:Generated_Source\PSoC5/SPI_IMU.c **** * Parameters:
+ 468:Generated_Source\PSoC5/SPI_IMU.c **** *  txDataByte: The data value to send across the SPI.
+ 469:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 470:Generated_Source\PSoC5/SPI_IMU.c **** * Return:
+ 471:Generated_Source\PSoC5/SPI_IMU.c **** *  None.
+ 472:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 473:Generated_Source\PSoC5/SPI_IMU.c **** * Global variables:
+ 474:Generated_Source\PSoC5/SPI_IMU.c **** *  SPI_IMU_txBufferWrite - used for the account of the bytes which
+ 475:Generated_Source\PSoC5/SPI_IMU.c **** *  have been written down in the TX software buffer, modified every function
+ 476:Generated_Source\PSoC5/SPI_IMU.c **** *  call if TX Software Buffer is used.
+ 477:Generated_Source\PSoC5/SPI_IMU.c **** *  SPI_IMU_txBufferRead - used for the account of the bytes which
+ 478:Generated_Source\PSoC5/SPI_IMU.c **** *  have been read from the TX software buffer.
+ 479:Generated_Source\PSoC5/SPI_IMU.c **** *  SPI_IMU_txBuffer[SPI_IMU_TX_BUFFER_SIZE] - used to store
+ 480:Generated_Source\PSoC5/SPI_IMU.c **** *  data to sending, modified every function call if TX Software Buffer is used.
+ 481:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 482:Generated_Source\PSoC5/SPI_IMU.c **** * Theory:
+ 483:Generated_Source\PSoC5/SPI_IMU.c **** *  Allows the user to transmit any byte of data in a single transfer.
+ 484:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 485:Generated_Source\PSoC5/SPI_IMU.c **** * Side Effects:
+ 486:Generated_Source\PSoC5/SPI_IMU.c **** *  If this function is called again before the previous byte is finished then
+ 487:Generated_Source\PSoC5/SPI_IMU.c **** *  the next byte will be appended to the transfer with no time between
+ 488:Generated_Source\PSoC5/SPI_IMU.c **** *  the byte transfers. Clear Tx status register of the component.
+ 489:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 490:Generated_Source\PSoC5/SPI_IMU.c **** * Reentrant:
+ 491:Generated_Source\PSoC5/SPI_IMU.c **** *  No.
+ 492:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 493:Generated_Source\PSoC5/SPI_IMU.c **** *******************************************************************************/
+ 494:Generated_Source\PSoC5/SPI_IMU.c **** void SPI_IMU_WriteTxData(uint8 txData) 
+ 495:Generated_Source\PSoC5/SPI_IMU.c **** {
+ 283              		.loc 1 495 0
+ 284              		.cfi_startproc
+ 285              		@ args = 0, pretend = 0, frame = 0
+ 286              		@ frame_needed = 0, uses_anonymous_args = 0
+ 287              		@ link register save eliminated.
+ 288              	.LVL8:
+ 289              	.L26:
+ 496:Generated_Source\PSoC5/SPI_IMU.c ****     #if(SPI_IMU_TX_SOFTWARE_BUF_ENABLED)
+ 497:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 498:Generated_Source\PSoC5/SPI_IMU.c ****         uint8 tempStatus;
+ 499:Generated_Source\PSoC5/SPI_IMU.c ****         uint8 tmpTxBufferRead;
+ 500:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 501:Generated_Source\PSoC5/SPI_IMU.c ****         /* Block if TX buffer is FULL: don't overwrite */
+ 502:Generated_Source\PSoC5/SPI_IMU.c ****         do
+ 503:Generated_Source\PSoC5/SPI_IMU.c ****         {
+ 504:Generated_Source\PSoC5/SPI_IMU.c ****             tmpTxBufferRead = SPI_IMU_txBufferRead;
+ 505:Generated_Source\PSoC5/SPI_IMU.c ****             if(0u == tmpTxBufferRead)
+ 506:Generated_Source\PSoC5/SPI_IMU.c ****             {
+ 507:Generated_Source\PSoC5/SPI_IMU.c ****                 tmpTxBufferRead = (SPI_IMU_TX_BUFFER_SIZE - 1u);
+ 508:Generated_Source\PSoC5/SPI_IMU.c ****             }
+ 509:Generated_Source\PSoC5/SPI_IMU.c ****             else
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccq1kucO.s 			page 15
+
+
+ 510:Generated_Source\PSoC5/SPI_IMU.c ****             {
+ 511:Generated_Source\PSoC5/SPI_IMU.c ****                 tmpTxBufferRead--;
+ 512:Generated_Source\PSoC5/SPI_IMU.c ****             }
+ 513:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 514:Generated_Source\PSoC5/SPI_IMU.c ****         }while(tmpTxBufferRead == SPI_IMU_txBufferWrite);
+ 515:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 516:Generated_Source\PSoC5/SPI_IMU.c ****         /* Disable TX interrupt to protect global veriables */
+ 517:Generated_Source\PSoC5/SPI_IMU.c ****         SPI_IMU_DisableTxInt();
+ 518:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 519:Generated_Source\PSoC5/SPI_IMU.c ****         tempStatus = SPI_IMU_GET_STATUS_TX(SPI_IMU_swStatusTx);
+ 520:Generated_Source\PSoC5/SPI_IMU.c ****         SPI_IMU_swStatusTx = tempStatus;
+ 521:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 522:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 523:Generated_Source\PSoC5/SPI_IMU.c ****         if((SPI_IMU_txBufferRead == SPI_IMU_txBufferWrite) &&
+ 524:Generated_Source\PSoC5/SPI_IMU.c ****            (0u != (SPI_IMU_swStatusTx & SPI_IMU_STS_TX_FIFO_NOT_FULL)))
+ 525:Generated_Source\PSoC5/SPI_IMU.c ****         {
+ 526:Generated_Source\PSoC5/SPI_IMU.c ****             /* Put data element into the TX FIFO */
+ 527:Generated_Source\PSoC5/SPI_IMU.c ****             CY_SET_REG8(SPI_IMU_TXDATA_PTR, txData);
+ 528:Generated_Source\PSoC5/SPI_IMU.c ****         }
+ 529:Generated_Source\PSoC5/SPI_IMU.c ****         else
+ 530:Generated_Source\PSoC5/SPI_IMU.c ****         {
+ 531:Generated_Source\PSoC5/SPI_IMU.c ****             /* Add to the TX software buffer */
+ 532:Generated_Source\PSoC5/SPI_IMU.c ****             SPI_IMU_txBufferWrite++;
+ 533:Generated_Source\PSoC5/SPI_IMU.c ****             if(SPI_IMU_txBufferWrite >= SPI_IMU_TX_BUFFER_SIZE)
+ 534:Generated_Source\PSoC5/SPI_IMU.c ****             {
+ 535:Generated_Source\PSoC5/SPI_IMU.c ****                 SPI_IMU_txBufferWrite = 0u;
+ 536:Generated_Source\PSoC5/SPI_IMU.c ****             }
+ 537:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 538:Generated_Source\PSoC5/SPI_IMU.c ****             if(SPI_IMU_txBufferWrite == SPI_IMU_txBufferRead)
+ 539:Generated_Source\PSoC5/SPI_IMU.c ****             {
+ 540:Generated_Source\PSoC5/SPI_IMU.c ****                 SPI_IMU_txBufferRead++;
+ 541:Generated_Source\PSoC5/SPI_IMU.c ****                 if(SPI_IMU_txBufferRead >= SPI_IMU_TX_BUFFER_SIZE)
+ 542:Generated_Source\PSoC5/SPI_IMU.c ****                 {
+ 543:Generated_Source\PSoC5/SPI_IMU.c ****                     SPI_IMU_txBufferRead = 0u;
+ 544:Generated_Source\PSoC5/SPI_IMU.c ****                 }
+ 545:Generated_Source\PSoC5/SPI_IMU.c ****                 SPI_IMU_txBufferFull = 1u;
+ 546:Generated_Source\PSoC5/SPI_IMU.c ****             }
+ 547:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 548:Generated_Source\PSoC5/SPI_IMU.c ****             SPI_IMU_txBuffer[SPI_IMU_txBufferWrite] = txData;
+ 549:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 550:Generated_Source\PSoC5/SPI_IMU.c ****             SPI_IMU_TX_STATUS_MASK_REG |= SPI_IMU_STS_TX_FIFO_NOT_FULL;
+ 551:Generated_Source\PSoC5/SPI_IMU.c ****         }
+ 552:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 553:Generated_Source\PSoC5/SPI_IMU.c ****         SPI_IMU_EnableTxInt();
+ 554:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 555:Generated_Source\PSoC5/SPI_IMU.c ****     #else
+ 556:Generated_Source\PSoC5/SPI_IMU.c ****         /* Wait until TX FIFO has a place */
+ 557:Generated_Source\PSoC5/SPI_IMU.c ****         while(0u == (SPI_IMU_TX_STATUS_REG & SPI_IMU_STS_TX_FIFO_NOT_FULL))
+ 290              		.loc 1 557 0 discriminator 1
+ 291 0000 034B     		ldr	r3, .L27
+ 292 0002 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 293 0004 13F0040F 		tst	r3, #4
+ 294 0008 FAD0     		beq	.L26
+ 558:Generated_Source\PSoC5/SPI_IMU.c ****         {
+ 559:Generated_Source\PSoC5/SPI_IMU.c ****         }
+ 560:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 561:Generated_Source\PSoC5/SPI_IMU.c ****         /* Put data element into the TX FIFO */
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccq1kucO.s 			page 16
+
+
+ 562:Generated_Source\PSoC5/SPI_IMU.c ****         CY_SET_REG8(SPI_IMU_TXDATA_PTR, txData);
+ 295              		.loc 1 562 0
+ 296 000a 024B     		ldr	r3, .L27+4
+ 297 000c 1870     		strb	r0, [r3]
+ 298 000e 7047     		bx	lr
+ 299              	.L28:
+ 300              		.align	2
+ 301              	.L27:
+ 302 0010 66650040 		.word	1073767782
+ 303 0014 46650040 		.word	1073767750
+ 304              		.cfi_endproc
+ 305              	.LFE12:
+ 306              		.size	SPI_IMU_WriteTxData, .-SPI_IMU_WriteTxData
+ 307              		.section	.text.SPI_IMU_ReadRxData,"ax",%progbits
+ 308              		.align	2
+ 309              		.global	SPI_IMU_ReadRxData
+ 310              		.thumb
+ 311              		.thumb_func
+ 312              		.type	SPI_IMU_ReadRxData, %function
+ 313              	SPI_IMU_ReadRxData:
+ 314              	.LFB13:
+ 563:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 564:Generated_Source\PSoC5/SPI_IMU.c ****     #endif /* (SPI_IMU_TX_SOFTWARE_BUF_ENABLED) */
+ 565:Generated_Source\PSoC5/SPI_IMU.c **** }
+ 566:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 567:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 568:Generated_Source\PSoC5/SPI_IMU.c **** /*******************************************************************************
+ 569:Generated_Source\PSoC5/SPI_IMU.c **** * Function Name: SPI_IMU_ReadRxData
+ 570:Generated_Source\PSoC5/SPI_IMU.c **** ********************************************************************************
+ 571:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 572:Generated_Source\PSoC5/SPI_IMU.c **** * Summary:
+ 573:Generated_Source\PSoC5/SPI_IMU.c **** *  Read the next byte of data received across the SPI.
+ 574:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 575:Generated_Source\PSoC5/SPI_IMU.c **** * Parameters:
+ 576:Generated_Source\PSoC5/SPI_IMU.c **** *  None.
+ 577:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 578:Generated_Source\PSoC5/SPI_IMU.c **** * Return:
+ 579:Generated_Source\PSoC5/SPI_IMU.c **** *  The next byte of data read from the FIFO.
+ 580:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 581:Generated_Source\PSoC5/SPI_IMU.c **** * Global variables:
+ 582:Generated_Source\PSoC5/SPI_IMU.c **** *  SPI_IMU_rxBufferWrite - used for the account of the bytes which
+ 583:Generated_Source\PSoC5/SPI_IMU.c **** *  have been written down in the RX software buffer.
+ 584:Generated_Source\PSoC5/SPI_IMU.c **** *  SPI_IMU_rxBufferRead - used for the account of the bytes which
+ 585:Generated_Source\PSoC5/SPI_IMU.c **** *  have been read from the RX software buffer, modified every function
+ 586:Generated_Source\PSoC5/SPI_IMU.c **** *  call if RX Software Buffer is used.
+ 587:Generated_Source\PSoC5/SPI_IMU.c **** *  SPI_IMU_rxBuffer[SPI_IMU_RX_BUFFER_SIZE] - used to store
+ 588:Generated_Source\PSoC5/SPI_IMU.c **** *  received data.
+ 589:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 590:Generated_Source\PSoC5/SPI_IMU.c **** * Theory:
+ 591:Generated_Source\PSoC5/SPI_IMU.c **** *  Allows the user to read a byte of data received.
+ 592:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 593:Generated_Source\PSoC5/SPI_IMU.c **** * Side Effects:
+ 594:Generated_Source\PSoC5/SPI_IMU.c **** *  Will return invalid data if the FIFO is empty. The user should Call
+ 595:Generated_Source\PSoC5/SPI_IMU.c **** *  GetRxBufferSize() and if it returns a non-zero value then it is safe to call
+ 596:Generated_Source\PSoC5/SPI_IMU.c **** *  ReadByte() function.
+ 597:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 598:Generated_Source\PSoC5/SPI_IMU.c **** * Reentrant:
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccq1kucO.s 			page 17
+
+
+ 599:Generated_Source\PSoC5/SPI_IMU.c **** *  No.
+ 600:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 601:Generated_Source\PSoC5/SPI_IMU.c **** *******************************************************************************/
+ 602:Generated_Source\PSoC5/SPI_IMU.c **** uint8 SPI_IMU_ReadRxData(void) 
+ 603:Generated_Source\PSoC5/SPI_IMU.c **** {
+ 315              		.loc 1 603 0
+ 316              		.cfi_startproc
+ 317              		@ args = 0, pretend = 0, frame = 0
+ 318              		@ frame_needed = 0, uses_anonymous_args = 0
+ 319              		@ link register save eliminated.
+ 604:Generated_Source\PSoC5/SPI_IMU.c ****     uint8 rxData;
+ 605:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 606:Generated_Source\PSoC5/SPI_IMU.c ****     #if(SPI_IMU_RX_SOFTWARE_BUF_ENABLED)
+ 607:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 608:Generated_Source\PSoC5/SPI_IMU.c ****         /* Disable RX interrupt to protect global veriables */
+ 609:Generated_Source\PSoC5/SPI_IMU.c ****         SPI_IMU_DisableRxInt();
+ 610:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 611:Generated_Source\PSoC5/SPI_IMU.c ****         if(SPI_IMU_rxBufferRead != SPI_IMU_rxBufferWrite)
+ 612:Generated_Source\PSoC5/SPI_IMU.c ****         {
+ 613:Generated_Source\PSoC5/SPI_IMU.c ****             if(0u == SPI_IMU_rxBufferFull)
+ 614:Generated_Source\PSoC5/SPI_IMU.c ****             {
+ 615:Generated_Source\PSoC5/SPI_IMU.c ****                 SPI_IMU_rxBufferRead++;
+ 616:Generated_Source\PSoC5/SPI_IMU.c ****                 if(SPI_IMU_rxBufferRead >= SPI_IMU_RX_BUFFER_SIZE)
+ 617:Generated_Source\PSoC5/SPI_IMU.c ****                 {
+ 618:Generated_Source\PSoC5/SPI_IMU.c ****                     SPI_IMU_rxBufferRead = 0u;
+ 619:Generated_Source\PSoC5/SPI_IMU.c ****                 }
+ 620:Generated_Source\PSoC5/SPI_IMU.c ****             }
+ 621:Generated_Source\PSoC5/SPI_IMU.c ****             else
+ 622:Generated_Source\PSoC5/SPI_IMU.c ****             {
+ 623:Generated_Source\PSoC5/SPI_IMU.c ****                 SPI_IMU_rxBufferFull = 0u;
+ 624:Generated_Source\PSoC5/SPI_IMU.c ****             }
+ 625:Generated_Source\PSoC5/SPI_IMU.c ****         }
+ 626:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 627:Generated_Source\PSoC5/SPI_IMU.c ****         rxData = SPI_IMU_rxBuffer[SPI_IMU_rxBufferRead];
+ 628:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 629:Generated_Source\PSoC5/SPI_IMU.c ****         SPI_IMU_EnableRxInt();
+ 630:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 631:Generated_Source\PSoC5/SPI_IMU.c ****     #else
+ 632:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 633:Generated_Source\PSoC5/SPI_IMU.c ****         rxData = CY_GET_REG8(SPI_IMU_RXDATA_PTR);
+ 320              		.loc 1 633 0
+ 321 0000 014B     		ldr	r3, .L30
+ 322 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 323              	.LVL9:
+ 634:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 635:Generated_Source\PSoC5/SPI_IMU.c ****     #endif /* (SPI_IMU_RX_SOFTWARE_BUF_ENABLED) */
+ 636:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 637:Generated_Source\PSoC5/SPI_IMU.c ****     return(rxData);
+ 638:Generated_Source\PSoC5/SPI_IMU.c **** }
+ 324              		.loc 1 638 0
+ 325 0004 7047     		bx	lr
+ 326              	.L31:
+ 327 0006 00BF     		.align	2
+ 328              	.L30:
+ 329 0008 56650040 		.word	1073767766
+ 330              		.cfi_endproc
+ 331              	.LFE13:
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccq1kucO.s 			page 18
+
+
+ 332              		.size	SPI_IMU_ReadRxData, .-SPI_IMU_ReadRxData
+ 333              		.section	.text.SPI_IMU_GetRxBufferSize,"ax",%progbits
+ 334              		.align	2
+ 335              		.global	SPI_IMU_GetRxBufferSize
+ 336              		.thumb
+ 337              		.thumb_func
+ 338              		.type	SPI_IMU_GetRxBufferSize, %function
+ 339              	SPI_IMU_GetRxBufferSize:
+ 340              	.LFB14:
+ 639:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 640:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 641:Generated_Source\PSoC5/SPI_IMU.c **** /*******************************************************************************
+ 642:Generated_Source\PSoC5/SPI_IMU.c **** * Function Name: SPI_IMU_GetRxBufferSize
+ 643:Generated_Source\PSoC5/SPI_IMU.c **** ********************************************************************************
+ 644:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 645:Generated_Source\PSoC5/SPI_IMU.c **** * Summary:
+ 646:Generated_Source\PSoC5/SPI_IMU.c **** *  Returns the number of bytes/words of data currently held in the RX buffer.
+ 647:Generated_Source\PSoC5/SPI_IMU.c **** *  If RX Software Buffer not used then function return 0 if FIFO empty or 1 if
+ 648:Generated_Source\PSoC5/SPI_IMU.c **** *  FIFO not empty. In another case function return size of RX Software Buffer.
+ 649:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 650:Generated_Source\PSoC5/SPI_IMU.c **** * Parameters:
+ 651:Generated_Source\PSoC5/SPI_IMU.c **** *  None.
+ 652:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 653:Generated_Source\PSoC5/SPI_IMU.c **** * Return:
+ 654:Generated_Source\PSoC5/SPI_IMU.c **** *  Integer count of the number of bytes/words in the RX buffer.
+ 655:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 656:Generated_Source\PSoC5/SPI_IMU.c **** * Global variables:
+ 657:Generated_Source\PSoC5/SPI_IMU.c **** *  SPI_IMU_rxBufferWrite - used for the account of the bytes which
+ 658:Generated_Source\PSoC5/SPI_IMU.c **** *  have been written down in the RX software buffer.
+ 659:Generated_Source\PSoC5/SPI_IMU.c **** *  SPI_IMU_rxBufferRead - used for the account of the bytes which
+ 660:Generated_Source\PSoC5/SPI_IMU.c **** *  have been read from the RX software buffer.
+ 661:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 662:Generated_Source\PSoC5/SPI_IMU.c **** * Side Effects:
+ 663:Generated_Source\PSoC5/SPI_IMU.c **** *  Clear status register of the component.
+ 664:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 665:Generated_Source\PSoC5/SPI_IMU.c **** *******************************************************************************/
+ 666:Generated_Source\PSoC5/SPI_IMU.c **** uint8 SPI_IMU_GetRxBufferSize(void) 
+ 667:Generated_Source\PSoC5/SPI_IMU.c **** {
+ 341              		.loc 1 667 0
+ 342              		.cfi_startproc
+ 343              		@ args = 0, pretend = 0, frame = 0
+ 344              		@ frame_needed = 0, uses_anonymous_args = 0
+ 345              		@ link register save eliminated.
+ 668:Generated_Source\PSoC5/SPI_IMU.c ****     uint8 size;
+ 669:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 670:Generated_Source\PSoC5/SPI_IMU.c ****     #if(SPI_IMU_RX_SOFTWARE_BUF_ENABLED)
+ 671:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 672:Generated_Source\PSoC5/SPI_IMU.c ****         /* Disable RX interrupt to protect global veriables */
+ 673:Generated_Source\PSoC5/SPI_IMU.c ****         SPI_IMU_DisableRxInt();
+ 674:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 675:Generated_Source\PSoC5/SPI_IMU.c ****         if(SPI_IMU_rxBufferRead == SPI_IMU_rxBufferWrite)
+ 676:Generated_Source\PSoC5/SPI_IMU.c ****         {
+ 677:Generated_Source\PSoC5/SPI_IMU.c ****             size = 0u;
+ 678:Generated_Source\PSoC5/SPI_IMU.c ****         }
+ 679:Generated_Source\PSoC5/SPI_IMU.c ****         else if(SPI_IMU_rxBufferRead < SPI_IMU_rxBufferWrite)
+ 680:Generated_Source\PSoC5/SPI_IMU.c ****         {
+ 681:Generated_Source\PSoC5/SPI_IMU.c ****             size = (SPI_IMU_rxBufferWrite - SPI_IMU_rxBufferRead);
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccq1kucO.s 			page 19
+
+
+ 682:Generated_Source\PSoC5/SPI_IMU.c ****         }
+ 683:Generated_Source\PSoC5/SPI_IMU.c ****         else
+ 684:Generated_Source\PSoC5/SPI_IMU.c ****         {
+ 685:Generated_Source\PSoC5/SPI_IMU.c ****             size = (SPI_IMU_RX_BUFFER_SIZE - SPI_IMU_rxBufferRead) + SPI_IMU_rxBufferWrite;
+ 686:Generated_Source\PSoC5/SPI_IMU.c ****         }
+ 687:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 688:Generated_Source\PSoC5/SPI_IMU.c ****         SPI_IMU_EnableRxInt();
+ 689:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 690:Generated_Source\PSoC5/SPI_IMU.c ****     #else
+ 691:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 692:Generated_Source\PSoC5/SPI_IMU.c ****         /* We can only know if there is data in the RX FIFO */
+ 693:Generated_Source\PSoC5/SPI_IMU.c ****         size = (0u != (SPI_IMU_RX_STATUS_REG & SPI_IMU_STS_RX_FIFO_NOT_EMPTY)) ? 1u : 0u;
+ 346              		.loc 1 693 0
+ 347 0000 044B     		ldr	r3, .L35
+ 348 0002 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 349 0004 13F0200F 		tst	r3, #32
+ 350 0008 01D0     		beq	.L34
+ 351 000a 0120     		movs	r0, #1
+ 352 000c 7047     		bx	lr
+ 353              	.L34:
+ 354 000e 0020     		movs	r0, #0
+ 355              	.LVL10:
+ 694:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 695:Generated_Source\PSoC5/SPI_IMU.c ****     #endif /* (SPI_IMU_TX_SOFTWARE_BUF_ENABLED) */
+ 696:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 697:Generated_Source\PSoC5/SPI_IMU.c ****     return(size);
+ 698:Generated_Source\PSoC5/SPI_IMU.c **** }
+ 356              		.loc 1 698 0
+ 357 0010 7047     		bx	lr
+ 358              	.L36:
+ 359 0012 00BF     		.align	2
+ 360              	.L35:
+ 361 0014 66640040 		.word	1073767526
+ 362              		.cfi_endproc
+ 363              	.LFE14:
+ 364              		.size	SPI_IMU_GetRxBufferSize, .-SPI_IMU_GetRxBufferSize
+ 365              		.section	.text.SPI_IMU_GetTxBufferSize,"ax",%progbits
+ 366              		.align	2
+ 367              		.global	SPI_IMU_GetTxBufferSize
+ 368              		.thumb
+ 369              		.thumb_func
+ 370              		.type	SPI_IMU_GetTxBufferSize, %function
+ 371              	SPI_IMU_GetTxBufferSize:
+ 372              	.LFB15:
+ 699:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 700:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 701:Generated_Source\PSoC5/SPI_IMU.c **** /*******************************************************************************
+ 702:Generated_Source\PSoC5/SPI_IMU.c **** * Function Name: SPI_IMU_GetTxBufferSize
+ 703:Generated_Source\PSoC5/SPI_IMU.c **** ********************************************************************************
+ 704:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 705:Generated_Source\PSoC5/SPI_IMU.c **** * Summary:
+ 706:Generated_Source\PSoC5/SPI_IMU.c **** *  Returns the number of bytes/words of data currently held in the TX buffer.
+ 707:Generated_Source\PSoC5/SPI_IMU.c **** *  If TX Software Buffer not used then function return 0 - if FIFO empty, 1 - if
+ 708:Generated_Source\PSoC5/SPI_IMU.c **** *  FIFO not full, 4 - if FIFO full. In another case function return size of TX
+ 709:Generated_Source\PSoC5/SPI_IMU.c **** *  Software Buffer.
+ 710:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 711:Generated_Source\PSoC5/SPI_IMU.c **** * Parameters:
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccq1kucO.s 			page 20
+
+
+ 712:Generated_Source\PSoC5/SPI_IMU.c **** *  None.
+ 713:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 714:Generated_Source\PSoC5/SPI_IMU.c **** * Return:
+ 715:Generated_Source\PSoC5/SPI_IMU.c **** *  Integer count of the number of bytes/words in the TX buffer.
+ 716:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 717:Generated_Source\PSoC5/SPI_IMU.c **** * Global variables:
+ 718:Generated_Source\PSoC5/SPI_IMU.c **** *  SPI_IMU_txBufferWrite - used for the account of the bytes which
+ 719:Generated_Source\PSoC5/SPI_IMU.c **** *  have been written down in the TX software buffer.
+ 720:Generated_Source\PSoC5/SPI_IMU.c **** *  SPI_IMU_txBufferRead - used for the account of the bytes which
+ 721:Generated_Source\PSoC5/SPI_IMU.c **** *  have been read from the TX software buffer.
+ 722:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 723:Generated_Source\PSoC5/SPI_IMU.c **** * Side Effects:
+ 724:Generated_Source\PSoC5/SPI_IMU.c **** *  Clear status register of the component.
+ 725:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 726:Generated_Source\PSoC5/SPI_IMU.c **** *******************************************************************************/
+ 727:Generated_Source\PSoC5/SPI_IMU.c **** uint8  SPI_IMU_GetTxBufferSize(void) 
+ 728:Generated_Source\PSoC5/SPI_IMU.c **** {
+ 373              		.loc 1 728 0
+ 374              		.cfi_startproc
+ 375              		@ args = 0, pretend = 0, frame = 0
+ 376              		@ frame_needed = 0, uses_anonymous_args = 0
+ 377              		@ link register save eliminated.
+ 729:Generated_Source\PSoC5/SPI_IMU.c ****     uint8 size;
+ 730:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 731:Generated_Source\PSoC5/SPI_IMU.c ****     #if(SPI_IMU_TX_SOFTWARE_BUF_ENABLED)
+ 732:Generated_Source\PSoC5/SPI_IMU.c ****         /* Disable TX interrupt to protect global veriables */
+ 733:Generated_Source\PSoC5/SPI_IMU.c ****         SPI_IMU_DisableTxInt();
+ 734:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 735:Generated_Source\PSoC5/SPI_IMU.c ****         if(SPI_IMU_txBufferRead == SPI_IMU_txBufferWrite)
+ 736:Generated_Source\PSoC5/SPI_IMU.c ****         {
+ 737:Generated_Source\PSoC5/SPI_IMU.c ****             size = 0u;
+ 738:Generated_Source\PSoC5/SPI_IMU.c ****         }
+ 739:Generated_Source\PSoC5/SPI_IMU.c ****         else if(SPI_IMU_txBufferRead < SPI_IMU_txBufferWrite)
+ 740:Generated_Source\PSoC5/SPI_IMU.c ****         {
+ 741:Generated_Source\PSoC5/SPI_IMU.c ****             size = (SPI_IMU_txBufferWrite - SPI_IMU_txBufferRead);
+ 742:Generated_Source\PSoC5/SPI_IMU.c ****         }
+ 743:Generated_Source\PSoC5/SPI_IMU.c ****         else
+ 744:Generated_Source\PSoC5/SPI_IMU.c ****         {
+ 745:Generated_Source\PSoC5/SPI_IMU.c ****             size = (SPI_IMU_TX_BUFFER_SIZE - SPI_IMU_txBufferRead) + SPI_IMU_txBufferWrite;
+ 746:Generated_Source\PSoC5/SPI_IMU.c ****         }
+ 747:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 748:Generated_Source\PSoC5/SPI_IMU.c ****         SPI_IMU_EnableTxInt();
+ 749:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 750:Generated_Source\PSoC5/SPI_IMU.c ****     #else
+ 751:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 752:Generated_Source\PSoC5/SPI_IMU.c ****         size = SPI_IMU_TX_STATUS_REG;
+ 378              		.loc 1 752 0
+ 379 0000 074B     		ldr	r3, .L41
+ 380 0002 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 381 0004 DBB2     		uxtb	r3, r3
+ 382              	.LVL11:
+ 753:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 754:Generated_Source\PSoC5/SPI_IMU.c ****         if(0u != (size & SPI_IMU_STS_TX_FIFO_EMPTY))
+ 383              		.loc 1 754 0
+ 384 0006 13F0020F 		tst	r3, #2
+ 385 000a 04D1     		bne	.L39
+ 755:Generated_Source\PSoC5/SPI_IMU.c ****         {
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccq1kucO.s 			page 21
+
+
+ 756:Generated_Source\PSoC5/SPI_IMU.c ****             size = 0u;
+ 757:Generated_Source\PSoC5/SPI_IMU.c ****         }
+ 758:Generated_Source\PSoC5/SPI_IMU.c ****         else if(0u != (size & SPI_IMU_STS_TX_FIFO_NOT_FULL))
+ 386              		.loc 1 758 0
+ 387 000c 13F0040F 		tst	r3, #4
+ 388 0010 03D0     		beq	.L40
+ 759:Generated_Source\PSoC5/SPI_IMU.c ****         {
+ 760:Generated_Source\PSoC5/SPI_IMU.c ****             size = 1u;
+ 389              		.loc 1 760 0
+ 390 0012 0120     		movs	r0, #1
+ 391 0014 7047     		bx	lr
+ 392              	.L39:
+ 756:Generated_Source\PSoC5/SPI_IMU.c ****         }
+ 393              		.loc 1 756 0
+ 394 0016 0020     		movs	r0, #0
+ 395 0018 7047     		bx	lr
+ 396              	.L40:
+ 761:Generated_Source\PSoC5/SPI_IMU.c ****         }
+ 762:Generated_Source\PSoC5/SPI_IMU.c ****         else
+ 763:Generated_Source\PSoC5/SPI_IMU.c ****         {
+ 764:Generated_Source\PSoC5/SPI_IMU.c ****             size = SPI_IMU_FIFO_SIZE;
+ 397              		.loc 1 764 0
+ 398 001a 0420     		movs	r0, #4
+ 399              	.LVL12:
+ 765:Generated_Source\PSoC5/SPI_IMU.c ****         }
+ 766:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 767:Generated_Source\PSoC5/SPI_IMU.c ****     #endif /* (SPI_IMU_TX_SOFTWARE_BUF_ENABLED) */
+ 768:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 769:Generated_Source\PSoC5/SPI_IMU.c ****     return(size);
+ 770:Generated_Source\PSoC5/SPI_IMU.c **** }
+ 400              		.loc 1 770 0
+ 401 001c 7047     		bx	lr
+ 402              	.L42:
+ 403 001e 00BF     		.align	2
+ 404              	.L41:
+ 405 0020 66650040 		.word	1073767782
+ 406              		.cfi_endproc
+ 407              	.LFE15:
+ 408              		.size	SPI_IMU_GetTxBufferSize, .-SPI_IMU_GetTxBufferSize
+ 409              		.section	.text.SPI_IMU_ClearRxBuffer,"ax",%progbits
+ 410              		.align	2
+ 411              		.global	SPI_IMU_ClearRxBuffer
+ 412              		.thumb
+ 413              		.thumb_func
+ 414              		.type	SPI_IMU_ClearRxBuffer, %function
+ 415              	SPI_IMU_ClearRxBuffer:
+ 416              	.LFB16:
+ 771:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 772:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 773:Generated_Source\PSoC5/SPI_IMU.c **** /*******************************************************************************
+ 774:Generated_Source\PSoC5/SPI_IMU.c **** * Function Name: SPI_IMU_ClearRxBuffer
+ 775:Generated_Source\PSoC5/SPI_IMU.c **** ********************************************************************************
+ 776:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 777:Generated_Source\PSoC5/SPI_IMU.c **** * Summary:
+ 778:Generated_Source\PSoC5/SPI_IMU.c **** *  Clear the RX RAM buffer by setting the read and write pointers both to zero.
+ 779:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 780:Generated_Source\PSoC5/SPI_IMU.c **** * Parameters:
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccq1kucO.s 			page 22
+
+
+ 781:Generated_Source\PSoC5/SPI_IMU.c **** *  None.
+ 782:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 783:Generated_Source\PSoC5/SPI_IMU.c **** * Return:
+ 784:Generated_Source\PSoC5/SPI_IMU.c **** *  None.
+ 785:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 786:Generated_Source\PSoC5/SPI_IMU.c **** * Global variables:
+ 787:Generated_Source\PSoC5/SPI_IMU.c **** *  SPI_IMU_rxBufferWrite - used for the account of the bytes which
+ 788:Generated_Source\PSoC5/SPI_IMU.c **** *  have been written down in the RX software buffer, modified every function
+ 789:Generated_Source\PSoC5/SPI_IMU.c **** *  call - resets to zero.
+ 790:Generated_Source\PSoC5/SPI_IMU.c **** *  SPI_IMU_rxBufferRead - used for the account of the bytes which
+ 791:Generated_Source\PSoC5/SPI_IMU.c **** *  have been read from the RX software buffer, modified every function call -
+ 792:Generated_Source\PSoC5/SPI_IMU.c **** *  resets to zero.
+ 793:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 794:Generated_Source\PSoC5/SPI_IMU.c **** * Theory:
+ 795:Generated_Source\PSoC5/SPI_IMU.c **** *  Setting the pointers to zero makes the system believe there is no data to
+ 796:Generated_Source\PSoC5/SPI_IMU.c **** *  read and writing will resume at address 0 overwriting any data that may have
+ 797:Generated_Source\PSoC5/SPI_IMU.c **** *  remained in the RAM.
+ 798:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 799:Generated_Source\PSoC5/SPI_IMU.c **** * Side Effects:
+ 800:Generated_Source\PSoC5/SPI_IMU.c **** *  Any received data not read from the RAM buffer will be lost when overwritten.
+ 801:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 802:Generated_Source\PSoC5/SPI_IMU.c **** * Reentrant:
+ 803:Generated_Source\PSoC5/SPI_IMU.c **** *  No.
+ 804:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 805:Generated_Source\PSoC5/SPI_IMU.c **** *******************************************************************************/
+ 806:Generated_Source\PSoC5/SPI_IMU.c **** void SPI_IMU_ClearRxBuffer(void) 
+ 807:Generated_Source\PSoC5/SPI_IMU.c **** {
+ 417              		.loc 1 807 0
+ 418              		.cfi_startproc
+ 419              		@ args = 0, pretend = 0, frame = 0
+ 420              		@ frame_needed = 0, uses_anonymous_args = 0
+ 421              		@ link register save eliminated.
+ 808:Generated_Source\PSoC5/SPI_IMU.c ****     /* Clear Hardware RX FIFO */
+ 809:Generated_Source\PSoC5/SPI_IMU.c ****     while(0u !=(SPI_IMU_RX_STATUS_REG & SPI_IMU_STS_RX_FIFO_NOT_EMPTY))
+ 422              		.loc 1 809 0
+ 423 0000 01E0     		b	.L44
+ 424              	.L45:
+ 810:Generated_Source\PSoC5/SPI_IMU.c ****     {
+ 811:Generated_Source\PSoC5/SPI_IMU.c ****         (void) CY_GET_REG8(SPI_IMU_RXDATA_PTR);
+ 425              		.loc 1 811 0
+ 426 0002 044B     		ldr	r3, .L46
+ 427 0004 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 428              	.L44:
+ 809:Generated_Source\PSoC5/SPI_IMU.c ****     {
+ 429              		.loc 1 809 0
+ 430 0006 044B     		ldr	r3, .L46+4
+ 431 0008 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 432 000a 13F0200F 		tst	r3, #32
+ 433 000e F8D1     		bne	.L45
+ 812:Generated_Source\PSoC5/SPI_IMU.c ****     }
+ 813:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 814:Generated_Source\PSoC5/SPI_IMU.c ****     #if(SPI_IMU_RX_SOFTWARE_BUF_ENABLED)
+ 815:Generated_Source\PSoC5/SPI_IMU.c ****         /* Disable RX interrupt to protect global veriables */
+ 816:Generated_Source\PSoC5/SPI_IMU.c ****         SPI_IMU_DisableRxInt();
+ 817:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 818:Generated_Source\PSoC5/SPI_IMU.c ****         SPI_IMU_rxBufferFull  = 0u;
+ 819:Generated_Source\PSoC5/SPI_IMU.c ****         SPI_IMU_rxBufferRead  = 0u;
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccq1kucO.s 			page 23
+
+
+ 820:Generated_Source\PSoC5/SPI_IMU.c ****         SPI_IMU_rxBufferWrite = 0u;
+ 821:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 822:Generated_Source\PSoC5/SPI_IMU.c ****         SPI_IMU_EnableRxInt();
+ 823:Generated_Source\PSoC5/SPI_IMU.c ****     #endif /* (SPI_IMU_RX_SOFTWARE_BUF_ENABLED) */
+ 824:Generated_Source\PSoC5/SPI_IMU.c **** }
+ 434              		.loc 1 824 0
+ 435 0010 7047     		bx	lr
+ 436              	.L47:
+ 437 0012 00BF     		.align	2
+ 438              	.L46:
+ 439 0014 56650040 		.word	1073767766
+ 440 0018 66640040 		.word	1073767526
+ 441              		.cfi_endproc
+ 442              	.LFE16:
+ 443              		.size	SPI_IMU_ClearRxBuffer, .-SPI_IMU_ClearRxBuffer
+ 444              		.section	.text.SPI_IMU_ClearTxBuffer,"ax",%progbits
+ 445              		.align	2
+ 446              		.global	SPI_IMU_ClearTxBuffer
+ 447              		.thumb
+ 448              		.thumb_func
+ 449              		.type	SPI_IMU_ClearTxBuffer, %function
+ 450              	SPI_IMU_ClearTxBuffer:
+ 451              	.LFB17:
+ 825:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 826:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 827:Generated_Source\PSoC5/SPI_IMU.c **** /*******************************************************************************
+ 828:Generated_Source\PSoC5/SPI_IMU.c **** * Function Name: SPI_IMU_ClearTxBuffer
+ 829:Generated_Source\PSoC5/SPI_IMU.c **** ********************************************************************************
+ 830:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 831:Generated_Source\PSoC5/SPI_IMU.c **** * Summary:
+ 832:Generated_Source\PSoC5/SPI_IMU.c **** *  Clear the TX RAM buffer by setting the read and write pointers both to zero.
+ 833:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 834:Generated_Source\PSoC5/SPI_IMU.c **** * Parameters:
+ 835:Generated_Source\PSoC5/SPI_IMU.c **** *  None.
+ 836:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 837:Generated_Source\PSoC5/SPI_IMU.c **** * Return:
+ 838:Generated_Source\PSoC5/SPI_IMU.c **** *  None.
+ 839:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 840:Generated_Source\PSoC5/SPI_IMU.c **** * Global variables:
+ 841:Generated_Source\PSoC5/SPI_IMU.c **** *  SPI_IMU_txBufferWrite - used for the account of the bytes which
+ 842:Generated_Source\PSoC5/SPI_IMU.c **** *  have been written down in the TX software buffer, modified every function
+ 843:Generated_Source\PSoC5/SPI_IMU.c **** *  call - resets to zero.
+ 844:Generated_Source\PSoC5/SPI_IMU.c **** *  SPI_IMU_txBufferRead - used for the account of the bytes which
+ 845:Generated_Source\PSoC5/SPI_IMU.c **** *  have been read from the TX software buffer, modified every function call -
+ 846:Generated_Source\PSoC5/SPI_IMU.c **** *  resets to zero.
+ 847:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 848:Generated_Source\PSoC5/SPI_IMU.c **** * Theory:
+ 849:Generated_Source\PSoC5/SPI_IMU.c **** *  Setting the pointers to zero makes the system believe there is no data to
+ 850:Generated_Source\PSoC5/SPI_IMU.c **** *  read and writing will resume at address 0 overwriting any data that may have
+ 851:Generated_Source\PSoC5/SPI_IMU.c **** *  remained in the RAM.
+ 852:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 853:Generated_Source\PSoC5/SPI_IMU.c **** * Side Effects:
+ 854:Generated_Source\PSoC5/SPI_IMU.c **** *  Any data not yet transmitted from the RAM buffer will be lost when
+ 855:Generated_Source\PSoC5/SPI_IMU.c **** *  overwritten.
+ 856:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 857:Generated_Source\PSoC5/SPI_IMU.c **** * Reentrant:
+ 858:Generated_Source\PSoC5/SPI_IMU.c **** *  No.
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccq1kucO.s 			page 24
+
+
+ 859:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 860:Generated_Source\PSoC5/SPI_IMU.c **** *******************************************************************************/
+ 861:Generated_Source\PSoC5/SPI_IMU.c **** void SPI_IMU_ClearTxBuffer(void) 
+ 862:Generated_Source\PSoC5/SPI_IMU.c **** {
+ 452              		.loc 1 862 0
+ 453              		.cfi_startproc
+ 454              		@ args = 0, pretend = 0, frame = 0
+ 455              		@ frame_needed = 0, uses_anonymous_args = 0
+ 456 0000 08B5     		push	{r3, lr}
+ 457              		.cfi_def_cfa_offset 8
+ 458              		.cfi_offset 3, -8
+ 459              		.cfi_offset 14, -4
+ 863:Generated_Source\PSoC5/SPI_IMU.c ****     uint8 enableInterrupts;
+ 864:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 865:Generated_Source\PSoC5/SPI_IMU.c ****     enableInterrupts = CyEnterCriticalSection();
+ 460              		.loc 1 865 0
+ 461 0002 FFF7FEFF 		bl	CyEnterCriticalSection
+ 462              	.LVL13:
+ 866:Generated_Source\PSoC5/SPI_IMU.c ****     /* Clear TX FIFO */
+ 867:Generated_Source\PSoC5/SPI_IMU.c ****     SPI_IMU_AUX_CONTROL_DP0_REG |= ((uint8)  SPI_IMU_TX_FIFO_CLR);
+ 463              		.loc 1 867 0
+ 464 0006 064B     		ldr	r3, .L50
+ 465 0008 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 466 000a 42F00102 		orr	r2, r2, #1
+ 467 000e 1A70     		strb	r2, [r3]
+ 868:Generated_Source\PSoC5/SPI_IMU.c ****     SPI_IMU_AUX_CONTROL_DP0_REG &= ((uint8) ~SPI_IMU_TX_FIFO_CLR);
+ 468              		.loc 1 868 0
+ 469 0010 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 470 0012 02F0FE02 		and	r2, r2, #254
+ 471 0016 1A70     		strb	r2, [r3]
+ 869:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 870:Generated_Source\PSoC5/SPI_IMU.c ****     #if(SPI_IMU_USE_SECOND_DATAPATH)
+ 871:Generated_Source\PSoC5/SPI_IMU.c ****         /* Clear TX FIFO for 2nd Datapath */
+ 872:Generated_Source\PSoC5/SPI_IMU.c ****         SPI_IMU_AUX_CONTROL_DP1_REG |= ((uint8)  SPI_IMU_TX_FIFO_CLR);
+ 873:Generated_Source\PSoC5/SPI_IMU.c ****         SPI_IMU_AUX_CONTROL_DP1_REG &= ((uint8) ~SPI_IMU_TX_FIFO_CLR);
+ 874:Generated_Source\PSoC5/SPI_IMU.c ****     #endif /* (SPI_IMU_USE_SECOND_DATAPATH) */
+ 875:Generated_Source\PSoC5/SPI_IMU.c ****     CyExitCriticalSection(enableInterrupts);
+ 472              		.loc 1 875 0
+ 473 0018 FFF7FEFF 		bl	CyExitCriticalSection
+ 474              	.LVL14:
+ 475 001c 08BD     		pop	{r3, pc}
+ 476              	.L51:
+ 477 001e 00BF     		.align	2
+ 478              	.L50:
+ 479 0020 96650040 		.word	1073767830
+ 480              		.cfi_endproc
+ 481              	.LFE17:
+ 482              		.size	SPI_IMU_ClearTxBuffer, .-SPI_IMU_ClearTxBuffer
+ 483              		.section	.text.SPI_IMU_TxEnable,"ax",%progbits
+ 484              		.align	2
+ 485              		.global	SPI_IMU_TxEnable
+ 486              		.thumb
+ 487              		.thumb_func
+ 488              		.type	SPI_IMU_TxEnable, %function
+ 489              	SPI_IMU_TxEnable:
+ 490              	.LFB18:
+ 876:Generated_Source\PSoC5/SPI_IMU.c **** 
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccq1kucO.s 			page 25
+
+
+ 877:Generated_Source\PSoC5/SPI_IMU.c ****     #if(SPI_IMU_TX_SOFTWARE_BUF_ENABLED)
+ 878:Generated_Source\PSoC5/SPI_IMU.c ****         /* Disable TX interrupt to protect global veriables */
+ 879:Generated_Source\PSoC5/SPI_IMU.c ****         SPI_IMU_DisableTxInt();
+ 880:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 881:Generated_Source\PSoC5/SPI_IMU.c ****         SPI_IMU_txBufferFull  = 0u;
+ 882:Generated_Source\PSoC5/SPI_IMU.c ****         SPI_IMU_txBufferRead  = 0u;
+ 883:Generated_Source\PSoC5/SPI_IMU.c ****         SPI_IMU_txBufferWrite = 0u;
+ 884:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 885:Generated_Source\PSoC5/SPI_IMU.c ****         /* Buffer is EMPTY: disable TX FIFO NOT FULL interrupt */
+ 886:Generated_Source\PSoC5/SPI_IMU.c ****         SPI_IMU_TX_STATUS_MASK_REG &= ((uint8) ~SPI_IMU_STS_TX_FIFO_NOT_FULL);
+ 887:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 888:Generated_Source\PSoC5/SPI_IMU.c ****         SPI_IMU_EnableTxInt();
+ 889:Generated_Source\PSoC5/SPI_IMU.c ****     #endif /* (SPI_IMU_TX_SOFTWARE_BUF_ENABLED) */
+ 890:Generated_Source\PSoC5/SPI_IMU.c **** }
+ 891:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 892:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 893:Generated_Source\PSoC5/SPI_IMU.c **** #if(0u != SPI_IMU_BIDIRECTIONAL_MODE)
+ 894:Generated_Source\PSoC5/SPI_IMU.c ****     /*******************************************************************************
+ 895:Generated_Source\PSoC5/SPI_IMU.c ****     * Function Name: SPI_IMU_TxEnable
+ 896:Generated_Source\PSoC5/SPI_IMU.c ****     ********************************************************************************
+ 897:Generated_Source\PSoC5/SPI_IMU.c ****     *
+ 898:Generated_Source\PSoC5/SPI_IMU.c ****     * Summary:
+ 899:Generated_Source\PSoC5/SPI_IMU.c ****     *  If the SPI master is configured to use a single bi-directional pin then this
+ 900:Generated_Source\PSoC5/SPI_IMU.c ****     *  will set the bi-directional pin to transmit.
+ 901:Generated_Source\PSoC5/SPI_IMU.c ****     *
+ 902:Generated_Source\PSoC5/SPI_IMU.c ****     * Parameters:
+ 903:Generated_Source\PSoC5/SPI_IMU.c ****     *  None.
+ 904:Generated_Source\PSoC5/SPI_IMU.c ****     *
+ 905:Generated_Source\PSoC5/SPI_IMU.c ****     * Return:
+ 906:Generated_Source\PSoC5/SPI_IMU.c ****     *  None.
+ 907:Generated_Source\PSoC5/SPI_IMU.c ****     *
+ 908:Generated_Source\PSoC5/SPI_IMU.c ****     *******************************************************************************/
+ 909:Generated_Source\PSoC5/SPI_IMU.c ****     void SPI_IMU_TxEnable(void) 
+ 910:Generated_Source\PSoC5/SPI_IMU.c ****     {
+ 491              		.loc 1 910 0
+ 492              		.cfi_startproc
+ 493              		@ args = 0, pretend = 0, frame = 0
+ 494              		@ frame_needed = 0, uses_anonymous_args = 0
+ 495              		@ link register save eliminated.
+ 911:Generated_Source\PSoC5/SPI_IMU.c ****         SPI_IMU_CONTROL_REG |= SPI_IMU_CTRL_TX_SIGNAL_EN;
+ 496              		.loc 1 911 0
+ 497 0000 024A     		ldr	r2, .L53
+ 498 0002 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+ 499 0004 43F00103 		orr	r3, r3, #1
+ 500 0008 1370     		strb	r3, [r2]
+ 501 000a 7047     		bx	lr
+ 502              	.L54:
+ 503              		.align	2
+ 504              	.L53:
+ 505 000c 76650040 		.word	1073767798
+ 506              		.cfi_endproc
+ 507              	.LFE18:
+ 508              		.size	SPI_IMU_TxEnable, .-SPI_IMU_TxEnable
+ 509              		.section	.text.SPI_IMU_TxDisable,"ax",%progbits
+ 510              		.align	2
+ 511              		.global	SPI_IMU_TxDisable
+ 512              		.thumb
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccq1kucO.s 			page 26
+
+
+ 513              		.thumb_func
+ 514              		.type	SPI_IMU_TxDisable, %function
+ 515              	SPI_IMU_TxDisable:
+ 516              	.LFB19:
+ 912:Generated_Source\PSoC5/SPI_IMU.c ****     }
+ 913:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 914:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 915:Generated_Source\PSoC5/SPI_IMU.c ****     /*******************************************************************************
+ 916:Generated_Source\PSoC5/SPI_IMU.c ****     * Function Name: SPI_IMU_TxDisable
+ 917:Generated_Source\PSoC5/SPI_IMU.c ****     ********************************************************************************
+ 918:Generated_Source\PSoC5/SPI_IMU.c ****     *
+ 919:Generated_Source\PSoC5/SPI_IMU.c ****     * Summary:
+ 920:Generated_Source\PSoC5/SPI_IMU.c ****     *  If the SPI master is configured to use a single bi-directional pin then this
+ 921:Generated_Source\PSoC5/SPI_IMU.c ****     *  will set the bi-directional pin to receive.
+ 922:Generated_Source\PSoC5/SPI_IMU.c ****     *
+ 923:Generated_Source\PSoC5/SPI_IMU.c ****     * Parameters:
+ 924:Generated_Source\PSoC5/SPI_IMU.c ****     *  None.
+ 925:Generated_Source\PSoC5/SPI_IMU.c ****     *
+ 926:Generated_Source\PSoC5/SPI_IMU.c ****     * Return:
+ 927:Generated_Source\PSoC5/SPI_IMU.c ****     *  None.
+ 928:Generated_Source\PSoC5/SPI_IMU.c ****     *
+ 929:Generated_Source\PSoC5/SPI_IMU.c ****     *******************************************************************************/
+ 930:Generated_Source\PSoC5/SPI_IMU.c ****     void SPI_IMU_TxDisable(void) 
+ 931:Generated_Source\PSoC5/SPI_IMU.c ****     {
+ 517              		.loc 1 931 0
+ 518              		.cfi_startproc
+ 519              		@ args = 0, pretend = 0, frame = 0
+ 520              		@ frame_needed = 0, uses_anonymous_args = 0
+ 521              		@ link register save eliminated.
+ 932:Generated_Source\PSoC5/SPI_IMU.c ****         SPI_IMU_CONTROL_REG &= ((uint8) ~SPI_IMU_CTRL_TX_SIGNAL_EN);
+ 522              		.loc 1 932 0
+ 523 0000 024A     		ldr	r2, .L56
+ 524 0002 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+ 525 0004 03F0FE03 		and	r3, r3, #254
+ 526 0008 1370     		strb	r3, [r2]
+ 527 000a 7047     		bx	lr
+ 528              	.L57:
+ 529              		.align	2
+ 530              	.L56:
+ 531 000c 76650040 		.word	1073767798
+ 532              		.cfi_endproc
+ 533              	.LFE19:
+ 534              		.size	SPI_IMU_TxDisable, .-SPI_IMU_TxDisable
+ 535              		.section	.text.SPI_IMU_PutArray,"ax",%progbits
+ 536              		.align	2
+ 537              		.global	SPI_IMU_PutArray
+ 538              		.thumb
+ 539              		.thumb_func
+ 540              		.type	SPI_IMU_PutArray, %function
+ 541              	SPI_IMU_PutArray:
+ 542              	.LFB20:
+ 933:Generated_Source\PSoC5/SPI_IMU.c ****     }
+ 934:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 935:Generated_Source\PSoC5/SPI_IMU.c **** #endif /* (0u != SPI_IMU_BIDIRECTIONAL_MODE) */
+ 936:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 937:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 938:Generated_Source\PSoC5/SPI_IMU.c **** /*******************************************************************************
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccq1kucO.s 			page 27
+
+
+ 939:Generated_Source\PSoC5/SPI_IMU.c **** * Function Name: SPI_IMU_PutArray
+ 940:Generated_Source\PSoC5/SPI_IMU.c **** ********************************************************************************
+ 941:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 942:Generated_Source\PSoC5/SPI_IMU.c **** * Summary:
+ 943:Generated_Source\PSoC5/SPI_IMU.c **** *  Write available data from ROM/RAM to the TX buffer while space is available
+ 944:Generated_Source\PSoC5/SPI_IMU.c **** *  in the TX buffer. Keep trying until all data is passed to the TX buffer.
+ 945:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 946:Generated_Source\PSoC5/SPI_IMU.c **** * Parameters:
+ 947:Generated_Source\PSoC5/SPI_IMU.c **** *  *buffer: Pointer to the location in RAM containing the data to send
+ 948:Generated_Source\PSoC5/SPI_IMU.c **** *  byteCount: The number of bytes to move to the transmit buffer.
+ 949:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 950:Generated_Source\PSoC5/SPI_IMU.c **** * Return:
+ 951:Generated_Source\PSoC5/SPI_IMU.c **** *  None.
+ 952:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 953:Generated_Source\PSoC5/SPI_IMU.c **** * Side Effects:
+ 954:Generated_Source\PSoC5/SPI_IMU.c **** *  Will stay in this routine until all data has been sent.  May get locked in
+ 955:Generated_Source\PSoC5/SPI_IMU.c **** *  this loop if data is not being initiated by the master if there is not
+ 956:Generated_Source\PSoC5/SPI_IMU.c **** *  enough room in the TX FIFO.
+ 957:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 958:Generated_Source\PSoC5/SPI_IMU.c **** * Reentrant:
+ 959:Generated_Source\PSoC5/SPI_IMU.c **** *  No.
+ 960:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 961:Generated_Source\PSoC5/SPI_IMU.c **** *******************************************************************************/
+ 962:Generated_Source\PSoC5/SPI_IMU.c **** void SPI_IMU_PutArray(const uint8 buffer[], uint8 byteCount)
+ 963:Generated_Source\PSoC5/SPI_IMU.c ****                                                                           
+ 964:Generated_Source\PSoC5/SPI_IMU.c **** {
+ 543              		.loc 1 964 0
+ 544              		.cfi_startproc
+ 545              		@ args = 0, pretend = 0, frame = 0
+ 546              		@ frame_needed = 0, uses_anonymous_args = 0
+ 547              	.LVL15:
+ 548 0000 70B5     		push	{r4, r5, r6, lr}
+ 549              		.cfi_def_cfa_offset 16
+ 550              		.cfi_offset 4, -16
+ 551              		.cfi_offset 5, -12
+ 552              		.cfi_offset 6, -8
+ 553              		.cfi_offset 14, -4
+ 554 0002 0646     		mov	r6, r0
+ 555 0004 0C46     		mov	r4, r1
+ 556              	.LVL16:
+ 965:Generated_Source\PSoC5/SPI_IMU.c ****     uint8 bufIndex;
+ 966:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 967:Generated_Source\PSoC5/SPI_IMU.c ****     bufIndex = 0u;
+ 557              		.loc 1 967 0
+ 558 0006 0025     		movs	r5, #0
+ 968:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 969:Generated_Source\PSoC5/SPI_IMU.c ****     while(byteCount > 0u)
+ 559              		.loc 1 969 0
+ 560 0008 06E0     		b	.L59
+ 561              	.LVL17:
+ 562              	.L60:
+ 970:Generated_Source\PSoC5/SPI_IMU.c ****     {
+ 971:Generated_Source\PSoC5/SPI_IMU.c ****         SPI_IMU_WriteTxData(buffer[bufIndex]);
+ 563              		.loc 1 971 0
+ 564 000a 705D     		ldrb	r0, [r6, r5]	@ zero_extendqisi2
+ 565 000c FFF7FEFF 		bl	SPI_IMU_WriteTxData
+ 566              	.LVL18:
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccq1kucO.s 			page 28
+
+
+ 972:Generated_Source\PSoC5/SPI_IMU.c ****         bufIndex++;
+ 567              		.loc 1 972 0
+ 568 0010 0135     		adds	r5, r5, #1
+ 569              	.LVL19:
+ 570 0012 EDB2     		uxtb	r5, r5
+ 571              	.LVL20:
+ 973:Generated_Source\PSoC5/SPI_IMU.c ****         byteCount--;
+ 572              		.loc 1 973 0
+ 573 0014 013C     		subs	r4, r4, #1
+ 574              	.LVL21:
+ 575 0016 E4B2     		uxtb	r4, r4
+ 576              	.LVL22:
+ 577              	.L59:
+ 969:Generated_Source\PSoC5/SPI_IMU.c ****     {
+ 578              		.loc 1 969 0
+ 579 0018 002C     		cmp	r4, #0
+ 580 001a F6D1     		bne	.L60
+ 974:Generated_Source\PSoC5/SPI_IMU.c ****     }
+ 975:Generated_Source\PSoC5/SPI_IMU.c **** }
+ 581              		.loc 1 975 0
+ 582 001c 70BD     		pop	{r4, r5, r6, pc}
+ 583              		.cfi_endproc
+ 584              	.LFE20:
+ 585              		.size	SPI_IMU_PutArray, .-SPI_IMU_PutArray
+ 586 001e 00BF     		.section	.text.SPI_IMU_ClearFIFO,"ax",%progbits
+ 587              		.align	2
+ 588              		.global	SPI_IMU_ClearFIFO
+ 589              		.thumb
+ 590              		.thumb_func
+ 591              		.type	SPI_IMU_ClearFIFO, %function
+ 592              	SPI_IMU_ClearFIFO:
+ 593              	.LFB21:
+ 976:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 977:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 978:Generated_Source\PSoC5/SPI_IMU.c **** /*******************************************************************************
+ 979:Generated_Source\PSoC5/SPI_IMU.c **** * Function Name: SPI_IMU_ClearFIFO
+ 980:Generated_Source\PSoC5/SPI_IMU.c **** ********************************************************************************
+ 981:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 982:Generated_Source\PSoC5/SPI_IMU.c **** * Summary:
+ 983:Generated_Source\PSoC5/SPI_IMU.c **** *  Clear the RX and TX FIFO's of all data for a fresh start.
+ 984:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 985:Generated_Source\PSoC5/SPI_IMU.c **** * Parameters:
+ 986:Generated_Source\PSoC5/SPI_IMU.c **** *  None.
+ 987:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 988:Generated_Source\PSoC5/SPI_IMU.c **** * Return:
+ 989:Generated_Source\PSoC5/SPI_IMU.c **** *  None.
+ 990:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 991:Generated_Source\PSoC5/SPI_IMU.c **** * Side Effects:
+ 992:Generated_Source\PSoC5/SPI_IMU.c **** *  Clear status register of the component.
+ 993:Generated_Source\PSoC5/SPI_IMU.c **** *
+ 994:Generated_Source\PSoC5/SPI_IMU.c **** *******************************************************************************/
+ 995:Generated_Source\PSoC5/SPI_IMU.c **** void SPI_IMU_ClearFIFO(void) 
+ 996:Generated_Source\PSoC5/SPI_IMU.c **** {
+ 594              		.loc 1 996 0
+ 595              		.cfi_startproc
+ 596              		@ args = 0, pretend = 0, frame = 0
+ 597              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccq1kucO.s 			page 29
+
+
+ 598 0000 08B5     		push	{r3, lr}
+ 599              		.cfi_def_cfa_offset 8
+ 600              		.cfi_offset 3, -8
+ 601              		.cfi_offset 14, -4
+ 997:Generated_Source\PSoC5/SPI_IMU.c ****     uint8 enableInterrupts;
+ 998:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 999:Generated_Source\PSoC5/SPI_IMU.c ****     /* Clear Hardware RX FIFO */
+1000:Generated_Source\PSoC5/SPI_IMU.c ****     while(0u !=(SPI_IMU_RX_STATUS_REG & SPI_IMU_STS_RX_FIFO_NOT_EMPTY))
+ 602              		.loc 1 1000 0
+ 603 0002 01E0     		b	.L63
+ 604              	.L64:
+1001:Generated_Source\PSoC5/SPI_IMU.c ****     {
+1002:Generated_Source\PSoC5/SPI_IMU.c ****         (void) CY_GET_REG8(SPI_IMU_RXDATA_PTR);
+ 605              		.loc 1 1002 0
+ 606 0004 0A4B     		ldr	r3, .L66
+ 607 0006 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 608              	.L63:
+1000:Generated_Source\PSoC5/SPI_IMU.c ****     {
+ 609              		.loc 1 1000 0
+ 610 0008 0A4B     		ldr	r3, .L66+4
+ 611 000a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 612 000c 13F0200F 		tst	r3, #32
+ 613 0010 F8D1     		bne	.L64
+1003:Generated_Source\PSoC5/SPI_IMU.c ****     }
+1004:Generated_Source\PSoC5/SPI_IMU.c **** 
+1005:Generated_Source\PSoC5/SPI_IMU.c ****     enableInterrupts = CyEnterCriticalSection();
+ 614              		.loc 1 1005 0
+ 615 0012 FFF7FEFF 		bl	CyEnterCriticalSection
+ 616              	.LVL23:
+1006:Generated_Source\PSoC5/SPI_IMU.c ****     /* Clear TX FIFO */
+1007:Generated_Source\PSoC5/SPI_IMU.c ****     SPI_IMU_AUX_CONTROL_DP0_REG |= ((uint8)  SPI_IMU_TX_FIFO_CLR);
+ 617              		.loc 1 1007 0
+ 618 0016 084B     		ldr	r3, .L66+8
+ 619 0018 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 620 001a 42F00102 		orr	r2, r2, #1
+ 621 001e 1A70     		strb	r2, [r3]
+1008:Generated_Source\PSoC5/SPI_IMU.c ****     SPI_IMU_AUX_CONTROL_DP0_REG &= ((uint8) ~SPI_IMU_TX_FIFO_CLR);
+ 622              		.loc 1 1008 0
+ 623 0020 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 624 0022 02F0FE02 		and	r2, r2, #254
+ 625 0026 1A70     		strb	r2, [r3]
+1009:Generated_Source\PSoC5/SPI_IMU.c **** 
+1010:Generated_Source\PSoC5/SPI_IMU.c ****     #if(SPI_IMU_USE_SECOND_DATAPATH)
+1011:Generated_Source\PSoC5/SPI_IMU.c ****         /* Clear TX FIFO for 2nd Datapath */
+1012:Generated_Source\PSoC5/SPI_IMU.c ****         SPI_IMU_AUX_CONTROL_DP1_REG |= ((uint8)  SPI_IMU_TX_FIFO_CLR);
+1013:Generated_Source\PSoC5/SPI_IMU.c ****         SPI_IMU_AUX_CONTROL_DP1_REG &= ((uint8) ~SPI_IMU_TX_FIFO_CLR);
+1014:Generated_Source\PSoC5/SPI_IMU.c ****     #endif /* (SPI_IMU_USE_SECOND_DATAPATH) */
+1015:Generated_Source\PSoC5/SPI_IMU.c ****     CyExitCriticalSection(enableInterrupts);
+ 626              		.loc 1 1015 0
+ 627 0028 FFF7FEFF 		bl	CyExitCriticalSection
+ 628              	.LVL24:
+ 629 002c 08BD     		pop	{r3, pc}
+ 630              	.L67:
+ 631 002e 00BF     		.align	2
+ 632              	.L66:
+ 633 0030 56650040 		.word	1073767766
+ 634 0034 66640040 		.word	1073767526
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccq1kucO.s 			page 30
+
+
+ 635 0038 96650040 		.word	1073767830
+ 636              		.cfi_endproc
+ 637              	.LFE21:
+ 638              		.size	SPI_IMU_ClearFIFO, .-SPI_IMU_ClearFIFO
+ 639              		.section	.text.SPI_IMU_Init,"ax",%progbits
+ 640              		.align	2
+ 641              		.global	SPI_IMU_Init
+ 642              		.thumb
+ 643              		.thumb_func
+ 644              		.type	SPI_IMU_Init, %function
+ 645              	SPI_IMU_Init:
+ 646              	.LFB0:
+  64:Generated_Source\PSoC5/SPI_IMU.c ****     /* Initialize the Bit counter */
+ 647              		.loc 1 64 0
+ 648              		.cfi_startproc
+ 649              		@ args = 0, pretend = 0, frame = 0
+ 650              		@ frame_needed = 0, uses_anonymous_args = 0
+ 651 0000 08B5     		push	{r3, lr}
+ 652              		.cfi_def_cfa_offset 8
+ 653              		.cfi_offset 3, -8
+ 654              		.cfi_offset 14, -4
+  66:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 655              		.loc 1 66 0
+ 656 0002 0F22     		movs	r2, #15
+ 657 0004 074B     		ldr	r3, .L70
+ 658 0006 1A70     		strb	r2, [r3]
+  83:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 659              		.loc 1 83 0
+ 660 0008 FFF7FEFF 		bl	SPI_IMU_ClearFIFO
+ 661              	.LVL25:
+  97:Generated_Source\PSoC5/SPI_IMU.c ****     (void) SPI_IMU_ReadRxStatus(); /* Clear Rx status and swStatusRx */
+ 662              		.loc 1 97 0
+ 663 000c FFF7FEFF 		bl	SPI_IMU_ReadTxStatus
+ 664              	.LVL26:
+  98:Generated_Source\PSoC5/SPI_IMU.c **** 
+ 665              		.loc 1 98 0
+ 666 0010 FFF7FEFF 		bl	SPI_IMU_ReadRxStatus
+ 667              	.LVL27:
+ 101:Generated_Source\PSoC5/SPI_IMU.c ****     SPI_IMU_RX_STATUS_MASK_REG = SPI_IMU_RX_INIT_INTERRUPTS_MASK;
+ 668              		.loc 1 101 0
+ 669 0014 0023     		movs	r3, #0
+ 670 0016 044A     		ldr	r2, .L70+4
+ 671 0018 1370     		strb	r3, [r2]
+ 102:Generated_Source\PSoC5/SPI_IMU.c **** }
+ 672              		.loc 1 102 0
+ 673 001a A2F58072 		sub	r2, r2, #256
+ 674 001e 1370     		strb	r3, [r2]
+ 675 0020 08BD     		pop	{r3, pc}
+ 676              	.L71:
+ 677 0022 00BF     		.align	2
+ 678              	.L70:
+ 679 0024 87640040 		.word	1073767559
+ 680 0028 86650040 		.word	1073767814
+ 681              		.cfi_endproc
+ 682              	.LFE0:
+ 683              		.size	SPI_IMU_Init, .-SPI_IMU_Init
+ 684              		.section	.text.SPI_IMU_Start,"ax",%progbits
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccq1kucO.s 			page 31
+
+
+ 685              		.align	2
+ 686              		.global	SPI_IMU_Start
+ 687              		.thumb
+ 688              		.thumb_func
+ 689              		.type	SPI_IMU_Start, %function
+ 690              	SPI_IMU_Start:
+ 691              	.LFB2:
+ 164:Generated_Source\PSoC5/SPI_IMU.c ****     if(0u == SPI_IMU_initVar)
+ 692              		.loc 1 164 0
+ 693              		.cfi_startproc
+ 694              		@ args = 0, pretend = 0, frame = 0
+ 695              		@ frame_needed = 0, uses_anonymous_args = 0
+ 696 0000 08B5     		push	{r3, lr}
+ 697              		.cfi_def_cfa_offset 8
+ 698              		.cfi_offset 3, -8
+ 699              		.cfi_offset 14, -4
+ 165:Generated_Source\PSoC5/SPI_IMU.c ****     {
+ 700              		.loc 1 165 0
+ 701 0002 054B     		ldr	r3, .L75
+ 702 0004 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 703 0006 23B9     		cbnz	r3, .L73
+ 167:Generated_Source\PSoC5/SPI_IMU.c ****         SPI_IMU_initVar = 1u;
+ 704              		.loc 1 167 0
+ 705 0008 FFF7FEFF 		bl	SPI_IMU_Init
+ 706              	.LVL28:
+ 168:Generated_Source\PSoC5/SPI_IMU.c ****     }
+ 707              		.loc 1 168 0
+ 708 000c 0122     		movs	r2, #1
+ 709 000e 024B     		ldr	r3, .L75
+ 710 0010 1A70     		strb	r2, [r3]
+ 711              	.L73:
+ 171:Generated_Source\PSoC5/SPI_IMU.c **** }
+ 712              		.loc 1 171 0
+ 713 0012 FFF7FEFF 		bl	SPI_IMU_Enable
+ 714              	.LVL29:
+ 715 0016 08BD     		pop	{r3, pc}
+ 716              	.L76:
+ 717              		.align	2
+ 718              	.L75:
+ 719 0018 00000000 		.word	.LANCHOR0
+ 720              		.cfi_endproc
+ 721              	.LFE2:
+ 722              		.size	SPI_IMU_Start, .-SPI_IMU_Start
+ 723              		.section	.text.SPI_IMU_EnableInt,"ax",%progbits
+ 724              		.align	2
+ 725              		.global	SPI_IMU_EnableInt
+ 726              		.thumb
+ 727              		.thumb_func
+ 728              		.type	SPI_IMU_EnableInt, %function
+ 729              	SPI_IMU_EnableInt:
+ 730              	.LFB22:
+1016:Generated_Source\PSoC5/SPI_IMU.c **** }
+1017:Generated_Source\PSoC5/SPI_IMU.c **** 
+1018:Generated_Source\PSoC5/SPI_IMU.c **** 
+1019:Generated_Source\PSoC5/SPI_IMU.c **** /* Following functions are for version Compatibility, they are obsolete.
+1020:Generated_Source\PSoC5/SPI_IMU.c **** *  Please do not use it in new projects.
+1021:Generated_Source\PSoC5/SPI_IMU.c **** */
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccq1kucO.s 			page 32
+
+
+1022:Generated_Source\PSoC5/SPI_IMU.c **** 
+1023:Generated_Source\PSoC5/SPI_IMU.c **** 
+1024:Generated_Source\PSoC5/SPI_IMU.c **** /*******************************************************************************
+1025:Generated_Source\PSoC5/SPI_IMU.c **** * Function Name: SPI_IMU_EnableInt
+1026:Generated_Source\PSoC5/SPI_IMU.c **** ********************************************************************************
+1027:Generated_Source\PSoC5/SPI_IMU.c **** *
+1028:Generated_Source\PSoC5/SPI_IMU.c **** * Summary:
+1029:Generated_Source\PSoC5/SPI_IMU.c **** *  Enable internal interrupt generation.
+1030:Generated_Source\PSoC5/SPI_IMU.c **** *
+1031:Generated_Source\PSoC5/SPI_IMU.c **** * Parameters:
+1032:Generated_Source\PSoC5/SPI_IMU.c **** *  None.
+1033:Generated_Source\PSoC5/SPI_IMU.c **** *
+1034:Generated_Source\PSoC5/SPI_IMU.c **** * Return:
+1035:Generated_Source\PSoC5/SPI_IMU.c **** *  None.
+1036:Generated_Source\PSoC5/SPI_IMU.c **** *
+1037:Generated_Source\PSoC5/SPI_IMU.c **** * Theory:
+1038:Generated_Source\PSoC5/SPI_IMU.c **** *  Enable the internal interrupt output -or- the interrupt component itself.
+1039:Generated_Source\PSoC5/SPI_IMU.c **** *
+1040:Generated_Source\PSoC5/SPI_IMU.c **** *******************************************************************************/
+1041:Generated_Source\PSoC5/SPI_IMU.c **** void SPI_IMU_EnableInt(void) 
+1042:Generated_Source\PSoC5/SPI_IMU.c **** {
+ 731              		.loc 1 1042 0
+ 732              		.cfi_startproc
+ 733              		@ args = 0, pretend = 0, frame = 0
+ 734              		@ frame_needed = 0, uses_anonymous_args = 0
+ 735              		@ link register save eliminated.
+ 736 0000 7047     		bx	lr
+ 737              		.cfi_endproc
+ 738              	.LFE22:
+ 739              		.size	SPI_IMU_EnableInt, .-SPI_IMU_EnableInt
+ 740 0002 00BF     		.section	.text.SPI_IMU_DisableInt,"ax",%progbits
+ 741              		.align	2
+ 742              		.global	SPI_IMU_DisableInt
+ 743              		.thumb
+ 744              		.thumb_func
+ 745              		.type	SPI_IMU_DisableInt, %function
+ 746              	SPI_IMU_DisableInt:
+ 747              	.LFB23:
+1043:Generated_Source\PSoC5/SPI_IMU.c ****     SPI_IMU_EnableRxInt();
+1044:Generated_Source\PSoC5/SPI_IMU.c ****     SPI_IMU_EnableTxInt();
+1045:Generated_Source\PSoC5/SPI_IMU.c **** }
+1046:Generated_Source\PSoC5/SPI_IMU.c **** 
+1047:Generated_Source\PSoC5/SPI_IMU.c **** 
+1048:Generated_Source\PSoC5/SPI_IMU.c **** /*******************************************************************************
+1049:Generated_Source\PSoC5/SPI_IMU.c **** * Function Name: SPI_IMU_DisableInt
+1050:Generated_Source\PSoC5/SPI_IMU.c **** ********************************************************************************
+1051:Generated_Source\PSoC5/SPI_IMU.c **** *
+1052:Generated_Source\PSoC5/SPI_IMU.c **** * Summary:
+1053:Generated_Source\PSoC5/SPI_IMU.c **** *  Disable internal interrupt generation.
+1054:Generated_Source\PSoC5/SPI_IMU.c **** *
+1055:Generated_Source\PSoC5/SPI_IMU.c **** * Parameters:
+1056:Generated_Source\PSoC5/SPI_IMU.c **** *  None.
+1057:Generated_Source\PSoC5/SPI_IMU.c **** *
+1058:Generated_Source\PSoC5/SPI_IMU.c **** * Return:
+1059:Generated_Source\PSoC5/SPI_IMU.c **** *  None.
+1060:Generated_Source\PSoC5/SPI_IMU.c **** *
+1061:Generated_Source\PSoC5/SPI_IMU.c **** * Theory:
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccq1kucO.s 			page 33
+
+
+1062:Generated_Source\PSoC5/SPI_IMU.c **** *  Disable the internal interrupt output -or- the interrupt component itself.
+1063:Generated_Source\PSoC5/SPI_IMU.c **** *
+1064:Generated_Source\PSoC5/SPI_IMU.c **** *******************************************************************************/
+1065:Generated_Source\PSoC5/SPI_IMU.c **** void SPI_IMU_DisableInt(void) 
+1066:Generated_Source\PSoC5/SPI_IMU.c **** {
+ 748              		.loc 1 1066 0
+ 749              		.cfi_startproc
+ 750              		@ args = 0, pretend = 0, frame = 0
+ 751              		@ frame_needed = 0, uses_anonymous_args = 0
+ 752              		@ link register save eliminated.
+ 753 0000 7047     		bx	lr
+ 754              		.cfi_endproc
+ 755              	.LFE23:
+ 756              		.size	SPI_IMU_DisableInt, .-SPI_IMU_DisableInt
+ 757 0002 00BF     		.section	.text.SPI_IMU_SetInterruptMode,"ax",%progbits
+ 758              		.align	2
+ 759              		.global	SPI_IMU_SetInterruptMode
+ 760              		.thumb
+ 761              		.thumb_func
+ 762              		.type	SPI_IMU_SetInterruptMode, %function
+ 763              	SPI_IMU_SetInterruptMode:
+ 764              	.LFB24:
+1067:Generated_Source\PSoC5/SPI_IMU.c ****     SPI_IMU_DisableTxInt();
+1068:Generated_Source\PSoC5/SPI_IMU.c ****     SPI_IMU_DisableRxInt();
+1069:Generated_Source\PSoC5/SPI_IMU.c **** }
+1070:Generated_Source\PSoC5/SPI_IMU.c **** 
+1071:Generated_Source\PSoC5/SPI_IMU.c **** 
+1072:Generated_Source\PSoC5/SPI_IMU.c **** /*******************************************************************************
+1073:Generated_Source\PSoC5/SPI_IMU.c **** * Function Name: SPI_IMU_SetInterruptMode
+1074:Generated_Source\PSoC5/SPI_IMU.c **** ********************************************************************************
+1075:Generated_Source\PSoC5/SPI_IMU.c **** *
+1076:Generated_Source\PSoC5/SPI_IMU.c **** * Summary:
+1077:Generated_Source\PSoC5/SPI_IMU.c **** *  Configure which status bits trigger an interrupt event.
+1078:Generated_Source\PSoC5/SPI_IMU.c **** *
+1079:Generated_Source\PSoC5/SPI_IMU.c **** * Parameters:
+1080:Generated_Source\PSoC5/SPI_IMU.c **** *  intSrc: An or'd combination of the desired status bit masks (defined in the
+1081:Generated_Source\PSoC5/SPI_IMU.c **** *  header file).
+1082:Generated_Source\PSoC5/SPI_IMU.c **** *
+1083:Generated_Source\PSoC5/SPI_IMU.c **** * Return:
+1084:Generated_Source\PSoC5/SPI_IMU.c **** *  None.
+1085:Generated_Source\PSoC5/SPI_IMU.c **** *
+1086:Generated_Source\PSoC5/SPI_IMU.c **** * Theory:
+1087:Generated_Source\PSoC5/SPI_IMU.c **** *  Enables the output of specific status bits to the interrupt controller.
+1088:Generated_Source\PSoC5/SPI_IMU.c **** *
+1089:Generated_Source\PSoC5/SPI_IMU.c **** *******************************************************************************/
+1090:Generated_Source\PSoC5/SPI_IMU.c **** void SPI_IMU_SetInterruptMode(uint8 intSrc) 
+1091:Generated_Source\PSoC5/SPI_IMU.c **** {
+ 765              		.loc 1 1091 0
+ 766              		.cfi_startproc
+ 767              		@ args = 0, pretend = 0, frame = 0
+ 768              		@ frame_needed = 0, uses_anonymous_args = 0
+ 769              		@ link register save eliminated.
+ 770              	.LVL30:
+1092:Generated_Source\PSoC5/SPI_IMU.c ****     SPI_IMU_TX_STATUS_MASK_REG  = (intSrc & ((uint8) ~SPI_IMU_STS_SPI_IDLE));
+ 771              		.loc 1 1092 0
+ 772 0000 00F0EF02 		and	r2, r0, #239
+ 773 0004 024B     		ldr	r3, .L80
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccq1kucO.s 			page 34
+
+
+ 774 0006 1A70     		strb	r2, [r3]
+1093:Generated_Source\PSoC5/SPI_IMU.c ****     SPI_IMU_RX_STATUS_MASK_REG  =  intSrc;
+ 775              		.loc 1 1093 0
+ 776 0008 A3F58073 		sub	r3, r3, #256
+ 777 000c 1870     		strb	r0, [r3]
+ 778 000e 7047     		bx	lr
+ 779              	.L81:
+ 780              		.align	2
+ 781              	.L80:
+ 782 0010 86650040 		.word	1073767814
+ 783              		.cfi_endproc
+ 784              	.LFE24:
+ 785              		.size	SPI_IMU_SetInterruptMode, .-SPI_IMU_SetInterruptMode
+ 786              		.section	.text.SPI_IMU_ReadStatus,"ax",%progbits
+ 787              		.align	2
+ 788              		.global	SPI_IMU_ReadStatus
+ 789              		.thumb
+ 790              		.thumb_func
+ 791              		.type	SPI_IMU_ReadStatus, %function
+ 792              	SPI_IMU_ReadStatus:
+ 793              	.LFB25:
+1094:Generated_Source\PSoC5/SPI_IMU.c **** }
+1095:Generated_Source\PSoC5/SPI_IMU.c **** 
+1096:Generated_Source\PSoC5/SPI_IMU.c **** 
+1097:Generated_Source\PSoC5/SPI_IMU.c **** /*******************************************************************************
+1098:Generated_Source\PSoC5/SPI_IMU.c **** * Function Name: SPI_IMU_ReadStatus
+1099:Generated_Source\PSoC5/SPI_IMU.c **** ********************************************************************************
+1100:Generated_Source\PSoC5/SPI_IMU.c **** *
+1101:Generated_Source\PSoC5/SPI_IMU.c **** * Summary:
+1102:Generated_Source\PSoC5/SPI_IMU.c **** *  Read the status register for the component.
+1103:Generated_Source\PSoC5/SPI_IMU.c **** *
+1104:Generated_Source\PSoC5/SPI_IMU.c **** * Parameters:
+1105:Generated_Source\PSoC5/SPI_IMU.c **** *  None.
+1106:Generated_Source\PSoC5/SPI_IMU.c **** *
+1107:Generated_Source\PSoC5/SPI_IMU.c **** * Return:
+1108:Generated_Source\PSoC5/SPI_IMU.c **** *  Contents of the status register.
+1109:Generated_Source\PSoC5/SPI_IMU.c **** *
+1110:Generated_Source\PSoC5/SPI_IMU.c **** * Global variables:
+1111:Generated_Source\PSoC5/SPI_IMU.c **** *  SPI_IMU_swStatus - used to store in software status register,
+1112:Generated_Source\PSoC5/SPI_IMU.c **** *  modified every function call - resets to zero.
+1113:Generated_Source\PSoC5/SPI_IMU.c **** *
+1114:Generated_Source\PSoC5/SPI_IMU.c **** * Theory:
+1115:Generated_Source\PSoC5/SPI_IMU.c **** *  Allows the user and the API to read the status register for error detection
+1116:Generated_Source\PSoC5/SPI_IMU.c **** *  and flow control.
+1117:Generated_Source\PSoC5/SPI_IMU.c **** *
+1118:Generated_Source\PSoC5/SPI_IMU.c **** * Side Effects:
+1119:Generated_Source\PSoC5/SPI_IMU.c **** *  Clear status register of the component.
+1120:Generated_Source\PSoC5/SPI_IMU.c **** *
+1121:Generated_Source\PSoC5/SPI_IMU.c **** * Reentrant:
+1122:Generated_Source\PSoC5/SPI_IMU.c **** *  No.
+1123:Generated_Source\PSoC5/SPI_IMU.c **** *
+1124:Generated_Source\PSoC5/SPI_IMU.c **** *******************************************************************************/
+1125:Generated_Source\PSoC5/SPI_IMU.c **** uint8 SPI_IMU_ReadStatus(void) 
+1126:Generated_Source\PSoC5/SPI_IMU.c **** {
+ 794              		.loc 1 1126 0
+ 795              		.cfi_startproc
+ 796              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccq1kucO.s 			page 35
+
+
+ 797              		@ frame_needed = 0, uses_anonymous_args = 0
+ 798              		@ link register save eliminated.
+1127:Generated_Source\PSoC5/SPI_IMU.c ****     uint8 tmpStatus;
+1128:Generated_Source\PSoC5/SPI_IMU.c **** 
+1129:Generated_Source\PSoC5/SPI_IMU.c ****     #if(SPI_IMU_TX_SOFTWARE_BUF_ENABLED || SPI_IMU_RX_SOFTWARE_BUF_ENABLED)
+1130:Generated_Source\PSoC5/SPI_IMU.c **** 
+1131:Generated_Source\PSoC5/SPI_IMU.c ****         SPI_IMU_DisableInt();
+1132:Generated_Source\PSoC5/SPI_IMU.c **** 
+1133:Generated_Source\PSoC5/SPI_IMU.c ****         tmpStatus  = SPI_IMU_GET_STATUS_RX(SPI_IMU_swStatusRx);
+1134:Generated_Source\PSoC5/SPI_IMU.c ****         tmpStatus |= SPI_IMU_GET_STATUS_TX(SPI_IMU_swStatusTx);
+1135:Generated_Source\PSoC5/SPI_IMU.c ****         tmpStatus &= ((uint8) ~SPI_IMU_STS_SPI_IDLE);
+1136:Generated_Source\PSoC5/SPI_IMU.c **** 
+1137:Generated_Source\PSoC5/SPI_IMU.c ****         SPI_IMU_swStatusTx = 0u;
+1138:Generated_Source\PSoC5/SPI_IMU.c ****         SPI_IMU_swStatusRx = 0u;
+1139:Generated_Source\PSoC5/SPI_IMU.c **** 
+1140:Generated_Source\PSoC5/SPI_IMU.c ****         SPI_IMU_EnableInt();
+1141:Generated_Source\PSoC5/SPI_IMU.c **** 
+1142:Generated_Source\PSoC5/SPI_IMU.c ****     #else
+1143:Generated_Source\PSoC5/SPI_IMU.c **** 
+1144:Generated_Source\PSoC5/SPI_IMU.c ****         tmpStatus  = SPI_IMU_RX_STATUS_REG;
+ 799              		.loc 1 1144 0
+ 800 0000 034B     		ldr	r3, .L83
+ 801 0002 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 802              	.LVL31:
+1145:Generated_Source\PSoC5/SPI_IMU.c ****         tmpStatus |= SPI_IMU_TX_STATUS_REG;
+ 803              		.loc 1 1145 0
+ 804 0004 034A     		ldr	r2, .L83+4
+ 805 0006 1078     		ldrb	r0, [r2]	@ zero_extendqisi2
+ 806 0008 1843     		orrs	r0, r0, r3
+ 807              	.LVL32:
+1146:Generated_Source\PSoC5/SPI_IMU.c ****         tmpStatus &= ((uint8) ~SPI_IMU_STS_SPI_IDLE);
+1147:Generated_Source\PSoC5/SPI_IMU.c **** 
+1148:Generated_Source\PSoC5/SPI_IMU.c ****     #endif /* (SPI_IMU_TX_SOFTWARE_BUF_ENABLED || SPI_IMU_RX_SOFTWARE_BUF_ENABLED) */
+1149:Generated_Source\PSoC5/SPI_IMU.c **** 
+1150:Generated_Source\PSoC5/SPI_IMU.c ****     return(tmpStatus);
+1151:Generated_Source\PSoC5/SPI_IMU.c **** }
+ 808              		.loc 1 1151 0
+ 809 000a 00F0EF00 		and	r0, r0, #239
+ 810              	.LVL33:
+ 811 000e 7047     		bx	lr
+ 812              	.L84:
+ 813              		.align	2
+ 814              	.L83:
+ 815 0010 66640040 		.word	1073767526
+ 816 0014 66650040 		.word	1073767782
+ 817              		.cfi_endproc
+ 818              	.LFE25:
+ 819              		.size	SPI_IMU_ReadStatus, .-SPI_IMU_ReadStatus
+ 820              		.comm	SPI_IMU_swStatusRx,1,1
+ 821              		.comm	SPI_IMU_swStatusTx,1,1
+ 822              		.global	SPI_IMU_initVar
+ 823              		.bss
+ 824              		.set	.LANCHOR0,. + 0
+ 825              		.type	SPI_IMU_initVar, %object
+ 826              		.size	SPI_IMU_initVar, 1
+ 827              	SPI_IMU_initVar:
+ 828 0000 00       		.space	1
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccq1kucO.s 			page 36
+
+
+ 829              		.text
+ 830              	.Letext0:
+ 831              		.file 2 "Generated_Source\\PSoC5\\cytypes.h"
+ 832              		.file 3 "Generated_Source\\PSoC5\\CyLib.h"
+ 833              		.section	.debug_info,"",%progbits
+ 834              	.Ldebug_info0:
+ 835 0000 B3040000 		.4byte	0x4b3
+ 836 0004 0400     		.2byte	0x4
+ 837 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 838 000a 04       		.byte	0x4
+ 839 000b 01       		.uleb128 0x1
+ 840 000c F7000000 		.4byte	.LASF56
+ 841 0010 0C       		.byte	0xc
+ 842 0011 6F030000 		.4byte	.LASF57
+ 843 0015 31020000 		.4byte	.LASF58
+ 844 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 845 001d 00000000 		.4byte	0
+ 846 0021 00000000 		.4byte	.Ldebug_line0
+ 847 0025 02       		.uleb128 0x2
+ 848 0026 01       		.byte	0x1
+ 849 0027 06       		.byte	0x6
+ 850 0028 0F040000 		.4byte	.LASF0
+ 851 002c 02       		.uleb128 0x2
+ 852 002d 01       		.byte	0x1
+ 853 002e 08       		.byte	0x8
+ 854 002f 08020000 		.4byte	.LASF1
+ 855 0033 02       		.uleb128 0x2
+ 856 0034 02       		.byte	0x2
+ 857 0035 05       		.byte	0x5
+ 858 0036 B8030000 		.4byte	.LASF2
+ 859 003a 02       		.uleb128 0x2
+ 860 003b 02       		.byte	0x2
+ 861 003c 07       		.byte	0x7
+ 862 003d 6D000000 		.4byte	.LASF3
+ 863 0041 02       		.uleb128 0x2
+ 864 0042 04       		.byte	0x4
+ 865 0043 05       		.byte	0x5
+ 866 0044 F0030000 		.4byte	.LASF4
+ 867 0048 02       		.uleb128 0x2
+ 868 0049 04       		.byte	0x4
+ 869 004a 07       		.byte	0x7
+ 870 004b C5020000 		.4byte	.LASF5
+ 871 004f 02       		.uleb128 0x2
+ 872 0050 08       		.byte	0x8
+ 873 0051 05       		.byte	0x5
+ 874 0052 52030000 		.4byte	.LASF6
+ 875 0056 02       		.uleb128 0x2
+ 876 0057 08       		.byte	0x8
+ 877 0058 07       		.byte	0x7
+ 878 0059 DB000000 		.4byte	.LASF7
+ 879 005d 03       		.uleb128 0x3
+ 880 005e 04       		.byte	0x4
+ 881 005f 05       		.byte	0x5
+ 882 0060 696E7400 		.ascii	"int\000"
+ 883 0064 02       		.uleb128 0x2
+ 884 0065 04       		.byte	0x4
+ 885 0066 07       		.byte	0x7
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccq1kucO.s 			page 37
+
+
+ 886 0067 D7020000 		.4byte	.LASF8
+ 887 006b 04       		.uleb128 0x4
+ 888 006c B0010000 		.4byte	.LASF12
+ 889 0070 02       		.byte	0x2
+ 890 0071 E901     		.2byte	0x1e9
+ 891 0073 2C000000 		.4byte	0x2c
+ 892 0077 02       		.uleb128 0x2
+ 893 0078 04       		.byte	0x4
+ 894 0079 04       		.byte	0x4
+ 895 007a D5000000 		.4byte	.LASF9
+ 896 007e 02       		.uleb128 0x2
+ 897 007f 08       		.byte	0x8
+ 898 0080 04       		.byte	0x4
+ 899 0081 16020000 		.4byte	.LASF10
+ 900 0085 02       		.uleb128 0x2
+ 901 0086 01       		.byte	0x1
+ 902 0087 08       		.byte	0x8
+ 903 0088 25000000 		.4byte	.LASF11
+ 904 008c 04       		.uleb128 0x4
+ 905 008d 96010000 		.4byte	.LASF13
+ 906 0091 02       		.byte	0x2
+ 907 0092 9302     		.2byte	0x293
+ 908 0094 98000000 		.4byte	0x98
+ 909 0098 05       		.uleb128 0x5
+ 910 0099 6B000000 		.4byte	0x6b
+ 911 009d 02       		.uleb128 0x2
+ 912 009e 08       		.byte	0x8
+ 913 009f 04       		.byte	0x4
+ 914 00a0 03040000 		.4byte	.LASF14
+ 915 00a4 02       		.uleb128 0x2
+ 916 00a5 04       		.byte	0x4
+ 917 00a6 07       		.byte	0x7
+ 918 00a7 35030000 		.4byte	.LASF15
+ 919 00ab 06       		.uleb128 0x6
+ 920 00ac 60030000 		.4byte	.LASF16
+ 921 00b0 01       		.byte	0x1
+ 922 00b1 78       		.byte	0x78
+ 923 00b2 00000000 		.4byte	.LFB1
+ 924 00b6 30000000 		.4byte	.LFE1-.LFB1
+ 925 00ba 01       		.uleb128 0x1
+ 926 00bb 9C       		.byte	0x9c
+ 927 00bc E2000000 		.4byte	0xe2
+ 928 00c0 07       		.uleb128 0x7
+ 929 00c1 E2010000 		.4byte	.LASF18
+ 930 00c5 01       		.byte	0x1
+ 931 00c6 7A       		.byte	0x7a
+ 932 00c7 6B000000 		.4byte	0x6b
+ 933 00cb 00000000 		.4byte	.LLST0
+ 934 00cf 08       		.uleb128 0x8
+ 935 00d0 06000000 		.4byte	.LVL0
+ 936 00d4 A0040000 		.4byte	0x4a0
+ 937 00d8 08       		.uleb128 0x8
+ 938 00d9 2A000000 		.4byte	.LVL1
+ 939 00dd AB040000 		.4byte	0x4ab
+ 940 00e1 00       		.byte	0
+ 941 00e2 06       		.uleb128 0x6
+ 942 00e3 24020000 		.4byte	.LASF17
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccq1kucO.s 			page 38
+
+
+ 943 00e7 01       		.byte	0x1
+ 944 00e8 C0       		.byte	0xc0
+ 945 00e9 00000000 		.4byte	.LFB3
+ 946 00ed 28000000 		.4byte	.LFE3-.LFB3
+ 947 00f1 01       		.uleb128 0x1
+ 948 00f2 9C       		.byte	0x9c
+ 949 00f3 19010000 		.4byte	0x119
+ 950 00f7 07       		.uleb128 0x7
+ 951 00f8 E2010000 		.4byte	.LASF18
+ 952 00fc 01       		.byte	0x1
+ 953 00fd C2       		.byte	0xc2
+ 954 00fe 6B000000 		.4byte	0x6b
+ 955 0102 13000000 		.4byte	.LLST1
+ 956 0106 08       		.uleb128 0x8
+ 957 0107 06000000 		.4byte	.LVL2
+ 958 010b A0040000 		.4byte	0x4a0
+ 959 010f 08       		.uleb128 0x8
+ 960 0110 20000000 		.4byte	.LVL3
+ 961 0114 AB040000 		.4byte	0x4ab
+ 962 0118 00       		.byte	0
+ 963 0119 09       		.uleb128 0x9
+ 964 011a 3E030000 		.4byte	.LASF19
+ 965 011e 01       		.byte	0x1
+ 966 011f E3       		.byte	0xe3
+ 967 0120 00000000 		.4byte	.LFB4
+ 968 0124 02000000 		.4byte	.LFE4-.LFB4
+ 969 0128 01       		.uleb128 0x1
+ 970 0129 9C       		.byte	0x9c
+ 971 012a 09       		.uleb128 0x9
+ 972 012b 80000000 		.4byte	.LASF20
+ 973 012f 01       		.byte	0x1
+ 974 0130 FC       		.byte	0xfc
+ 975 0131 00000000 		.4byte	.LFB5
+ 976 0135 02000000 		.4byte	.LFE5-.LFB5
+ 977 0139 01       		.uleb128 0x1
+ 978 013a 9C       		.byte	0x9c
+ 979 013b 0A       		.uleb128 0xa
+ 980 013c DB030000 		.4byte	.LASF21
+ 981 0140 01       		.byte	0x1
+ 982 0141 1501     		.2byte	0x115
+ 983 0143 00000000 		.4byte	.LFB6
+ 984 0147 02000000 		.4byte	.LFE6-.LFB6
+ 985 014b 01       		.uleb128 0x1
+ 986 014c 9C       		.byte	0x9c
+ 987 014d 0A       		.uleb128 0xa
+ 988 014e 9B010000 		.4byte	.LASF22
+ 989 0152 01       		.byte	0x1
+ 990 0153 2E01     		.2byte	0x12e
+ 991 0155 00000000 		.4byte	.LFB7
+ 992 0159 02000000 		.4byte	.LFE7-.LFB7
+ 993 015d 01       		.uleb128 0x1
+ 994 015e 9C       		.byte	0x9c
+ 995 015f 0B       		.uleb128 0xb
+ 996 0160 2D040000 		.4byte	.LASF23
+ 997 0164 01       		.byte	0x1
+ 998 0165 4801     		.2byte	0x148
+ 999 0167 00000000 		.4byte	.LFB8
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccq1kucO.s 			page 39
+
+
+ 1000 016b 0C000000 		.4byte	.LFE8-.LFB8
+ 1001 016f 01       		.uleb128 0x1
+ 1002 0170 9C       		.byte	0x9c
+ 1003 0171 84010000 		.4byte	0x184
+ 1004 0175 0C       		.uleb128 0xc
+ 1005 0176 1D020000 		.4byte	.LASF25
+ 1006 017a 01       		.byte	0x1
+ 1007 017b 4801     		.2byte	0x148
+ 1008 017d 6B000000 		.4byte	0x6b
+ 1009 0181 01       		.uleb128 0x1
+ 1010 0182 50       		.byte	0x50
+ 1011 0183 00       		.byte	0
+ 1012 0184 0B       		.uleb128 0xb
+ 1013 0185 48040000 		.4byte	.LASF24
+ 1014 0189 01       		.byte	0x1
+ 1015 018a 6001     		.2byte	0x160
+ 1016 018c 00000000 		.4byte	.LFB9
+ 1017 0190 0C000000 		.4byte	.LFE9-.LFB9
+ 1018 0194 01       		.uleb128 0x1
+ 1019 0195 9C       		.byte	0x9c
+ 1020 0196 A9010000 		.4byte	0x1a9
+ 1021 019a 0C       		.uleb128 0xc
+ 1022 019b 1D020000 		.4byte	.LASF25
+ 1023 019f 01       		.byte	0x1
+ 1024 01a0 6001     		.2byte	0x160
+ 1025 01a2 6B000000 		.4byte	0x6b
+ 1026 01a6 01       		.uleb128 0x1
+ 1027 01a7 50       		.byte	0x50
+ 1028 01a8 00       		.byte	0
+ 1029 01a9 0D       		.uleb128 0xd
+ 1030 01aa F3010000 		.4byte	.LASF27
+ 1031 01ae 01       		.byte	0x1
+ 1032 01af 8201     		.2byte	0x182
+ 1033 01b1 6B000000 		.4byte	0x6b
+ 1034 01b5 00000000 		.4byte	.LFB10
+ 1035 01b9 0C000000 		.4byte	.LFE10-.LFB10
+ 1036 01bd 01       		.uleb128 0x1
+ 1037 01be 9C       		.byte	0x9c
+ 1038 01bf D2010000 		.4byte	0x1d2
+ 1039 01c3 0E       		.uleb128 0xe
+ 1040 01c4 F9030000 		.4byte	.LASF26
+ 1041 01c8 01       		.byte	0x1
+ 1042 01c9 8401     		.2byte	0x184
+ 1043 01cb 6B000000 		.4byte	0x6b
+ 1044 01cf 01       		.uleb128 0x1
+ 1045 01d0 50       		.byte	0x50
+ 1046 01d1 00       		.byte	0
+ 1047 01d2 0D       		.uleb128 0xd
+ 1048 01d3 A3030000 		.4byte	.LASF28
+ 1049 01d7 01       		.byte	0x1
+ 1050 01d8 B501     		.2byte	0x1b5
+ 1051 01da 6B000000 		.4byte	0x6b
+ 1052 01de 00000000 		.4byte	.LFB11
+ 1053 01e2 0C000000 		.4byte	.LFE11-.LFB11
+ 1054 01e6 01       		.uleb128 0x1
+ 1055 01e7 9C       		.byte	0x9c
+ 1056 01e8 FB010000 		.4byte	0x1fb
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccq1kucO.s 			page 40
+
+
+ 1057 01ec 0E       		.uleb128 0xe
+ 1058 01ed F9030000 		.4byte	.LASF26
+ 1059 01f1 01       		.byte	0x1
+ 1060 01f2 B701     		.2byte	0x1b7
+ 1061 01f4 6B000000 		.4byte	0x6b
+ 1062 01f8 01       		.uleb128 0x1
+ 1063 01f9 50       		.byte	0x50
+ 1064 01fa 00       		.byte	0
+ 1065 01fb 0B       		.uleb128 0xb
+ 1066 01fc B6010000 		.4byte	.LASF29
+ 1067 0200 01       		.byte	0x1
+ 1068 0201 EE01     		.2byte	0x1ee
+ 1069 0203 00000000 		.4byte	.LFB12
+ 1070 0207 18000000 		.4byte	.LFE12-.LFB12
+ 1071 020b 01       		.uleb128 0x1
+ 1072 020c 9C       		.byte	0x9c
+ 1073 020d 20020000 		.4byte	0x220
+ 1074 0211 0C       		.uleb128 0xc
+ 1075 0212 66000000 		.4byte	.LASF30
+ 1076 0216 01       		.byte	0x1
+ 1077 0217 EE01     		.2byte	0x1ee
+ 1078 0219 6B000000 		.4byte	0x6b
+ 1079 021d 01       		.uleb128 0x1
+ 1080 021e 50       		.byte	0x50
+ 1081 021f 00       		.byte	0
+ 1082 0220 0D       		.uleb128 0xd
+ 1083 0221 53000000 		.4byte	.LASF31
+ 1084 0225 01       		.byte	0x1
+ 1085 0226 5A02     		.2byte	0x25a
+ 1086 0228 6B000000 		.4byte	0x6b
+ 1087 022c 00000000 		.4byte	.LFB13
+ 1088 0230 0C000000 		.4byte	.LFE13-.LFB13
+ 1089 0234 01       		.uleb128 0x1
+ 1090 0235 9C       		.byte	0x9c
+ 1091 0236 49020000 		.4byte	0x249
+ 1092 023a 0E       		.uleb128 0xe
+ 1093 023b FC020000 		.4byte	.LASF32
+ 1094 023f 01       		.byte	0x1
+ 1095 0240 5C02     		.2byte	0x25c
+ 1096 0242 6B000000 		.4byte	0x6b
+ 1097 0246 01       		.uleb128 0x1
+ 1098 0247 50       		.byte	0x50
+ 1099 0248 00       		.byte	0
+ 1100 0249 0D       		.uleb128 0xd
+ 1101 024a E4020000 		.4byte	.LASF33
+ 1102 024e 01       		.byte	0x1
+ 1103 024f 9A02     		.2byte	0x29a
+ 1104 0251 6B000000 		.4byte	0x6b
+ 1105 0255 00000000 		.4byte	.LFB14
+ 1106 0259 18000000 		.4byte	.LFE14-.LFB14
+ 1107 025d 01       		.uleb128 0x1
+ 1108 025e 9C       		.byte	0x9c
+ 1109 025f 72020000 		.4byte	0x272
+ 1110 0263 0E       		.uleb128 0xe
+ 1111 0264 F2000000 		.4byte	.LASF34
+ 1112 0268 01       		.byte	0x1
+ 1113 0269 9C02     		.2byte	0x29c
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccq1kucO.s 			page 41
+
+
+ 1114 026b 6B000000 		.4byte	0x6b
+ 1115 026f 01       		.uleb128 0x1
+ 1116 0270 50       		.byte	0x50
+ 1117 0271 00       		.byte	0
+ 1118 0272 0D       		.uleb128 0xd
+ 1119 0273 94000000 		.4byte	.LASF35
+ 1120 0277 01       		.byte	0x1
+ 1121 0278 D702     		.2byte	0x2d7
+ 1122 027a 6B000000 		.4byte	0x6b
+ 1123 027e 00000000 		.4byte	.LFB15
+ 1124 0282 24000000 		.4byte	.LFE15-.LFB15
+ 1125 0286 01       		.uleb128 0x1
+ 1126 0287 9C       		.byte	0x9c
+ 1127 0288 9D020000 		.4byte	0x29d
+ 1128 028c 0F       		.uleb128 0xf
+ 1129 028d F2000000 		.4byte	.LASF34
+ 1130 0291 01       		.byte	0x1
+ 1131 0292 D902     		.2byte	0x2d9
+ 1132 0294 6B000000 		.4byte	0x6b
+ 1133 0298 26000000 		.4byte	.LLST2
+ 1134 029c 00       		.byte	0
+ 1135 029d 0A       		.uleb128 0xa
+ 1136 029e 98020000 		.4byte	.LASF36
+ 1137 02a2 01       		.byte	0x1
+ 1138 02a3 2603     		.2byte	0x326
+ 1139 02a5 00000000 		.4byte	.LFB16
+ 1140 02a9 1C000000 		.4byte	.LFE16-.LFB16
+ 1141 02ad 01       		.uleb128 0x1
+ 1142 02ae 9C       		.byte	0x9c
+ 1143 02af 0B       		.uleb128 0xb
+ 1144 02b0 2A000000 		.4byte	.LASF37
+ 1145 02b4 01       		.byte	0x1
+ 1146 02b5 5D03     		.2byte	0x35d
+ 1147 02b7 00000000 		.4byte	.LFB17
+ 1148 02bb 24000000 		.4byte	.LFE17-.LFB17
+ 1149 02bf 01       		.uleb128 0x1
+ 1150 02c0 9C       		.byte	0x9c
+ 1151 02c1 E8020000 		.4byte	0x2e8
+ 1152 02c5 0F       		.uleb128 0xf
+ 1153 02c6 E2010000 		.4byte	.LASF18
+ 1154 02ca 01       		.byte	0x1
+ 1155 02cb 5F03     		.2byte	0x35f
+ 1156 02cd 6B000000 		.4byte	0x6b
+ 1157 02d1 44000000 		.4byte	.LLST3
+ 1158 02d5 08       		.uleb128 0x8
+ 1159 02d6 06000000 		.4byte	.LVL13
+ 1160 02da A0040000 		.4byte	0x4a0
+ 1161 02de 08       		.uleb128 0x8
+ 1162 02df 1C000000 		.4byte	.LVL14
+ 1163 02e3 AB040000 		.4byte	0x4ab
+ 1164 02e7 00       		.byte	0
+ 1165 02e8 0A       		.uleb128 0xa
+ 1166 02e9 85010000 		.4byte	.LASF38
+ 1167 02ed 01       		.byte	0x1
+ 1168 02ee 8D03     		.2byte	0x38d
+ 1169 02f0 00000000 		.4byte	.LFB18
+ 1170 02f4 10000000 		.4byte	.LFE18-.LFB18
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccq1kucO.s 			page 42
+
+
+ 1171 02f8 01       		.uleb128 0x1
+ 1172 02f9 9C       		.byte	0x9c
+ 1173 02fa 0A       		.uleb128 0xa
+ 1174 02fb C2030000 		.4byte	.LASF39
+ 1175 02ff 01       		.byte	0x1
+ 1176 0300 A203     		.2byte	0x3a2
+ 1177 0302 00000000 		.4byte	.LFB19
+ 1178 0306 10000000 		.4byte	.LFE19-.LFB19
+ 1179 030a 01       		.uleb128 0x1
+ 1180 030b 9C       		.byte	0x9c
+ 1181 030c 0B       		.uleb128 0xb
+ 1182 030d 87020000 		.4byte	.LASF40
+ 1183 0311 01       		.byte	0x1
+ 1184 0312 C203     		.2byte	0x3c2
+ 1185 0314 00000000 		.4byte	.LFB20
+ 1186 0318 1E000000 		.4byte	.LFE20-.LFB20
+ 1187 031c 01       		.uleb128 0x1
+ 1188 031d 9C       		.byte	0x9c
+ 1189 031e 5C030000 		.4byte	0x35c
+ 1190 0322 10       		.uleb128 0x10
+ 1191 0323 D4030000 		.4byte	.LASF41
+ 1192 0327 01       		.byte	0x1
+ 1193 0328 C203     		.2byte	0x3c2
+ 1194 032a 5C030000 		.4byte	0x35c
+ 1195 032e 57000000 		.4byte	.LLST4
+ 1196 0332 10       		.uleb128 0x10
+ 1197 0333 D8010000 		.4byte	.LASF42
+ 1198 0337 01       		.byte	0x1
+ 1199 0338 C203     		.2byte	0x3c2
+ 1200 033a 6B000000 		.4byte	0x6b
+ 1201 033e 75000000 		.4byte	.LLST5
+ 1202 0342 0F       		.uleb128 0xf
+ 1203 0343 2C030000 		.4byte	.LASF43
+ 1204 0347 01       		.byte	0x1
+ 1205 0348 C503     		.2byte	0x3c5
+ 1206 034a 6B000000 		.4byte	0x6b
+ 1207 034e 9E000000 		.4byte	.LLST6
+ 1208 0352 08       		.uleb128 0x8
+ 1209 0353 10000000 		.4byte	.LVL18
+ 1210 0357 FB010000 		.4byte	0x1fb
+ 1211 035b 00       		.byte	0
+ 1212 035c 11       		.uleb128 0x11
+ 1213 035d 04       		.byte	0x4
+ 1214 035e 62030000 		.4byte	0x362
+ 1215 0362 12       		.uleb128 0x12
+ 1216 0363 6B000000 		.4byte	0x6b
+ 1217 0367 0B       		.uleb128 0xb
+ 1218 0368 00000000 		.4byte	.LASF44
+ 1219 036c 01       		.byte	0x1
+ 1220 036d E303     		.2byte	0x3e3
+ 1221 036f 00000000 		.4byte	.LFB21
+ 1222 0373 3C000000 		.4byte	.LFE21-.LFB21
+ 1223 0377 01       		.uleb128 0x1
+ 1224 0378 9C       		.byte	0x9c
+ 1225 0379 A0030000 		.4byte	0x3a0
+ 1226 037d 0F       		.uleb128 0xf
+ 1227 037e E2010000 		.4byte	.LASF18
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccq1kucO.s 			page 43
+
+
+ 1228 0382 01       		.byte	0x1
+ 1229 0383 E503     		.2byte	0x3e5
+ 1230 0385 6B000000 		.4byte	0x6b
+ 1231 0389 C8000000 		.4byte	.LLST7
+ 1232 038d 08       		.uleb128 0x8
+ 1233 038e 16000000 		.4byte	.LVL23
+ 1234 0392 A0040000 		.4byte	0x4a0
+ 1235 0396 08       		.uleb128 0x8
+ 1236 0397 2C000000 		.4byte	.LVL24
+ 1237 039b AB040000 		.4byte	0x4ab
+ 1238 039f 00       		.byte	0
+ 1239 03a0 06       		.uleb128 0x6
+ 1240 03a1 63040000 		.4byte	.LASF45
+ 1241 03a5 01       		.byte	0x1
+ 1242 03a6 3F       		.byte	0x3f
+ 1243 03a7 00000000 		.4byte	.LFB0
+ 1244 03ab 2C000000 		.4byte	.LFE0-.LFB0
+ 1245 03af 01       		.uleb128 0x1
+ 1246 03b0 9C       		.byte	0x9c
+ 1247 03b1 D1030000 		.4byte	0x3d1
+ 1248 03b5 08       		.uleb128 0x8
+ 1249 03b6 0C000000 		.4byte	.LVL25
+ 1250 03ba 67030000 		.4byte	0x367
+ 1251 03be 08       		.uleb128 0x8
+ 1252 03bf 10000000 		.4byte	.LVL26
+ 1253 03c3 A9010000 		.4byte	0x1a9
+ 1254 03c7 08       		.uleb128 0x8
+ 1255 03c8 14000000 		.4byte	.LVL27
+ 1256 03cc D2010000 		.4byte	0x1d2
+ 1257 03d0 00       		.byte	0
+ 1258 03d1 06       		.uleb128 0x6
+ 1259 03d2 CA010000 		.4byte	.LASF46
+ 1260 03d6 01       		.byte	0x1
+ 1261 03d7 A3       		.byte	0xa3
+ 1262 03d8 00000000 		.4byte	.LFB2
+ 1263 03dc 1C000000 		.4byte	.LFE2-.LFB2
+ 1264 03e0 01       		.uleb128 0x1
+ 1265 03e1 9C       		.byte	0x9c
+ 1266 03e2 F9030000 		.4byte	0x3f9
+ 1267 03e6 08       		.uleb128 0x8
+ 1268 03e7 0C000000 		.4byte	.LVL28
+ 1269 03eb A0030000 		.4byte	0x3a0
+ 1270 03ef 08       		.uleb128 0x8
+ 1271 03f0 16000000 		.4byte	.LVL29
+ 1272 03f4 AB000000 		.4byte	0xab
+ 1273 03f8 00       		.byte	0
+ 1274 03f9 0A       		.uleb128 0xa
+ 1275 03fa 1B040000 		.4byte	.LASF47
+ 1276 03fe 01       		.byte	0x1
+ 1277 03ff 1104     		.2byte	0x411
+ 1278 0401 00000000 		.4byte	.LFB22
+ 1279 0405 02000000 		.4byte	.LFE22-.LFB22
+ 1280 0409 01       		.uleb128 0x1
+ 1281 040a 9C       		.byte	0x9c
+ 1282 040b 0A       		.uleb128 0xa
+ 1283 040c 19030000 		.4byte	.LASF48
+ 1284 0410 01       		.byte	0x1
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccq1kucO.s 			page 44
+
+
+ 1285 0411 2904     		.2byte	0x429
+ 1286 0413 00000000 		.4byte	.LFB23
+ 1287 0417 02000000 		.4byte	.LFE23-.LFB23
+ 1288 041b 01       		.uleb128 0x1
+ 1289 041c 9C       		.byte	0x9c
+ 1290 041d 0B       		.uleb128 0xb
+ 1291 041e BC000000 		.4byte	.LASF49
+ 1292 0422 01       		.byte	0x1
+ 1293 0423 4204     		.2byte	0x442
+ 1294 0425 00000000 		.4byte	.LFB24
+ 1295 0429 14000000 		.4byte	.LFE24-.LFB24
+ 1296 042d 01       		.uleb128 0x1
+ 1297 042e 9C       		.byte	0x9c
+ 1298 042f 42040000 		.4byte	0x442
+ 1299 0433 0C       		.uleb128 0xc
+ 1300 0434 1D020000 		.4byte	.LASF25
+ 1301 0438 01       		.byte	0x1
+ 1302 0439 4204     		.2byte	0x442
+ 1303 043b 6B000000 		.4byte	0x6b
+ 1304 043f 01       		.uleb128 0x1
+ 1305 0440 50       		.byte	0x50
+ 1306 0441 00       		.byte	0
+ 1307 0442 0D       		.uleb128 0xd
+ 1308 0443 90030000 		.4byte	.LASF50
+ 1309 0447 01       		.byte	0x1
+ 1310 0448 6504     		.2byte	0x465
+ 1311 044a 6B000000 		.4byte	0x6b
+ 1312 044e 00000000 		.4byte	.LFB25
+ 1313 0452 18000000 		.4byte	.LFE25-.LFB25
+ 1314 0456 01       		.uleb128 0x1
+ 1315 0457 9C       		.byte	0x9c
+ 1316 0458 6D040000 		.4byte	0x46d
+ 1317 045c 0F       		.uleb128 0xf
+ 1318 045d F9030000 		.4byte	.LASF26
+ 1319 0461 01       		.byte	0x1
+ 1320 0462 6704     		.2byte	0x467
+ 1321 0464 6B000000 		.4byte	0x6b
+ 1322 0468 DB000000 		.4byte	.LLST8
+ 1323 046c 00       		.byte	0
+ 1324 046d 13       		.uleb128 0x13
+ 1325 046e AC000000 		.4byte	.LASF51
+ 1326 0472 01       		.byte	0x1
+ 1327 0473 22       		.byte	0x22
+ 1328 0474 6B000000 		.4byte	0x6b
+ 1329 0478 05       		.uleb128 0x5
+ 1330 0479 03       		.byte	0x3
+ 1331 047a 00000000 		.4byte	SPI_IMU_initVar
+ 1332 047e 13       		.uleb128 0x13
+ 1333 047f 40000000 		.4byte	.LASF52
+ 1334 0483 01       		.byte	0x1
+ 1335 0484 24       		.byte	0x24
+ 1336 0485 98000000 		.4byte	0x98
+ 1337 0489 05       		.uleb128 0x5
+ 1338 048a 03       		.byte	0x3
+ 1339 048b 00000000 		.4byte	SPI_IMU_swStatusTx
+ 1340 048f 13       		.uleb128 0x13
+ 1341 0490 12000000 		.4byte	.LASF53
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccq1kucO.s 			page 45
+
+
+ 1342 0494 01       		.byte	0x1
+ 1343 0495 25       		.byte	0x25
+ 1344 0496 98000000 		.4byte	0x98
+ 1345 049a 05       		.uleb128 0x5
+ 1346 049b 03       		.byte	0x3
+ 1347 049c 00000000 		.4byte	SPI_IMU_swStatusRx
+ 1348 04a0 14       		.uleb128 0x14
+ 1349 04a1 AE020000 		.4byte	.LASF54
+ 1350 04a5 AE020000 		.4byte	.LASF54
+ 1351 04a9 03       		.byte	0x3
+ 1352 04aa 7D       		.byte	0x7d
+ 1353 04ab 14       		.uleb128 0x14
+ 1354 04ac 03030000 		.4byte	.LASF55
+ 1355 04b0 03030000 		.4byte	.LASF55
+ 1356 04b4 03       		.byte	0x3
+ 1357 04b5 7E       		.byte	0x7e
+ 1358 04b6 00       		.byte	0
+ 1359              		.section	.debug_abbrev,"",%progbits
+ 1360              	.Ldebug_abbrev0:
+ 1361 0000 01       		.uleb128 0x1
+ 1362 0001 11       		.uleb128 0x11
+ 1363 0002 01       		.byte	0x1
+ 1364 0003 25       		.uleb128 0x25
+ 1365 0004 0E       		.uleb128 0xe
+ 1366 0005 13       		.uleb128 0x13
+ 1367 0006 0B       		.uleb128 0xb
+ 1368 0007 03       		.uleb128 0x3
+ 1369 0008 0E       		.uleb128 0xe
+ 1370 0009 1B       		.uleb128 0x1b
+ 1371 000a 0E       		.uleb128 0xe
+ 1372 000b 55       		.uleb128 0x55
+ 1373 000c 17       		.uleb128 0x17
+ 1374 000d 11       		.uleb128 0x11
+ 1375 000e 01       		.uleb128 0x1
+ 1376 000f 10       		.uleb128 0x10
+ 1377 0010 17       		.uleb128 0x17
+ 1378 0011 00       		.byte	0
+ 1379 0012 00       		.byte	0
+ 1380 0013 02       		.uleb128 0x2
+ 1381 0014 24       		.uleb128 0x24
+ 1382 0015 00       		.byte	0
+ 1383 0016 0B       		.uleb128 0xb
+ 1384 0017 0B       		.uleb128 0xb
+ 1385 0018 3E       		.uleb128 0x3e
+ 1386 0019 0B       		.uleb128 0xb
+ 1387 001a 03       		.uleb128 0x3
+ 1388 001b 0E       		.uleb128 0xe
+ 1389 001c 00       		.byte	0
+ 1390 001d 00       		.byte	0
+ 1391 001e 03       		.uleb128 0x3
+ 1392 001f 24       		.uleb128 0x24
+ 1393 0020 00       		.byte	0
+ 1394 0021 0B       		.uleb128 0xb
+ 1395 0022 0B       		.uleb128 0xb
+ 1396 0023 3E       		.uleb128 0x3e
+ 1397 0024 0B       		.uleb128 0xb
+ 1398 0025 03       		.uleb128 0x3
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccq1kucO.s 			page 46
+
+
+ 1399 0026 08       		.uleb128 0x8
+ 1400 0027 00       		.byte	0
+ 1401 0028 00       		.byte	0
+ 1402 0029 04       		.uleb128 0x4
+ 1403 002a 16       		.uleb128 0x16
+ 1404 002b 00       		.byte	0
+ 1405 002c 03       		.uleb128 0x3
+ 1406 002d 0E       		.uleb128 0xe
+ 1407 002e 3A       		.uleb128 0x3a
+ 1408 002f 0B       		.uleb128 0xb
+ 1409 0030 3B       		.uleb128 0x3b
+ 1410 0031 05       		.uleb128 0x5
+ 1411 0032 49       		.uleb128 0x49
+ 1412 0033 13       		.uleb128 0x13
+ 1413 0034 00       		.byte	0
+ 1414 0035 00       		.byte	0
+ 1415 0036 05       		.uleb128 0x5
+ 1416 0037 35       		.uleb128 0x35
+ 1417 0038 00       		.byte	0
+ 1418 0039 49       		.uleb128 0x49
+ 1419 003a 13       		.uleb128 0x13
+ 1420 003b 00       		.byte	0
+ 1421 003c 00       		.byte	0
+ 1422 003d 06       		.uleb128 0x6
+ 1423 003e 2E       		.uleb128 0x2e
+ 1424 003f 01       		.byte	0x1
+ 1425 0040 3F       		.uleb128 0x3f
+ 1426 0041 19       		.uleb128 0x19
+ 1427 0042 03       		.uleb128 0x3
+ 1428 0043 0E       		.uleb128 0xe
+ 1429 0044 3A       		.uleb128 0x3a
+ 1430 0045 0B       		.uleb128 0xb
+ 1431 0046 3B       		.uleb128 0x3b
+ 1432 0047 0B       		.uleb128 0xb
+ 1433 0048 27       		.uleb128 0x27
+ 1434 0049 19       		.uleb128 0x19
+ 1435 004a 11       		.uleb128 0x11
+ 1436 004b 01       		.uleb128 0x1
+ 1437 004c 12       		.uleb128 0x12
+ 1438 004d 06       		.uleb128 0x6
+ 1439 004e 40       		.uleb128 0x40
+ 1440 004f 18       		.uleb128 0x18
+ 1441 0050 9742     		.uleb128 0x2117
+ 1442 0052 19       		.uleb128 0x19
+ 1443 0053 01       		.uleb128 0x1
+ 1444 0054 13       		.uleb128 0x13
+ 1445 0055 00       		.byte	0
+ 1446 0056 00       		.byte	0
+ 1447 0057 07       		.uleb128 0x7
+ 1448 0058 34       		.uleb128 0x34
+ 1449 0059 00       		.byte	0
+ 1450 005a 03       		.uleb128 0x3
+ 1451 005b 0E       		.uleb128 0xe
+ 1452 005c 3A       		.uleb128 0x3a
+ 1453 005d 0B       		.uleb128 0xb
+ 1454 005e 3B       		.uleb128 0x3b
+ 1455 005f 0B       		.uleb128 0xb
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccq1kucO.s 			page 47
+
+
+ 1456 0060 49       		.uleb128 0x49
+ 1457 0061 13       		.uleb128 0x13
+ 1458 0062 02       		.uleb128 0x2
+ 1459 0063 17       		.uleb128 0x17
+ 1460 0064 00       		.byte	0
+ 1461 0065 00       		.byte	0
+ 1462 0066 08       		.uleb128 0x8
+ 1463 0067 898201   		.uleb128 0x4109
+ 1464 006a 00       		.byte	0
+ 1465 006b 11       		.uleb128 0x11
+ 1466 006c 01       		.uleb128 0x1
+ 1467 006d 31       		.uleb128 0x31
+ 1468 006e 13       		.uleb128 0x13
+ 1469 006f 00       		.byte	0
+ 1470 0070 00       		.byte	0
+ 1471 0071 09       		.uleb128 0x9
+ 1472 0072 2E       		.uleb128 0x2e
+ 1473 0073 00       		.byte	0
+ 1474 0074 3F       		.uleb128 0x3f
+ 1475 0075 19       		.uleb128 0x19
+ 1476 0076 03       		.uleb128 0x3
+ 1477 0077 0E       		.uleb128 0xe
+ 1478 0078 3A       		.uleb128 0x3a
+ 1479 0079 0B       		.uleb128 0xb
+ 1480 007a 3B       		.uleb128 0x3b
+ 1481 007b 0B       		.uleb128 0xb
+ 1482 007c 27       		.uleb128 0x27
+ 1483 007d 19       		.uleb128 0x19
+ 1484 007e 11       		.uleb128 0x11
+ 1485 007f 01       		.uleb128 0x1
+ 1486 0080 12       		.uleb128 0x12
+ 1487 0081 06       		.uleb128 0x6
+ 1488 0082 40       		.uleb128 0x40
+ 1489 0083 18       		.uleb128 0x18
+ 1490 0084 9742     		.uleb128 0x2117
+ 1491 0086 19       		.uleb128 0x19
+ 1492 0087 00       		.byte	0
+ 1493 0088 00       		.byte	0
+ 1494 0089 0A       		.uleb128 0xa
+ 1495 008a 2E       		.uleb128 0x2e
+ 1496 008b 00       		.byte	0
+ 1497 008c 3F       		.uleb128 0x3f
+ 1498 008d 19       		.uleb128 0x19
+ 1499 008e 03       		.uleb128 0x3
+ 1500 008f 0E       		.uleb128 0xe
+ 1501 0090 3A       		.uleb128 0x3a
+ 1502 0091 0B       		.uleb128 0xb
+ 1503 0092 3B       		.uleb128 0x3b
+ 1504 0093 05       		.uleb128 0x5
+ 1505 0094 27       		.uleb128 0x27
+ 1506 0095 19       		.uleb128 0x19
+ 1507 0096 11       		.uleb128 0x11
+ 1508 0097 01       		.uleb128 0x1
+ 1509 0098 12       		.uleb128 0x12
+ 1510 0099 06       		.uleb128 0x6
+ 1511 009a 40       		.uleb128 0x40
+ 1512 009b 18       		.uleb128 0x18
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccq1kucO.s 			page 48
+
+
+ 1513 009c 9742     		.uleb128 0x2117
+ 1514 009e 19       		.uleb128 0x19
+ 1515 009f 00       		.byte	0
+ 1516 00a0 00       		.byte	0
+ 1517 00a1 0B       		.uleb128 0xb
+ 1518 00a2 2E       		.uleb128 0x2e
+ 1519 00a3 01       		.byte	0x1
+ 1520 00a4 3F       		.uleb128 0x3f
+ 1521 00a5 19       		.uleb128 0x19
+ 1522 00a6 03       		.uleb128 0x3
+ 1523 00a7 0E       		.uleb128 0xe
+ 1524 00a8 3A       		.uleb128 0x3a
+ 1525 00a9 0B       		.uleb128 0xb
+ 1526 00aa 3B       		.uleb128 0x3b
+ 1527 00ab 05       		.uleb128 0x5
+ 1528 00ac 27       		.uleb128 0x27
+ 1529 00ad 19       		.uleb128 0x19
+ 1530 00ae 11       		.uleb128 0x11
+ 1531 00af 01       		.uleb128 0x1
+ 1532 00b0 12       		.uleb128 0x12
+ 1533 00b1 06       		.uleb128 0x6
+ 1534 00b2 40       		.uleb128 0x40
+ 1535 00b3 18       		.uleb128 0x18
+ 1536 00b4 9742     		.uleb128 0x2117
+ 1537 00b6 19       		.uleb128 0x19
+ 1538 00b7 01       		.uleb128 0x1
+ 1539 00b8 13       		.uleb128 0x13
+ 1540 00b9 00       		.byte	0
+ 1541 00ba 00       		.byte	0
+ 1542 00bb 0C       		.uleb128 0xc
+ 1543 00bc 05       		.uleb128 0x5
+ 1544 00bd 00       		.byte	0
+ 1545 00be 03       		.uleb128 0x3
+ 1546 00bf 0E       		.uleb128 0xe
+ 1547 00c0 3A       		.uleb128 0x3a
+ 1548 00c1 0B       		.uleb128 0xb
+ 1549 00c2 3B       		.uleb128 0x3b
+ 1550 00c3 05       		.uleb128 0x5
+ 1551 00c4 49       		.uleb128 0x49
+ 1552 00c5 13       		.uleb128 0x13
+ 1553 00c6 02       		.uleb128 0x2
+ 1554 00c7 18       		.uleb128 0x18
+ 1555 00c8 00       		.byte	0
+ 1556 00c9 00       		.byte	0
+ 1557 00ca 0D       		.uleb128 0xd
+ 1558 00cb 2E       		.uleb128 0x2e
+ 1559 00cc 01       		.byte	0x1
+ 1560 00cd 3F       		.uleb128 0x3f
+ 1561 00ce 19       		.uleb128 0x19
+ 1562 00cf 03       		.uleb128 0x3
+ 1563 00d0 0E       		.uleb128 0xe
+ 1564 00d1 3A       		.uleb128 0x3a
+ 1565 00d2 0B       		.uleb128 0xb
+ 1566 00d3 3B       		.uleb128 0x3b
+ 1567 00d4 05       		.uleb128 0x5
+ 1568 00d5 27       		.uleb128 0x27
+ 1569 00d6 19       		.uleb128 0x19
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccq1kucO.s 			page 49
+
+
+ 1570 00d7 49       		.uleb128 0x49
+ 1571 00d8 13       		.uleb128 0x13
+ 1572 00d9 11       		.uleb128 0x11
+ 1573 00da 01       		.uleb128 0x1
+ 1574 00db 12       		.uleb128 0x12
+ 1575 00dc 06       		.uleb128 0x6
+ 1576 00dd 40       		.uleb128 0x40
+ 1577 00de 18       		.uleb128 0x18
+ 1578 00df 9742     		.uleb128 0x2117
+ 1579 00e1 19       		.uleb128 0x19
+ 1580 00e2 01       		.uleb128 0x1
+ 1581 00e3 13       		.uleb128 0x13
+ 1582 00e4 00       		.byte	0
+ 1583 00e5 00       		.byte	0
+ 1584 00e6 0E       		.uleb128 0xe
+ 1585 00e7 34       		.uleb128 0x34
+ 1586 00e8 00       		.byte	0
+ 1587 00e9 03       		.uleb128 0x3
+ 1588 00ea 0E       		.uleb128 0xe
+ 1589 00eb 3A       		.uleb128 0x3a
+ 1590 00ec 0B       		.uleb128 0xb
+ 1591 00ed 3B       		.uleb128 0x3b
+ 1592 00ee 05       		.uleb128 0x5
+ 1593 00ef 49       		.uleb128 0x49
+ 1594 00f0 13       		.uleb128 0x13
+ 1595 00f1 02       		.uleb128 0x2
+ 1596 00f2 18       		.uleb128 0x18
+ 1597 00f3 00       		.byte	0
+ 1598 00f4 00       		.byte	0
+ 1599 00f5 0F       		.uleb128 0xf
+ 1600 00f6 34       		.uleb128 0x34
+ 1601 00f7 00       		.byte	0
+ 1602 00f8 03       		.uleb128 0x3
+ 1603 00f9 0E       		.uleb128 0xe
+ 1604 00fa 3A       		.uleb128 0x3a
+ 1605 00fb 0B       		.uleb128 0xb
+ 1606 00fc 3B       		.uleb128 0x3b
+ 1607 00fd 05       		.uleb128 0x5
+ 1608 00fe 49       		.uleb128 0x49
+ 1609 00ff 13       		.uleb128 0x13
+ 1610 0100 02       		.uleb128 0x2
+ 1611 0101 17       		.uleb128 0x17
+ 1612 0102 00       		.byte	0
+ 1613 0103 00       		.byte	0
+ 1614 0104 10       		.uleb128 0x10
+ 1615 0105 05       		.uleb128 0x5
+ 1616 0106 00       		.byte	0
+ 1617 0107 03       		.uleb128 0x3
+ 1618 0108 0E       		.uleb128 0xe
+ 1619 0109 3A       		.uleb128 0x3a
+ 1620 010a 0B       		.uleb128 0xb
+ 1621 010b 3B       		.uleb128 0x3b
+ 1622 010c 05       		.uleb128 0x5
+ 1623 010d 49       		.uleb128 0x49
+ 1624 010e 13       		.uleb128 0x13
+ 1625 010f 02       		.uleb128 0x2
+ 1626 0110 17       		.uleb128 0x17
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccq1kucO.s 			page 50
+
+
+ 1627 0111 00       		.byte	0
+ 1628 0112 00       		.byte	0
+ 1629 0113 11       		.uleb128 0x11
+ 1630 0114 0F       		.uleb128 0xf
+ 1631 0115 00       		.byte	0
+ 1632 0116 0B       		.uleb128 0xb
+ 1633 0117 0B       		.uleb128 0xb
+ 1634 0118 49       		.uleb128 0x49
+ 1635 0119 13       		.uleb128 0x13
+ 1636 011a 00       		.byte	0
+ 1637 011b 00       		.byte	0
+ 1638 011c 12       		.uleb128 0x12
+ 1639 011d 26       		.uleb128 0x26
+ 1640 011e 00       		.byte	0
+ 1641 011f 49       		.uleb128 0x49
+ 1642 0120 13       		.uleb128 0x13
+ 1643 0121 00       		.byte	0
+ 1644 0122 00       		.byte	0
+ 1645 0123 13       		.uleb128 0x13
+ 1646 0124 34       		.uleb128 0x34
+ 1647 0125 00       		.byte	0
+ 1648 0126 03       		.uleb128 0x3
+ 1649 0127 0E       		.uleb128 0xe
+ 1650 0128 3A       		.uleb128 0x3a
+ 1651 0129 0B       		.uleb128 0xb
+ 1652 012a 3B       		.uleb128 0x3b
+ 1653 012b 0B       		.uleb128 0xb
+ 1654 012c 49       		.uleb128 0x49
+ 1655 012d 13       		.uleb128 0x13
+ 1656 012e 3F       		.uleb128 0x3f
+ 1657 012f 19       		.uleb128 0x19
+ 1658 0130 02       		.uleb128 0x2
+ 1659 0131 18       		.uleb128 0x18
+ 1660 0132 00       		.byte	0
+ 1661 0133 00       		.byte	0
+ 1662 0134 14       		.uleb128 0x14
+ 1663 0135 2E       		.uleb128 0x2e
+ 1664 0136 00       		.byte	0
+ 1665 0137 3F       		.uleb128 0x3f
+ 1666 0138 19       		.uleb128 0x19
+ 1667 0139 3C       		.uleb128 0x3c
+ 1668 013a 19       		.uleb128 0x19
+ 1669 013b 6E       		.uleb128 0x6e
+ 1670 013c 0E       		.uleb128 0xe
+ 1671 013d 03       		.uleb128 0x3
+ 1672 013e 0E       		.uleb128 0xe
+ 1673 013f 3A       		.uleb128 0x3a
+ 1674 0140 0B       		.uleb128 0xb
+ 1675 0141 3B       		.uleb128 0x3b
+ 1676 0142 0B       		.uleb128 0xb
+ 1677 0143 00       		.byte	0
+ 1678 0144 00       		.byte	0
+ 1679 0145 00       		.byte	0
+ 1680              		.section	.debug_loc,"",%progbits
+ 1681              	.Ldebug_loc0:
+ 1682              	.LLST0:
+ 1683 0000 06000000 		.4byte	.LVL0
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccq1kucO.s 			page 51
+
+
+ 1684 0004 29000000 		.4byte	.LVL1-1
+ 1685 0008 0100     		.2byte	0x1
+ 1686 000a 50       		.byte	0x50
+ 1687 000b 00000000 		.4byte	0
+ 1688 000f 00000000 		.4byte	0
+ 1689              	.LLST1:
+ 1690 0013 06000000 		.4byte	.LVL2
+ 1691 0017 1F000000 		.4byte	.LVL3-1
+ 1692 001b 0100     		.2byte	0x1
+ 1693 001d 50       		.byte	0x50
+ 1694 001e 00000000 		.4byte	0
+ 1695 0022 00000000 		.4byte	0
+ 1696              	.LLST2:
+ 1697 0026 06000000 		.4byte	.LVL11
+ 1698 002a 1C000000 		.4byte	.LVL12
+ 1699 002e 0100     		.2byte	0x1
+ 1700 0030 53       		.byte	0x53
+ 1701 0031 1C000000 		.4byte	.LVL12
+ 1702 0035 24000000 		.4byte	.LFE15
+ 1703 0039 0100     		.2byte	0x1
+ 1704 003b 50       		.byte	0x50
+ 1705 003c 00000000 		.4byte	0
+ 1706 0040 00000000 		.4byte	0
+ 1707              	.LLST3:
+ 1708 0044 06000000 		.4byte	.LVL13
+ 1709 0048 1B000000 		.4byte	.LVL14-1
+ 1710 004c 0100     		.2byte	0x1
+ 1711 004e 50       		.byte	0x50
+ 1712 004f 00000000 		.4byte	0
+ 1713 0053 00000000 		.4byte	0
+ 1714              	.LLST4:
+ 1715 0057 00000000 		.4byte	.LVL15
+ 1716 005b 0A000000 		.4byte	.LVL17
+ 1717 005f 0100     		.2byte	0x1
+ 1718 0061 50       		.byte	0x50
+ 1719 0062 0A000000 		.4byte	.LVL17
+ 1720 0066 1E000000 		.4byte	.LFE20
+ 1721 006a 0100     		.2byte	0x1
+ 1722 006c 56       		.byte	0x56
+ 1723 006d 00000000 		.4byte	0
+ 1724 0071 00000000 		.4byte	0
+ 1725              	.LLST5:
+ 1726 0075 00000000 		.4byte	.LVL15
+ 1727 0079 0A000000 		.4byte	.LVL17
+ 1728 007d 0100     		.2byte	0x1
+ 1729 007f 51       		.byte	0x51
+ 1730 0080 0A000000 		.4byte	.LVL17
+ 1731 0084 16000000 		.4byte	.LVL21
+ 1732 0088 0100     		.2byte	0x1
+ 1733 008a 54       		.byte	0x54
+ 1734 008b 18000000 		.4byte	.LVL22
+ 1735 008f 1E000000 		.4byte	.LFE20
+ 1736 0093 0100     		.2byte	0x1
+ 1737 0095 54       		.byte	0x54
+ 1738 0096 00000000 		.4byte	0
+ 1739 009a 00000000 		.4byte	0
+ 1740              	.LLST6:
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccq1kucO.s 			page 52
+
+
+ 1741 009e 06000000 		.4byte	.LVL16
+ 1742 00a2 0A000000 		.4byte	.LVL17
+ 1743 00a6 0200     		.2byte	0x2
+ 1744 00a8 30       		.byte	0x30
+ 1745 00a9 9F       		.byte	0x9f
+ 1746 00aa 0A000000 		.4byte	.LVL17
+ 1747 00ae 12000000 		.4byte	.LVL19
+ 1748 00b2 0100     		.2byte	0x1
+ 1749 00b4 55       		.byte	0x55
+ 1750 00b5 14000000 		.4byte	.LVL20
+ 1751 00b9 1E000000 		.4byte	.LFE20
+ 1752 00bd 0100     		.2byte	0x1
+ 1753 00bf 55       		.byte	0x55
+ 1754 00c0 00000000 		.4byte	0
+ 1755 00c4 00000000 		.4byte	0
+ 1756              	.LLST7:
+ 1757 00c8 16000000 		.4byte	.LVL23
+ 1758 00cc 2B000000 		.4byte	.LVL24-1
+ 1759 00d0 0100     		.2byte	0x1
+ 1760 00d2 50       		.byte	0x50
+ 1761 00d3 00000000 		.4byte	0
+ 1762 00d7 00000000 		.4byte	0
+ 1763              	.LLST8:
+ 1764 00db 04000000 		.4byte	.LVL31
+ 1765 00df 0A000000 		.4byte	.LVL32
+ 1766 00e3 0100     		.2byte	0x1
+ 1767 00e5 53       		.byte	0x53
+ 1768 00e6 0A000000 		.4byte	.LVL32
+ 1769 00ea 0E000000 		.4byte	.LVL33
+ 1770 00ee 0600     		.2byte	0x6
+ 1771 00f0 70       		.byte	0x70
+ 1772 00f1 00       		.sleb128 0
+ 1773 00f2 08       		.byte	0x8
+ 1774 00f3 EF       		.byte	0xef
+ 1775 00f4 1A       		.byte	0x1a
+ 1776 00f5 9F       		.byte	0x9f
+ 1777 00f6 00000000 		.4byte	0
+ 1778 00fa 00000000 		.4byte	0
+ 1779              		.section	.debug_aranges,"",%progbits
+ 1780 0000 E4000000 		.4byte	0xe4
+ 1781 0004 0200     		.2byte	0x2
+ 1782 0006 00000000 		.4byte	.Ldebug_info0
+ 1783 000a 04       		.byte	0x4
+ 1784 000b 00       		.byte	0
+ 1785 000c 0000     		.2byte	0
+ 1786 000e 0000     		.2byte	0
+ 1787 0010 00000000 		.4byte	.LFB1
+ 1788 0014 30000000 		.4byte	.LFE1-.LFB1
+ 1789 0018 00000000 		.4byte	.LFB3
+ 1790 001c 28000000 		.4byte	.LFE3-.LFB3
+ 1791 0020 00000000 		.4byte	.LFB4
+ 1792 0024 02000000 		.4byte	.LFE4-.LFB4
+ 1793 0028 00000000 		.4byte	.LFB5
+ 1794 002c 02000000 		.4byte	.LFE5-.LFB5
+ 1795 0030 00000000 		.4byte	.LFB6
+ 1796 0034 02000000 		.4byte	.LFE6-.LFB6
+ 1797 0038 00000000 		.4byte	.LFB7
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccq1kucO.s 			page 53
+
+
+ 1798 003c 02000000 		.4byte	.LFE7-.LFB7
+ 1799 0040 00000000 		.4byte	.LFB8
+ 1800 0044 0C000000 		.4byte	.LFE8-.LFB8
+ 1801 0048 00000000 		.4byte	.LFB9
+ 1802 004c 0C000000 		.4byte	.LFE9-.LFB9
+ 1803 0050 00000000 		.4byte	.LFB10
+ 1804 0054 0C000000 		.4byte	.LFE10-.LFB10
+ 1805 0058 00000000 		.4byte	.LFB11
+ 1806 005c 0C000000 		.4byte	.LFE11-.LFB11
+ 1807 0060 00000000 		.4byte	.LFB12
+ 1808 0064 18000000 		.4byte	.LFE12-.LFB12
+ 1809 0068 00000000 		.4byte	.LFB13
+ 1810 006c 0C000000 		.4byte	.LFE13-.LFB13
+ 1811 0070 00000000 		.4byte	.LFB14
+ 1812 0074 18000000 		.4byte	.LFE14-.LFB14
+ 1813 0078 00000000 		.4byte	.LFB15
+ 1814 007c 24000000 		.4byte	.LFE15-.LFB15
+ 1815 0080 00000000 		.4byte	.LFB16
+ 1816 0084 1C000000 		.4byte	.LFE16-.LFB16
+ 1817 0088 00000000 		.4byte	.LFB17
+ 1818 008c 24000000 		.4byte	.LFE17-.LFB17
+ 1819 0090 00000000 		.4byte	.LFB18
+ 1820 0094 10000000 		.4byte	.LFE18-.LFB18
+ 1821 0098 00000000 		.4byte	.LFB19
+ 1822 009c 10000000 		.4byte	.LFE19-.LFB19
+ 1823 00a0 00000000 		.4byte	.LFB20
+ 1824 00a4 1E000000 		.4byte	.LFE20-.LFB20
+ 1825 00a8 00000000 		.4byte	.LFB21
+ 1826 00ac 3C000000 		.4byte	.LFE21-.LFB21
+ 1827 00b0 00000000 		.4byte	.LFB0
+ 1828 00b4 2C000000 		.4byte	.LFE0-.LFB0
+ 1829 00b8 00000000 		.4byte	.LFB2
+ 1830 00bc 1C000000 		.4byte	.LFE2-.LFB2
+ 1831 00c0 00000000 		.4byte	.LFB22
+ 1832 00c4 02000000 		.4byte	.LFE22-.LFB22
+ 1833 00c8 00000000 		.4byte	.LFB23
+ 1834 00cc 02000000 		.4byte	.LFE23-.LFB23
+ 1835 00d0 00000000 		.4byte	.LFB24
+ 1836 00d4 14000000 		.4byte	.LFE24-.LFB24
+ 1837 00d8 00000000 		.4byte	.LFB25
+ 1838 00dc 18000000 		.4byte	.LFE25-.LFB25
+ 1839 00e0 00000000 		.4byte	0
+ 1840 00e4 00000000 		.4byte	0
+ 1841              		.section	.debug_ranges,"",%progbits
+ 1842              	.Ldebug_ranges0:
+ 1843 0000 00000000 		.4byte	.LFB1
+ 1844 0004 30000000 		.4byte	.LFE1
+ 1845 0008 00000000 		.4byte	.LFB3
+ 1846 000c 28000000 		.4byte	.LFE3
+ 1847 0010 00000000 		.4byte	.LFB4
+ 1848 0014 02000000 		.4byte	.LFE4
+ 1849 0018 00000000 		.4byte	.LFB5
+ 1850 001c 02000000 		.4byte	.LFE5
+ 1851 0020 00000000 		.4byte	.LFB6
+ 1852 0024 02000000 		.4byte	.LFE6
+ 1853 0028 00000000 		.4byte	.LFB7
+ 1854 002c 02000000 		.4byte	.LFE7
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccq1kucO.s 			page 54
+
+
+ 1855 0030 00000000 		.4byte	.LFB8
+ 1856 0034 0C000000 		.4byte	.LFE8
+ 1857 0038 00000000 		.4byte	.LFB9
+ 1858 003c 0C000000 		.4byte	.LFE9
+ 1859 0040 00000000 		.4byte	.LFB10
+ 1860 0044 0C000000 		.4byte	.LFE10
+ 1861 0048 00000000 		.4byte	.LFB11
+ 1862 004c 0C000000 		.4byte	.LFE11
+ 1863 0050 00000000 		.4byte	.LFB12
+ 1864 0054 18000000 		.4byte	.LFE12
+ 1865 0058 00000000 		.4byte	.LFB13
+ 1866 005c 0C000000 		.4byte	.LFE13
+ 1867 0060 00000000 		.4byte	.LFB14
+ 1868 0064 18000000 		.4byte	.LFE14
+ 1869 0068 00000000 		.4byte	.LFB15
+ 1870 006c 24000000 		.4byte	.LFE15
+ 1871 0070 00000000 		.4byte	.LFB16
+ 1872 0074 1C000000 		.4byte	.LFE16
+ 1873 0078 00000000 		.4byte	.LFB17
+ 1874 007c 24000000 		.4byte	.LFE17
+ 1875 0080 00000000 		.4byte	.LFB18
+ 1876 0084 10000000 		.4byte	.LFE18
+ 1877 0088 00000000 		.4byte	.LFB19
+ 1878 008c 10000000 		.4byte	.LFE19
+ 1879 0090 00000000 		.4byte	.LFB20
+ 1880 0094 1E000000 		.4byte	.LFE20
+ 1881 0098 00000000 		.4byte	.LFB21
+ 1882 009c 3C000000 		.4byte	.LFE21
+ 1883 00a0 00000000 		.4byte	.LFB0
+ 1884 00a4 2C000000 		.4byte	.LFE0
+ 1885 00a8 00000000 		.4byte	.LFB2
+ 1886 00ac 1C000000 		.4byte	.LFE2
+ 1887 00b0 00000000 		.4byte	.LFB22
+ 1888 00b4 02000000 		.4byte	.LFE22
+ 1889 00b8 00000000 		.4byte	.LFB23
+ 1890 00bc 02000000 		.4byte	.LFE23
+ 1891 00c0 00000000 		.4byte	.LFB24
+ 1892 00c4 14000000 		.4byte	.LFE24
+ 1893 00c8 00000000 		.4byte	.LFB25
+ 1894 00cc 18000000 		.4byte	.LFE25
+ 1895 00d0 00000000 		.4byte	0
+ 1896 00d4 00000000 		.4byte	0
+ 1897              		.section	.debug_line,"",%progbits
+ 1898              	.Ldebug_line0:
+ 1899 0000 4F020000 		.section	.debug_str,"MS",%progbits,1
+ 1899      02004F00 
+ 1899      00000201 
+ 1899      FB0E0D00 
+ 1899      01010101 
+ 1900              	.LASF44:
+ 1901 0000 5350495F 		.ascii	"SPI_IMU_ClearFIFO\000"
+ 1901      494D555F 
+ 1901      436C6561 
+ 1901      72464946 
+ 1901      4F00
+ 1902              	.LASF53:
+ 1903 0012 5350495F 		.ascii	"SPI_IMU_swStatusRx\000"
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccq1kucO.s 			page 55
+
+
+ 1903      494D555F 
+ 1903      73775374 
+ 1903      61747573 
+ 1903      527800
+ 1904              	.LASF11:
+ 1905 0025 63686172 		.ascii	"char\000"
+ 1905      00
+ 1906              	.LASF37:
+ 1907 002a 5350495F 		.ascii	"SPI_IMU_ClearTxBuffer\000"
+ 1907      494D555F 
+ 1907      436C6561 
+ 1907      72547842 
+ 1907      75666665 
+ 1908              	.LASF52:
+ 1909 0040 5350495F 		.ascii	"SPI_IMU_swStatusTx\000"
+ 1909      494D555F 
+ 1909      73775374 
+ 1909      61747573 
+ 1909      547800
+ 1910              	.LASF31:
+ 1911 0053 5350495F 		.ascii	"SPI_IMU_ReadRxData\000"
+ 1911      494D555F 
+ 1911      52656164 
+ 1911      52784461 
+ 1911      746100
+ 1912              	.LASF30:
+ 1913 0066 74784461 		.ascii	"txData\000"
+ 1913      746100
+ 1914              	.LASF3:
+ 1915 006d 73686F72 		.ascii	"short unsigned int\000"
+ 1915      7420756E 
+ 1915      7369676E 
+ 1915      65642069 
+ 1915      6E7400
+ 1916              	.LASF20:
+ 1917 0080 5350495F 		.ascii	"SPI_IMU_EnableRxInt\000"
+ 1917      494D555F 
+ 1917      456E6162 
+ 1917      6C655278 
+ 1917      496E7400 
+ 1918              	.LASF35:
+ 1919 0094 5350495F 		.ascii	"SPI_IMU_GetTxBufferSize\000"
+ 1919      494D555F 
+ 1919      47657454 
+ 1919      78427566 
+ 1919      66657253 
+ 1920              	.LASF51:
+ 1921 00ac 5350495F 		.ascii	"SPI_IMU_initVar\000"
+ 1921      494D555F 
+ 1921      696E6974 
+ 1921      56617200 
+ 1922              	.LASF49:
+ 1923 00bc 5350495F 		.ascii	"SPI_IMU_SetInterruptMode\000"
+ 1923      494D555F 
+ 1923      53657449 
+ 1923      6E746572 
+ 1923      72757074 
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccq1kucO.s 			page 56
+
+
+ 1924              	.LASF9:
+ 1925 00d5 666C6F61 		.ascii	"float\000"
+ 1925      7400
+ 1926              	.LASF7:
+ 1927 00db 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1927      206C6F6E 
+ 1927      6720756E 
+ 1927      7369676E 
+ 1927      65642069 
+ 1928              	.LASF34:
+ 1929 00f2 73697A65 		.ascii	"size\000"
+ 1929      00
+ 1930              	.LASF56:
+ 1931 00f7 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1931      43313120 
+ 1931      352E342E 
+ 1931      31203230 
+ 1931      31363036 
+ 1932 012a 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 1932      20726576 
+ 1932      6973696F 
+ 1932      6E203233 
+ 1932      37373135 
+ 1933 015d 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1933      66756E63 
+ 1933      74696F6E 
+ 1933      2D736563 
+ 1933      74696F6E 
+ 1934              	.LASF38:
+ 1935 0185 5350495F 		.ascii	"SPI_IMU_TxEnable\000"
+ 1935      494D555F 
+ 1935      5478456E 
+ 1935      61626C65 
+ 1935      00
+ 1936              	.LASF13:
+ 1937 0196 72656738 		.ascii	"reg8\000"
+ 1937      00
+ 1938              	.LASF22:
+ 1939 019b 5350495F 		.ascii	"SPI_IMU_DisableRxInt\000"
+ 1939      494D555F 
+ 1939      44697361 
+ 1939      626C6552 
+ 1939      78496E74 
+ 1940              	.LASF12:
+ 1941 01b0 75696E74 		.ascii	"uint8\000"
+ 1941      3800
+ 1942              	.LASF29:
+ 1943 01b6 5350495F 		.ascii	"SPI_IMU_WriteTxData\000"
+ 1943      494D555F 
+ 1943      57726974 
+ 1943      65547844 
+ 1943      61746100 
+ 1944              	.LASF46:
+ 1945 01ca 5350495F 		.ascii	"SPI_IMU_Start\000"
+ 1945      494D555F 
+ 1945      53746172 
+ 1945      7400
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccq1kucO.s 			page 57
+
+
+ 1946              	.LASF42:
+ 1947 01d8 62797465 		.ascii	"byteCount\000"
+ 1947      436F756E 
+ 1947      7400
+ 1948              	.LASF18:
+ 1949 01e2 656E6162 		.ascii	"enableInterrupts\000"
+ 1949      6C65496E 
+ 1949      74657272 
+ 1949      75707473 
+ 1949      00
+ 1950              	.LASF27:
+ 1951 01f3 5350495F 		.ascii	"SPI_IMU_ReadTxStatus\000"
+ 1951      494D555F 
+ 1951      52656164 
+ 1951      54785374 
+ 1951      61747573 
+ 1952              	.LASF1:
+ 1953 0208 756E7369 		.ascii	"unsigned char\000"
+ 1953      676E6564 
+ 1953      20636861 
+ 1953      7200
+ 1954              	.LASF10:
+ 1955 0216 646F7562 		.ascii	"double\000"
+ 1955      6C6500
+ 1956              	.LASF25:
+ 1957 021d 696E7453 		.ascii	"intSrc\000"
+ 1957      726300
+ 1958              	.LASF17:
+ 1959 0224 5350495F 		.ascii	"SPI_IMU_Stop\000"
+ 1959      494D555F 
+ 1959      53746F70 
+ 1959      00
+ 1960              	.LASF58:
+ 1961 0231 433A5C55 		.ascii	"C:\\Users\\mgnocco\\Documents\\ControlloDiVersione\\"
+ 1961      73657273 
+ 1961      5C6D676E 
+ 1961      6F63636F 
+ 1961      5C446F63 
+ 1962 0260 54455354 		.ascii	"TEST_LSM6DSRX\\Workspace01\\SPI_3W.cydsn\000"
+ 1962      5F4C534D 
+ 1962      36445352 
+ 1962      585C576F 
+ 1962      726B7370 
+ 1963              	.LASF40:
+ 1964 0287 5350495F 		.ascii	"SPI_IMU_PutArray\000"
+ 1964      494D555F 
+ 1964      50757441 
+ 1964      72726179 
+ 1964      00
+ 1965              	.LASF36:
+ 1966 0298 5350495F 		.ascii	"SPI_IMU_ClearRxBuffer\000"
+ 1966      494D555F 
+ 1966      436C6561 
+ 1966      72527842 
+ 1966      75666665 
+ 1967              	.LASF54:
+ 1968 02ae 4379456E 		.ascii	"CyEnterCriticalSection\000"
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccq1kucO.s 			page 58
+
+
+ 1968      74657243 
+ 1968      72697469 
+ 1968      63616C53 
+ 1968      65637469 
+ 1969              	.LASF5:
+ 1970 02c5 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1970      20756E73 
+ 1970      69676E65 
+ 1970      6420696E 
+ 1970      7400
+ 1971              	.LASF8:
+ 1972 02d7 756E7369 		.ascii	"unsigned int\000"
+ 1972      676E6564 
+ 1972      20696E74 
+ 1972      00
+ 1973              	.LASF33:
+ 1974 02e4 5350495F 		.ascii	"SPI_IMU_GetRxBufferSize\000"
+ 1974      494D555F 
+ 1974      47657452 
+ 1974      78427566 
+ 1974      66657253 
+ 1975              	.LASF32:
+ 1976 02fc 72784461 		.ascii	"rxData\000"
+ 1976      746100
+ 1977              	.LASF55:
+ 1978 0303 43794578 		.ascii	"CyExitCriticalSection\000"
+ 1978      69744372 
+ 1978      69746963 
+ 1978      616C5365 
+ 1978      6374696F 
+ 1979              	.LASF48:
+ 1980 0319 5350495F 		.ascii	"SPI_IMU_DisableInt\000"
+ 1980      494D555F 
+ 1980      44697361 
+ 1980      626C6549 
+ 1980      6E7400
+ 1981              	.LASF43:
+ 1982 032c 62756649 		.ascii	"bufIndex\000"
+ 1982      6E646578 
+ 1982      00
+ 1983              	.LASF15:
+ 1984 0335 73697A65 		.ascii	"sizetype\000"
+ 1984      74797065 
+ 1984      00
+ 1985              	.LASF19:
+ 1986 033e 5350495F 		.ascii	"SPI_IMU_EnableTxInt\000"
+ 1986      494D555F 
+ 1986      456E6162 
+ 1986      6C655478 
+ 1986      496E7400 
+ 1987              	.LASF6:
+ 1988 0352 6C6F6E67 		.ascii	"long long int\000"
+ 1988      206C6F6E 
+ 1988      6720696E 
+ 1988      7400
+ 1989              	.LASF16:
+ 1990 0360 5350495F 		.ascii	"SPI_IMU_Enable\000"
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccq1kucO.s 			page 59
+
+
+ 1990      494D555F 
+ 1990      456E6162 
+ 1990      6C6500
+ 1991              	.LASF57:
+ 1992 036f 47656E65 		.ascii	"Generated_Source\\PSoC5\\SPI_IMU.c\000"
+ 1992      72617465 
+ 1992      645F536F 
+ 1992      75726365 
+ 1992      5C50536F 
+ 1993              	.LASF50:
+ 1994 0390 5350495F 		.ascii	"SPI_IMU_ReadStatus\000"
+ 1994      494D555F 
+ 1994      52656164 
+ 1994      53746174 
+ 1994      757300
+ 1995              	.LASF28:
+ 1996 03a3 5350495F 		.ascii	"SPI_IMU_ReadRxStatus\000"
+ 1996      494D555F 
+ 1996      52656164 
+ 1996      52785374 
+ 1996      61747573 
+ 1997              	.LASF2:
+ 1998 03b8 73686F72 		.ascii	"short int\000"
+ 1998      7420696E 
+ 1998      7400
+ 1999              	.LASF39:
+ 2000 03c2 5350495F 		.ascii	"SPI_IMU_TxDisable\000"
+ 2000      494D555F 
+ 2000      54784469 
+ 2000      7361626C 
+ 2000      6500
+ 2001              	.LASF41:
+ 2002 03d4 62756666 		.ascii	"buffer\000"
+ 2002      657200
+ 2003              	.LASF21:
+ 2004 03db 5350495F 		.ascii	"SPI_IMU_DisableTxInt\000"
+ 2004      494D555F 
+ 2004      44697361 
+ 2004      626C6554 
+ 2004      78496E74 
+ 2005              	.LASF4:
+ 2006 03f0 6C6F6E67 		.ascii	"long int\000"
+ 2006      20696E74 
+ 2006      00
+ 2007              	.LASF26:
+ 2008 03f9 746D7053 		.ascii	"tmpStatus\000"
+ 2008      74617475 
+ 2008      7300
+ 2009              	.LASF14:
+ 2010 0403 6C6F6E67 		.ascii	"long double\000"
+ 2010      20646F75 
+ 2010      626C6500 
+ 2011              	.LASF0:
+ 2012 040f 7369676E 		.ascii	"signed char\000"
+ 2012      65642063 
+ 2012      68617200 
+ 2013              	.LASF47:
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccq1kucO.s 			page 60
+
+
+ 2014 041b 5350495F 		.ascii	"SPI_IMU_EnableInt\000"
+ 2014      494D555F 
+ 2014      456E6162 
+ 2014      6C65496E 
+ 2014      7400
+ 2015              	.LASF23:
+ 2016 042d 5350495F 		.ascii	"SPI_IMU_SetTxInterruptMode\000"
+ 2016      494D555F 
+ 2016      53657454 
+ 2016      78496E74 
+ 2016      65727275 
+ 2017              	.LASF24:
+ 2018 0448 5350495F 		.ascii	"SPI_IMU_SetRxInterruptMode\000"
+ 2018      494D555F 
+ 2018      53657452 
+ 2018      78496E74 
+ 2018      65727275 
+ 2019              	.LASF45:
+ 2020 0463 5350495F 		.ascii	"SPI_IMU_Init\000"
+ 2020      494D555F 
+ 2020      496E6974 
+ 2020      00
+ 2021              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

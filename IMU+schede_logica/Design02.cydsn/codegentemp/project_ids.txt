@@ -1,0 +1,6 @@
+C:\Users\mgnocco\Documents\ControlloDiVersione\IMU+schede_logica\Design02.cydsn\Design02.cyprj|3e90024f-080b-4224-b9cf-17220dd6a6b5
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|d08695bf-3f07-44d6-ac7a-d3397f241304
+C:\Users\mgnocco\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|e2a976cb-1c29-444f-9192-ab60503dfe7b
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|2b984d4d-c56e-4c2d-84d0-3cca37a869ea
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|72fa38b5-1c00-4cd8-860c-fc9e332bafea
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|b784e26a-9f41-4b9f-bdd8-30052720f203
