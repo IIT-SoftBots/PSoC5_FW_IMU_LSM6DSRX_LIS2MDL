@@ -79,26 +79,35 @@ void OneShot_ReadRoutine1(uint8 address, uint8 subaddress,uint8 slave_config){
     
     i = ReadControlRegisterSPI(LSM6DSRX_WHO_AM_I);
     
-    i = ReadControlRegisterSPI(LSM6DSRX_OUTZ_L_A);
+    i = ReadControlRegisterSPI(LSM6DSRX_OUTX_L_A);
         UART_PutChar(i);
-        i = ReadControlRegisterSPI(LSM6DSRX_OUTZ_H_A);
+        i = ReadControlRegisterSPI(LSM6DSRX_OUTX_H_A);
         UART_PutChar(i);
-   i= ReadControlRegisterSPI(LSM6DSRX_OUTX_L_A); //21
+   i= ReadControlRegisterSPI(LSM6DSRX_OUTY_L_A); //21
 UART_PutChar(i);
-  i = ReadControlRegisterSPI(LSM6DSRX_OUTX_H_A);
+  i = ReadControlRegisterSPI(LSM6DSRX_OUTY_H_A);
         UART_PutChar(i);
-        i = ReadControlRegisterSPI(LSM6DSRX_OUTY_L_A);
+        i = ReadControlRegisterSPI(LSM6DSRX_OUTZ_L_A);
         UART_PutChar(i);
-   i= ReadControlRegisterSPI(LSM6DSRX_OUTY_H_A); //21
+   i= ReadControlRegisterSPI(LSM6DSRX_OUTZ_H_A); //21
 UART_PutChar(i);
     CyDelayUs(10);
     
         
-    i = ReadControlRegisterSPI(LSM6DSRX_OUTZ_L_G);
+    i = ReadControlRegisterSPI(LSM6DSRX_OUTX_L_G);
+        UART_PutChar(i);
+        i = ReadControlRegisterSPI(LSM6DSRX_OUTX_H_G);
+        UART_PutChar(i);
+
+            i = ReadControlRegisterSPI(LSM6DSRX_OUTY_L_G);
+        UART_PutChar(i);
+        i = ReadControlRegisterSPI(LSM6DSRX_OUTY_H_G);
+        UART_PutChar(i);
+        
+            i = ReadControlRegisterSPI(LSM6DSRX_OUTZ_L_G);
         UART_PutChar(i);
         i = ReadControlRegisterSPI(LSM6DSRX_OUTZ_H_G);
         UART_PutChar(i);
-
         
     
     do 
