@@ -1,33 +1,21 @@
---------------- Build Started: 06/09/2023 12:54:58 Project: Design02, Configuration: ARM GCC 5.4-2016-q2-update Release ---------------
+--------------- Build Started: 10/16/2023 16:59:29 Project: Design02, Configuration: ARM GCC 5.4-2016-q2-update Release ---------------
 The code generation step is up to date.
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Release/source01.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Os -c source01.c -o .\CortexM3\ARM_GCC_541\Release\source01.o
-source01.c: In function 'OneShot_ReadRoutine1':
-source01.c:61:21: warning: unused variable 'tempoMSB' [-Wunused-variable]
-     uint8 tempoLSB, tempoMSB;
-                     ^
-source01.c:61:11: warning: unused variable 'tempoLSB' [-Wunused-variable]
-     uint8 tempoLSB, tempoMSB;
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Release/main.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Os -c main.c -o .\CortexM3\ARM_GCC_541\Release\main.o
+main.c: In function 'main':
+main.c:39:11: warning: unused variable 'who' [-Wunused-variable]
+     uint8 who;
            ^
-source01.c:60:12: warning: unused variable 'tempo' [-Wunused-variable]
-     uint16 tempo;
-            ^
-source01.c:59:12: warning: unused variable 't0' [-Wunused-variable]
-     uint16 t0;
-            ^
-source01.c:58:12: warning: unused variable 't1' [-Wunused-variable]
-     uint16 t1;
-            ^
-source01.c:56:11: warning: unused variable 'Data' [-Wunused-variable]
-     uint8 Data;
+main.c:38:11: warning: unused variable 'i' [-Wunused-variable]
+     uint8 i;
            ^
 arm-none-eabi-ar.exe -rs .\CortexM3\ARM_GCC_541\Release\Design02.a .\CortexM3\ARM_GCC_541\Release\SCLK.o .\CortexM3\ARM_GCC_541\Release\SPI_IMU.o .\CortexM3\ARM_GCC_541\Release\SPI_IMU_PM.o .\CortexM3\ARM_GCC_541\Release\SPI_IMU_INT.o .\CortexM3\ARM_GCC_541\Release\ChipSelect.o .\CortexM3\ARM_GCC_541\Release\CLOCK_PWM.o .\CortexM3\ARM_GCC_541\Release\CyDmac.o .\CortexM3\ARM_GCC_541\Release\CyFlash.o .\CortexM3\ARM_GCC_541\Release\CyLib.o .\CortexM3\ARM_GCC_541\Release\cyPm.o .\CortexM3\ARM_GCC_541\Release\CySpc.o .\CortexM3\ARM_GCC_541\Release\cyutils.o .\CortexM3\ARM_GCC_541\Release\cy_em_eeprom.o .\CortexM3\ARM_GCC_541\Release\PACER_TIMER.o .\CortexM3\ARM_GCC_541\Release\PACER_TIMER_PM.o .\CortexM3\ARM_GCC_541\Release\RESET_FF.o .\CortexM3\ARM_GCC_541\Release\RESET_FF_PM.o .\CortexM3\ARM_GCC_541\Release\FF_STATUS.o .\CortexM3\ARM_GCC_541\Release\UART.o .\CortexM3\ARM_GCC_541\Release\UART_PM.o .\CortexM3\ARM_GCC_541\Release\UART_INT.o .\CortexM3\ARM_GCC_541\Release\UART_BOOT.o .\CortexM3\ARM_GCC_541\Release\UART_IntClock.o .\CortexM3\ARM_GCC_541\Release\MOSI_SDA.o .\CortexM3\ARM_GCC_541\Release\MISO_SDO.o .\CortexM3\ARM_GCC_541\Release\CyBootAsmGnu.o
 arm-none-eabi-ar.exe: creating .\CortexM3\ARM_GCC_541\Release\Design02.a
-arm-none-eabi-gcc.exe -Wl,--start-group -o "C:\Users\mgnocco\Documents\ControlloDiVersione\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn\CortexM3\ARM_GCC_541\Release\Design02.elf" .\CortexM3\ARM_GCC_541\Release\main.o .\CortexM3\ARM_GCC_541\Release\source01.o .\CortexM3\ARM_GCC_541\Release\cyfitter_cfg.o .\CortexM3\ARM_GCC_541\Release\cymetadata.o .\CortexM3\ARM_GCC_541\Release\Cm3Start.o .\CortexM3\ARM_GCC_541\Release\Design02.a "C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM3\ARM_GCC_541\Release\CyComponentLibrary.a" -mcpu=cortex-m3 -mthumb -L Generated_Source\PSoC5 -Wl,-Map,.\CortexM3\ARM_GCC_541\Release/Design02.map -T Generated_Source\PSoC5\cm3gcc.ld -specs=nano.specs -Wl,--gc-sections -g -ffunction-sections -Os -ffat-lto-objects -Wl,--end-group
-cyelftool.exe -C "C:\Users\mgnocco\Documents\ControlloDiVersione\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn\CortexM3\ARM_GCC_541\Release\Design02.elf" --flash_row_size 256 --flash_size 262144 --flash_offset 0x00000000
+arm-none-eabi-gcc.exe -Wl,--start-group -o "C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_IMU_LSM6DSRX_LIS2MDL\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn\CortexM3\ARM_GCC_541\Release\Design02.elf" .\CortexM3\ARM_GCC_541\Release\main.o .\CortexM3\ARM_GCC_541\Release\source01.o .\CortexM3\ARM_GCC_541\Release\cyfitter_cfg.o .\CortexM3\ARM_GCC_541\Release\cymetadata.o .\CortexM3\ARM_GCC_541\Release\Cm3Start.o .\CortexM3\ARM_GCC_541\Release\Design02.a "C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM3\ARM_GCC_541\Release\CyComponentLibrary.a" -mcpu=cortex-m3 -mthumb -L Generated_Source\PSoC5 -Wl,-Map,.\CortexM3\ARM_GCC_541\Release/Design02.map -T Generated_Source\PSoC5\cm3gcc.ld -specs=nano.specs -Wl,--gc-sections -g -ffunction-sections -Os -ffat-lto-objects -Wl,--end-group
+cyelftool.exe -C "C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_IMU_LSM6DSRX_LIS2MDL\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn\CortexM3\ARM_GCC_541\Release\Design02.elf" --flash_row_size 256 --flash_size 262144 --flash_offset 0x00000000
 No ELF section .cychecksum found, creating one
 Application checksum calculated and stored in ELF section .cychecksum
 Checksum calculated and stored in ELF section .cymeta
-cyelftool.exe -S "C:\Users\mgnocco\Documents\ControlloDiVersione\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn\CortexM3\ARM_GCC_541\Release\Design02.elf"
+cyelftool.exe -S "C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_IMU_LSM6DSRX_LIS2MDL\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn\CortexM3\ARM_GCC_541\Release\Design02.elf"
 Flash used: 3326 of 262144 bytes (1,3%).
 SRAM used: 2545 of 65536 bytes (3,9%). Stack: 2048 bytes. Heap: 128 bytes.
---------------- Build Succeeded: 06/09/2023 12:55:00 ---------------
+--------------- Build Succeeded: 10/16/2023 16:59:32 ---------------

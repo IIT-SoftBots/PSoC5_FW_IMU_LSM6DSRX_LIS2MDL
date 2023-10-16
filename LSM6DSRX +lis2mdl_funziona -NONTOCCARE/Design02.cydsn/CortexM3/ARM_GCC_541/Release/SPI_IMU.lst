@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
   28:Generated_Source\PSoC5/SPI_IMU.c ****     volatile uint8 SPI_IMU_rxBuffer[SPI_IMU_RX_BUFFER_SIZE];
   29:Generated_Source\PSoC5/SPI_IMU.c ****     volatile uint8 SPI_IMU_rxBufferFull;
   30:Generated_Source\PSoC5/SPI_IMU.c ****     volatile uint8 SPI_IMU_rxBufferRead;
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 2
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 2
 
 
   31:Generated_Source\PSoC5/SPI_IMU.c ****     volatile uint8 SPI_IMU_rxBufferWrite;
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
   85:Generated_Source\PSoC5/SPI_IMU.c ****     #if(SPI_IMU_RX_SOFTWARE_BUF_ENABLED)
   86:Generated_Source\PSoC5/SPI_IMU.c ****         SPI_IMU_rxBufferFull  = 0u;
   87:Generated_Source\PSoC5/SPI_IMU.c ****         SPI_IMU_rxBufferRead  = 0u;
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 3
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 3
 
 
   88:Generated_Source\PSoC5/SPI_IMU.c ****         SPI_IMU_rxBufferWrite = 0u;
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  126:Generated_Source\PSoC5/SPI_IMU.c ****     SPI_IMU_TX_STATUS_ACTL_REG  |= SPI_IMU_INT_ENABLE;
   44              		.loc 1 126 0
   45 0010 D378     		ldrb	r3, [r2, #3]	@ zero_extendqisi2
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 4
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 4
 
 
   46 0012 43F01003 		orr	r3, r3, #16
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  151:Generated_Source\PSoC5/SPI_IMU.c **** *
  152:Generated_Source\PSoC5/SPI_IMU.c **** * Global variables:
  153:Generated_Source\PSoC5/SPI_IMU.c **** *  SPI_IMU_initVar - used to check initial configuration, modified on
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 5
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 5
 
 
  154:Generated_Source\PSoC5/SPI_IMU.c **** *  first function call.
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  197:Generated_Source\PSoC5/SPI_IMU.c ****     SPI_IMU_TX_STATUS_ACTL_REG &= ((uint8) ~SPI_IMU_INT_ENABLE);
   86              		.loc 1 197 0
   87 0006 074A     		ldr	r2, .L5
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 6
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 6
 
 
   88 0008 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  131              		.type	SPI_IMU_EnableRxInt, %function
  132              	SPI_IMU_EnableRxInt:
  133              	.LFB31:
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 7
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 7
 
 
  134              		.cfi_startproc
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  214:Generated_Source\PSoC5/SPI_IMU.c **** * Summary:
  215:Generated_Source\PSoC5/SPI_IMU.c **** *  Enable internal Tx interrupt generation.
  216:Generated_Source\PSoC5/SPI_IMU.c **** *
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 8
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 8
 
 
  217:Generated_Source\PSoC5/SPI_IMU.c **** * Parameters:
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  271:Generated_Source\PSoC5/SPI_IMU.c **** *  None.
  272:Generated_Source\PSoC5/SPI_IMU.c **** *
  273:Generated_Source\PSoC5/SPI_IMU.c **** * Theory:
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 9
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 9
 
 
  274:Generated_Source\PSoC5/SPI_IMU.c **** *  Disable the internal Tx interrupt output -or- the interrupt component itself.
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  328:Generated_Source\PSoC5/SPI_IMU.c **** void SPI_IMU_SetTxInterruptMode(uint8 intSrc) 
  329:Generated_Source\PSoC5/SPI_IMU.c **** {
  182              		.loc 1 329 0
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 10
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 10
 
 
  183              		.cfi_startproc
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  354:Generated_Source\PSoC5/SPI_IMU.c ****     SPI_IMU_RX_STATUS_MASK_REG  = intSrc;
  213              		.loc 1 354 0
  214 0000 014B     		ldr	r3, .L15
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 11
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 11
 
 
  215 0002 1870     		strb	r0, [r3]
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  236              		@ link register save eliminated.
  388:Generated_Source\PSoC5/SPI_IMU.c ****     uint8 tmpStatus;
  389:Generated_Source\PSoC5/SPI_IMU.c **** 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 12
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 12
 
 
  390:Generated_Source\PSoC5/SPI_IMU.c ****     #if(SPI_IMU_TX_SOFTWARE_BUF_ENABLED)
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  423:Generated_Source\PSoC5/SPI_IMU.c **** *  SPI_IMU_swStatusRx - used to store in software Rx status register,
  424:Generated_Source\PSoC5/SPI_IMU.c **** *  modified every function call - resets to zero.
  425:Generated_Source\PSoC5/SPI_IMU.c **** *
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 13
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 13
 
 
  426:Generated_Source\PSoC5/SPI_IMU.c **** * Theory:
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  280              		.thumb_func
  281              		.type	SPI_IMU_WriteTxData, %function
  282              	SPI_IMU_WriteTxData:
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 14
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 14
 
 
  283              	.LFB12:
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  505:Generated_Source\PSoC5/SPI_IMU.c ****             if(0u == tmpTxBufferRead)
  506:Generated_Source\PSoC5/SPI_IMU.c ****             {
  507:Generated_Source\PSoC5/SPI_IMU.c ****                 tmpTxBufferRead = (SPI_IMU_TX_BUFFER_SIZE - 1u);
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 15
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 15
 
 
  508:Generated_Source\PSoC5/SPI_IMU.c ****             }
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  294 0002 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
  295 0004 5B07     		lsls	r3, r3, #29
  296 0006 FCD5     		bpl	.L24
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 16
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 16
 
 
  558:Generated_Source\PSoC5/SPI_IMU.c ****         {
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  592:Generated_Source\PSoC5/SPI_IMU.c **** *
  593:Generated_Source\PSoC5/SPI_IMU.c **** * Side Effects:
  594:Generated_Source\PSoC5/SPI_IMU.c **** *  Will return invalid data if the FIFO is empty. The user should Call
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 17
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 17
 
 
  595:Generated_Source\PSoC5/SPI_IMU.c **** *  GetRxBufferSize() and if it returns a non-zero value then it is safe to call
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  327 0004 7047     		bx	lr
  328              	.L32:
  329 0006 00BF     		.align	2
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 18
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 18
 
 
  330              	.L31:
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  675:Generated_Source\PSoC5/SPI_IMU.c ****         if(SPI_IMU_rxBufferRead == SPI_IMU_rxBufferWrite)
  676:Generated_Source\PSoC5/SPI_IMU.c ****         {
  677:Generated_Source\PSoC5/SPI_IMU.c ****             size = 0u;
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 19
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 19
 
 
  678:Generated_Source\PSoC5/SPI_IMU.c ****         }
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  709:Generated_Source\PSoC5/SPI_IMU.c **** *  Software Buffer.
  710:Generated_Source\PSoC5/SPI_IMU.c **** *
  711:Generated_Source\PSoC5/SPI_IMU.c **** * Parameters:
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 20
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 20
 
 
  712:Generated_Source\PSoC5/SPI_IMU.c **** *  None.
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  382 0006 9A07     		lsls	r2, r3, #30
  383 0008 05D4     		bmi	.L38
  755:Generated_Source\PSoC5/SPI_IMU.c ****         {
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 21
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 21
 
 
  756:Generated_Source\PSoC5/SPI_IMU.c ****             size = 0u;
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  781:Generated_Source\PSoC5/SPI_IMU.c **** *  None.
  782:Generated_Source\PSoC5/SPI_IMU.c **** *
  783:Generated_Source\PSoC5/SPI_IMU.c **** * Return:
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 22
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 22
 
 
  784:Generated_Source\PSoC5/SPI_IMU.c **** *  None.
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  819:Generated_Source\PSoC5/SPI_IMU.c ****         SPI_IMU_rxBufferRead  = 0u;
  820:Generated_Source\PSoC5/SPI_IMU.c ****         SPI_IMU_rxBufferWrite = 0u;
  821:Generated_Source\PSoC5/SPI_IMU.c **** 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 23
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 23
 
 
  822:Generated_Source\PSoC5/SPI_IMU.c ****         SPI_IMU_EnableRxInt();
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  858:Generated_Source\PSoC5/SPI_IMU.c **** *  No.
  859:Generated_Source\PSoC5/SPI_IMU.c **** *
  860:Generated_Source\PSoC5/SPI_IMU.c **** *******************************************************************************/
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 24
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 24
 
 
  861:Generated_Source\PSoC5/SPI_IMU.c **** void SPI_IMU_ClearTxBuffer(void) 
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  472              		.cfi_def_cfa_offset 0
  875:Generated_Source\PSoC5/SPI_IMU.c **** 
  473              		.loc 1 875 0
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 25
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 25
 
 
  474 001c FFF7FEBF 		b	CyExitCriticalSection
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  928:Generated_Source\PSoC5/SPI_IMU.c ****     *
  929:Generated_Source\PSoC5/SPI_IMU.c ****     *******************************************************************************/
  930:Generated_Source\PSoC5/SPI_IMU.c ****     void SPI_IMU_TxDisable(void) 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 26
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 26
 
 
  931:Generated_Source\PSoC5/SPI_IMU.c ****     {
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  971:Generated_Source\PSoC5/SPI_IMU.c ****         SPI_IMU_WriteTxData(buffer[bufIndex]);
  505              		.loc 1 971 0
  506 0006 14F8010F 		ldrb	r0, [r4, #1]!	@ zero_extendqisi2
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 27
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 27
 
 
  507              	.LVL18:
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  536              		.cfi_offset 14, -4
  997:Generated_Source\PSoC5/SPI_IMU.c ****     uint8 enableInterrupts;
  998:Generated_Source\PSoC5/SPI_IMU.c **** 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 28
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 28
 
 
  999:Generated_Source\PSoC5/SPI_IMU.c ****     /* Clear Hardware RX FIFO */
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  571 002e 00BF     		.align	2
  572              	.L59:
  573 0030 67650040 		.word	1073767783
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 29
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 29
 
 
  574 0034 54640040 		.word	1073767508
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  621              	.LBE27:
  622              	.LBE26:
  101:Generated_Source\PSoC5/SPI_IMU.c ****     SPI_IMU_RX_STATUS_MASK_REG = SPI_IMU_RX_INIT_INTERRUPTS_MASK;
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 30
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 30
 
 
  623              		.loc 1 101 0
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  171:Generated_Source\PSoC5/SPI_IMU.c **** }
  671              		.loc 1 171 0
  672 0014 FFF7FEBF 		b	SPI_IMU_Enable
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 31
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 31
 
 
  673              	.LVL25:
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
 1039:Generated_Source\PSoC5/SPI_IMU.c **** *
 1040:Generated_Source\PSoC5/SPI_IMU.c **** *******************************************************************************/
 1041:Generated_Source\PSoC5/SPI_IMU.c **** void SPI_IMU_EnableInt(void) 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 32
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 32
 
 
 1042:Generated_Source\PSoC5/SPI_IMU.c **** {
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
 1079:Generated_Source\PSoC5/SPI_IMU.c **** * Parameters:
 1080:Generated_Source\PSoC5/SPI_IMU.c **** *  intSrc: An or'd combination of the desired status bit masks (defined in the
 1081:Generated_Source\PSoC5/SPI_IMU.c **** *  header file).
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 33
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 33
 
 
 1082:Generated_Source\PSoC5/SPI_IMU.c **** *
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
 1108:Generated_Source\PSoC5/SPI_IMU.c **** *  Contents of the status register.
 1109:Generated_Source\PSoC5/SPI_IMU.c **** *
 1110:Generated_Source\PSoC5/SPI_IMU.c **** * Global variables:
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 34
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 34
 
 
 1111:Generated_Source\PSoC5/SPI_IMU.c **** *  SPI_IMU_swStatus - used to store in software status register,
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
 1151:Generated_Source\PSoC5/SPI_IMU.c **** }
  764              		.loc 1 1151 0
  765 000c 00F0EF00 		and	r0, r0, #239
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 35
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 35
 
 
  766              	.LVL29:
@@ -2070,48 +2070,48 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  792 0006 00000000 		.4byte	.Ldebug_abbrev0
  793 000a 04       		.byte	0x4
  794 000b 01       		.uleb128 0x1
- 795 000c 11010000 		.4byte	.LASF52
+ 795 000c 8A010000 		.4byte	.LASF52
  796 0010 0C       		.byte	0xc
- 797 0011 08030000 		.4byte	.LASF53
- 798 0015 E5030000 		.4byte	.LASF54
+ 797 0011 81030000 		.4byte	.LASF53
+ 798 0015 2A000000 		.4byte	.LASF54
  799 0019 18000000 		.4byte	.Ldebug_ranges0+0x18
  800 001d 00000000 		.4byte	0
  801 0021 00000000 		.4byte	.Ldebug_line0
  802 0025 02       		.uleb128 0x2
  803 0026 01       		.byte	0x1
  804 0027 06       		.byte	0x6
- 805 0028 96030000 		.4byte	.LASF0
+ 805 0028 0F040000 		.4byte	.LASF0
  806 002c 02       		.uleb128 0x2
  807 002d 01       		.byte	0x1
  808 002e 08       		.byte	0x8
- 809 002f F7010000 		.4byte	.LASF1
+ 809 002f 70020000 		.4byte	.LASF1
  810 0033 02       		.uleb128 0x2
  811 0034 02       		.byte	0x2
  812 0035 05       		.byte	0x5
- 813 0036 51030000 		.4byte	.LASF2
+ 813 0036 CA030000 		.4byte	.LASF2
  814 003a 02       		.uleb128 0x2
  815 003b 02       		.byte	0x2
  816 003c 07       		.byte	0x7
- 817 003d 6D000000 		.4byte	.LASF3
+ 817 003d E6000000 		.4byte	.LASF3
  818 0041 02       		.uleb128 0x2
  819 0042 04       		.byte	0x4
  820 0043 05       		.byte	0x5
- 821 0044 77030000 		.4byte	.LASF4
+ 821 0044 F0030000 		.4byte	.LASF4
  822 0048 02       		.uleb128 0x2
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 36
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 36
 
 
  823 0049 04       		.byte	0x4
  824 004a 07       		.byte	0x7
- 825 004b 5E020000 		.4byte	.LASF5
+ 825 004b D7020000 		.4byte	.LASF5
  826 004f 02       		.uleb128 0x2
  827 0050 08       		.byte	0x8
  828 0051 05       		.byte	0x5
- 829 0052 EB020000 		.4byte	.LASF6
+ 829 0052 64030000 		.4byte	.LASF6
  830 0056 02       		.uleb128 0x2
  831 0057 08       		.byte	0x8
  832 0058 07       		.byte	0x7
- 833 0059 F0000000 		.4byte	.LASF7
+ 833 0059 69010000 		.4byte	.LASF7
  834 005d 03       		.uleb128 0x3
  835 005e 04       		.byte	0x4
  836 005f 05       		.byte	0x5
@@ -2119,26 +2119,26 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  838 0064 02       		.uleb128 0x2
  839 0065 04       		.byte	0x4
  840 0066 07       		.byte	0x7
- 841 0067 70020000 		.4byte	.LASF8
+ 841 0067 E9020000 		.4byte	.LASF8
  842 006b 04       		.uleb128 0x4
- 843 006c 9F010000 		.4byte	.LASF12
+ 843 006c 18020000 		.4byte	.LASF12
  844 0070 02       		.byte	0x2
  845 0071 E901     		.2byte	0x1e9
  846 0073 2C000000 		.4byte	0x2c
  847 0077 02       		.uleb128 0x2
  848 0078 04       		.byte	0x4
  849 0079 04       		.byte	0x4
- 850 007a EA000000 		.4byte	.LASF9
+ 850 007a 63010000 		.4byte	.LASF9
  851 007e 02       		.uleb128 0x2
  852 007f 08       		.byte	0x8
  853 0080 04       		.byte	0x4
- 854 0081 05020000 		.4byte	.LASF10
+ 854 0081 7E020000 		.4byte	.LASF10
  855 0085 02       		.uleb128 0x2
  856 0086 01       		.byte	0x1
  857 0087 08       		.byte	0x8
  858 0088 25000000 		.4byte	.LASF11
  859 008c 04       		.uleb128 0x4
- 860 008d 0C010000 		.4byte	.LASF13
+ 860 008d 85010000 		.4byte	.LASF13
  861 0091 02       		.byte	0x2
  862 0092 9302     		.2byte	0x293
  863 0094 98000000 		.4byte	0x98
@@ -2147,62 +2147,62 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  866 009d 02       		.uleb128 0x2
  867 009e 08       		.byte	0x8
  868 009f 04       		.byte	0x4
- 869 00a0 8A030000 		.4byte	.LASF14
+ 869 00a0 03040000 		.4byte	.LASF14
  870 00a4 02       		.uleb128 0x2
  871 00a5 04       		.byte	0x4
  872 00a6 07       		.byte	0x7
- 873 00a7 CE020000 		.4byte	.LASF15
+ 873 00a7 47030000 		.4byte	.LASF15
  874 00ab 06       		.uleb128 0x6
- 875 00ac 95000000 		.4byte	.LASF16
+ 875 00ac 0E010000 		.4byte	.LASF16
  876 00b0 01       		.byte	0x1
  877 00b1 FC       		.byte	0xfc
  878 00b2 01       		.byte	0x1
  879 00b3 06       		.uleb128 0x6
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 37
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 37
 
 
- 880 00b4 D7020000 		.4byte	.LASF17
+ 880 00b4 50030000 		.4byte	.LASF17
  881 00b8 01       		.byte	0x1
  882 00b9 E3       		.byte	0xe3
  883 00ba 01       		.byte	0x1
  884 00bb 07       		.uleb128 0x7
- 885 00bc 80000000 		.4byte	.LASF18
+ 885 00bc F9000000 		.4byte	.LASF18
  886 00c0 01       		.byte	0x1
  887 00c1 2E01     		.2byte	0x12e
  888 00c3 01       		.byte	0x1
  889 00c4 07       		.uleb128 0x7
- 890 00c5 62030000 		.4byte	.LASF19
+ 890 00c5 DB030000 		.4byte	.LASF19
  891 00c9 01       		.byte	0x1
  892 00ca 1501     		.2byte	0x115
  893 00cc 01       		.byte	0x1
  894 00cd 08       		.uleb128 0x8
- 895 00ce 3C030000 		.4byte	.LASF20
+ 895 00ce B5030000 		.4byte	.LASF20
  896 00d2 01       		.byte	0x1
  897 00d3 B501     		.2byte	0x1b5
  898 00d5 6B000000 		.4byte	0x6b
  899 00d9 01       		.byte	0x1
  900 00da EB000000 		.4byte	0xeb
  901 00de 09       		.uleb128 0x9
- 902 00df 80030000 		.4byte	.LASF22
+ 902 00df F9030000 		.4byte	.LASF22
  903 00e3 01       		.byte	0x1
  904 00e4 B701     		.2byte	0x1b7
  905 00e6 6B000000 		.4byte	0x6b
  906 00ea 00       		.byte	0
  907 00eb 08       		.uleb128 0x8
- 908 00ec E2010000 		.4byte	.LASF21
+ 908 00ec 5B020000 		.4byte	.LASF21
  909 00f0 01       		.byte	0x1
  910 00f1 8201     		.2byte	0x182
  911 00f3 6B000000 		.4byte	0x6b
  912 00f7 01       		.byte	0x1
  913 00f8 09010000 		.4byte	0x109
  914 00fc 09       		.uleb128 0x9
- 915 00fd 80030000 		.4byte	.LASF22
+ 915 00fd F9030000 		.4byte	.LASF22
  916 0101 01       		.byte	0x1
  917 0102 8401     		.2byte	0x184
  918 0104 6B000000 		.4byte	0x6b
  919 0108 00       		.byte	0
  920 0109 0A       		.uleb128 0xa
- 921 010a F9020000 		.4byte	.LASF23
+ 921 010a 72030000 		.4byte	.LASF23
  922 010e 01       		.byte	0x1
  923 010f 78       		.byte	0x78
  924 0110 00000000 		.4byte	.LFB1
@@ -2211,14 +2211,14 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  927 0119 9C       		.byte	0x9c
  928 011a 40010000 		.4byte	0x140
  929 011e 0B       		.uleb128 0xb
- 930 011f D1010000 		.4byte	.LASF25
+ 930 011f 4A020000 		.4byte	.LASF25
  931 0123 01       		.byte	0x1
  932 0124 7A       		.byte	0x7a
  933 0125 6B000000 		.4byte	0x6b
  934 0129 00000000 		.4byte	.LLST0
  935 012d 0C       		.uleb128 0xc
  936 012e 06000000 		.4byte	.LVL0
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 38
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 38
 
 
  937 0132 9E040000 		.4byte	0x49e
@@ -2227,7 +2227,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  940 013b A9040000 		.4byte	0x4a9
  941 013f 00       		.byte	0
  942 0140 0A       		.uleb128 0xa
- 943 0141 13020000 		.4byte	.LASF24
+ 943 0141 8C020000 		.4byte	.LASF24
  944 0145 01       		.byte	0x1
  945 0146 C0       		.byte	0xc0
  946 0147 00000000 		.4byte	.LFB3
@@ -2236,7 +2236,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  949 0150 9C       		.byte	0x9c
  950 0151 77010000 		.4byte	0x177
  951 0155 0B       		.uleb128 0xb
- 952 0156 D1010000 		.4byte	.LASF25
+ 952 0156 4A020000 		.4byte	.LASF25
  953 015a 01       		.byte	0x1
  954 015b C2       		.byte	0xc2
  955 015c 6B000000 		.4byte	0x6b
@@ -2249,7 +2249,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  962 0172 A9040000 		.4byte	0x4a9
  963 0176 00       		.byte	0
  964 0177 0E       		.uleb128 0xe
- 965 0178 A2030000 		.4byte	.LASF26
+ 965 0178 1B040000 		.4byte	.LASF26
  966 017c 01       		.byte	0x1
  967 017d 4801     		.2byte	0x148
  968 017f 00000000 		.4byte	.LFB8
@@ -2258,7 +2258,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  971 0188 9C       		.byte	0x9c
  972 0189 9C010000 		.4byte	0x19c
  973 018d 0F       		.uleb128 0xf
- 974 018e 0C020000 		.4byte	.LASF28
+ 974 018e 85020000 		.4byte	.LASF28
  975 0192 01       		.byte	0x1
  976 0193 4801     		.2byte	0x148
  977 0195 6B000000 		.4byte	0x6b
@@ -2266,7 +2266,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  979 019a 50       		.byte	0x50
  980 019b 00       		.byte	0
  981 019c 0E       		.uleb128 0xe
- 982 019d BD030000 		.4byte	.LASF27
+ 982 019d 36040000 		.4byte	.LASF27
  983 01a1 01       		.byte	0x1
  984 01a2 6001     		.2byte	0x160
  985 01a4 00000000 		.4byte	.LFB9
@@ -2275,10 +2275,10 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  988 01ad 9C       		.byte	0x9c
  989 01ae C1010000 		.4byte	0x1c1
  990 01b2 0F       		.uleb128 0xf
- 991 01b3 0C020000 		.4byte	.LASF28
+ 991 01b3 85020000 		.4byte	.LASF28
  992 01b7 01       		.byte	0x1
  993 01b8 6001     		.2byte	0x160
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 39
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 39
 
 
  994 01ba 6B000000 		.4byte	0x6b
@@ -2310,7 +2310,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  1020 01f5 50       		.byte	0x50
  1021 01f6 00       		.byte	0
  1022 01f7 0E       		.uleb128 0xe
- 1023 01f8 A5010000 		.4byte	.LASF29
+ 1023 01f8 1E020000 		.4byte	.LASF29
  1024 01fc 01       		.byte	0x1
  1025 01fd EE01     		.2byte	0x1ee
  1026 01ff 00000000 		.4byte	.LFB12
@@ -2319,7 +2319,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  1029 0208 9C       		.byte	0x9c
  1030 0209 1C020000 		.4byte	0x21c
  1031 020d 0F       		.uleb128 0xf
- 1032 020e 66000000 		.4byte	.LASF30
+ 1032 020e DF000000 		.4byte	.LASF30
  1033 0212 01       		.byte	0x1
  1034 0213 EE01     		.2byte	0x1ee
  1035 0215 6B000000 		.4byte	0x6b
@@ -2327,7 +2327,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  1037 021a 50       		.byte	0x50
  1038 021b 00       		.byte	0
  1039 021c 12       		.uleb128 0x12
- 1040 021d 53000000 		.4byte	.LASF32
+ 1040 021d CC000000 		.4byte	.LASF32
  1041 0221 01       		.byte	0x1
  1042 0222 5A02     		.2byte	0x25a
  1043 0224 6B000000 		.4byte	0x6b
@@ -2337,8 +2337,8 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  1047 0231 9C       		.byte	0x9c
  1048 0232 45020000 		.4byte	0x245
  1049 0236 13       		.uleb128 0x13
- 1050 0237 95020000 		.4byte	.LASF31
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 40
+ 1050 0237 0E030000 		.4byte	.LASF31
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 40
 
 
  1051 023b 01       		.byte	0x1
@@ -2348,7 +2348,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  1055 0243 50       		.byte	0x50
  1056 0244 00       		.byte	0
  1057 0245 12       		.uleb128 0x12
- 1058 0246 7D020000 		.4byte	.LASF33
+ 1058 0246 F6020000 		.4byte	.LASF33
  1059 024a 01       		.byte	0x1
  1060 024b 9A02     		.2byte	0x29a
  1061 024d 6B000000 		.4byte	0x6b
@@ -2358,14 +2358,14 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  1065 025a 9C       		.byte	0x9c
  1066 025b 70020000 		.4byte	0x270
  1067 025f 14       		.uleb128 0x14
- 1068 0260 07010000 		.4byte	.LASF34
+ 1068 0260 80010000 		.4byte	.LASF34
  1069 0264 01       		.byte	0x1
  1070 0265 9C02     		.2byte	0x29c
  1071 0267 6B000000 		.4byte	0x6b
  1072 026b 26000000 		.4byte	.LLST2
  1073 026f 00       		.byte	0
  1074 0270 12       		.uleb128 0x12
- 1075 0271 A9000000 		.4byte	.LASF35
+ 1075 0271 22010000 		.4byte	.LASF35
  1076 0275 01       		.byte	0x1
  1077 0276 D702     		.2byte	0x2d7
  1078 0278 6B000000 		.4byte	0x6b
@@ -2375,14 +2375,14 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  1082 0285 9C       		.byte	0x9c
  1083 0286 9B020000 		.4byte	0x29b
  1084 028a 14       		.uleb128 0x14
- 1085 028b 07010000 		.4byte	.LASF34
+ 1085 028b 80010000 		.4byte	.LASF34
  1086 028f 01       		.byte	0x1
  1087 0290 D902     		.2byte	0x2d9
  1088 0292 6B000000 		.4byte	0x6b
  1089 0296 42000000 		.4byte	.LLST3
  1090 029a 00       		.byte	0
  1091 029b 15       		.uleb128 0x15
- 1092 029c 31020000 		.4byte	.LASF55
+ 1092 029c AA020000 		.4byte	.LASF55
  1093 02a0 01       		.byte	0x1
  1094 02a1 2603     		.2byte	0x326
  1095 02a3 00000000 		.4byte	.LFB16
@@ -2390,7 +2390,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  1097 02ab 01       		.uleb128 0x1
  1098 02ac 9C       		.byte	0x9c
  1099 02ad 0E       		.uleb128 0xe
- 1100 02ae 2A000000 		.4byte	.LASF36
+ 1100 02ae A3000000 		.4byte	.LASF36
  1101 02b2 01       		.byte	0x1
  1102 02b3 5D03     		.2byte	0x35d
  1103 02b5 00000000 		.4byte	.LFB17
@@ -2398,11 +2398,11 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  1105 02bd 01       		.uleb128 0x1
  1106 02be 9C       		.byte	0x9c
  1107 02bf E6020000 		.4byte	0x2e6
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 41
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 41
 
 
  1108 02c3 14       		.uleb128 0x14
- 1109 02c4 D1010000 		.4byte	.LASF25
+ 1109 02c4 4A020000 		.4byte	.LASF25
  1110 02c8 01       		.byte	0x1
  1111 02c9 5F03     		.2byte	0x35f
  1112 02cb 6B000000 		.4byte	0x6b
@@ -2415,7 +2415,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  1119 02e1 A9040000 		.4byte	0x4a9
  1120 02e5 00       		.byte	0
  1121 02e6 0E       		.uleb128 0xe
- 1122 02e7 20020000 		.4byte	.LASF37
+ 1122 02e7 99020000 		.4byte	.LASF37
  1123 02eb 01       		.byte	0x1
  1124 02ec C203     		.2byte	0x3c2
  1125 02ee 00000000 		.4byte	.LFB18
@@ -2424,19 +2424,19 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  1128 02f7 9C       		.byte	0x9c
  1129 02f8 36030000 		.4byte	0x336
  1130 02fc 16       		.uleb128 0x16
- 1131 02fd 5B030000 		.4byte	.LASF38
+ 1131 02fd D4030000 		.4byte	.LASF38
  1132 0301 01       		.byte	0x1
  1133 0302 C203     		.2byte	0x3c2
  1134 0304 36030000 		.4byte	0x336
  1135 0308 73000000 		.4byte	.LLST5
  1136 030c 16       		.uleb128 0x16
- 1137 030d C7010000 		.4byte	.LASF39
+ 1137 030d 40020000 		.4byte	.LASF39
  1138 0311 01       		.byte	0x1
  1139 0312 C203     		.2byte	0x3c2
  1140 0314 6B000000 		.4byte	0x6b
  1141 0318 94000000 		.4byte	.LLST6
  1142 031c 14       		.uleb128 0x14
- 1143 031d C5020000 		.4byte	.LASF40
+ 1143 031d 3E030000 		.4byte	.LASF40
  1144 0321 01       		.byte	0x1
  1145 0322 C503     		.2byte	0x3c5
  1146 0324 6B000000 		.4byte	0x6b
@@ -2458,12 +2458,12 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  1162 034d 3C000000 		.4byte	.LFE19-.LFB19
  1163 0351 01       		.uleb128 0x1
  1164 0352 9C       		.byte	0x9c
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 42
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 42
 
 
  1165 0353 7A030000 		.4byte	0x37a
  1166 0357 14       		.uleb128 0x14
- 1167 0358 D1010000 		.4byte	.LASF25
+ 1167 0358 4A020000 		.4byte	.LASF25
  1168 035c 01       		.byte	0x1
  1169 035d E503     		.2byte	0x3e5
  1170 035f 6B000000 		.4byte	0x6b
@@ -2476,7 +2476,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  1177 0375 A9040000 		.4byte	0x4a9
  1178 0379 00       		.byte	0
  1179 037a 0A       		.uleb128 0xa
- 1180 037b D8030000 		.4byte	.LASF42
+ 1180 037b 51040000 		.4byte	.LASF42
  1181 037f 01       		.byte	0x1
  1182 0380 3F       		.byte	0x3f
  1183 0381 00000000 		.4byte	.LFB0
@@ -2516,9 +2516,9 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  1217 03d6 41030000 		.4byte	0x341
  1218 03da 00       		.byte	0
  1219 03db 0A       		.uleb128 0xa
- 1220 03dc B9010000 		.4byte	.LASF43
+ 1220 03dc 32020000 		.4byte	.LASF43
  1221 03e0 01       		.byte	0x1
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 43
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 43
 
 
  1222 03e1 A3       		.byte	0xa3
@@ -2535,7 +2535,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  1233 03fe 09010000 		.4byte	0x109
  1234 0402 00       		.byte	0
  1235 0403 07       		.uleb128 0x7
- 1236 0404 B2020000 		.4byte	.LASF44
+ 1236 0404 2B030000 		.4byte	.LASF44
  1237 0408 01       		.byte	0x1
  1238 0409 2904     		.2byte	0x429
  1239 040b 01       		.byte	0x1
@@ -2546,7 +2546,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  1244 0419 01       		.uleb128 0x1
  1245 041a 9C       		.byte	0x9c
  1246 041b 0E       		.uleb128 0xe
- 1247 041c D1000000 		.4byte	.LASF45
+ 1247 041c 4A010000 		.4byte	.LASF45
  1248 0420 01       		.byte	0x1
  1249 0421 4204     		.2byte	0x442
  1250 0423 00000000 		.4byte	.LFB22
@@ -2555,7 +2555,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  1253 042c 9C       		.byte	0x9c
  1254 042d 40040000 		.4byte	0x440
  1255 0431 0F       		.uleb128 0xf
- 1256 0432 0C020000 		.4byte	.LASF28
+ 1256 0432 85020000 		.4byte	.LASF28
  1257 0436 01       		.byte	0x1
  1258 0437 4204     		.2byte	0x442
  1259 0439 6B000000 		.4byte	0x6b
@@ -2563,7 +2563,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  1261 043e 50       		.byte	0x50
  1262 043f 00       		.byte	0
  1263 0440 12       		.uleb128 0x12
- 1264 0441 29030000 		.4byte	.LASF46
+ 1264 0441 A2030000 		.4byte	.LASF46
  1265 0445 01       		.byte	0x1
  1266 0446 6504     		.2byte	0x465
  1267 0448 6B000000 		.4byte	0x6b
@@ -2573,17 +2573,17 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  1271 0455 9C       		.byte	0x9c
  1272 0456 6B040000 		.4byte	0x46b
  1273 045a 14       		.uleb128 0x14
- 1274 045b 80030000 		.4byte	.LASF22
+ 1274 045b F9030000 		.4byte	.LASF22
  1275 045f 01       		.byte	0x1
  1276 0460 6704     		.2byte	0x467
  1277 0462 6B000000 		.4byte	0x6b
  1278 0466 FF000000 		.4byte	.LLST9
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 44
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 44
 
 
  1279 046a 00       		.byte	0
  1280 046b 1F       		.uleb128 0x1f
- 1281 046c C1000000 		.4byte	.LASF47
+ 1281 046c 3A010000 		.4byte	.LASF47
  1282 0470 01       		.byte	0x1
  1283 0471 22       		.byte	0x22
  1284 0472 6B000000 		.4byte	0x6b
@@ -2591,7 +2591,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  1286 0477 03       		.byte	0x3
  1287 0478 00000000 		.4byte	SPI_IMU_initVar
  1288 047c 1F       		.uleb128 0x1f
- 1289 047d 40000000 		.4byte	.LASF48
+ 1289 047d B9000000 		.4byte	.LASF48
  1290 0481 01       		.byte	0x1
  1291 0482 24       		.byte	0x24
  1292 0483 98000000 		.4byte	0x98
@@ -2607,13 +2607,13 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  1302 0499 03       		.byte	0x3
  1303 049a 00000000 		.4byte	SPI_IMU_swStatusRx
  1304 049e 20       		.uleb128 0x20
- 1305 049f 47020000 		.4byte	.LASF50
- 1306 04a3 47020000 		.4byte	.LASF50
+ 1305 049f C0020000 		.4byte	.LASF50
+ 1306 04a3 C0020000 		.4byte	.LASF50
  1307 04a7 03       		.byte	0x3
  1308 04a8 7D       		.byte	0x7d
  1309 04a9 20       		.uleb128 0x20
- 1310 04aa 9C020000 		.4byte	.LASF51
- 1311 04ae 9C020000 		.4byte	.LASF51
+ 1310 04aa 15030000 		.4byte	.LASF51
+ 1311 04ae 15030000 		.4byte	.LASF51
  1312 04b2 03       		.byte	0x3
  1313 04b3 7E       		.byte	0x7e
  1314 04b4 00       		.byte	0
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  1333 0010 17       		.uleb128 0x17
  1334 0011 00       		.byte	0
  1335 0012 00       		.byte	0
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 45
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 45
 
 
  1336 0013 02       		.uleb128 0x2
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  1390 0049 19       		.uleb128 0x19
  1391 004a 20       		.uleb128 0x20
  1392 004b 0B       		.uleb128 0xb
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 46
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 46
 
 
  1393 004c 00       		.byte	0
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  1447 0082 2E       		.uleb128 0x2e
  1448 0083 01       		.byte	0x1
  1449 0084 3F       		.uleb128 0x3f
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 47
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 47
 
 
  1450 0085 19       		.uleb128 0x19
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  1504 00c1 00       		.byte	0
  1505 00c2 00       		.byte	0
  1506 00c3 0E       		.uleb128 0xe
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 48
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 48
 
 
  1507 00c4 2E       		.uleb128 0x2e
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  1561 00fc 00       		.byte	0
  1562 00fd 00       		.byte	0
  1563 00fe 11       		.uleb128 0x11
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 49
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 49
 
 
  1564 00ff 34       		.uleb128 0x34
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  1618 0136 0E       		.uleb128 0xe
  1619 0137 3A       		.uleb128 0x3a
  1620 0138 0B       		.uleb128 0xb
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 50
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 50
 
 
  1621 0139 3B       		.uleb128 0x3b
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  1675 0170 00       		.byte	0
  1676 0171 18       		.uleb128 0x18
  1677 0172 26       		.uleb128 0x26
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 51
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 51
 
 
  1678 0173 00       		.byte	0
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  1732 01a9 0B       		.uleb128 0xb
  1733 01aa 01       		.byte	0x1
  1734 01ab 11       		.uleb128 0x11
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 52
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 52
 
 
  1735 01ac 01       		.uleb128 0x1
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  1789 01e3 00       		.byte	0
  1790              		.section	.debug_loc,"",%progbits
  1791              	.Ldebug_loc0:
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 53
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 53
 
 
  1792              	.LLST0:
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  1846 0082 16000000 		.4byte	.LFE18
  1847 0086 0400     		.2byte	0x4
  1848 0088 F3       		.byte	0xf3
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 54
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 54
 
 
  1849 0089 01       		.uleb128 0x1
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  1903 00fb 00000000 		.4byte	0
  1904              	.LLST9:
  1905 00ff 04000000 		.4byte	.LVL27
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 55
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 55
 
 
  1906 0103 0C000000 		.4byte	.LVL28
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  1960 0090 00000000 		.4byte	.LFB21
  1961 0094 02000000 		.4byte	.LFE21-.LFB21
  1962 0098 00000000 		.4byte	.LFB22
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 56
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 56
 
 
  1963 009c 14000000 		.4byte	.LFE22-.LFB22
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  2017              	.Ldebug_line0:
  2018 0000 01020000 		.section	.debug_str,"MS",%progbits,1
  2018      02004F00 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 57
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 57
 
 
  2018      00000201 
@@ -3379,302 +3379,306 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 1
  2023              	.LASF11:
  2024 0025 63686172 		.ascii	"char\000"
  2024      00
- 2025              	.LASF36:
- 2026 002a 5350495F 		.ascii	"SPI_IMU_ClearTxBuffer\000"
- 2026      494D555F 
- 2026      436C6561 
- 2026      72547842 
- 2026      75666665 
- 2027              	.LASF48:
- 2028 0040 5350495F 		.ascii	"SPI_IMU_swStatusTx\000"
- 2028      494D555F 
- 2028      73775374 
- 2028      61747573 
- 2028      547800
- 2029              	.LASF32:
- 2030 0053 5350495F 		.ascii	"SPI_IMU_ReadRxData\000"
+ 2025              	.LASF54:
+ 2026 002a 433A5C55 		.ascii	"C:\\Users\\mgnocco\\Documents\\Git\\PSoC5\\PSoC5_FW"
+ 2026      73657273 
+ 2026      5C6D676E 
+ 2026      6F63636F 
+ 2026      5C446F63 
+ 2027 0057 5F494D55 		.ascii	"_IMU_LSM6DSRX_LIS2MDL\\LSM6DSRX +lis2mdl_funziona -"
+ 2027      5F4C534D 
+ 2027      36445352 
+ 2027      585F4C49 
+ 2027      53324D44 
+ 2028 0089 4E4F4E54 		.ascii	"NONTOCCARE\\Design02.cydsn\000"
+ 2028      4F434341 
+ 2028      52455C44 
+ 2028      65736967 
+ 2028      6E30322E 
+ 2029              	.LASF36:
+ 2030 00a3 5350495F 		.ascii	"SPI_IMU_ClearTxBuffer\000"
  2030      494D555F 
- 2030      52656164 
- 2030      52784461 
- 2030      746100
- 2031              	.LASF30:
- 2032 0066 74784461 		.ascii	"txData\000"
- 2032      746100
- 2033              	.LASF3:
- 2034 006d 73686F72 		.ascii	"short unsigned int\000"
- 2034      7420756E 
- 2034      7369676E 
- 2034      65642069 
- 2034      6E7400
- 2035              	.LASF18:
- 2036 0080 5350495F 		.ascii	"SPI_IMU_DisableRxInt\000"
- 2036      494D555F 
- 2036      44697361 
- 2036      626C6552 
- 2036      78496E74 
- 2037              	.LASF16:
- 2038 0095 5350495F 		.ascii	"SPI_IMU_EnableRxInt\000"
- 2038      494D555F 
- 2038      456E6162 
- 2038      6C655278 
- 2038      496E7400 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 58
+ 2030      436C6561 
+ 2030      72547842 
+ 2030      75666665 
+ 2031              	.LASF48:
+ 2032 00b9 5350495F 		.ascii	"SPI_IMU_swStatusTx\000"
+ 2032      494D555F 
+ 2032      73775374 
+ 2032      61747573 
+ 2032      547800
+ 2033              	.LASF32:
+ 2034 00cc 5350495F 		.ascii	"SPI_IMU_ReadRxData\000"
+ 2034      494D555F 
+ 2034      52656164 
+ 2034      52784461 
+ 2034      746100
+ 2035              	.LASF30:
+ 2036 00df 74784461 		.ascii	"txData\000"
+ 2036      746100
+ 2037              	.LASF3:
+ 2038 00e6 73686F72 		.ascii	"short unsigned int\000"
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 58
 
 
- 2039              	.LASF35:
- 2040 00a9 5350495F 		.ascii	"SPI_IMU_GetTxBufferSize\000"
+ 2038      7420756E 
+ 2038      7369676E 
+ 2038      65642069 
+ 2038      6E7400
+ 2039              	.LASF18:
+ 2040 00f9 5350495F 		.ascii	"SPI_IMU_DisableRxInt\000"
  2040      494D555F 
- 2040      47657454 
- 2040      78427566 
- 2040      66657253 
- 2041              	.LASF47:
- 2042 00c1 5350495F 		.ascii	"SPI_IMU_initVar\000"
+ 2040      44697361 
+ 2040      626C6552 
+ 2040      78496E74 
+ 2041              	.LASF16:
+ 2042 010e 5350495F 		.ascii	"SPI_IMU_EnableRxInt\000"
  2042      494D555F 
- 2042      696E6974 
- 2042      56617200 
- 2043              	.LASF45:
- 2044 00d1 5350495F 		.ascii	"SPI_IMU_SetInterruptMode\000"
+ 2042      456E6162 
+ 2042      6C655278 
+ 2042      496E7400 
+ 2043              	.LASF35:
+ 2044 0122 5350495F 		.ascii	"SPI_IMU_GetTxBufferSize\000"
  2044      494D555F 
- 2044      53657449 
- 2044      6E746572 
- 2044      72757074 
- 2045              	.LASF9:
- 2046 00ea 666C6F61 		.ascii	"float\000"
- 2046      7400
- 2047              	.LASF7:
- 2048 00f0 6C6F6E67 		.ascii	"long long unsigned int\000"
- 2048      206C6F6E 
- 2048      6720756E 
- 2048      7369676E 
- 2048      65642069 
- 2049              	.LASF34:
- 2050 0107 73697A65 		.ascii	"size\000"
- 2050      00
- 2051              	.LASF13:
- 2052 010c 72656738 		.ascii	"reg8\000"
- 2052      00
- 2053              	.LASF52:
- 2054 0111 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 2054      43313120 
- 2054      352E342E 
- 2054      31203230 
- 2054      31363036 
- 2055 0144 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 2055      20726576 
- 2055      6973696F 
- 2055      6E203233 
- 2055      37373135 
- 2056 0177 73202D66 		.ascii	"s -ffunction-sections -ffat-lto-objects\000"
- 2056      66756E63 
- 2056      74696F6E 
- 2056      2D736563 
- 2056      74696F6E 
- 2057              	.LASF12:
- 2058 019f 75696E74 		.ascii	"uint8\000"
- 2058      3800
- 2059              	.LASF29:
- 2060 01a5 5350495F 		.ascii	"SPI_IMU_WriteTxData\000"
- 2060      494D555F 
- 2060      57726974 
- 2060      65547844 
- 2060      61746100 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 59
+ 2044      47657454 
+ 2044      78427566 
+ 2044      66657253 
+ 2045              	.LASF47:
+ 2046 013a 5350495F 		.ascii	"SPI_IMU_initVar\000"
+ 2046      494D555F 
+ 2046      696E6974 
+ 2046      56617200 
+ 2047              	.LASF45:
+ 2048 014a 5350495F 		.ascii	"SPI_IMU_SetInterruptMode\000"
+ 2048      494D555F 
+ 2048      53657449 
+ 2048      6E746572 
+ 2048      72757074 
+ 2049              	.LASF9:
+ 2050 0163 666C6F61 		.ascii	"float\000"
+ 2050      7400
+ 2051              	.LASF7:
+ 2052 0169 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 2052      206C6F6E 
+ 2052      6720756E 
+ 2052      7369676E 
+ 2052      65642069 
+ 2053              	.LASF34:
+ 2054 0180 73697A65 		.ascii	"size\000"
+ 2054      00
+ 2055              	.LASF13:
+ 2056 0185 72656738 		.ascii	"reg8\000"
+ 2056      00
+ 2057              	.LASF52:
+ 2058 018a 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 2058      43313120 
+ 2058      352E342E 
+ 2058      31203230 
+ 2058      31363036 
+ 2059 01bd 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 2059      20726576 
+ 2059      6973696F 
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 59
 
 
- 2061              	.LASF43:
- 2062 01b9 5350495F 		.ascii	"SPI_IMU_Start\000"
- 2062      494D555F 
- 2062      53746172 
- 2062      7400
- 2063              	.LASF39:
- 2064 01c7 62797465 		.ascii	"byteCount\000"
- 2064      436F756E 
- 2064      7400
- 2065              	.LASF25:
- 2066 01d1 656E6162 		.ascii	"enableInterrupts\000"
- 2066      6C65496E 
- 2066      74657272 
- 2066      75707473 
- 2066      00
- 2067              	.LASF21:
- 2068 01e2 5350495F 		.ascii	"SPI_IMU_ReadTxStatus\000"
- 2068      494D555F 
- 2068      52656164 
- 2068      54785374 
- 2068      61747573 
- 2069              	.LASF1:
- 2070 01f7 756E7369 		.ascii	"unsigned char\000"
- 2070      676E6564 
- 2070      20636861 
- 2070      7200
- 2071              	.LASF10:
- 2072 0205 646F7562 		.ascii	"double\000"
- 2072      6C6500
- 2073              	.LASF28:
- 2074 020c 696E7453 		.ascii	"intSrc\000"
- 2074      726300
- 2075              	.LASF24:
- 2076 0213 5350495F 		.ascii	"SPI_IMU_Stop\000"
- 2076      494D555F 
- 2076      53746F70 
- 2076      00
- 2077              	.LASF37:
- 2078 0220 5350495F 		.ascii	"SPI_IMU_PutArray\000"
- 2078      494D555F 
- 2078      50757441 
- 2078      72726179 
- 2078      00
- 2079              	.LASF55:
- 2080 0231 5350495F 		.ascii	"SPI_IMU_ClearRxBuffer\000"
+ 2059      6E203233 
+ 2059      37373135 
+ 2060 01f0 73202D66 		.ascii	"s -ffunction-sections -ffat-lto-objects\000"
+ 2060      66756E63 
+ 2060      74696F6E 
+ 2060      2D736563 
+ 2060      74696F6E 
+ 2061              	.LASF12:
+ 2062 0218 75696E74 		.ascii	"uint8\000"
+ 2062      3800
+ 2063              	.LASF29:
+ 2064 021e 5350495F 		.ascii	"SPI_IMU_WriteTxData\000"
+ 2064      494D555F 
+ 2064      57726974 
+ 2064      65547844 
+ 2064      61746100 
+ 2065              	.LASF43:
+ 2066 0232 5350495F 		.ascii	"SPI_IMU_Start\000"
+ 2066      494D555F 
+ 2066      53746172 
+ 2066      7400
+ 2067              	.LASF39:
+ 2068 0240 62797465 		.ascii	"byteCount\000"
+ 2068      436F756E 
+ 2068      7400
+ 2069              	.LASF25:
+ 2070 024a 656E6162 		.ascii	"enableInterrupts\000"
+ 2070      6C65496E 
+ 2070      74657272 
+ 2070      75707473 
+ 2070      00
+ 2071              	.LASF21:
+ 2072 025b 5350495F 		.ascii	"SPI_IMU_ReadTxStatus\000"
+ 2072      494D555F 
+ 2072      52656164 
+ 2072      54785374 
+ 2072      61747573 
+ 2073              	.LASF1:
+ 2074 0270 756E7369 		.ascii	"unsigned char\000"
+ 2074      676E6564 
+ 2074      20636861 
+ 2074      7200
+ 2075              	.LASF10:
+ 2076 027e 646F7562 		.ascii	"double\000"
+ 2076      6C6500
+ 2077              	.LASF28:
+ 2078 0285 696E7453 		.ascii	"intSrc\000"
+ 2078      726300
+ 2079              	.LASF24:
+ 2080 028c 5350495F 		.ascii	"SPI_IMU_Stop\000"
  2080      494D555F 
- 2080      436C6561 
- 2080      72527842 
- 2080      75666665 
- 2081              	.LASF50:
- 2082 0247 4379456E 		.ascii	"CyEnterCriticalSection\000"
- 2082      74657243 
- 2082      72697469 
- 2082      63616C53 
- 2082      65637469 
- 2083              	.LASF5:
- 2084 025e 6C6F6E67 		.ascii	"long unsigned int\000"
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 60
+ 2080      53746F70 
+ 2080      00
+ 2081              	.LASF37:
+ 2082 0299 5350495F 		.ascii	"SPI_IMU_PutArray\000"
+ 2082      494D555F 
+ 2082      50757441 
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 60
 
 
- 2084      20756E73 
- 2084      69676E65 
- 2084      6420696E 
- 2084      7400
- 2085              	.LASF8:
- 2086 0270 756E7369 		.ascii	"unsigned int\000"
- 2086      676E6564 
- 2086      20696E74 
- 2086      00
- 2087              	.LASF33:
- 2088 027d 5350495F 		.ascii	"SPI_IMU_GetRxBufferSize\000"
- 2088      494D555F 
- 2088      47657452 
- 2088      78427566 
- 2088      66657253 
- 2089              	.LASF31:
- 2090 0295 72784461 		.ascii	"rxData\000"
- 2090      746100
- 2091              	.LASF51:
- 2092 029c 43794578 		.ascii	"CyExitCriticalSection\000"
- 2092      69744372 
- 2092      69746963 
- 2092      616C5365 
- 2092      6374696F 
- 2093              	.LASF44:
- 2094 02b2 5350495F 		.ascii	"SPI_IMU_DisableInt\000"
- 2094      494D555F 
- 2094      44697361 
- 2094      626C6549 
- 2094      6E7400
- 2095              	.LASF40:
- 2096 02c5 62756649 		.ascii	"bufIndex\000"
- 2096      6E646578 
- 2096      00
- 2097              	.LASF15:
- 2098 02ce 73697A65 		.ascii	"sizetype\000"
- 2098      74797065 
- 2098      00
- 2099              	.LASF17:
- 2100 02d7 5350495F 		.ascii	"SPI_IMU_EnableTxInt\000"
- 2100      494D555F 
- 2100      456E6162 
- 2100      6C655478 
- 2100      496E7400 
- 2101              	.LASF6:
- 2102 02eb 6C6F6E67 		.ascii	"long long int\000"
- 2102      206C6F6E 
- 2102      6720696E 
- 2102      7400
- 2103              	.LASF23:
- 2104 02f9 5350495F 		.ascii	"SPI_IMU_Enable\000"
+ 2082      72726179 
+ 2082      00
+ 2083              	.LASF55:
+ 2084 02aa 5350495F 		.ascii	"SPI_IMU_ClearRxBuffer\000"
+ 2084      494D555F 
+ 2084      436C6561 
+ 2084      72527842 
+ 2084      75666665 
+ 2085              	.LASF50:
+ 2086 02c0 4379456E 		.ascii	"CyEnterCriticalSection\000"
+ 2086      74657243 
+ 2086      72697469 
+ 2086      63616C53 
+ 2086      65637469 
+ 2087              	.LASF5:
+ 2088 02d7 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2088      20756E73 
+ 2088      69676E65 
+ 2088      6420696E 
+ 2088      7400
+ 2089              	.LASF8:
+ 2090 02e9 756E7369 		.ascii	"unsigned int\000"
+ 2090      676E6564 
+ 2090      20696E74 
+ 2090      00
+ 2091              	.LASF33:
+ 2092 02f6 5350495F 		.ascii	"SPI_IMU_GetRxBufferSize\000"
+ 2092      494D555F 
+ 2092      47657452 
+ 2092      78427566 
+ 2092      66657253 
+ 2093              	.LASF31:
+ 2094 030e 72784461 		.ascii	"rxData\000"
+ 2094      746100
+ 2095              	.LASF51:
+ 2096 0315 43794578 		.ascii	"CyExitCriticalSection\000"
+ 2096      69744372 
+ 2096      69746963 
+ 2096      616C5365 
+ 2096      6374696F 
+ 2097              	.LASF44:
+ 2098 032b 5350495F 		.ascii	"SPI_IMU_DisableInt\000"
+ 2098      494D555F 
+ 2098      44697361 
+ 2098      626C6549 
+ 2098      6E7400
+ 2099              	.LASF40:
+ 2100 033e 62756649 		.ascii	"bufIndex\000"
+ 2100      6E646578 
+ 2100      00
+ 2101              	.LASF15:
+ 2102 0347 73697A65 		.ascii	"sizetype\000"
+ 2102      74797065 
+ 2102      00
+ 2103              	.LASF17:
+ 2104 0350 5350495F 		.ascii	"SPI_IMU_EnableTxInt\000"
  2104      494D555F 
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 61
+
+
  2104      456E6162 
- 2104      6C6500
- 2105              	.LASF53:
- 2106 0308 47656E65 		.ascii	"Generated_Source\\PSoC5\\SPI_IMU.c\000"
- 2106      72617465 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 61
-
-
- 2106      645F536F 
- 2106      75726365 
- 2106      5C50536F 
- 2107              	.LASF46:
- 2108 0329 5350495F 		.ascii	"SPI_IMU_ReadStatus\000"
+ 2104      6C655478 
+ 2104      496E7400 
+ 2105              	.LASF6:
+ 2106 0364 6C6F6E67 		.ascii	"long long int\000"
+ 2106      206C6F6E 
+ 2106      6720696E 
+ 2106      7400
+ 2107              	.LASF23:
+ 2108 0372 5350495F 		.ascii	"SPI_IMU_Enable\000"
  2108      494D555F 
- 2108      52656164 
- 2108      53746174 
- 2108      757300
- 2109              	.LASF20:
- 2110 033c 5350495F 		.ascii	"SPI_IMU_ReadRxStatus\000"
- 2110      494D555F 
- 2110      52656164 
- 2110      52785374 
- 2110      61747573 
- 2111              	.LASF2:
- 2112 0351 73686F72 		.ascii	"short int\000"
- 2112      7420696E 
- 2112      7400
- 2113              	.LASF38:
- 2114 035b 62756666 		.ascii	"buffer\000"
- 2114      657200
- 2115              	.LASF19:
- 2116 0362 5350495F 		.ascii	"SPI_IMU_DisableTxInt\000"
- 2116      494D555F 
- 2116      44697361 
- 2116      626C6554 
- 2116      78496E74 
- 2117              	.LASF4:
- 2118 0377 6C6F6E67 		.ascii	"long int\000"
- 2118      20696E74 
- 2118      00
- 2119              	.LASF22:
- 2120 0380 746D7053 		.ascii	"tmpStatus\000"
- 2120      74617475 
- 2120      7300
- 2121              	.LASF14:
- 2122 038a 6C6F6E67 		.ascii	"long double\000"
- 2122      20646F75 
- 2122      626C6500 
- 2123              	.LASF0:
- 2124 0396 7369676E 		.ascii	"signed char\000"
- 2124      65642063 
- 2124      68617200 
- 2125              	.LASF26:
- 2126 03a2 5350495F 		.ascii	"SPI_IMU_SetTxInterruptMode\000"
- 2126      494D555F 
- 2126      53657454 
- 2126      78496E74 
- 2126      65727275 
- 2127              	.LASF27:
- 2128 03bd 5350495F 		.ascii	"SPI_IMU_SetRxInterruptMode\000"
- 2128      494D555F 
- 2128      53657452 
- 2128      78496E74 
- 2128      65727275 
- 2129              	.LASF42:
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccvFBeDW.s 			page 62
+ 2108      456E6162 
+ 2108      6C6500
+ 2109              	.LASF53:
+ 2110 0381 47656E65 		.ascii	"Generated_Source\\PSoC5\\SPI_IMU.c\000"
+ 2110      72617465 
+ 2110      645F536F 
+ 2110      75726365 
+ 2110      5C50536F 
+ 2111              	.LASF46:
+ 2112 03a2 5350495F 		.ascii	"SPI_IMU_ReadStatus\000"
+ 2112      494D555F 
+ 2112      52656164 
+ 2112      53746174 
+ 2112      757300
+ 2113              	.LASF20:
+ 2114 03b5 5350495F 		.ascii	"SPI_IMU_ReadRxStatus\000"
+ 2114      494D555F 
+ 2114      52656164 
+ 2114      52785374 
+ 2114      61747573 
+ 2115              	.LASF2:
+ 2116 03ca 73686F72 		.ascii	"short int\000"
+ 2116      7420696E 
+ 2116      7400
+ 2117              	.LASF38:
+ 2118 03d4 62756666 		.ascii	"buffer\000"
+ 2118      657200
+ 2119              	.LASF19:
+ 2120 03db 5350495F 		.ascii	"SPI_IMU_DisableTxInt\000"
+ 2120      494D555F 
+ 2120      44697361 
+ 2120      626C6554 
+ 2120      78496E74 
+ 2121              	.LASF4:
+ 2122 03f0 6C6F6E67 		.ascii	"long int\000"
+ 2122      20696E74 
+ 2122      00
+ 2123              	.LASF22:
+ 2124 03f9 746D7053 		.ascii	"tmpStatus\000"
+ 2124      74617475 
+ 2124      7300
+ 2125              	.LASF14:
+ 2126 0403 6C6F6E67 		.ascii	"long double\000"
+ 2126      20646F75 
+ 2126      626C6500 
+ 2127              	.LASF0:
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cckafCVg.s 			page 62
 
 
- 2130 03d8 5350495F 		.ascii	"SPI_IMU_Init\000"
+ 2128 040f 7369676E 		.ascii	"signed char\000"
+ 2128      65642063 
+ 2128      68617200 
+ 2129              	.LASF26:
+ 2130 041b 5350495F 		.ascii	"SPI_IMU_SetTxInterruptMode\000"
  2130      494D555F 
- 2130      496E6974 
- 2130      00
- 2131              	.LASF54:
- 2132 03e5 433A5C55 		.ascii	"C:\\Users\\mgnocco\\Documents\\ControlloDiVersione\\"
- 2132      73657273 
- 2132      5C6D676E 
- 2132      6F63636F 
- 2132      5C446F63 
- 2133 0414 4C534D36 		.ascii	"LSM6DSRX +lis2mdl_funziona -NONTOCCARE\\Design02.cy"
- 2133      44535258 
- 2133      202B6C69 
- 2133      73326D64 
- 2133      6C5F6675 
- 2134 0446 64736E00 		.ascii	"dsn\000"
+ 2130      53657454 
+ 2130      78496E74 
+ 2130      65727275 
+ 2131              	.LASF27:
+ 2132 0436 5350495F 		.ascii	"SPI_IMU_SetRxInterruptMode\000"
+ 2132      494D555F 
+ 2132      53657452 
+ 2132      78496E74 
+ 2132      65727275 
+ 2133              	.LASF42:
+ 2134 0451 5350495F 		.ascii	"SPI_IMU_Init\000"
+ 2134      494D555F 
+ 2134      496E6974 
+ 2134      00
  2135              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

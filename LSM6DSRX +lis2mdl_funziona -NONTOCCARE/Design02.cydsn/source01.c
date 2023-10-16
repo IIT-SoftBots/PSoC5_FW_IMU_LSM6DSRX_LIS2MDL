@@ -63,21 +63,21 @@ void OneShot_ReadRoutine1(uint8 address, uint8 subaddress,uint8 slave_config){
 
         
     WriteControlRegisterSPI(LSM6DSRX_FUNC_CFG_ACCESS, 0x40);  //18ms
-    CyDelayUs(10);
+    CyDelayUs(100);
     WriteControlRegisterSPI(LSM6DSRX_SLV0_ADD, address | 0x01); //28ms
     CyDelayUs(10);
     WriteControlRegisterSPI(LSM6DSRX_SLV0_SUBADD, subaddress); //10
     CyDelayUs(10);
            
-    WriteControlRegisterSPI(LSM6DSRX_SLV0_CONFIG, 0b11000110); //ODR = 288Hz, FSR=+/-2g, LPF2 disabled //17
+    WriteControlRegisterSPI(LSM6DSRX_SLV0_CONFIG, 0b00000110); //ODR = 288Hz, FSR=+/-2g, LPF2 disabled //17
      CyDelayUs(10);
     WriteControlRegisterSPI(LSM6DSRX_MASTER_CONFIG, 0x4C); //ODR = 288Hz, FSR=+/-2g, LPF2 disabled  //10
     CyDelayUs(10);  
                 
     WriteControlRegisterSPI(LSM6DSRX_FUNC_CFG_ACCESS, 0x00);   //17
-    CyDelayUs(10); 
+    CyDelayUs(100); 
     
-    
+    i = ReadControlRegisterSPI(LSM6DSRX_WHO_AM_I);
     
     i = ReadControlRegisterSPI(LSM6DSRX_OUTZ_L_A);
         UART_PutChar(i);
@@ -118,6 +118,7 @@ UART_PutChar(i);
    // UART_PutChar(SENS_HUB_ENDOP);
   
     WriteControlRegisterSPI(LSM6DSRX_FUNC_CFG_ACCESS, 0x40);   
+    CyDelayUs(100);  
     
     WriteControlRegisterSPI(LSM6DSRX_MASTER_CONFIG, 0x08);
     
@@ -148,9 +149,8 @@ UART_PutChar(i);
         
      
     WriteControlRegisterSPI(LSM6DSRX_FUNC_CFG_ACCESS, 0x00); 
-      CyDelayUs(10);
-    WriteControlRegisterSPI(LSM6DSRX_FUNC_CFG_ACCESS, 0x00); 
-    CyDelayUs(10);  
+
+    CyDelayUs(100);  
         
     
     

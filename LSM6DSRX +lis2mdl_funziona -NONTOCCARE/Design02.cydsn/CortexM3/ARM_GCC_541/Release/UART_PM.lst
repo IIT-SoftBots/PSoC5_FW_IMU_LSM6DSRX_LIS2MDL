@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccH7QVFg.s 			page 1
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccEOgZQj.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccH7QVFg.s 			page 1
   12:Generated_Source\PSoC5/UART_PM.c **** * You may use this file only in accordance with the license, terms, conditions,
   13:Generated_Source\PSoC5/UART_PM.c **** * disclaimers, and limitations in the end user license agreement accompanying
   14:Generated_Source\PSoC5/UART_PM.c **** * the software package with which this file was provided.
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccH7QVFg.s 			page 2
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccEOgZQj.s 			page 2
 
 
   15:Generated_Source\PSoC5/UART_PM.c **** *******************************************************************************/
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccH7QVFg.s 			page 1
   69:Generated_Source\PSoC5/UART_PM.c **** *
   70:Generated_Source\PSoC5/UART_PM.c **** * Parameters:
   71:Generated_Source\PSoC5/UART_PM.c **** *  None.
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccH7QVFg.s 			page 3
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccEOgZQj.s 			page 3
 
 
   72:Generated_Source\PSoC5/UART_PM.c **** *
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccH7QVFg.s 			page 1
  109:Generated_Source\PSoC5/UART_PM.c **** *
  110:Generated_Source\PSoC5/UART_PM.c **** * Return:
  111:Generated_Source\PSoC5/UART_PM.c **** *  None.
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccH7QVFg.s 			page 4
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccEOgZQj.s 			page 4
 
 
  112:Generated_Source\PSoC5/UART_PM.c **** *
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccH7QVFg.s 			page 1
   84              	.L8:
   85              		.align	2
   86              	.L7:
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccH7QVFg.s 			page 5
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccEOgZQj.s 			page 5
 
 
   87 001c 96650040 		.word	1073767830
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccH7QVFg.s 			page 1
  176:Generated_Source\PSoC5/UART_PM.c ****         UART_ClearRxBuffer();
  108              		.loc 1 176 0
  109 0002 FFF7FEFF 		bl	UART_ClearRxBuffer
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccH7QVFg.s 			page 6
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccEOgZQj.s 			page 6
 
 
  110              	.LVL1:
@@ -356,48 +356,48 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccH7QVFg.s 			page 1
  151 0006 00000000 		.4byte	.Ldebug_abbrev0
  152 000a 04       		.byte	0x4
  153 000b 01       		.uleb128 0x1
- 154 000c 79000000 		.4byte	.LASF25
+ 154 000c F2000000 		.4byte	.LASF25
  155 0010 0C       		.byte	0xc
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccH7QVFg.s 			page 7
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccEOgZQj.s 			page 7
 
 
- 156 0011 E5010000 		.4byte	.LASF26
- 157 0015 19020000 		.4byte	.LASF27
+ 156 0011 5E020000 		.4byte	.LASF26
+ 157 0015 00000000 		.4byte	.LASF27
  158 0019 00000000 		.4byte	.Ldebug_ranges0+0
  159 001d 00000000 		.4byte	0
  160 0021 00000000 		.4byte	.Ldebug_line0
  161 0025 02       		.uleb128 0x2
  162 0026 01       		.byte	0x1
  163 0027 06       		.byte	0x6
- 164 0028 D9010000 		.4byte	.LASF0
+ 164 0028 52020000 		.4byte	.LASF0
  165 002c 02       		.uleb128 0x2
  166 002d 01       		.byte	0x1
  167 002e 08       		.byte	0x8
- 168 002f 66000000 		.4byte	.LASF1
+ 168 002f DF000000 		.4byte	.LASF1
  169 0033 02       		.uleb128 0x2
  170 0034 02       		.byte	0x2
  171 0035 05       		.byte	0x5
- 172 0036 8F010000 		.4byte	.LASF2
+ 172 0036 08020000 		.4byte	.LASF2
  173 003a 02       		.uleb128 0x2
  174 003b 02       		.byte	0x2
  175 003c 07       		.byte	0x7
- 176 003d 23000000 		.4byte	.LASF3
+ 176 003d 9C000000 		.4byte	.LASF3
  177 0041 02       		.uleb128 0x2
  178 0042 04       		.byte	0x4
  179 0043 05       		.byte	0x5
- 180 0044 B8010000 		.4byte	.LASF4
+ 180 0044 31020000 		.4byte	.LASF4
  181 0048 02       		.uleb128 0x2
  182 0049 04       		.byte	0x4
  183 004a 07       		.byte	0x7
- 184 004b 14010000 		.4byte	.LASF5
+ 184 004b 8D010000 		.4byte	.LASF5
  185 004f 02       		.uleb128 0x2
  186 0050 08       		.byte	0x8
  187 0051 05       		.byte	0x5
- 188 0052 69010000 		.4byte	.LASF6
+ 188 0052 E2010000 		.4byte	.LASF6
  189 0056 02       		.uleb128 0x2
  190 0057 08       		.byte	0x8
  191 0058 07       		.byte	0x7
- 192 0059 33010000 		.4byte	.LASF7
+ 192 0059 AC010000 		.4byte	.LASF7
  193 005d 03       		.uleb128 0x3
  194 005e 04       		.byte	0x4
  195 005f 05       		.byte	0x5
@@ -405,29 +405,29 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccH7QVFg.s 			page 1
  197 0064 02       		.uleb128 0x2
  198 0065 04       		.byte	0x4
  199 0066 07       		.byte	0x7
- 200 0067 26010000 		.4byte	.LASF8
+ 200 0067 9F010000 		.4byte	.LASF8
  201 006b 04       		.uleb128 0x4
- 202 006c 07010000 		.4byte	.LASF12
+ 202 006c 80010000 		.4byte	.LASF12
  203 0070 02       		.byte	0x2
  204 0071 E901     		.2byte	0x1e9
  205 0073 2C000000 		.4byte	0x2c
  206 0077 02       		.uleb128 0x2
  207 0078 04       		.byte	0x4
  208 0079 04       		.byte	0x4
- 209 007a 54000000 		.4byte	.LASF9
+ 209 007a CD000000 		.4byte	.LASF9
  210 007e 02       		.uleb128 0x2
  211 007f 08       		.byte	0x8
  212 0080 04       		.byte	0x4
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccH7QVFg.s 			page 8
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccEOgZQj.s 			page 8
 
 
- 213 0081 0D010000 		.4byte	.LASF10
+ 213 0081 86010000 		.4byte	.LASF10
  214 0085 02       		.uleb128 0x2
  215 0086 01       		.byte	0x1
  216 0087 08       		.byte	0x8
- 217 0088 77010000 		.4byte	.LASF11
+ 217 0088 F0010000 		.4byte	.LASF11
  218 008c 04       		.uleb128 0x4
- 219 008d 74000000 		.4byte	.LASF13
+ 219 008d ED000000 		.4byte	.LASF13
  220 0091 02       		.byte	0x2
  221 0092 9302     		.2byte	0x293
  222 0094 98000000 		.4byte	0x98
@@ -436,36 +436,36 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccH7QVFg.s 			page 1
  225 009d 02       		.uleb128 0x2
  226 009e 08       		.byte	0x8
  227 009f 04       		.byte	0x4
- 228 00a0 CD010000 		.4byte	.LASF14
+ 228 00a0 46020000 		.4byte	.LASF14
  229 00a4 02       		.uleb128 0x2
  230 00a5 04       		.byte	0x4
  231 00a6 07       		.byte	0x7
- 232 00a7 60010000 		.4byte	.LASF15
+ 232 00a7 D9010000 		.4byte	.LASF15
  233 00ab 06       		.uleb128 0x6
- 234 00ac 7C010000 		.4byte	.LASF28
+ 234 00ac F5010000 		.4byte	.LASF28
  235 00b0 01       		.byte	0x1
  236 00b1 03       		.byte	0x3
  237 00b2 45       		.byte	0x45
  238 00b3 C4000000 		.4byte	0xc4
  239 00b7 07       		.uleb128 0x7
- 240 00b8 C1010000 		.4byte	.LASF29
+ 240 00b8 3A020000 		.4byte	.LASF29
  241 00bc 03       		.byte	0x3
  242 00bd 47       		.byte	0x47
  243 00be 6B000000 		.4byte	0x6b
  244 00c2 00       		.byte	0
  245 00c3 00       		.byte	0
  246 00c4 08       		.uleb128 0x8
- 247 00c5 06020000 		.4byte	.LASF16
+ 247 00c5 7F020000 		.4byte	.LASF16
  248 00c9 03       		.byte	0x3
  249 00ca 4D       		.byte	0x4d
  250 00cb AB000000 		.4byte	0xab
  251 00cf 09       		.uleb128 0x9
- 252 00d0 00000000 		.4byte	.LASF17
+ 252 00d0 79000000 		.4byte	.LASF17
  253 00d4 01       		.byte	0x1
  254 00d5 36       		.byte	0x36
  255 00d6 01       		.byte	0x1
  256 00d7 09       		.uleb128 0x9
- 257 00d8 10000000 		.4byte	.LASF18
+ 257 00d8 89000000 		.4byte	.LASF18
  258 00dc 01       		.byte	0x1
  259 00dd 57       		.byte	0x57
  260 00de 01       		.byte	0x1
@@ -476,9 +476,9 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccH7QVFg.s 			page 1
  265 00ec 01       		.uleb128 0x1
  266 00ed 9C       		.byte	0x9c
  267 00ee 0B       		.uleb128 0xb
- 268 00ef 49000000 		.4byte	.LASF19
+ 268 00ef C2000000 		.4byte	.LASF19
  269 00f3 01       		.byte	0x1
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccH7QVFg.s 			page 9
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccEOgZQj.s 			page 9
 
 
  270 00f4 78       		.byte	0x78
@@ -492,7 +492,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccH7QVFg.s 			page 1
  278 0108 4F010000 		.4byte	0x14f
  279 010c 00       		.byte	0
  280 010d 0B       		.uleb128 0xb
- 281 010e AC010000 		.4byte	.LASF20
+ 281 010e 25020000 		.4byte	.LASF20
  282 0112 01       		.byte	0x1
  283 0113 AC       		.byte	0xac
  284 0114 00000000 		.4byte	.LFB3
@@ -511,7 +511,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccH7QVFg.s 			page 1
  297 0139 70010000 		.4byte	0x170
  298 013d 00       		.byte	0
  299 013e 0E       		.uleb128 0xe
- 300 013f 4A010000 		.4byte	.LASF30
+ 300 013f C3010000 		.4byte	.LASF30
  301 0143 01       		.byte	0x1
  302 0144 18       		.byte	0x18
  303 0145 C4000000 		.4byte	0xc4
@@ -519,26 +519,26 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccH7QVFg.s 			page 1
  305 014a 03       		.byte	0x3
  306 014b 00000000 		.4byte	UART_backup
  307 014f 0F       		.uleb128 0xf
- 308 0150 56010000 		.4byte	.LASF21
- 309 0154 56010000 		.4byte	.LASF21
+ 308 0150 CF010000 		.4byte	.LASF21
+ 309 0154 CF010000 		.4byte	.LASF21
  310 0158 03       		.byte	0x3
  311 0159 55       		.byte	0x55
  312 015a 0F       		.uleb128 0xf
- 313 015b 36000000 		.4byte	.LASF22
- 314 015f 36000000 		.4byte	.LASF22
+ 313 015b AF000000 		.4byte	.LASF22
+ 314 015f AF000000 		.4byte	.LASF22
  315 0163 03       		.byte	0x3
  316 0164 75       		.byte	0x75
  317 0165 0F       		.uleb128 0xf
- 318 0166 99010000 		.4byte	.LASF23
- 319 016a 99010000 		.4byte	.LASF23
+ 318 0166 12020000 		.4byte	.LASF23
+ 319 016a 12020000 		.4byte	.LASF23
  320 016e 03       		.byte	0x3
  321 016f 8F       		.byte	0x8f
  322 0170 0F       		.uleb128 0xf
- 323 0171 5A000000 		.4byte	.LASF24
- 324 0175 5A000000 		.4byte	.LASF24
+ 323 0171 D3000000 		.4byte	.LASF24
+ 324 0175 D3000000 		.4byte	.LASF24
  325 0179 03       		.byte	0x3
  326 017a 5A       		.byte	0x5a
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccH7QVFg.s 			page 10
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccEOgZQj.s 			page 10
 
 
  327 017b 00       		.byte	0
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccH7QVFg.s 			page 1
  381 0033 13       		.uleb128 0x13
  382 0034 00       		.byte	0
  383 0035 00       		.byte	0
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccH7QVFg.s 			page 11
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccEOgZQj.s 			page 11
 
 
  384 0036 05       		.uleb128 0x5
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccH7QVFg.s 			page 1
  438 006c 19       		.uleb128 0x19
  439 006d 03       		.uleb128 0x3
  440 006e 0E       		.uleb128 0xe
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccH7QVFg.s 			page 12
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccEOgZQj.s 			page 12
 
 
  441 006f 3A       		.uleb128 0x3a
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccH7QVFg.s 			page 1
  495 00a9 01       		.uleb128 0x1
  496 00aa 9542     		.uleb128 0x2115
  497 00ac 19       		.uleb128 0x19
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccH7QVFg.s 			page 13
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccEOgZQj.s 			page 13
 
 
  498 00ad 31       		.uleb128 0x31
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccH7QVFg.s 			page 1
  552 0010 00000000 		.4byte	.LFB1
  553 0014 02000000 		.4byte	.LFE1-.LFB1
  554 0018 00000000 		.4byte	.LFB2
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccH7QVFg.s 			page 14
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccEOgZQj.s 			page 14
 
 
  555 001c 24000000 		.4byte	.LFE2-.LFB2
@@ -803,174 +803,178 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccH7QVFg.s 			page 1
  572      00000201 
  572      FB0E0D00 
  572      01010101 
- 573              	.LASF17:
- 574 0000 55415254 		.ascii	"UART_SaveConfig\000"
- 574      5F536176 
- 574      65436F6E 
- 574      66696700 
- 575              	.LASF18:
- 576 0010 55415254 		.ascii	"UART_RestoreConfig\000"
- 576      5F526573 
- 576      746F7265 
- 576      436F6E66 
- 576      696700
- 577              	.LASF3:
- 578 0023 73686F72 		.ascii	"short unsigned int\000"
- 578      7420756E 
- 578      7369676E 
- 578      65642069 
- 578      6E7400
- 579              	.LASF22:
- 580 0036 55415254 		.ascii	"UART_ClearRxBuffer\000"
- 580      5F436C65 
- 580      61725278 
- 580      42756666 
- 580      657200
- 581              	.LASF19:
- 582 0049 55415254 		.ascii	"UART_Sleep\000"
- 582      5F536C65 
- 582      657000
- 583              	.LASF9:
- 584 0054 666C6F61 		.ascii	"float\000"
- 584      7400
- 585              	.LASF24:
- 586 005a 55415254 		.ascii	"UART_Enable\000"
- 586      5F456E61 
- 586      626C6500 
- 587              	.LASF1:
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccH7QVFg.s 			page 15
+ 573              	.LASF27:
+ 574 0000 433A5C55 		.ascii	"C:\\Users\\mgnocco\\Documents\\Git\\PSoC5\\PSoC5_FW"
+ 574      73657273 
+ 574      5C6D676E 
+ 574      6F63636F 
+ 574      5C446F63 
+ 575 002d 5F494D55 		.ascii	"_IMU_LSM6DSRX_LIS2MDL\\LSM6DSRX +lis2mdl_funziona -"
+ 575      5F4C534D 
+ 575      36445352 
+ 575      585F4C49 
+ 575      53324D44 
+ 576 005f 4E4F4E54 		.ascii	"NONTOCCARE\\Design02.cydsn\000"
+ 576      4F434341 
+ 576      52455C44 
+ 576      65736967 
+ 576      6E30322E 
+ 577              	.LASF17:
+ 578 0079 55415254 		.ascii	"UART_SaveConfig\000"
+ 578      5F536176 
+ 578      65436F6E 
+ 578      66696700 
+ 579              	.LASF18:
+ 580 0089 55415254 		.ascii	"UART_RestoreConfig\000"
+ 580      5F526573 
+ 580      746F7265 
+ 580      436F6E66 
+ 580      696700
+ 581              	.LASF3:
+ 582 009c 73686F72 		.ascii	"short unsigned int\000"
+ 582      7420756E 
+ 582      7369676E 
+ 582      65642069 
+ 582      6E7400
+ 583              	.LASF22:
+ 584 00af 55415254 		.ascii	"UART_ClearRxBuffer\000"
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccEOgZQj.s 			page 15
 
 
- 588 0066 756E7369 		.ascii	"unsigned char\000"
- 588      676E6564 
- 588      20636861 
- 588      7200
- 589              	.LASF13:
- 590 0074 72656738 		.ascii	"reg8\000"
- 590      00
- 591              	.LASF25:
- 592 0079 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 592      43313120 
- 592      352E342E 
- 592      31203230 
- 592      31363036 
- 593 00ac 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 593      20726576 
- 593      6973696F 
- 593      6E203233 
- 593      37373135 
- 594 00df 73202D66 		.ascii	"s -ffunction-sections -ffat-lto-objects\000"
- 594      66756E63 
- 594      74696F6E 
- 594      2D736563 
- 594      74696F6E 
- 595              	.LASF12:
- 596 0107 75696E74 		.ascii	"uint8\000"
- 596      3800
- 597              	.LASF10:
- 598 010d 646F7562 		.ascii	"double\000"
- 598      6C6500
- 599              	.LASF5:
- 600 0114 6C6F6E67 		.ascii	"long unsigned int\000"
- 600      20756E73 
- 600      69676E65 
- 600      6420696E 
- 600      7400
- 601              	.LASF8:
- 602 0126 756E7369 		.ascii	"unsigned int\000"
- 602      676E6564 
- 602      20696E74 
- 602      00
- 603              	.LASF7:
- 604 0133 6C6F6E67 		.ascii	"long long unsigned int\000"
- 604      206C6F6E 
- 604      6720756E 
- 604      7369676E 
- 604      65642069 
- 605              	.LASF30:
- 606 014a 55415254 		.ascii	"UART_backup\000"
- 606      5F626163 
- 606      6B757000 
- 607              	.LASF21:
- 608 0156 55415254 		.ascii	"UART_Stop\000"
- 608      5F53746F 
- 608      7000
- 609              	.LASF15:
- 610 0160 73697A65 		.ascii	"sizetype\000"
- 610      74797065 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccH7QVFg.s 			page 16
+ 584      5F436C65 
+ 584      61725278 
+ 584      42756666 
+ 584      657200
+ 585              	.LASF19:
+ 586 00c2 55415254 		.ascii	"UART_Sleep\000"
+ 586      5F536C65 
+ 586      657000
+ 587              	.LASF9:
+ 588 00cd 666C6F61 		.ascii	"float\000"
+ 588      7400
+ 589              	.LASF24:
+ 590 00d3 55415254 		.ascii	"UART_Enable\000"
+ 590      5F456E61 
+ 590      626C6500 
+ 591              	.LASF1:
+ 592 00df 756E7369 		.ascii	"unsigned char\000"
+ 592      676E6564 
+ 592      20636861 
+ 592      7200
+ 593              	.LASF13:
+ 594 00ed 72656738 		.ascii	"reg8\000"
+ 594      00
+ 595              	.LASF25:
+ 596 00f2 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 596      43313120 
+ 596      352E342E 
+ 596      31203230 
+ 596      31363036 
+ 597 0125 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 597      20726576 
+ 597      6973696F 
+ 597      6E203233 
+ 597      37373135 
+ 598 0158 73202D66 		.ascii	"s -ffunction-sections -ffat-lto-objects\000"
+ 598      66756E63 
+ 598      74696F6E 
+ 598      2D736563 
+ 598      74696F6E 
+ 599              	.LASF12:
+ 600 0180 75696E74 		.ascii	"uint8\000"
+ 600      3800
+ 601              	.LASF10:
+ 602 0186 646F7562 		.ascii	"double\000"
+ 602      6C6500
+ 603              	.LASF5:
+ 604 018d 6C6F6E67 		.ascii	"long unsigned int\000"
+ 604      20756E73 
+ 604      69676E65 
+ 604      6420696E 
+ 604      7400
+ 605              	.LASF8:
+ 606 019f 756E7369 		.ascii	"unsigned int\000"
+ 606      676E6564 
+ 606      20696E74 
+ 606      00
+ 607              	.LASF7:
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccEOgZQj.s 			page 16
 
 
- 610      00
- 611              	.LASF6:
- 612 0169 6C6F6E67 		.ascii	"long long int\000"
- 612      206C6F6E 
- 612      6720696E 
- 612      7400
- 613              	.LASF11:
- 614 0177 63686172 		.ascii	"char\000"
+ 608 01ac 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 608      206C6F6E 
+ 608      6720756E 
+ 608      7369676E 
+ 608      65642069 
+ 609              	.LASF30:
+ 610 01c3 55415254 		.ascii	"UART_backup\000"
+ 610      5F626163 
+ 610      6B757000 
+ 611              	.LASF21:
+ 612 01cf 55415254 		.ascii	"UART_Stop\000"
+ 612      5F53746F 
+ 612      7000
+ 613              	.LASF15:
+ 614 01d9 73697A65 		.ascii	"sizetype\000"
+ 614      74797065 
  614      00
- 615              	.LASF28:
- 616 017c 55415254 		.ascii	"UART_backupStruct_\000"
- 616      5F626163 
- 616      6B757053 
- 616      74727563 
- 616      745F00
- 617              	.LASF2:
- 618 018f 73686F72 		.ascii	"short int\000"
- 618      7420696E 
- 618      7400
- 619              	.LASF23:
- 620 0199 55415254 		.ascii	"UART_ClearTxBuffer\000"
- 620      5F436C65 
- 620      61725478 
- 620      42756666 
- 620      657200
- 621              	.LASF20:
- 622 01ac 55415254 		.ascii	"UART_Wakeup\000"
- 622      5F57616B 
- 622      65757000 
- 623              	.LASF4:
- 624 01b8 6C6F6E67 		.ascii	"long int\000"
- 624      20696E74 
- 624      00
- 625              	.LASF29:
- 626 01c1 656E6162 		.ascii	"enableState\000"
- 626      6C655374 
- 626      61746500 
- 627              	.LASF14:
- 628 01cd 6C6F6E67 		.ascii	"long double\000"
- 628      20646F75 
- 628      626C6500 
- 629              	.LASF0:
- 630 01d9 7369676E 		.ascii	"signed char\000"
- 630      65642063 
- 630      68617200 
- 631              	.LASF26:
- 632 01e5 47656E65 		.ascii	"Generated_Source\\PSoC5\\UART_PM.c\000"
- 632      72617465 
- 632      645F536F 
- 632      75726365 
- 632      5C50536F 
- 633              	.LASF16:
- 634 0206 55415254 		.ascii	"UART_BACKUP_STRUCT\000"
- 634      5F424143 
- 634      4B55505F 
- 634      53545255 
- 634      435400
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccH7QVFg.s 			page 17
+ 615              	.LASF6:
+ 616 01e2 6C6F6E67 		.ascii	"long long int\000"
+ 616      206C6F6E 
+ 616      6720696E 
+ 616      7400
+ 617              	.LASF11:
+ 618 01f0 63686172 		.ascii	"char\000"
+ 618      00
+ 619              	.LASF28:
+ 620 01f5 55415254 		.ascii	"UART_backupStruct_\000"
+ 620      5F626163 
+ 620      6B757053 
+ 620      74727563 
+ 620      745F00
+ 621              	.LASF2:
+ 622 0208 73686F72 		.ascii	"short int\000"
+ 622      7420696E 
+ 622      7400
+ 623              	.LASF23:
+ 624 0212 55415254 		.ascii	"UART_ClearTxBuffer\000"
+ 624      5F436C65 
+ 624      61725478 
+ 624      42756666 
+ 624      657200
+ 625              	.LASF20:
+ 626 0225 55415254 		.ascii	"UART_Wakeup\000"
+ 626      5F57616B 
+ 626      65757000 
+ 627              	.LASF4:
+ 628 0231 6C6F6E67 		.ascii	"long int\000"
+ 628      20696E74 
+ 628      00
+ 629              	.LASF29:
+ 630 023a 656E6162 		.ascii	"enableState\000"
+ 630      6C655374 
+ 630      61746500 
+ 631              	.LASF14:
+ 632 0246 6C6F6E67 		.ascii	"long double\000"
+ 632      20646F75 
+ 632      626C6500 
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccEOgZQj.s 			page 17
 
 
- 635              	.LASF27:
- 636 0219 433A5C55 		.ascii	"C:\\Users\\mgnocco\\Documents\\ControlloDiVersione\\"
- 636      73657273 
- 636      5C6D676E 
- 636      6F63636F 
- 636      5C446F63 
- 637 0248 4C534D36 		.ascii	"LSM6DSRX +lis2mdl_funziona -NONTOCCARE\\Design02.cy"
- 637      44535258 
- 637      202B6C69 
- 637      73326D64 
- 637      6C5F6675 
- 638 027a 64736E00 		.ascii	"dsn\000"
+ 633              	.LASF0:
+ 634 0252 7369676E 		.ascii	"signed char\000"
+ 634      65642063 
+ 634      68617200 
+ 635              	.LASF26:
+ 636 025e 47656E65 		.ascii	"Generated_Source\\PSoC5\\UART_PM.c\000"
+ 636      72617465 
+ 636      645F536F 
+ 636      75726365 
+ 636      5C50536F 
+ 637              	.LASF16:
+ 638 027f 55415254 		.ascii	"UART_BACKUP_STRUCT\000"
+ 638      5F424143 
+ 638      4B55505F 
+ 638      53545255 
+ 638      435400
  639              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

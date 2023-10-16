@@ -38,10 +38,11 @@ int main()
     uint8 i;
     uint8 who;
     UART_Start();
-    WriteControlRegisterSPI(LSM6DSRX_CTRL1_XL,0x10); //104 Hz (normal mode)
-    WriteControlRegisterSPI(LSM6DSRX_CTRL2_G,0x10); //104 Hz (normal mode)
-    CyDelay(10);
+    WriteControlRegisterSPI(LSM6DSRX_CTRL1_XL,0x40); //104 Hz (normal mode)
+    WriteControlRegisterSPI(LSM6DSRX_CTRL2_G,0x40); //104 Hz (normal mode)
     
+    WriteControlRegisterSPI(LSM6DSRX_FUNC_CFG_ACCESS, 0x00);
+   CyDelay(100);
     OneShot_ReadRoutine(EXT_SENS_ADDR,LIS2MDL_WHO_AM_I); //LIS2MDL
     OneShot_WriteRoutine(EXT_SENS_ADDR,LIS2MDL_CFG_REG_A,0x8C);
     OneShot_WriteRoutine(EXT_SENS_ADDR,LIS2MDL_CFG_REG_B,0x02);
@@ -50,17 +51,14 @@ int main()
     
     for(;;)
     {
-        UART_PutChar('k');
-    
+        UART_PutChar('a');
         CyDelay(10);
         
         OneShot_ReadRoutine1(EXT_SENS_ADDR,LIS2MDL_OUTX_L_REG,0x06);
-                CyDelay(10);
-        
-    
-
-
-      
+  
+    //    OneShot_ReadRoutine(EXT_SENS_ADDR,LIS2MDL_WHO_AM_I); //LIS2MDL
+                CyDelay(100);
+       
         
    // OneShot_WriteRoutine(EXT_SENS_ADDR,LIS2MDL_CFG_REG_A,0x07);
    //  who = OneShot_ReadRoutine(EXT_SENS_ADDR,LIS2MDL_CFG_REG_A);

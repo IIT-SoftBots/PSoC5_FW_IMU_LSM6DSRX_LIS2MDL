@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="LSM6DSRX_prova\Design02\Source Files\main.c">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
 <ExpandedNodeIds>
 <v>LSM6DSRX_prova</v>
 <v>LSM6DSRX_prova\Design02</v>
@@ -41,25 +41,21 @@
 <v>LSM6DSRX_prova\Design02\Generated_Source\PSoC5\UART</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
+<v>LSM6DSRX_prova</v>
+<v>LSM6DSRX_prova\Design02</v>
+<v>LSM6DSRX_prova\Design02\TopDesign</v>
+<v>LSM6DSRX_prova\Design02\Design02.cydwr</v>
+<v>LSM6DSRX_prova\Design02\Design02.cydwr\Pins</v>
+<v>LSM6DSRX_prova\Design02\Design02.cydwr\Analog</v>
+<v>LSM6DSRX_prova\Design02\Design02.cydwr\Clocks</v>
+<v>LSM6DSRX_prova\Design02\Design02.cydwr\Interrupts</v>
+<v>LSM6DSRX_prova\Design02\Design02.cydwr\DMA</v>
+<v>LSM6DSRX_prova\Design02\Design02.cydwr\System</v>
+<v>LSM6DSRX_prova\Design02\Design02.cydwr\Directives</v>
+<v>LSM6DSRX_prova\Design02\Design02.cydwr\Flash Security</v>
 <v>LSM6DSRX_prova\Design02\Design02.cydwr\EEPROM</v>
 <v>LSM6DSRX_prova\Design02\Header Files</v>
 <v>LSM6DSRX_prova\Design02\Header Files\cyapicallbacks.h</v>
-<v>LSM6DSRX_prova\Design02\Header Files\globals.h</v>
-<v>LSM6DSRX_prova\Design02\Header Files\header01.h</v>
-<v>LSM6DSRX_prova\Design02\Source Files</v>
-<v>LSM6DSRX_prova\Design02\Source Files\main.c</v>
-<v>LSM6DSRX_prova\Design02\Source Files\source01.c</v>
-<v>LSM6DSRX_prova\Design02\Generated_Source</v>
-<v>LSM6DSRX_prova\Design02\Generated_Source\PSoC5</v>
-<v>LSM6DSRX_prova\Design02\Generated_Source\PSoC5\ChipSelect</v>
-<v>LSM6DSRX_prova\Design02\Generated_Source\PSoC5\CLOCK_PWM</v>
-<v>LSM6DSRX_prova\Design02\Generated_Source\PSoC5\cy_boot</v>
-<v>LSM6DSRX_prova\Design02\Generated_Source\PSoC5\cy_boot\cm3gcc.ld</v>
-<v>LSM6DSRX_prova\Design02\Generated_Source\PSoC5\cy_boot\Cm3Iar.icf</v>
-<v>LSM6DSRX_prova\Design02\Generated_Source\PSoC5\cy_boot\Cm3RealView.scat</v>
-<v>LSM6DSRX_prova\Design02\Generated_Source\PSoC5\cy_boot\Cm3Start.c</v>
-<v>LSM6DSRX_prova\Design02\Generated_Source\PSoC5\cy_boot\cmsis_armcc.h</v>
-<v>LSM6DSRX_prova\Design02\Generated_Source\PSoC5\cy_boot\cmsis_compiler.h</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -172,10 +168,6 @@
 <v>LSM6DSRX_prova\Design02\CortexM3\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
 <v>LSM6DSRX_prova\Design02\CortexM3\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
 <v>LSM6DSRX_prova\Design02\CortexM3\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
-<v>LSM6DSRX_prova\Design02\CortexM3\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
-<v>LSM6DSRX_prova\Design02\CortexM3\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
-<v>LSM6DSRX_prova\Design02\CortexM3\ARM_GCC_541\Debug\Listing Files\CySpc.lst</v>
-<v>LSM6DSRX_prova\Design02\CortexM3\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -221,10 +213,6 @@
 <v>LSM6DSRX_prova\Design02\cy_sync_v1_0.pdf</v>
 <v>LSM6DSRX_prova\Design02\CyControlReg_v1_80.pdf</v>
 <v>LSM6DSRX_prova\Design02\CyStatusReg_v1_90.pdf</v>
-<v>LSM6DSRX_prova\Design02\SPI_Master_v2_50.pdf</v>
-<v>LSM6DSRX_prova\Design02\Timer_v2_70.pdf</v>
-<v>LSM6DSRX_prova\Design02\UART_v2_50.pdf</v>
-<v>LSM6DSRX_prova\Design02\ZeroTerminal.pdf</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStatesV2>

@@ -1,4 +1,4 @@
-C:\Users\mgnocco\Documents\ControlloDiVersione\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn\TopDesign\TopDesign.cysch
+C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_IMU_LSM6DSRX_LIS2MDL\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn\TopDesign\TopDesign.cysch
 C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_constant_v1_0\cy_constant_v1_0.cysym
 C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_constant_v1_0\cy_constant_v1_0.v
 C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_constant_v1_0\cy_constant_v1_0.cystate
@@ -186,7 +186,7 @@ C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyPrim
 C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_isr_v1_70\PSoC5\API\intc.h
 C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\B_UART_v2_50\B_UART_v2_50.cysym
 C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\B_UART_v2_50\B_UART_v2_50.v
-C:\Users\mgnocco\Documents\ControlloDiVersione\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn\Design02.cydwr
+C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_IMU_LSM6DSRX_LIS2MDL\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn\Design02.cydwr
 C:\Users\mgnocco\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\cy_boot_v6_10\PSoC5\API\cm3gcc.ld
 C:\Users\mgnocco\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\cy_boot_v6_10\PSoC5\API\Cm3RealView.scat
 C:\Users\mgnocco\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\cy_boot_v6_10\PSoC5\API\Cm3Start.c
