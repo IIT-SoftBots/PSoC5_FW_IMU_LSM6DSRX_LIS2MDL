@@ -41,44 +41,105 @@ int main()
     WriteControlRegisterSPI(LSM6DSRX_CTRL1_XL,0x40); //104 Hz (normal mode)
     WriteControlRegisterSPI(LSM6DSRX_CTRL2_G,0x40); //104 Hz (normal mode)
     
-    WriteControlRegisterSPI(LSM6DSRX_FUNC_CFG_ACCESS, 0x00);
-   CyDelay(100);
+   // WriteControlRegisterSPI(LSM6DSRX_FUNC_CFG_ACCESS, 0x00);
+    CyDelay(100);
     OneShot_ReadRoutine(EXT_SENS_ADDR,LIS2MDL_WHO_AM_I); //LIS2MDL
     OneShot_WriteRoutine(EXT_SENS_ADDR,LIS2MDL_CFG_REG_A,0x8C);
     OneShot_WriteRoutine(EXT_SENS_ADDR,LIS2MDL_CFG_REG_B,0x02);
     OneShot_WriteRoutine(EXT_SENS_ADDR,LIS2MDL_CFG_REG_C,0x10);
-    //Continuous_ReadRoutine(EXT_SENS_ADDR,LIS2MDL_OUTX_L_REG,0x06);
+    Continuous_ReadRoutine(EXT_SENS_ADDR,LIS2MDL_OUTX_L_REG,0x04);
     
     for(;;)
     {
         UART_PutChar('a');
-        CyDelay(10);
         
-        OneShot_ReadRoutine1(EXT_SENS_ADDR,LIS2MDL_OUTX_L_REG,0x06);
-  
-    //    OneShot_ReadRoutine(EXT_SENS_ADDR,LIS2MDL_WHO_AM_I); //LIS2MDL
-                CyDelay(100);
-       
         
-   // OneShot_WriteRoutine(EXT_SENS_ADDR,LIS2MDL_CFG_REG_A,0x07);
-   //  who = OneShot_ReadRoutine(EXT_SENS_ADDR,LIS2MDL_CFG_REG_A);
-      // UART_PutChar(who);
-       // who = OneShot_ReadRoutine(EXT_SENS_ADDR,LIS2MDL_CFG_REG_A);
-      //  UART_PutChar(who);
-      //  OneShot_WriteRoutine(EXT_SENS_ADDR,LIS2MDL_CFG_REG_A,0x07);
+       do 
+    {
+        i = ReadControlRegisterSPI(LSM6DSRX_STATUS_REG);  //20
+                
+    }
+    while ((i & 0b00000001) == 0); 
+    
+     
+    do 
+    {
+        i = ReadControlRegisterSPI(LSM6DSRX_STATUS_MASTER_MAINPAGE);   
+       // UART_PutChar(SENS_HUB_ENDOP);
+    }
+    while ((i & 0b00000001) == 0);
+   // UART_PutChar(SENS_HUB_ENDOP);
   
-        //OneShot_WriteRoutine(EXT_SENS_ADDR,LIS2MDL_CFG_REG_A,0x07);
-        //who= OneShot_ReadRoutine(EXT_SENS_ADDR,LIS2MDL_CFG_REG_A);
-        //UART_PutChar(who);
-        /*
-        for (i = 0; i < 6; i++)
-        {
-            UART_PutChar(Mag[i]);
-        }*/
+   // WriteControlRegisterSPI(LSM6DSRX_FUNC_CFG_ACCESS, 0x40);   
+    
+    
+    //WriteControlRegisterSPI(LSM6DSRX_MASTER_CONFIG, 0x08);
+    
+    CyDelayUs(10);  
       
-     //Read(0x01);
-    //UART_PutChar(Mag[0]);
+    ReadControlRegisterSPI(LSM6DSRX_WHO_AM_I); 
+    
+            i= ReadControlRegisterSPI(LSM6DSRX_SENSOR_HUB_1);  
         
+        UART_PutChar(i);
+        
+   
+        i= ReadControlRegisterSPI(LSM6DSRX_SENSOR_HUB_2);  
+        
+        UART_PutChar(i);
+
+        
+                i= ReadControlRegisterSPI(LSM6DSRX_SENSOR_HUB_3);  
+        
+        UART_PutChar(i);
+        
+        
+                i= ReadControlRegisterSPI(LSM6DSRX_SENSOR_HUB_4);  
+        
+        UART_PutChar(i);
+        
+       // WriteControlRegisterSPI(LSM6DSRX_FUNC_CFG_ACCESS, 0x00);   
+
+    CyDelayUs(10);  
+//      ---------------------------------------------------------------------READ AXELS
+        
+        i = ReadControlRegisterSPI(LSM6DSRX_OUTX_L_A);
+        UART_PutChar(i);
+        i = ReadControlRegisterSPI(LSM6DSRX_OUTX_H_A);
+        UART_PutChar(i); 
+        
+        i= ReadControlRegisterSPI(LSM6DSRX_OUTY_L_A); //21
+        UART_PutChar(i);
+         i = ReadControlRegisterSPI(LSM6DSRX_OUTY_H_A);
+        UART_PutChar(i);
+        
+        i = ReadControlRegisterSPI(LSM6DSRX_OUTZ_L_A);
+        UART_PutChar(i);
+         i= ReadControlRegisterSPI(LSM6DSRX_OUTZ_H_A); //21
+        UART_PutChar(i);
+    
+//      ---------------------------------------------------------------------READ GYROS
+        i = ReadControlRegisterSPI(LSM6DSRX_OUTX_L_G);
+        UART_PutChar(i);
+        i = ReadControlRegisterSPI(LSM6DSRX_OUTX_H_G);
+        UART_PutChar(i);
+
+        i = ReadControlRegisterSPI(LSM6DSRX_OUTY_L_G);
+        UART_PutChar(i);
+        i = ReadControlRegisterSPI(LSM6DSRX_OUTY_H_G);
+        UART_PutChar(i);
+        
+        i = ReadControlRegisterSPI(LSM6DSRX_OUTZ_L_G);
+        UART_PutChar(i);
+        i = ReadControlRegisterSPI(LSM6DSRX_OUTZ_H_G);
+        UART_PutChar(i);
+        
+
+        
+  
+    //   OneShot_ReadRoutine(EXT_SENS_ADDR,LIS2MDL_WHO_AM_I); //LIS2MDL
+                
+       
     
     }
 return 0;

@@ -219,7 +219,7 @@ void Continuous_ReadRoutine(uint8 address, uint8 subaddress, uint8 slave_config)
     CyDelay(1);  
     WriteControlRegisterSPI(LSM6DSRX_SLV0_SUBADD, subaddress); 
     CyDelay(1);
-    WriteControlRegisterSPI(LSM6DSRX_SLV0_CONFIG, 0x06); //ODR = 288Hz, FSR=+/-2g, LPF2 disabled
+    WriteControlRegisterSPI(LSM6DSRX_SLV0_CONFIG, slave_config); //ODR = 288Hz, FSR=+/-2g, LPF2 disabled
     CyDelay(1);
     WriteControlRegisterSPI(LSM6DSRX_MASTER_CONFIG, 0x4C); //ODR = 288Hz, FSR=+/-2g, LPF2 disabled
     CyDelay(1);

@@ -41,21 +41,21 @@
 <v>LSM6DSRX_prova\Design02\Generated_Source\PSoC5\UART</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
-<v>LSM6DSRX_prova</v>
-<v>LSM6DSRX_prova\Design02</v>
-<v>LSM6DSRX_prova\Design02\TopDesign</v>
-<v>LSM6DSRX_prova\Design02\Design02.cydwr</v>
-<v>LSM6DSRX_prova\Design02\Design02.cydwr\Pins</v>
-<v>LSM6DSRX_prova\Design02\Design02.cydwr\Analog</v>
-<v>LSM6DSRX_prova\Design02\Design02.cydwr\Clocks</v>
-<v>LSM6DSRX_prova\Design02\Design02.cydwr\Interrupts</v>
-<v>LSM6DSRX_prova\Design02\Design02.cydwr\DMA</v>
-<v>LSM6DSRX_prova\Design02\Design02.cydwr\System</v>
-<v>LSM6DSRX_prova\Design02\Design02.cydwr\Directives</v>
-<v>LSM6DSRX_prova\Design02\Design02.cydwr\Flash Security</v>
 <v>LSM6DSRX_prova\Design02\Design02.cydwr\EEPROM</v>
 <v>LSM6DSRX_prova\Design02\Header Files</v>
 <v>LSM6DSRX_prova\Design02\Header Files\cyapicallbacks.h</v>
+<v>LSM6DSRX_prova\Design02\Header Files\globals.h</v>
+<v>LSM6DSRX_prova\Design02\Header Files\header01.h</v>
+<v>LSM6DSRX_prova\Design02\Source Files</v>
+<v>LSM6DSRX_prova\Design02\Source Files\main.c</v>
+<v>LSM6DSRX_prova\Design02\Source Files\source01.c</v>
+<v>LSM6DSRX_prova\Design02\Generated_Source</v>
+<v>LSM6DSRX_prova\Design02\Generated_Source\PSoC5</v>
+<v>LSM6DSRX_prova\Design02\Generated_Source\PSoC5\ChipSelect</v>
+<v>LSM6DSRX_prova\Design02\Generated_Source\PSoC5\CLOCK_PWM</v>
+<v>LSM6DSRX_prova\Design02\Generated_Source\PSoC5\cy_boot</v>
+<v>LSM6DSRX_prova\Design02\Generated_Source\PSoC5\cy_boot\cm3gcc.ld</v>
+<v>LSM6DSRX_prova\Design02\Generated_Source\PSoC5\cy_boot\Cm3Iar.icf</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -228,7 +228,9 @@
 <Unloaded />
 <OpenDocs>
 <name v=".\Design02.cydsn\main.c" />
+<name v=".\Design02.cydsn\Design02.cydwr" />
 <name v=".\Design02.cydsn\source01.c" />
+<name v=".\Design02.cydsn\TopDesign\TopDesign.cysch" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -236,7 +238,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="843, 450" SelectedTabbedMdiWindow="7926ae35-8a49-405c-a005-6e28da1fbda5"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="e6c53592-2600-47bd-bb84-e80a1b9fa9d1" /><DocumentWindow Key="C:\Users\mgnocco\Documents\ControlloDiVersione\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn\main.c" Guid="ddf163bf-a368-4e87-ba12-58193e00ce55" /><DocumentWindow Key="C:\Users\mgnocco\Documents\ControlloDiVersione\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn\source01.c" Guid="7926ae35-8a49-405c-a005-6e28da1fbda5" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1188, 573" SelectedTabbedMdiWindow="41863f62-efb6-492a-8bc7-2ac3b3fc099e"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="e6c53592-2600-47bd-bb84-e80a1b9fa9d1" /><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_IMU_LSM6DSRX_LIS2MDL\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn\main.c" Guid="41863f62-efb6-492a-8bc7-2ac3b3fc099e" /><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_IMU_LSM6DSRX_LIS2MDL\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn\Design02.cydwr" Guid="cfbd9dcc-1bf8-417a-8e33-f6ce40e55267" /><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_IMU_LSM6DSRX_LIS2MDL\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn\source01.c" Guid="a3fc7ec4-09e3-4df4-9582-bf4e3f207549" /><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_IMU_LSM6DSRX_LIS2MDL\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn\TopDesign\TopDesign.cysch" Guid="caca5267-57c5-4dd9-811a-c628b8b7292f" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="Release" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
