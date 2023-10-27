@@ -26,8 +26,10 @@ uint8 XLDA;
 uint8 SENS_HUB_ENDOP;
 uint16 t0;
 uint16 t1;
-uint16 tempo;
-
+uint16 tempo[100];
+uint8 j;
+float o;
+uint8 l;
 int main()
 {   MY_TIMER_Start();                 
     PACER_TIMER_Start();    
@@ -49,23 +51,27 @@ int main()
     
    // WriteControlRegisterSPI(LSM6DSRX_FUNC_CFG_ACCESS, 0x00);
     CyDelay(100);
-    OneShot_ReadRoutine(EXT_SENS_ADDR,LIS2MDL_WHO_AM_I); //LIS2MDL
-    OneShot_WriteRoutine(EXT_SENS_ADDR,LIS2MDL_CFG_REG_A,0x8C);
+    OneShot_ReadRoutine(EXT_SENS_ADDR,LIS2MDL_WHO_AM_I); //LIS2MDL -->valore WHO_AM_I = 64
+    OneShot_WriteRoutine(EXT_SENS_ADDR,LIS2MDL_CFG_REG_A,0x8C); //
+    //7 - T_Compensation_enable
+    //6 - 0 //5 - 0 //4 - 0 
+    //3,2 - ODR
     OneShot_WriteRoutine(EXT_SENS_ADDR,LIS2MDL_CFG_REG_B,0x02);
     OneShot_WriteRoutine(EXT_SENS_ADDR,LIS2MDL_CFG_REG_C,0x10);
     Continuous_ReadRoutine(EXT_SENS_ADDR,LIS2MDL_OUTX_L_REG,0x04);
-    
+    j = 0;
+    o=0;
     for(;;)
-    {t0 = (uint16)MY_TIMER_ReadCounter();
+    {   t0 = (uint16)MY_TIMER_ReadCounter();
         //UART_PutChar('a');
-       
+       /*
 //      ------------------------------------------------------------------------READ MAG
         do 
         {
             XLDA = ReadControlRegisterSPI(LSM6DSRX_STATUS_REG);          
         }
         while ((XLDA & 0b00000001) == 0); 
-        /* 
+        
         do 
         {
             SENS_HUB_ENDOP = ReadControlRegisterSPI(LSM6DSRX_STATUS_MASTER_MAINPAGE);   
@@ -87,23 +93,24 @@ int main()
         CyDelayUs(300);  
         */
 //      ---------------------------------------------------------------------READ AXELS
-        
+        /*
         i = ReadControlRegisterSPI(LSM6DSRX_OUTX_L_A);
        // UART_PutChar(i);
         i = ReadControlRegisterSPI(LSM6DSRX_OUTX_H_A);
        // UART_PutChar(i); 
         
-        i= ReadControlRegisterSPI(LSM6DSRX_OUTY_L_A); 
+        i = ReadControlRegisterSPI(LSM6DSRX_OUTY_L_A); 
        // UART_PutChar(i);
-         i = ReadControlRegisterSPI(LSM6DSRX_OUTY_H_A);
+        i = ReadControlRegisterSPI(LSM6DSRX_OUTY_H_A);
        // UART_PutChar(i);
         
         i = ReadControlRegisterSPI(LSM6DSRX_OUTZ_L_A);
        // UART_PutChar(i);
-         i= ReadControlRegisterSPI(LSM6DSRX_OUTZ_H_A); 
+        i= ReadControlRegisterSPI(LSM6DSRX_OUTZ_H_A); 
        // UART_PutChar(i);
-    
+    */
 //      ---------------------------------------------------------------------READ GYROS
+        /*
         i = ReadControlRegisterSPI(LSM6DSRX_OUTX_L_G);
        // UART_PutChar(i);
         i = ReadControlRegisterSPI(LSM6DSRX_OUTX_H_G);
@@ -118,18 +125,37 @@ int main()
        // UART_PutChar(i);
         i = ReadControlRegisterSPI(LSM6DSRX_OUTZ_H_G);
        // UART_PutChar(i);
-        CyDelay(30);  
-        t1 = (uint16)MY_TIMER_ReadCounter();     
-        tempo=(t0-t1);
-        
-        
-        i = (uint8)(tempo & 0x07);
-        UART_PutChar(i);
-        i = (uint8) (tempo >> 8);
-        UART_PutChar(i);
-        
+        */
 
+        t1 = (uint16) MY_TIMER_ReadCounter();
+
+        tempo[j] = (uint16)(t0-t1);
+        MY_TIMER_REG_Write(1);
+        MY_TIMER_REG_Write(0);
+                                
+        j = j + 1;
+        
+        if (j > 99) {
+            
+
+            for(j = 0; j < 100; j++){ 
+                
+               UART_PutChar(j);
+               UART_PutChar(0);
+            
+               l = (uint8)(tempo[j] & 0xFF);
+              UART_PutChar(l);
+              l = (uint8) (tempo[j] >> 8);
+                UART_PutChar(l);
+                UART_PutChar('r');
+                
+            }
+          j = 0;
+            
+        }      
     }
+    
 return 0;
+    
 }
 /* [] END OF FILE */

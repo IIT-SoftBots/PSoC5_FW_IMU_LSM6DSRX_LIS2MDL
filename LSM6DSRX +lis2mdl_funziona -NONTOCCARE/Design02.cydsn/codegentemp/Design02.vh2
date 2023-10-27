@@ -2,7 +2,7 @@
 --	Conversion of Design02.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Tue Oct 17 17:58:43 2023
+--	Fri Oct 27 17:45:46 2023
 --
 
 USE cypress.cypress.all;
@@ -1726,10 +1726,10 @@ Tx_1:cy_psoc3_pins_v1_10
 timer_clock:cy_clock_v1_0
 	GENERIC MAP(cy_registers=>"",
 		id=>"920ac626-75fc-42be-bddc-386ba9cec7f2",
-		source_clock_id=>"75C2148C-3656-4d8a-846D-0CAE99AB6FF7",
+		source_clock_id=>"",
 		divisor=>0,
-		period=>"0",
-		is_direct=>'1',
+		period=>"1000000000",
+		is_direct=>'0',
 		is_digital=>'1')
 	PORT MAP(clock_out=>Net_10654,
 		dig_domain_out=>open);

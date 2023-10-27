@@ -1,5 +1,5 @@
 -- Project:   Design02
--- Generated: 10/17/2023 17:58:43
+-- Generated: 10/27/2023 17:45:47
 -- PSoC Creator  4.4
 
 ENTITY Design02 IS
@@ -37,6 +37,9 @@ ARCHITECTURE __DEFAULT__ OF Design02 IS
     SIGNAL MISO_SDO(0)__PA : bit;
     SIGNAL MOSI_SDA(0)__PA : bit;
     SIGNAL Net_10653 : bit;
+    SIGNAL Net_10654 : bit;
+    ATTRIBUTE global_signal OF Net_10654 : SIGNAL IS true;
+    SIGNAL Net_10654_local : bit;
     SIGNAL Net_14 : bit;
     SIGNAL Net_2 : bit;
     SIGNAL Net_2334 : bit;
@@ -148,6 +151,7 @@ ARCHITECTURE __DEFAULT__ OF Design02 IS
     SIGNAL zero : bit;
     ATTRIBUTE GROUND OF zero : SIGNAL IS true;
     SIGNAL \ClockBlock.clk_bus_glb_ff__sig\ : bit;
+    SIGNAL \ClockBlock.dclk_glb_ff_1__sig\ : bit;
     ATTRIBUTE lib_model OF MOSI_SDA(0) : LABEL IS "iocell1";
     ATTRIBUTE Location OF MOSI_SDA(0) : LABEL IS "P0[7]";
     ATTRIBUTE lib_model OF SCLK(0) : LABEL IS "iocell2";
@@ -592,9 +596,12 @@ BEGIN
             dsi_glb_div => open,
             dclk_glb_0 => Net_2334,
             dclk_0 => Net_2334_local,
-            dclk_glb_1 => \UART:Net_9\,
-            dclk_1 => \UART:Net_9_local\,
-            clk_bus_glb_ff => \ClockBlock.clk_bus_glb_ff__sig\);
+            dclk_glb_1 => Net_10654,
+            dclk_1 => Net_10654_local,
+            dclk_glb_2 => \UART:Net_9\,
+            dclk_2 => \UART:Net_9_local\,
+            clk_bus_glb_ff => \ClockBlock.clk_bus_glb_ff__sig\,
+            dclk_glb_ff_1 => \ClockBlock.dclk_glb_ff_1__sig\);
 
     MOSI_SDA:logicalport
         GENERIC MAP(
@@ -1637,7 +1644,7 @@ BEGIN
         GENERIC MAP(
             cy_registers => "")
         PORT MAP(
-            clock => \ClockBlock.clk_bus_glb_ff__sig\,
+            clock => \ClockBlock.dclk_glb_ff_1__sig\,
             kill => open,
             enable => __ONE__,
             capture => open,

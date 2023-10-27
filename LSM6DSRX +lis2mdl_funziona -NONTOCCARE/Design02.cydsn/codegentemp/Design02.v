@@ -1,6 +1,6 @@
 // ======================================================================
 // Design02.v generated from TopDesign.cysch
-// 10/17/2023 at 17:58
+// 10/27/2023 at 17:45
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -1281,10 +1281,10 @@ module top ;
 
 	cy_clock_v1_0
 		#(.id("920ac626-75fc-42be-bddc-386ba9cec7f2"),
-		  .source_clock_id("75C2148C-3656-4d8a-846D-0CAE99AB6FF7"),
+		  .source_clock_id(""),
 		  .divisor(0),
-		  .period("0"),
-		  .is_direct(1),
+		  .period("1000000000"),
+		  .is_direct(0),
 		  .is_digital(1))
 		timer_clock
 		 (.clock_out(Net_10654));

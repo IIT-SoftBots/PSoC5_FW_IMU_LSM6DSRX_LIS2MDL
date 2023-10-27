@@ -35,6 +35,7 @@
 #include "FF_STATUS.h"
 #include "UART.h"
 #include "MY_TIMER.h"
+#include "timer_clock.h"
 #include "MY_TIMER_REG.h"
 #include "UART_IntClock.h"
 #include "core_cm3_psoc5.h"

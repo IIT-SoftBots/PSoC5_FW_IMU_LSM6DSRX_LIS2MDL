@@ -207,7 +207,7 @@ uint8 OneShot_ReadRoutine(uint8 address, uint8 subaddress){
     
     Data = ReadControlRegisterSPI(LSM6DSRX_SENSOR_HUB_1);  
     WriteControlRegisterSPI(LSM6DSRX_FUNC_CFG_ACCESS, 0x00); 
-    UART_PutChar(Data);
+   // UART_PutChar(Data);
     return Data;
 }
 
@@ -226,6 +226,7 @@ void Continuous_ReadRoutine(uint8 address, uint8 subaddress, uint8 slave_config)
     WriteControlRegisterSPI(LSM6DSRX_FUNC_CFG_ACCESS, 0x00); 
     CyDelay(1);
  }
+
 /*
 void Read( uint8 slave_config){
     uint8 XLDA;
