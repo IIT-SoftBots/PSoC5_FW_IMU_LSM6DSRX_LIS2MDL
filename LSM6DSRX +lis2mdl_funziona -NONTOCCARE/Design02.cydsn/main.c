@@ -13,10 +13,11 @@
 #include "header01.h"
 #include "globals.h"
 #include <project.h>
+#include "interrupts.h"
 int IMU_ack;
 
 //uint8 SensorHub[6] = {LSM6DSRX_SENSOR_HUB_1, LSM6DSRX_SENSOR_HUB_2, LSM6DSRX_SENSOR_HUB_3, LSM6DSRX_SENSOR_HUB_4, LSM6DSRX_SENSOR_HUB_5, LSM6DSRX_SENSOR_HUB_6};
-struct st_imu_data g_imu, g_imuNew;
+//struct st_imu_data g_imu, g_imuNew;
 uint8 Mag[6];
 uint8 Accel[6];
 uint8 Gyro[6];
@@ -30,6 +31,7 @@ uint16 tempo[100];
 uint8 j;
 float o;
 uint8 l;
+uint8 flag_int = 0;
 int main()
 {   MY_TIMER_Start();                 
     PACER_TIMER_Start();    
@@ -39,13 +41,17 @@ int main()
 	SPI_IMU_ClearRxBuffer();
 	SPI_IMU_ClearTxBuffer();
 	SPI_IMU_ClearFIFO();							
+    UART_Start();
     CyDelay(10);
-  
     CyGlobalIntEnable;
+    isr_Acc_StartEx(isr_Acc_Handler);
+    isr_Acc_StartEx(isr_Gyro_Handler);
+    
     
     uint8 i;
     uint8 who;
-    UART_Start();
+    WriteControlRegisterSPI(LSM6DSRX_INT1_CTRL,0x01); //104 Hz (normal mode)
+    WriteControlRegisterSPI(LSM6DSRX_INT2_CTRL,0x02); //104 Hz (normal mode)
     WriteControlRegisterSPI(LSM6DSRX_CTRL1_XL,0x40); //104 Hz (normal mode)
     WriteControlRegisterSPI(LSM6DSRX_CTRL2_G,0x40); //104 Hz (normal mode)
     
@@ -60,18 +66,27 @@ int main()
     OneShot_WriteRoutine(EXT_SENS_ADDR,LIS2MDL_CFG_REG_C,0x10);
     Continuous_ReadRoutine(EXT_SENS_ADDR,LIS2MDL_OUTX_L_REG,0x04);
     j = 0;
+    t0=65533;
     o=0;
     for(;;)
-    {   t0 = (uint16)MY_TIMER_ReadCounter();
+    {
         //UART_PutChar('a');
-       /*
+       
 //      ------------------------------------------------------------------------READ MAG
-        do 
+        /*do 
         {
             XLDA = ReadControlRegisterSPI(LSM6DSRX_STATUS_REG);          
         }
         while ((XLDA & 0b00000001) == 0); 
+        // i = ReadControlRegisterSPI(LSM6DSRX_OUTX_L_A);
+        UART_PutChar(i);*/
+        if (flag_int){
+        i = ReadControlRegisterSPI(LSM6DSRX_OUTX_H_A);
+        UART_PutChar(i); 
+        flag_int=0;
+        }
         
+      /*  
         do 
         {
             SENS_HUB_ENDOP = ReadControlRegisterSPI(LSM6DSRX_STATUS_MASTER_MAINPAGE);   
@@ -93,7 +108,7 @@ int main()
         CyDelayUs(300);  
         */
 //      ---------------------------------------------------------------------READ AXELS
-        /*
+    /*     
         i = ReadControlRegisterSPI(LSM6DSRX_OUTX_L_A);
        // UART_PutChar(i);
         i = ReadControlRegisterSPI(LSM6DSRX_OUTX_H_A);
@@ -103,14 +118,14 @@ int main()
        // UART_PutChar(i);
         i = ReadControlRegisterSPI(LSM6DSRX_OUTY_H_A);
        // UART_PutChar(i);
-        
+       
         i = ReadControlRegisterSPI(LSM6DSRX_OUTZ_L_A);
        // UART_PutChar(i);
         i= ReadControlRegisterSPI(LSM6DSRX_OUTZ_H_A); 
        // UART_PutChar(i);
-    */
+   */
 //      ---------------------------------------------------------------------READ GYROS
-        /*
+/*        
         i = ReadControlRegisterSPI(LSM6DSRX_OUTX_L_G);
        // UART_PutChar(i);
         i = ReadControlRegisterSPI(LSM6DSRX_OUTX_H_G);
@@ -125,34 +140,34 @@ int main()
        // UART_PutChar(i);
         i = ReadControlRegisterSPI(LSM6DSRX_OUTZ_H_G);
        // UART_PutChar(i);
-        */
+        
 
         t1 = (uint16) MY_TIMER_ReadCounter();
 
-        tempo[j] = (uint16)(t0-t1);
+        tempo[j] = (uint16)(t0-t1); 
         MY_TIMER_REG_Write(1);
         MY_TIMER_REG_Write(0);
+         t0 = (uint16)MY_TIMER_ReadCounter();
+       
                                 
         j = j + 1;
         
-        if (j > 99) {
+        if (j > 99) {    
             
-
             for(j = 0; j < 100; j++){ 
                 
-               UART_PutChar(j);
-               UART_PutChar(0);
-            
-               l = (uint8)(tempo[j] & 0xFF);
-              UART_PutChar(l);
-              l = (uint8) (tempo[j] >> 8);
+                UART_PutChar(j);
+                UART_PutChar(0);
+                l = (uint8)(tempo[j] & 0xFF);
                 UART_PutChar(l);
-                UART_PutChar('r');
-                
-            }
-          j = 0;
+                l = (uint8) (tempo[j] >> 8);
+                UART_PutChar(l);
+                UART_PutChar('r');    
+            }         
             
-        }      
+            j = 0;     
+            
+        }      */
     }
     
 return 0;

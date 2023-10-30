@@ -6,7 +6,7 @@
 
 #Build Date:         Sep  9 2019 11:47:43
 
-#File Generated:     Oct 27 2023 17:45:47
+#File Generated:     Oct 30 2023 17:53:24
 
 #Purpose:            
 
@@ -55,7 +55,7 @@ Design Statistics after Packing
 Device Utilization Summary after Packing
     Macrocells                  :	38/192
     UDBS                        :	8/24
-    IOs                         :	6/72
+    IOs                         :	9/72
 
 
 D2088: Phase 3, elapsed time : 0.0 (sec)
@@ -80,14 +80,14 @@ analysis after routing.
                      Clock Summary 
 ======================================================================
 Number of clocks: 10
-Clock: CLOCK_PWM            | Frequency:  58.3 MHz | Target:   2.0 MHz
-Clock: CyBUS_CLK            | Frequency:  49.9 MHz | Target:  24.0 MHz
+Clock: CLOCK_PWM            | Frequency:  62.9 MHz | Target:   2.0 MHz
+Clock: CyBUS_CLK            | Frequency:  51.7 MHz | Target:  24.0 MHz
 Clock: CyBUS_CLK(fixed-function) | Frequency: N/A       | Target:  24.0 MHz
 Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyIMO                | Frequency: N/A       | Target:   3.0 MHz
 Clock: CyMASTER_CLK         | Frequency: N/A       | Target:  24.0 MHz
 Clock: CyPLL_OUT            | Frequency: N/A       | Target:  24.0 MHz
-Clock: UART_IntClock        | Frequency:  49.9 MHz | Target:   0.5 MHz
+Clock: UART_IntClock        | Frequency:  51.7 MHz | Target:   0.5 MHz
 Clock: timer_clock          | Frequency: N/A       | Target:   1.0 MHz
 Clock: timer_clock(fixed-function) | Frequency: N/A       | Target:   1.0 MHz
 
@@ -102,7 +102,7 @@ Phase 7
                      Clock Summary 
 ======================================================================
 Number of clocks: 10
-Clock: CLOCK_PWM            | Frequency:  62.9 MHz | Target:   2.0 MHz
+Clock: CLOCK_PWM            | Frequency:  60.2 MHz | Target:   2.0 MHz
 Clock: CyBUS_CLK            | Frequency:   2.5 MHz | Target:  24.0 MHz
 Clock: CyBUS_CLK(fixed-function) | Frequency: N/A       | Target:  24.0 MHz
 Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
@@ -116,7 +116,7 @@ Clock: timer_clock(fixed-function) | Frequency: N/A       | Target:   1.0 MHz
 ======================================================================
                      End of Clock Summary
 ######################################################################
-D2088: Phase 7, elapsed time : 0.3 (sec)
+D2088: Phase 7, elapsed time : 0.5 (sec)
 
 Final Design Statistics
     Number of Combinational MCs 	:	13
@@ -126,11 +126,11 @@ Final Design Statistics
     Number of Status            	:	5
     Number of SyncCells         	:	1
     Number of count7cells       	:	2
-    Number of IOs       	:	6
+    Number of IOs       	:	9
 
 Device Utilization Summary
     Macrocells                  :	38/192
-    IOs                         :	6/72
+    IOs                         :	9/72
 
 
 
@@ -147,7 +147,7 @@ analysis after routing.
                      Clock Summary 
 ======================================================================
 Number of clocks: 10
-Clock: CLOCK_PWM            | Frequency:  65.0 MHz | Target:   2.0 MHz
+Clock: CLOCK_PWM            | Frequency:  64.5 MHz | Target:   2.0 MHz
 Clock: CyBUS_CLK            | Frequency:   2.6 MHz | Target:  24.0 MHz
 Clock: CyBUS_CLK(fixed-function) | Frequency: N/A       | Target:  24.0 MHz
 Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
@@ -167,5 +167,5 @@ D2088: Phase 8, elapsed time : 0.0 (sec)
 
 D2054: Placement of the design completed successfully
 
-I2076: Total run-time: 1.0 sec.
+I2076: Total run-time: 1.2 sec.
 

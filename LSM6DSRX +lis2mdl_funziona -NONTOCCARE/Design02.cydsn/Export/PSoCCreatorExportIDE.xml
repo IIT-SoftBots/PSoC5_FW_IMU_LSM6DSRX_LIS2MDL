@@ -38,9 +38,11 @@
         <Files Root="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_IMU_LSM6DSRX_LIS2MDL\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn">
           <File BuildType="BUILD" Toolchain="">main.c</File>
           <File BuildType="BUILD" Toolchain="">source01.c</File>
+          <File BuildType="BUILD" Toolchain="">interrupts.c</File>
           <File BuildType="BUILD" Toolchain="">cyapicallbacks.h</File>
           <File BuildType="BUILD" Toolchain="">header01.h</File>
           <File BuildType="BUILD" Toolchain="">globals.h</File>
+          <File BuildType="BUILD" Toolchain="">interrupts.h</File>
         </Files>
       </Folder>
       <Folder BuildType="STRICT" Path="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_IMU_LSM6DSRX_LIS2MDL\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn\Generated_Source\PSoC5">
@@ -136,6 +138,19 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MY_TIMER_REG_PM.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\timer_clock.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\timer_clock.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\isr_Acc.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\isr_Acc.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Acc_INT_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Acc_INT.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Acc_INT.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\isr_Gyro.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\isr_Gyro.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Gyro_INT_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Gyro_INT.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Gyro_INT.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\LED_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\LED.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\LED.h</File>
         </Files>
       </Folder>
       <Folder BuildType="STRICT" Path="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_IMU_LSM6DSRX_LIS2MDL\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn\Export\ARM_GCC_Generic">
