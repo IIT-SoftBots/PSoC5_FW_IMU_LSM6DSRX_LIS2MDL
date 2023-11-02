@@ -2,7 +2,7 @@
 --	Conversion of Design02.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Mon Oct 30 17:53:23 2023
+--	Thu Nov 02 18:38:49 2023
 --
 
 USE cypress.cypress.all;
@@ -590,14 +590,14 @@ SIGNAL \MY_TIMER_REG:control_1\ : bit;
 SIGNAL \MY_TIMER_REG:control_0\ : bit;
 SIGNAL Net_371 : bit;
 SIGNAL tmpOE__Acc_INT_net_0 : bit;
+SIGNAL Net_390 : bit;
 SIGNAL tmpIO_0__Acc_INT_net_0 : bit;
 TERMINAL tmpSIOVREF__Acc_INT_net_0 : bit;
-SIGNAL tmpINTERRUPT_0__Acc_INT_net_0 : bit;
 SIGNAL Net_373 : bit;
 SIGNAL tmpOE__Gyro_INT_net_0 : bit;
+SIGNAL Net_386 : bit;
 SIGNAL tmpIO_0__Gyro_INT_net_0 : bit;
 TERMINAL tmpSIOVREF__Gyro_INT_net_0 : bit;
-SIGNAL tmpINTERRUPT_0__Gyro_INT_net_0 : bit;
 SIGNAL tmpOE__LED_net_0 : bit;
 SIGNAL tmpFB_0__LED_net_0 : bit;
 SIGNAL tmpIO_0__LED_net_0 : bit;
@@ -1759,18 +1759,18 @@ timer_clock:cy_clock_v1_0
 		control=>(\MY_TIMER_REG:control_7\, \MY_TIMER_REG:control_6\, \MY_TIMER_REG:control_5\, \MY_TIMER_REG:control_4\,
 			\MY_TIMER_REG:control_3\, \MY_TIMER_REG:control_2\, \MY_TIMER_REG:control_1\, Net_10653));
 isr_Acc:cy_isr_v1_0
-	GENERIC MAP(int_type=>"01",
+	GENERIC MAP(int_type=>"00",
 		is_nmi=>'0')
 	PORT MAP(int_signal=>Net_371);
 Acc_INT:cy_psoc3_pins_v1_10
 	GENERIC MAP(id=>"1f511037-62a9-4bf4-b7d3-5b09673b1919",
-		drive_mode=>"110",
+		drive_mode=>"011",
 		ibuf_enabled=>"1",
 		init_dr_st=>"0",
 		input_sync=>"0",
 		input_clk_en=>'0',
 		input_sync_mode=>"0",
-		intr_mode=>"00",
+		intr_mode=>"01",
 		invert_in_clock=>'0',
 		invert_in_clock_en=>'0',
 		invert_in_reset=>'0',
@@ -1820,7 +1820,7 @@ Acc_INT:cy_psoc3_pins_v1_10
 		input_buffer_sel=>"00")
 	PORT MAP(oe=>(tmpOE__MOSI_SDA_net_0),
 		y=>(zero),
-		fb=>Net_371,
+		fb=>Net_390,
 		analog=>(open),
 		io=>(tmpIO_0__Acc_INT_net_0),
 		siovref=>(tmpSIOVREF__Acc_INT_net_0),
@@ -1831,7 +1831,7 @@ Acc_INT:cy_psoc3_pins_v1_10
 		out_clock=>zero,
 		out_clock_en=>tmpOE__MOSI_SDA_net_0,
 		out_reset=>zero,
-		interrupt=>tmpINTERRUPT_0__Acc_INT_net_0);
+		interrupt=>Net_371);
 isr_Gyro:cy_isr_v1_0
 	GENERIC MAP(int_type=>"10",
 		is_nmi=>'0')
@@ -1844,7 +1844,7 @@ Gyro_INT:cy_psoc3_pins_v1_10
 		input_sync=>"0",
 		input_clk_en=>'0',
 		input_sync_mode=>"0",
-		intr_mode=>"00",
+		intr_mode=>"01",
 		invert_in_clock=>'0',
 		invert_in_clock_en=>'0',
 		invert_in_reset=>'0',
@@ -1894,7 +1894,7 @@ Gyro_INT:cy_psoc3_pins_v1_10
 		input_buffer_sel=>"00")
 	PORT MAP(oe=>(tmpOE__MOSI_SDA_net_0),
 		y=>(zero),
-		fb=>Net_373,
+		fb=>Net_386,
 		analog=>(open),
 		io=>(tmpIO_0__Gyro_INT_net_0),
 		siovref=>(tmpSIOVREF__Gyro_INT_net_0),
@@ -1905,7 +1905,7 @@ Gyro_INT:cy_psoc3_pins_v1_10
 		out_clock=>zero,
 		out_clock_en=>tmpOE__MOSI_SDA_net_0,
 		out_reset=>zero,
-		interrupt=>tmpINTERRUPT_0__Gyro_INT_net_0);
+		interrupt=>Net_373);
 LED:cy_psoc3_pins_v1_10
 	GENERIC MAP(id=>"885db6f7-3ba1-4516-b893-286a625edbbe",
 		drive_mode=>"110",

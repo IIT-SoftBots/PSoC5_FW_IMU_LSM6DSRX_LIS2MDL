@@ -1,58 +1,57 @@
---------------- Rebuild Started: 10/30/2023 16:53:45 Project: Design02, Configuration: ARM GCC 5.4-2016-q2-update Release ---------------
-Deleting file ".\Design02.cycdx"
-Deleting file ".\Design02.svd"
+--------------- Rebuild Started: 11/02/2023 18:37:35 Project: Design02, Configuration: ARM GCC 5.4-2016-q2-update Release ---------------
+Deleting file ".\CortexM3\ARM_GCC_541\Release\main.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Release\source01.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Release\interrupts.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Release\cyfitter_cfg.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Release\cymetadata.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Release\SCLK.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Release\SPI_IMU.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Release\SPI_IMU_PM.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Release\SPI_IMU_INT.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Release\ChipSelect.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Release\CLOCK_PWM.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Release\Cm3Start.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Release\CyBootAsmGnu.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Release\CyDmac.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Release\CyFlash.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Release\CyLib.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Release\cyPm.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Release\CySpc.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Release\cyutils.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Release\cy_em_eeprom.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Release\PACER_TIMER.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Release\PACER_TIMER_PM.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Release\RESET_FF.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Release\RESET_FF_PM.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Release\FF_STATUS.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Release\UART.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Release\UART_PM.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Release\UART_INT.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Release\UART_BOOT.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Release\UART_IntClock.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Release\MOSI_SDA.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Release\MISO_SDO.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Release\MY_TIMER.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Release\MY_TIMER_PM.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Release\MY_TIMER_REG.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Release\MY_TIMER_REG_PM.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Release\timer_clock.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Release\isr_Acc.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Release\Acc_INT.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Release\isr_Gyro.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Release\Gyro_INT.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Release\LED.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Release\Design02.hex"
+Deleting file ".\CortexM3\ARM_GCC_541\Release\Design02.elf"
+Deleting file ".\CortexM3\ARM_GCC_541\Release\Design02.map"
 Deleting file ".\Design02.rpt"
 Deleting file ".\Design02_timing.html"
+Deleting file ".\CortexM3\ARM_GCC_541\Release\.deps\SOURCE_C__ARM_GCC_GENERIC.P"
+Deleting file ".\CortexM3\ARM_GCC_541\Release\.deps\SOURCE_ASM__ARM_GCC_GENERIC.P"
 cydsfit.exe -.appdatapath "C:\Users\mgnocco\AppData\Local\Cypress Semiconductor\PSoC Creator\4.4" -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p "C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_IMU_LSM6DSRX_LIS2MDL\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn\Design02.cyprj" -d CY8C5888LTI-LP097 -s "C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_IMU_LSM6DSRX_LIS2MDL\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn\Generated_Source\PSoC5" -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
 Elaborating Design...
-HDL Generation...
-Synthesis...
-Tech Mapping...
-Analog Placement...
-Analog Routing...
-Analog Code Generation...
-Digital Placement...
-Digital Routing...
-Bitstream Generation...
-Bitstream Verification...
-Static timing analysis...
-API Generation...
-Dependency Generation...
-Cleanup...
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Release/main.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Os -c main.c -o .\CortexM3\ARM_GCC_541\Release\main.o
-In file included from interrupts.h:13:0,
-                 from main.c:16:
-globals.h:13:8: error: redefinition of 'struct st_imu_data'
- struct st_imu_data {
-        ^
-In file included from main.c:14:0:
-globals.h:13:8: note: originally defined here
- struct st_imu_data {
-        ^
-In file included from interrupts.h:13:0,
-                 from main.c:16:
-globals.h:20:27: error: conflicting types for 'g_imu'
- extern struct st_imu_data g_imu,g_imuNew;
-                           ^
-In file included from main.c:14:0:
-globals.h:20:27: note: previous declaration of 'g_imu' was here
- extern struct st_imu_data g_imu,g_imuNew;
-                           ^
-In file included from interrupts.h:13:0,
-                 from main.c:16:
-globals.h:20:33: error: conflicting types for 'g_imuNew'
- extern struct st_imu_data g_imu,g_imuNew;
-                                 ^
-In file included from main.c:14:0:
-globals.h:20:33: note: previous declaration of 'g_imuNew' was here
- extern struct st_imu_data g_imu,g_imuNew;
-                                 ^
-main.c: In function 'main':
-main.c:51:11: warning: unused variable 'who' [-Wunused-variable]
-     uint8 who;
-           ^
-main.c:50:11: warning: variable 'i' set but not used [-Wunused-but-set-variable]
-     uint8 i;
-           ^
-The command 'arm-none-eabi-gcc.exe' failed with exit code '1'.
---------------- Rebuild Failed: 10/30/2023 16:54:05 ---------------
+ADD: sdb.M0017: error: No drivers on signal "Net_385", bit(s) "0".
+ * C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_IMU_LSM6DSRX_LIS2MDL\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn\TopDesign\TopDesign.cysch (Signal: Net_385)
+ * C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_IMU_LSM6DSRX_LIS2MDL\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn\TopDesign\TopDesign.cysch (Shape_133)
+Error: fit.M0050: The fitter aborted due to errors, please address all errors and rebuild. (App=cydsfit)
+--------------- Rebuild Failed: 11/02/2023 18:37:38 ---------------

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczGRVWW.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
   28:Generated_Source\PSoC5/cyfitter_cfg.c **** 
   29:Generated_Source\PSoC5/cyfitter_cfg.c **** 
   30:Generated_Source\PSoC5/cyfitter_cfg.c **** #if defined(__GNUC__) || defined(__ARMCC_VERSION)
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 2
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczGRVWW.s 			page 2
 
 
   31:Generated_Source\PSoC5/cyfitter_cfg.c ****     #define CYPACKED 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
   85:Generated_Source\PSoC5/cyfitter_cfg.c **** {
   86:Generated_Source\PSoC5/cyfitter_cfg.c **** 	(void)memcpy(dest, src, n);
   87:Generated_Source\PSoC5/cyfitter_cfg.c **** }
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 3
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczGRVWW.s 			page 3
 
 
   88:Generated_Source\PSoC5/cyfitter_cfg.c **** CY_CFG_UNUSED
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  142:Generated_Source\PSoC5/cyfitter_cfg.c **** 
  143:Generated_Source\PSoC5/cyfitter_cfg.c **** 
  144:Generated_Source\PSoC5/cyfitter_cfg.c ****     /* `#END` */
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 4
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczGRVWW.s 			page 4
 
 
  145:Generated_Source\PSoC5/cyfitter_cfg.c **** 
@@ -187,7 +187,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  148:Generated_Source\PSoC5/cyfitter_cfg.c **** }
  149:Generated_Source\PSoC5/cyfitter_cfg.c **** #endif
  150:Generated_Source\PSoC5/cyfitter_cfg.c **** 
- 151:Generated_Source\PSoC5/cyfitter_cfg.c **** #define CY_CFG_BASE_ADDR_COUNT 28u
+ 151:Generated_Source\PSoC5/cyfitter_cfg.c **** #define CY_CFG_BASE_ADDR_COUNT 29u
  152:Generated_Source\PSoC5/cyfitter_cfg.c **** CYPACKED typedef struct
  153:Generated_Source\PSoC5/cyfitter_cfg.c **** {
  154:Generated_Source\PSoC5/cyfitter_cfg.c **** 	uint8 offset;
@@ -195,28 +195,28 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  156:Generated_Source\PSoC5/cyfitter_cfg.c **** } CYPACKED_ATTR cy_cfg_addrvalue_t;
  157:Generated_Source\PSoC5/cyfitter_cfg.c **** 
  158:Generated_Source\PSoC5/cyfitter_cfg.c **** #define cy_cfg_addr_table ((const uint32 CYFAR *)0x48000000u)
- 159:Generated_Source\PSoC5/cyfitter_cfg.c **** #define cy_cfg_data_table ((const cy_cfg_addrvalue_t CYFAR *)0x48000070u)
+ 159:Generated_Source\PSoC5/cyfitter_cfg.c **** #define cy_cfg_data_table ((const cy_cfg_addrvalue_t CYFAR *)0x48000074u)
  160:Generated_Source\PSoC5/cyfitter_cfg.c **** 
  161:Generated_Source\PSoC5/cyfitter_cfg.c **** /* UDB_1_2_1_CONFIG Address: CYDEV_UCFG_B0_P3_U0_BASE Size (bytes): 128 */
- 162:Generated_Source\PSoC5/cyfitter_cfg.c **** #define BS_UDB_1_2_1_CONFIG_VAL ((const uint8 CYFAR *)0x480004C0u)
+ 162:Generated_Source\PSoC5/cyfitter_cfg.c **** #define BS_UDB_1_2_1_CONFIG_VAL ((const uint8 CYFAR *)0x480004C8u)
  163:Generated_Source\PSoC5/cyfitter_cfg.c **** 
  164:Generated_Source\PSoC5/cyfitter_cfg.c **** /* UDB_1_0_0_CONFIG Address: CYDEV_UCFG_B1_P2_U0_BASE Size (bytes): 128 */
- 165:Generated_Source\PSoC5/cyfitter_cfg.c **** #define BS_UDB_1_0_0_CONFIG_VAL ((const uint8 CYFAR *)0x48000540u)
+ 165:Generated_Source\PSoC5/cyfitter_cfg.c **** #define BS_UDB_1_0_0_CONFIG_VAL ((const uint8 CYFAR *)0x48000548u)
  166:Generated_Source\PSoC5/cyfitter_cfg.c **** 
  167:Generated_Source\PSoC5/cyfitter_cfg.c **** /* IOPINS0_0 Address: CYREG_PRT0_DM0 Size (bytes): 8 */
- 168:Generated_Source\PSoC5/cyfitter_cfg.c **** #define BS_IOPINS0_0_VAL ((const uint8 CYFAR *)0x480005C0u)
+ 168:Generated_Source\PSoC5/cyfitter_cfg.c **** #define BS_IOPINS0_0_VAL ((const uint8 CYFAR *)0x480005C8u)
  169:Generated_Source\PSoC5/cyfitter_cfg.c **** 
  170:Generated_Source\PSoC5/cyfitter_cfg.c **** /* IOPINS0_7 Address: CYREG_PRT12_DR Size (bytes): 10 */
- 171:Generated_Source\PSoC5/cyfitter_cfg.c **** #define BS_IOPINS0_7_VAL ((const uint8 CYFAR *)0x480005C8u)
+ 171:Generated_Source\PSoC5/cyfitter_cfg.c **** #define BS_IOPINS0_7_VAL ((const uint8 CYFAR *)0x480005D0u)
  172:Generated_Source\PSoC5/cyfitter_cfg.c **** 
  173:Generated_Source\PSoC5/cyfitter_cfg.c **** /* IOPINS0_1 Address: CYREG_PRT1_DM0 Size (bytes): 8 */
- 174:Generated_Source\PSoC5/cyfitter_cfg.c **** #define BS_IOPINS0_1_VAL ((const uint8 CYFAR *)0x480005D4u)
+ 174:Generated_Source\PSoC5/cyfitter_cfg.c **** #define BS_IOPINS0_1_VAL ((const uint8 CYFAR *)0x480005DCu)
  175:Generated_Source\PSoC5/cyfitter_cfg.c **** 
  176:Generated_Source\PSoC5/cyfitter_cfg.c **** /* IOPINS0_2 Address: CYREG_PRT2_DM0 Size (bytes): 8 */
- 177:Generated_Source\PSoC5/cyfitter_cfg.c **** #define BS_IOPINS0_2_VAL ((const uint8 CYFAR *)0x480005DCu)
+ 177:Generated_Source\PSoC5/cyfitter_cfg.c **** #define BS_IOPINS0_2_VAL ((const uint8 CYFAR *)0x480005E4u)
  178:Generated_Source\PSoC5/cyfitter_cfg.c **** 
  179:Generated_Source\PSoC5/cyfitter_cfg.c **** /* IOPINS0_3 Address: CYREG_PRT3_DM0 Size (bytes): 8 */
- 180:Generated_Source\PSoC5/cyfitter_cfg.c **** #define BS_IOPINS0_3_VAL ((const uint8 CYFAR *)0x480005E4u)
+ 180:Generated_Source\PSoC5/cyfitter_cfg.c **** #define BS_IOPINS0_3_VAL ((const uint8 CYFAR *)0x480005ECu)
  181:Generated_Source\PSoC5/cyfitter_cfg.c **** 
  182:Generated_Source\PSoC5/cyfitter_cfg.c **** 
  183:Generated_Source\PSoC5/cyfitter_cfg.c **** /*******************************************************************************
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  199:Generated_Source\PSoC5/cyfitter_cfg.c **** {
  200:Generated_Source\PSoC5/cyfitter_cfg.c **** 	/* For 32-bit little-endian architectures */
  201:Generated_Source\PSoC5/cyfitter_cfg.c **** 	uint32 i, j = 0u;
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 5
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczGRVWW.s 			page 5
 
 
  202:Generated_Source\PSoC5/cyfitter_cfg.c **** 	for (i = 0u; i < CY_CFG_BASE_ADDR_COUNT; i++)
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  256:Generated_Source\PSoC5/cyfitter_cfg.c **** 	CY_SET_XTND_REG16((void CYFAR *)(CYREG_FASTCLK_PLL_P), 0x0008u);
  257:Generated_Source\PSoC5/cyfitter_cfg.c **** 	CY_SET_XTND_REG16((void CYFAR *)(CYREG_FASTCLK_PLL_CFG0), 0x1251u);
  258:Generated_Source\PSoC5/cyfitter_cfg.c **** 	/* Wait up to 250us for the PLL to lock */
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 6
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczGRVWW.s 			page 6
 
 
  259:Generated_Source\PSoC5/cyfitter_cfg.c **** 	pllLock = 0u;
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  313:Generated_Source\PSoC5/cyfitter_cfg.c **** ********************************************************************************
  314:Generated_Source\PSoC5/cyfitter_cfg.c **** *
  315:Generated_Source\PSoC5/cyfitter_cfg.c **** * Summary:
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 7
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczGRVWW.s 			page 7
 
 
  316:Generated_Source\PSoC5/cyfitter_cfg.c **** * Enables or disables the analog pumps feeding analog routing switches.
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  341:Generated_Source\PSoC5/cyfitter_cfg.c **** 
  342:Generated_Source\PSoC5/cyfitter_cfg.c **** 
  343:Generated_Source\PSoC5/cyfitter_cfg.c **** 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 8
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczGRVWW.s 			page 8
 
 
  344:Generated_Source\PSoC5/cyfitter_cfg.c **** 
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  375:Generated_Source\PSoC5/cyfitter_cfg.c **** 			void CYFAR *address;
  376:Generated_Source\PSoC5/cyfitter_cfg.c **** 			uint16 size;
  377:Generated_Source\PSoC5/cyfitter_cfg.c **** 		} CYPACKED_ATTR cfg_memset_t;
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 9
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczGRVWW.s 			page 9
 
 
  378:Generated_Source\PSoC5/cyfitter_cfg.c **** 
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
   99              	.LBB51:
   79:Generated_Source\PSoC5/cyfitter_cfg.c **** }
  100              		.loc 1 79 0 is_stmt 1 discriminator 3
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 10
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczGRVWW.s 			page 10
 
 
  101 0018 0021     		movs	r1, #0
@@ -598,18 +598,18 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  151              	.LBB60:
  204:Generated_Source\PSoC5/cyfitter_cfg.c **** 		uint8 count = (uint8)baseAddr;
  152              		.loc 1 204 0
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 11
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczGRVWW.s 			page 11
 
 
  153 0042 50F8041F 		ldr	r1, [r0, #4]!
  154              	.LVL10:
  155 0046 04F11053 		add	r3, r4, #603979776
- 156 004a 03F13802 		add	r2, r3, #56
+ 156 004a 03F13A02 		add	r2, r3, #58
  206:Generated_Source\PSoC5/cyfitter_cfg.c **** 		while (count != 0u)
  157              		.loc 1 206 0
  158 004e 21F0FF06 		bic	r6, r1, #255
  159              	.LVL11:
- 160 0052 3933     		adds	r3, r3, #57
+ 160 0052 3B33     		adds	r3, r3, #59
  161 0054 C9B2     		uxtb	r1, r1
  162 0056 0B44     		add	r3, r3, r1
  163 0058 5200     		lsls	r2, r2, #1
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  187 0076 544A     		ldr	r2, .L20+32
  428:Generated_Source\PSoC5/cyfitter_cfg.c **** 		CY_SET_XTND_REG8((void CYFAR *)CYREG_BCTL1_BANK_CTL, CY_GET_XTND_REG8((void CYFAR *)CYREG_BCTL1_B
  429:Generated_Source\PSoC5/cyfitter_cfg.c **** 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 12
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczGRVWW.s 			page 12
 
 
  430:Generated_Source\PSoC5/cyfitter_cfg.c **** 		/* Enable UDB array */
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  231              	.LBE71:
  232              	.LBE76:
  233              	.LBB77:
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 13
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczGRVWW.s 			page 13
 
 
  234              		.loc 1 432 0
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  440:Generated_Source\PSoC5/cyfitter_cfg.c **** 	CYCONFIGCPY((void CYFAR *)(CYREG_PRT2_DM0), (const void CYFAR *)(BS_IOPINS0_2_VAL), 8u);
  441:Generated_Source\PSoC5/cyfitter_cfg.c **** 	CYCONFIGCPY((void CYFAR *)(CYREG_PRT3_DM0), (const void CYFAR *)(BS_IOPINS0_3_VAL), 8u);
  442:Generated_Source\PSoC5/cyfitter_cfg.c **** 	/* Switch Boost to the precision bandgap reference from its internal reference */
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 14
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczGRVWW.s 			page 14
 
 
  443:Generated_Source\PSoC5/cyfitter_cfg.c **** 	CY_SET_REG8((void CYXDATA *)CYREG_BOOST_CR2, (CY_GET_REG8((void CYXDATA *)CYREG_BOOST_CR2) | 0x08u
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  322 00fc D180     		strh	r1, [r2, #6]	@ movhi
  245:Generated_Source\PSoC5/cyfitter_cfg.c **** 
  323              		.loc 1 245 0
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 15
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczGRVWW.s 			page 15
 
 
  324 00fe 1372     		strb	r3, [r2, #8]
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  260:Generated_Source\PSoC5/cyfitter_cfg.c **** 	{ 
  365              		.loc 1 260 0
  366 013e 013E     		subs	r6, r6, #1
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 16
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczGRVWW.s 			page 16
 
 
  367              	.LVL24:
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  409              	.LBB74:
  279:Generated_Source\PSoC5/cyfitter_cfg.c **** }
  410              		.loc 1 279 0
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 17
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczGRVWW.s 			page 17
 
 
  411 016c 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  452              	.LBB97:
  453              	.LBB93:
   86:Generated_Source\PSoC5/cyfitter_cfg.c **** }
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 18
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczGRVWW.s 			page 18
 
 
  454              		.loc 1 86 0
@@ -1035,17 +1035,17 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  465              	.L20:
  466 01a8 E8460040 		.word	1073759976
  467 01ac 00000000 		.word	.LANCHOR0
- 468 01b0 C0040048 		.word	1207960768
+ 468 01b0 C8040048 		.word	1207960776
  469 01b4 00060140 		.word	1073808896
- 470 01b8 40050048 		.word	1207960896
+ 470 01b8 48050048 		.word	1207960904
  471 01bc 00140140 		.word	1073812480
- 472 01c0 6C000048 		.word	1207959660
+ 472 01c0 70000048 		.word	1207959664
  473 01c4 FCFFFF47 		.word	1207959548
  474 01c8 03500140 		.word	1073827843
  475 01cc A0430040 		.word	1073759136
  476 01d0 C0510040 		.word	1073762752
  477 01d4 25420040 		.word	1073758757
- 478 01d8 C0050048 		.word	1207961024
+ 478 01d8 C8050048 		.word	1207961032
  479 01dc 12510040 		.word	1073762578
  480 01e0 00480040 		.word	1073760256
  481 01e4 82400040 		.word	1073758338
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  508 0010 1000     		.2byte	16
  509 0012 00000140 		.4byte	1073807360
  510 0016 0006     		.2byte	1536
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 19
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczGRVWW.s 			page 19
 
 
  511 0018 80060140 		.4byte	1073809024
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  565 0053 04       		.uleb128 0x4
  566 0054 01       		.byte	0x1
  567 0055 08       		.byte	0x8
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 20
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczGRVWW.s 			page 20
 
 
  568 0056 40020000 		.4byte	.LASF4
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  622 00bf 06       		.uleb128 0x6
  623 00c0 3B020000 		.4byte	.LASF18
  624 00c4 03       		.byte	0x3
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 21
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczGRVWW.s 			page 21
 
 
  625 00c5 9302     		.2byte	0x293
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  679 0136 01       		.byte	0x1
  680 0137 54       		.byte	0x54
  681 0138 84000000 		.4byte	0x84
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 22
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczGRVWW.s 			page 22
 
 
  682 013c 0C       		.uleb128 0xc
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  736 01a5 0D       		.uleb128 0xd
  737 01a6 04       		.byte	0x4
  738 01a7 AB010000 		.4byte	0x1ab
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 23
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczGRVWW.s 			page 23
 
 
  739 01ab 12       		.uleb128 0x12
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  793 021a 17       		.uleb128 0x17
  794 021b EB010000 		.4byte	.LASF34
  795 021f 01       		.byte	0x1
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 24
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczGRVWW.s 			page 24
 
 
  796 0220 3001     		.2byte	0x130
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  850 0295 69020000 		.4byte	0x269
  851 0299 19       		.uleb128 0x19
  852 029a 0A       		.byte	0xa
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 25
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczGRVWW.s 			page 25
 
 
  853 029b 01       		.byte	0x1
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  907 0313 CA020000 		.4byte	0x2ca
  908 0317 1E       		.uleb128 0x1e
  909 0318 5E030000 		.4byte	.LASF46
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 26
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczGRVWW.s 			page 26
 
 
  910 031c 01       		.byte	0x1
@@ -1509,7 +1509,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  915 0325 06       		.byte	0x6
  916 0326 01       		.byte	0x1
  917 0327 40       		.byte	0x40
- 918 0328 C0       		.byte	0xc0
+ 918 0328 C8       		.byte	0xc8
  919 0329 04       		.byte	0x4
  920 032a 00       		.byte	0
  921 032b 48       		.byte	0x48
@@ -1519,7 +1519,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  925 032f 14       		.byte	0x14
  926 0330 01       		.byte	0x1
  927 0331 40       		.byte	0x40
- 928 0332 40       		.byte	0x40
+ 928 0332 48       		.byte	0x48
  929 0333 05       		.byte	0x5
  930 0334 00       		.byte	0
  931 0335 48       		.byte	0x48
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  964 0383 FA010000 		.4byte	0x1fa
  965 0387 B3000000 		.4byte	.LLST3
  966 038b 22       		.uleb128 0x22
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 27
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczGRVWW.s 			page 27
 
 
  967 038c 24000000 		.4byte	.LVL5
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  1021 040e 98010000 		.4byte	.LLST9
  1022 0412 27       		.uleb128 0x27
  1023 0413 32000000 		.4byte	.LVL7
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 28
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczGRVWW.s 			page 28
 
 
  1024 0417 38060000 		.4byte	0x638
@@ -1634,7 +1634,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  1034 042a 51       		.byte	0x51
  1035 042b 05       		.uleb128 0x5
  1036 042c 0C       		.byte	0xc
- 1037 042d C0040048 		.4byte	0x480004c0
+ 1037 042d C8040048 		.4byte	0x480004c8
  1038 0431 23       		.uleb128 0x23
  1039 0432 01       		.uleb128 0x1
  1040 0433 52       		.byte	0x52
@@ -1656,7 +1656,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  1056 044c 51       		.byte	0x51
  1057 044d 05       		.uleb128 0x5
  1058 044e 0C       		.byte	0xc
- 1059 044f 40050048 		.4byte	0x48000540
+ 1059 044f 48050048 		.4byte	0x48000548
  1060 0453 23       		.uleb128 0x23
  1061 0454 01       		.uleb128 0x1
  1062 0455 52       		.byte	0x52
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  1078 0472 6F010000 		.4byte	0x16f
  1079 0476 29       		.uleb128 0x29
  1080 0477 60000000 		.4byte	.Ldebug_ranges0+0x60
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 29
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczGRVWW.s 			page 29
 
 
  1081 047b 2A       		.uleb128 0x2a
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  1135 0510 23       		.uleb128 0x23
  1136 0511 01       		.uleb128 0x1
  1137 0512 50       		.byte	0x50
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 30
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczGRVWW.s 			page 30
 
 
  1138 0513 03       		.uleb128 0x3
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  1192 05a1 31010000 		.4byte	0x131
  1193 05a5 7D030000 		.4byte	.LLST27
  1194 05a9 00       		.byte	0
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 31
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczGRVWW.s 			page 31
 
 
  1195 05aa 2C       		.uleb128 0x2c
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  1249 063d 4D010000 		.4byte	.LASF51
  1250 0641 2F       		.uleb128 0x2f
  1251 0642 25020000 		.4byte	.LASF56
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 32
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczGRVWW.s 			page 32
 
 
  1252 0646 25020000 		.4byte	.LASF56
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  1306 0030 3E       		.uleb128 0x3e
  1307 0031 0B       		.uleb128 0xb
  1308 0032 03       		.uleb128 0x3
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 33
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczGRVWW.s 			page 33
 
 
  1309 0033 0E       		.uleb128 0xe
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  1363 0069 38       		.uleb128 0x38
  1364 006a 0B       		.uleb128 0xb
  1365 006b 00       		.byte	0
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 34
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczGRVWW.s 			page 34
 
 
  1366 006c 00       		.byte	0
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  1420 00a2 26       		.uleb128 0x26
  1421 00a3 00       		.byte	0
  1422 00a4 00       		.byte	0
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 35
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczGRVWW.s 			page 35
 
 
  1423 00a5 00       		.byte	0
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  1477 00db 12       		.uleb128 0x12
  1478 00dc 06       		.uleb128 0x6
  1479 00dd 40       		.uleb128 0x40
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 36
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczGRVWW.s 			page 36
 
 
  1480 00de 18       		.uleb128 0x18
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  1534 0115 17       		.uleb128 0x17
  1535 0116 34       		.uleb128 0x34
  1536 0117 00       		.byte	0
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 37
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczGRVWW.s 			page 37
 
 
  1537 0118 03       		.uleb128 0x3
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  1591 014e 3B       		.uleb128 0x3b
  1592 014f 05       		.uleb128 0x5
  1593 0150 49       		.uleb128 0x49
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 38
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczGRVWW.s 			page 38
 
 
  1594 0151 13       		.uleb128 0x13
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  1648 0187 1D       		.uleb128 0x1d
  1649 0188 01       		.byte	0x1
  1650 0189 31       		.uleb128 0x31
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 39
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczGRVWW.s 			page 39
 
 
  1651 018a 13       		.uleb128 0x13
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  1705 01c5 34       		.uleb128 0x34
  1706 01c6 00       		.byte	0
  1707 01c7 03       		.uleb128 0x3
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 40
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczGRVWW.s 			page 40
 
 
  1708 01c8 0E       		.uleb128 0xe
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  1762 0200 31       		.uleb128 0x31
  1763 0201 13       		.uleb128 0x13
  1764 0202 02       		.uleb128 0x2
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 41
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczGRVWW.s 			page 41
 
 
  1765 0203 17       		.uleb128 0x17
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  1819 0239 0E       		.uleb128 0xe
  1820 023a 03       		.uleb128 0x3
  1821 023b 0E       		.uleb128 0xe
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 42
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczGRVWW.s 			page 42
 
 
  1822 023c 00       		.byte	0
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  1876 004e 00       		.sleb128 0
  1877 004f 36       		.byte	0x36
  1878 0050 1E       		.byte	0x1e
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 43
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczGRVWW.s 			page 43
 
 
  1879 0051 03       		.byte	0x3
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  1933 00b7 20000000 		.4byte	.LVL4
  1934 00bb 0A00     		.2byte	0xa
  1935 00bd 74       		.byte	0x74
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 44
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczGRVWW.s 			page 44
 
 
  1936 00be 00       		.sleb128 0
@@ -2634,16 +2634,16 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  1986 0137 32000000 		.4byte	.LVL7
  1987 013b 0600     		.2byte	0x6
  1988 013d 0C       		.byte	0xc
- 1989 013e C0040048 		.4byte	0x480004c0
+ 1989 013e C8040048 		.4byte	0x480004c8
  1990 0142 9F       		.byte	0x9f
  1991 0143 32000000 		.4byte	.LVL7
  1992 0147 14020000 		.4byte	.LFE8
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 45
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczGRVWW.s 			page 45
 
 
  1993 014b 0600     		.2byte	0x6
  1994 014d 0C       		.byte	0xc
- 1995 014e 40050048 		.4byte	0x48000540
+ 1995 014e 48050048 		.4byte	0x48000548
  1996 0152 9F       		.byte	0x9f
  1997 0153 00000000 		.4byte	0
  1998 0157 00000000 		.4byte	0
@@ -2661,13 +2661,13 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  2010 0174 32000000 		.4byte	.LVL7
  2011 0178 0600     		.2byte	0x6
  2012 017a 0C       		.byte	0xc
- 2013 017b C0040048 		.4byte	0x480004c0
+ 2013 017b C8040048 		.4byte	0x480004c8
  2014 017f 9F       		.byte	0x9f
  2015 0180 32000000 		.4byte	.LVL7
  2016 0184 3C000000 		.4byte	.LVL8
  2017 0188 0600     		.2byte	0x6
  2018 018a 0C       		.byte	0xc
- 2019 018b 40050048 		.4byte	0x48000540
+ 2019 018b 48050048 		.4byte	0x48000548
  2020 018f 9F       		.byte	0x9f
  2021 0190 00000000 		.4byte	0
  2022 0194 00000000 		.4byte	0
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  2047 01d4 3C000000 		.4byte	.LVL8
  2048 01d8 42000000 		.4byte	.LVL9
  2049 01dc 0200     		.2byte	0x2
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 46
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczGRVWW.s 			page 46
 
 
  2050 01de 30       		.byte	0x30
@@ -2744,7 +2744,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  2090 0247 BA000000 		.4byte	.LVL17
  2091 024b 0600     		.2byte	0x6
  2092 024d 0C       		.byte	0xc
- 2093 024e C8050048 		.4byte	0x480005c8
+ 2093 024e D0050048 		.4byte	0x480005d0
  2094 0252 9F       		.byte	0x9f
  2095 0253 00000000 		.4byte	0
  2096 0257 00000000 		.4byte	0
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  2104 026b 00000000 		.4byte	0
  2105 026f 00000000 		.4byte	0
  2106              	.LLST17:
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 47
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczGRVWW.s 			page 47
 
 
  2107 0273 2C010000 		.4byte	.LVL21
@@ -2807,7 +2807,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  2150 02e1 B2000000 		.4byte	.LVL16
  2151 02e5 0600     		.2byte	0x6
  2152 02e7 0C       		.byte	0xc
- 2153 02e8 C0050048 		.4byte	0x480005c0
+ 2153 02e8 C8050048 		.4byte	0x480005c8
  2154 02ec 9F       		.byte	0x9f
  2155 02ed 00000000 		.4byte	0
  2156 02f1 00000000 		.4byte	0
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  2161 02ff 0C       		.byte	0xc
  2162 0300 02510040 		.4byte	0x40005102
  2163 0304 9F       		.byte	0x9f
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 48
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczGRVWW.s 			page 48
 
 
  2164 0305 00000000 		.4byte	0
@@ -2836,7 +2836,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  2176 0325 C4000000 		.4byte	.LVL18
  2177 0329 0600     		.2byte	0x6
  2178 032b 0C       		.byte	0xc
- 2179 032c D4050048 		.4byte	0x480005d4
+ 2179 032c DC050048 		.4byte	0x480005dc
  2180 0330 9F       		.byte	0x9f
  2181 0331 00000000 		.4byte	0
  2182 0335 00000000 		.4byte	0
@@ -2862,7 +2862,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  2202 0369 CA000000 		.4byte	.LVL19
  2203 036d 0600     		.2byte	0x6
  2204 036f 0C       		.byte	0xc
- 2205 0370 DC050048 		.4byte	0x480005dc
+ 2205 0370 E4050048 		.4byte	0x480005e4
  2206 0374 9F       		.byte	0x9f
  2207 0375 00000000 		.4byte	0
  2208 0379 00000000 		.4byte	0
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  2218              	.LLST28:
  2219 0395 CA000000 		.4byte	.LVL19
  2220 0399 D4000000 		.4byte	.LVL20
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 49
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczGRVWW.s 			page 49
 
 
  2221 039d 0200     		.2byte	0x2
@@ -2891,7 +2891,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  2228 03ad D4000000 		.4byte	.LVL20
  2229 03b1 0600     		.2byte	0x6
  2230 03b3 0C       		.byte	0xc
- 2231 03b4 E4050048 		.4byte	0x480005e4
+ 2231 03b4 EC050048 		.4byte	0x480005ec
  2232 03b8 9F       		.byte	0x9f
  2233 03b9 00000000 		.4byte	0
  2234 03bd 00000000 		.4byte	0
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  2275 0428 00000000 		.4byte	0
  2276 042c 00000000 		.4byte	0
  2277              		.section	.debug_aranges,"",%progbits
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 50
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczGRVWW.s 			page 50
 
 
  2278 0000 24000000 		.4byte	0x24
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  2332 009c A0000000 		.4byte	.LBE76
  2333 00a0 DA000000 		.4byte	.LBB89
  2334 00a4 DC000000 		.4byte	.LBE89
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 51
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczGRVWW.s 			page 51
 
 
  2335 00a8 E8000000 		.4byte	.LBB90
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  2374              	.LASF9:
  2375 003c 6C6F6E67 		.ascii	"long long unsigned int\000"
  2375      206C6F6E 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 52
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczGRVWW.s 			page 52
 
 
  2375      6720756E 
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  2395      20696E74 
  2395      00
  2396              	.LASF19:
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 53
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczGRVWW.s 			page 53
 
 
  2397 0147 72656731 		.ascii	"reg16\000"
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  2425      7369676E 
  2425      65642069 
  2425      6E7400
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 54
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczGRVWW.s 			page 54
 
 
  2426              	.LASF10:
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  2453 0260 63795F63 		.ascii	"cy_cfg_addrvalue_t\000"
  2453      66675F61 
  2453      64647276 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 55
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczGRVWW.s 			page 55
 
 
  2453      616C7565 
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 1
  2477      6D656D63 
  2477      70795F6C 
  2477      69737400 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZYe3tt.s 			page 56
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczGRVWW.s 			page 56
 
 
  2478              	.LASF39:

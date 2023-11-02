@@ -32,6 +32,28 @@ uint8 j;
 float o;
 uint8 l;
 uint8 flag_int = 0;
+
+    uint8 i;
+    uint8 who;
+
+CY_ISR(isr_Acc_Handler){
+
+LED_Write(1);
+CyDelay(50);
+   
+        i = ReadControlRegisterSPI(LSM6DSRX_OUTX_H_A);
+    CyDelay (10);
+Acc_INT_ClearInterrupt();
+}
+
+CY_ISR(isr_Gyro_Handler){
+
+    // Set cycles interrupt flag
+    
+
+
+}
+
 int main()
 {   MY_TIMER_Start();                 
     PACER_TIMER_Start();    
@@ -41,33 +63,28 @@ int main()
 	SPI_IMU_ClearRxBuffer();
 	SPI_IMU_ClearTxBuffer();
 	SPI_IMU_ClearFIFO();							
-    UART_Start();
+    //UART_Start();
     CyDelay(10);
     CyGlobalIntEnable;
     isr_Acc_StartEx(isr_Acc_Handler);
-    isr_Acc_StartEx(isr_Gyro_Handler);
+    //isr_Gyro_StartEx(isr_Gyro_Handler);
     
     
-    uint8 i;
-    uint8 who;
     WriteControlRegisterSPI(LSM6DSRX_INT1_CTRL,0x01); //104 Hz (normal mode)
     WriteControlRegisterSPI(LSM6DSRX_INT2_CTRL,0x02); //104 Hz (normal mode)
-    WriteControlRegisterSPI(LSM6DSRX_CTRL1_XL,0x40); //104 Hz (normal mode)
-    WriteControlRegisterSPI(LSM6DSRX_CTRL2_G,0x40); //104 Hz (normal mode)
+    WriteControlRegisterSPI(LSM6DSRX_CTRL1_XL,0x20); //104 Hz (normal mode)
+    WriteControlRegisterSPI(LSM6DSRX_CTRL2_G,0x00); //104 Hz (normal mode)
     
-   // WriteControlRegisterSPI(LSM6DSRX_FUNC_CFG_ACCESS, 0x00);
-    CyDelay(100);
+  // WriteControlRegisterSPI(LSM6DSRX_FUNC_CFG_ACCESS, 0x00);
+ /*   CyDelay(100);
     OneShot_ReadRoutine(EXT_SENS_ADDR,LIS2MDL_WHO_AM_I); //LIS2MDL -->valore WHO_AM_I = 64
     OneShot_WriteRoutine(EXT_SENS_ADDR,LIS2MDL_CFG_REG_A,0x8C); //
-    //7 - T_Compensation_enable
-    //6 - 0 //5 - 0 //4 - 0 
-    //3,2 - ODR
     OneShot_WriteRoutine(EXT_SENS_ADDR,LIS2MDL_CFG_REG_B,0x02);
     OneShot_WriteRoutine(EXT_SENS_ADDR,LIS2MDL_CFG_REG_C,0x10);
     Continuous_ReadRoutine(EXT_SENS_ADDR,LIS2MDL_OUTX_L_REG,0x04);
     j = 0;
     t0=65533;
-    o=0;
+   */ o=0;
     for(;;)
     {
         //UART_PutChar('a');
@@ -80,11 +97,7 @@ int main()
         while ((XLDA & 0b00000001) == 0); 
         // i = ReadControlRegisterSPI(LSM6DSRX_OUTX_L_A);
         UART_PutChar(i);*/
-        if (flag_int){
-        i = ReadControlRegisterSPI(LSM6DSRX_OUTX_H_A);
-        UART_PutChar(i); 
-        flag_int=0;
-        }
+     
         
       /*  
         do 
@@ -168,6 +181,8 @@ int main()
             j = 0;     
             
         }      */
+        
+        LED_Write(0);
     }
     
 return 0;

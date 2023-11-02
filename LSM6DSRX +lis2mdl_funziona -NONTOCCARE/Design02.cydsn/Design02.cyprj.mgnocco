@@ -534,7 +534,7 @@
 </dependency_info>
 <dependency_info name="c9323d49-d323-40b8-9b59-cc008d68a989@Release@CortexM3" xml_contents_version="2">
 <CyGuid_1173175f-1b9b-4ad4-a065-754a48a27021 type_name="CyDesigner.Common.Base.CyFileDeps" version="1">
-<file name=".\CortexM3\ARM_GCC_541\Release\interrupts.o">
+<file name=".\CortexM3\ARM_GCC_541\Release\main.o">
 <dep name=".\Generated_Source\PSoC5\Acc_INT.h" />
 <dep name=".\Generated_Source\PSoC5\Acc_INT_aliases.h" />
 <dep name=".\Generated_Source\PSoC5\CLOCK_PWM.h" />
@@ -582,8 +582,9 @@
 <dep name=".\Generated_Source\PSoC5\project.h" />
 <dep name=".\Generated_Source\PSoC5\timer_clock.h" />
 <dep name=".\globals.h" />
-<dep name=".\interrupts.c" />
+<dep name=".\header01.h" />
 <dep name=".\interrupts.h" />
+<dep name=".\main.c" />
 </file>
 <file name=".\Generated_Source\PSoC5\Acc_INT.h" />
 <file name=".\Generated_Source\PSoC5\Acc_INT_aliases.h" />
@@ -632,8 +633,9 @@
 <file name=".\Generated_Source\PSoC5\project.h" />
 <file name=".\Generated_Source\PSoC5\timer_clock.h" />
 <file name=".\globals.h" />
-<file name=".\interrupts.c" />
+<file name=".\header01.h" />
 <file name=".\interrupts.h" />
+<file name=".\main.c" />
 <file name=".\CortexM3\ARM_GCC_541\Release\Acc_INT.o">
 <dep name=".\Generated_Source\PSoC5\Acc_INT.c" />
 <dep name=".\Generated_Source\PSoC5\Acc_INT.h" />
@@ -1081,7 +1083,7 @@
 <dep name=".\Generated_Source\PSoC5\timer_clock.h" />
 </file>
 <file name=".\Generated_Source\PSoC5\timer_clock.c" />
-<file name=".\CortexM3\ARM_GCC_541\Release\main.o">
+<file name=".\CortexM3\ARM_GCC_541\Release\interrupts.o">
 <dep name=".\Generated_Source\PSoC5\cmsis_armcc.h" />
 <dep name=".\Generated_Source\PSoC5\cmsis_compiler.h" />
 <dep name=".\Generated_Source\PSoC5\cmsis_gcc.h" />
@@ -1129,12 +1131,10 @@
 <dep name=".\Generated_Source\PSoC5\isr_Gyro.h" />
 <dep name=".\Generated_Source\PSoC5\timer_clock.h" />
 <dep name=".\globals.h" />
-<dep name=".\header01.h" />
+<dep name=".\interrupts.c" />
 <dep name=".\interrupts.h" />
-<dep name=".\main.c" />
 </file>
-<file name=".\header01.h" />
-<file name=".\main.c" />
+<file name=".\interrupts.c" />
 <file name=".\CortexM3\ARM_GCC_541\Release\source01.o">
 <dep name=".\Generated_Source\PSoC5\cmsis_armcc.h" />
 <dep name=".\Generated_Source\PSoC5\cmsis_compiler.h" />
@@ -1878,7 +1878,7 @@
 <v>C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif</v>
 <v>C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3.vif</v>
 </warp_dep>
-<deps_time v="133431584124527423" />
+<deps_time v="133434203361321108" />
 <top_block v="TopDesign" />
 <last_generation v="0" />
 <pdl_path v="" />
@@ -1896,7 +1896,7 @@
 <CyGuid_769d31ea-68b1-4f0c-b90a-7c10a43ee563 type_name="CyDesigner.Common.ProjMgmt.Model.CyLinkCustomData" version="1">
 <link_deps_times>
 <name_val_pair name="c9323d49-d323-40b8-9b59-cc008d68a989@Debug@CortexM3" v="133192174562096303" />
-<name_val_pair name="c9323d49-d323-40b8-9b59-cc008d68a989@Release@CortexM3" v="133431585299757523" />
+<name_val_pair name="c9323d49-d323-40b8-9b59-cc008d68a989@Release@CortexM3" v="133434204535398658" />
 </link_deps_times>
 </CyGuid_769d31ea-68b1-4f0c-b90a-7c10a43ee563>
 </dataGuid>

@@ -1,6 +1,6 @@
 (DELAYFILE
  (SDFVERSION "IEEE 1497 4.0")
- (DATE "2023-10-30T16:53:28Z")
+ (DATE "2023-11-02T17:38:53Z")
  (DESIGN "Design02")
  (VENDOR "Cypress Semiconductor")
  (PROGRAM "PSoC Creator")
@@ -59,8 +59,8 @@
     (INTERCONNECT \\Sync_1\:genblk1\[0\]\:INST\\.out cy_srff_1.main_1 (3.679:3.679:3.679))
     (INTERCONNECT \\PACER_TIMER\:TimerHW\\.tc \\Sync_1\:genblk1\[0\]\:INST\\.in (4.710:4.710:4.710))
     (INTERCONNECT \\RESET_FF\:Sync\:ctrl_reg\\.control_0 cy_srff_1.main_2 (2.315:2.315:2.315))
-    (INTERCONNECT Acc_INT\(0\).fb isr_Acc.interrupt (2.699:2.699:2.699))
-    (INTERCONNECT Gyro_INT\(0\).fb isr_Gyro.interrupt (2.699:2.699:2.699))
+    (INTERCONNECT Acc_INT.interrupt isr_Acc.interrupt (4.330:4.330:4.330))
+    (INTERCONNECT Gyro_INT.interrupt isr_Gyro.interrupt (1.000:1.000:1.000))
     (INTERCONNECT SCLK\(0\).pad_out SCLK\(0\).pad_in (0.000:0.000:0.000))
     (INTERCONNECT Tx_1\(0\).pad_out Tx_1\(0\).pad_in (0.000:0.000:0.000))
     (INTERCONNECT \\SPI_IMU\:BSPIM\:cnt_enable\\.q \\SPI_IMU\:BSPIM\:BitCounter\\.enable (3.235:3.235:3.235))

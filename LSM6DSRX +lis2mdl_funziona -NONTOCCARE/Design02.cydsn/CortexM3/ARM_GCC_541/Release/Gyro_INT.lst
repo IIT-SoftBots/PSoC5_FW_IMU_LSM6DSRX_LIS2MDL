@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccyksHLP.s 			page 1
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccX9TPZL.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccyksHLP.s 			page 1
   28:Generated_Source\PSoC5/Gyro_INT.c **** *
   29:Generated_Source\PSoC5/Gyro_INT.c **** * \brief Writes the value to the physical port (data output register), masking
   30:Generated_Source\PSoC5/Gyro_INT.c **** *  and shifting the bits appropriately. 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccyksHLP.s 			page 2
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccX9TPZL.s 			page 2
 
 
   31:Generated_Source\PSoC5/Gyro_INT.c **** *
@@ -100,36 +100,37 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccyksHLP.s 			page 1
   35 0000 044A     		ldr	r2, .L2
   60:Generated_Source\PSoC5/Gyro_INT.c ****     Gyro_INT_DR = staticBits | ((uint8)(value << Gyro_INT_SHIFT) & Gyro_INT_MASK);
   36              		.loc 1 60 0
-  37 0002 00F00100 		and	r0, r0, #1
+  37 0002 C000     		lsls	r0, r0, #3
   38              	.LVL1:
   59:Generated_Source\PSoC5/Gyro_INT.c ****     uint8 staticBits = (Gyro_INT_DR & (uint8)(~Gyro_INT_MASK));
   39              		.loc 1 59 0
-  40 0006 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+  40 0004 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
   41              	.LVL2:
   42              		.loc 1 60 0
-  43 0008 03F0FE03 		and	r3, r3, #254
-  44              	.LVL3:
-  45 000c 1843     		orrs	r0, r0, r3
-  46 000e 1070     		strb	r0, [r2]
-  47 0010 7047     		bx	lr
-  48              	.L3:
-  49 0012 00BF     		.align	2
-  50              	.L2:
-  51 0014 00510040 		.word	1073762560
-  52              		.cfi_endproc
-  53              	.LFE0:
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccyksHLP.s 			page 3
+  43 0006 00F00800 		and	r0, r0, #8
+  44 000a 03F0F703 		and	r3, r3, #247
+  45              	.LVL3:
+  46 000e 0343     		orrs	r3, r3, r0
+  47 0010 1370     		strb	r3, [r2]
+  48 0012 7047     		bx	lr
+  49              	.L3:
+  50              		.align	2
+  51              	.L2:
+  52 0014 30510040 		.word	1073762608
+  53              		.cfi_endproc
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccX9TPZL.s 			page 3
 
 
-  54              		.size	Gyro_INT_Write, .-Gyro_INT_Write
-  55              		.section	.text.Gyro_INT_SetDriveMode,"ax",%progbits
-  56              		.align	1
-  57              		.global	Gyro_INT_SetDriveMode
-  58              		.thumb
-  59              		.thumb_func
-  60              		.type	Gyro_INT_SetDriveMode, %function
-  61              	Gyro_INT_SetDriveMode:
-  62              	.LFB1:
+  54              	.LFE0:
+  55              		.size	Gyro_INT_Write, .-Gyro_INT_Write
+  56              		.section	.text.Gyro_INT_SetDriveMode,"ax",%progbits
+  57              		.align	1
+  58              		.global	Gyro_INT_SetDriveMode
+  59              		.thumb
+  60              		.thumb_func
+  61              		.type	Gyro_INT_SetDriveMode, %function
+  62              	Gyro_INT_SetDriveMode:
+  63              	.LFB1:
   61:Generated_Source\PSoC5/Gyro_INT.c **** }
   62:Generated_Source\PSoC5/Gyro_INT.c **** 
   63:Generated_Source\PSoC5/Gyro_INT.c **** 
@@ -161,40 +162,40 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccyksHLP.s 			page 1
   89:Generated_Source\PSoC5/Gyro_INT.c **** *******************************************************************************/
   90:Generated_Source\PSoC5/Gyro_INT.c **** void Gyro_INT_SetDriveMode(uint8 mode)
   91:Generated_Source\PSoC5/Gyro_INT.c **** {
-  63              		.loc 1 91 0
-  64              		.cfi_startproc
-  65              		@ args = 0, pretend = 0, frame = 0
-  66              		@ frame_needed = 0, uses_anonymous_args = 0
-  67              		@ link register save eliminated.
-  68              	.LVL4:
+  64              		.loc 1 91 0
+  65              		.cfi_startproc
+  66              		@ args = 0, pretend = 0, frame = 0
+  67              		@ frame_needed = 0, uses_anonymous_args = 0
+  68              		@ link register save eliminated.
+  69              	.LVL4:
   92:Generated_Source\PSoC5/Gyro_INT.c **** 	CyPins_SetPinDriveMode(Gyro_INT_0, mode);
-  69              		.loc 1 92 0
-  70 0000 044A     		ldr	r2, .L5
-  71 0002 00F00E00 		and	r0, r0, #14
-  72              	.LVL5:
-  73 0006 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
-  74 0008 03F0F103 		and	r3, r3, #241
-  75 000c 1843     		orrs	r0, r0, r3
-  76 000e 1070     		strb	r0, [r2]
-  77 0010 7047     		bx	lr
-  78              	.L6:
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccyksHLP.s 			page 4
+  70              		.loc 1 92 0
+  71 0000 044A     		ldr	r2, .L5
+  72 0002 00F00E00 		and	r0, r0, #14
+  73              	.LVL5:
+  74 0006 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+  75 0008 03F0F103 		and	r3, r3, #241
+  76 000c 1843     		orrs	r0, r0, r3
+  77 000e 1070     		strb	r0, [r2]
+  78 0010 7047     		bx	lr
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccX9TPZL.s 			page 4
 
 
-  79 0012 00BF     		.align	2
-  80              	.L5:
-  81 0014 00500040 		.word	1073762304
-  82              		.cfi_endproc
-  83              	.LFE1:
-  84              		.size	Gyro_INT_SetDriveMode, .-Gyro_INT_SetDriveMode
-  85              		.section	.text.Gyro_INT_Read,"ax",%progbits
-  86              		.align	1
-  87              		.global	Gyro_INT_Read
-  88              		.thumb
-  89              		.thumb_func
-  90              		.type	Gyro_INT_Read, %function
-  91              	Gyro_INT_Read:
-  92              	.LFB2:
+  79              	.L6:
+  80 0012 00BF     		.align	2
+  81              	.L5:
+  82 0014 1B500040 		.word	1073762331
+  83              		.cfi_endproc
+  84              	.LFE1:
+  85              		.size	Gyro_INT_SetDriveMode, .-Gyro_INT_SetDriveMode
+  86              		.section	.text.Gyro_INT_Read,"ax",%progbits
+  87              		.align	1
+  88              		.global	Gyro_INT_Read
+  89              		.thumb
+  90              		.thumb_func
+  91              		.type	Gyro_INT_Read, %function
+  92              	Gyro_INT_Read:
+  93              	.LFB2:
   93:Generated_Source\PSoC5/Gyro_INT.c **** }
   94:Generated_Source\PSoC5/Gyro_INT.c **** 
   95:Generated_Source\PSoC5/Gyro_INT.c **** 
@@ -217,37 +218,37 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccyksHLP.s 			page 1
  112:Generated_Source\PSoC5/Gyro_INT.c **** *******************************************************************************/
  113:Generated_Source\PSoC5/Gyro_INT.c **** uint8 Gyro_INT_Read(void)
  114:Generated_Source\PSoC5/Gyro_INT.c **** {
-  93              		.loc 1 114 0
-  94              		.cfi_startproc
-  95              		@ args = 0, pretend = 0, frame = 0
-  96              		@ frame_needed = 0, uses_anonymous_args = 0
-  97              		@ link register save eliminated.
+  94              		.loc 1 114 0
+  95              		.cfi_startproc
+  96              		@ args = 0, pretend = 0, frame = 0
+  97              		@ frame_needed = 0, uses_anonymous_args = 0
+  98              		@ link register save eliminated.
  115:Generated_Source\PSoC5/Gyro_INT.c ****     return (Gyro_INT_PS & Gyro_INT_MASK) >> Gyro_INT_SHIFT;
-  98              		.loc 1 115 0
-  99 0000 024B     		ldr	r3, .L8
- 100 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+  99              		.loc 1 115 0
+ 100 0000 024B     		ldr	r3, .L8
+ 101 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
  116:Generated_Source\PSoC5/Gyro_INT.c **** }
- 101              		.loc 1 116 0
- 102 0004 00F00100 		and	r0, r0, #1
- 103 0008 7047     		bx	lr
- 104              	.L9:
- 105 000a 00BF     		.align	2
- 106              	.L8:
- 107 000c 01510040 		.word	1073762561
- 108              		.cfi_endproc
- 109              	.LFE2:
- 110              		.size	Gyro_INT_Read, .-Gyro_INT_Read
- 111              		.section	.text.Gyro_INT_ReadDataReg,"ax",%progbits
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccyksHLP.s 			page 5
+ 102              		.loc 1 116 0
+ 103 0004 C0F3C000 		ubfx	r0, r0, #3, #1
+ 104 0008 7047     		bx	lr
+ 105              	.L9:
+ 106 000a 00BF     		.align	2
+ 107              	.L8:
+ 108 000c 31510040 		.word	1073762609
+ 109              		.cfi_endproc
+ 110              	.LFE2:
+ 111              		.size	Gyro_INT_Read, .-Gyro_INT_Read
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccX9TPZL.s 			page 5
 
 
- 112              		.align	1
- 113              		.global	Gyro_INT_ReadDataReg
- 114              		.thumb
- 115              		.thumb_func
- 116              		.type	Gyro_INT_ReadDataReg, %function
- 117              	Gyro_INT_ReadDataReg:
- 118              	.LFB3:
+ 112              		.section	.text.Gyro_INT_ReadDataReg,"ax",%progbits
+ 113              		.align	1
+ 114              		.global	Gyro_INT_ReadDataReg
+ 115              		.thumb
+ 116              		.thumb_func
+ 117              		.type	Gyro_INT_ReadDataReg, %function
+ 118              	Gyro_INT_ReadDataReg:
+ 119              	.LFB3:
  117:Generated_Source\PSoC5/Gyro_INT.c **** 
  118:Generated_Source\PSoC5/Gyro_INT.c **** 
  119:Generated_Source\PSoC5/Gyro_INT.c **** /*******************************************************************************
@@ -274,542 +275,778 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccyksHLP.s 			page 1
  140:Generated_Source\PSoC5/Gyro_INT.c **** *******************************************************************************/
  141:Generated_Source\PSoC5/Gyro_INT.c **** uint8 Gyro_INT_ReadDataReg(void)
  142:Generated_Source\PSoC5/Gyro_INT.c **** {
- 119              		.loc 1 142 0
- 120              		.cfi_startproc
- 121              		@ args = 0, pretend = 0, frame = 0
- 122              		@ frame_needed = 0, uses_anonymous_args = 0
- 123              		@ link register save eliminated.
+ 120              		.loc 1 142 0
+ 121              		.cfi_startproc
+ 122              		@ args = 0, pretend = 0, frame = 0
+ 123              		@ frame_needed = 0, uses_anonymous_args = 0
+ 124              		@ link register save eliminated.
  143:Generated_Source\PSoC5/Gyro_INT.c ****     return (Gyro_INT_DR & Gyro_INT_MASK) >> Gyro_INT_SHIFT;
- 124              		.loc 1 143 0
- 125 0000 024B     		ldr	r3, .L11
- 126 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 125              		.loc 1 143 0
+ 126 0000 024B     		ldr	r3, .L11
+ 127 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
  144:Generated_Source\PSoC5/Gyro_INT.c **** }
- 127              		.loc 1 144 0
- 128 0004 00F00100 		and	r0, r0, #1
- 129 0008 7047     		bx	lr
- 130              	.L12:
- 131 000a 00BF     		.align	2
- 132              	.L11:
- 133 000c 00510040 		.word	1073762560
- 134              		.cfi_endproc
- 135              	.LFE3:
- 136              		.size	Gyro_INT_ReadDataReg, .-Gyro_INT_ReadDataReg
- 137              		.text
- 138              	.Letext0:
- 139              		.file 2 "Generated_Source\\PSoC5\\cytypes.h"
- 140              		.section	.debug_info,"",%progbits
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccyksHLP.s 			page 6
+ 128              		.loc 1 144 0
+ 129 0004 C0F3C000 		ubfx	r0, r0, #3, #1
+ 130 0008 7047     		bx	lr
+ 131              	.L12:
+ 132 000a 00BF     		.align	2
+ 133              	.L11:
+ 134 000c 30510040 		.word	1073762608
+ 135              		.cfi_endproc
+ 136              	.LFE3:
+ 137              		.size	Gyro_INT_ReadDataReg, .-Gyro_INT_ReadDataReg
+ 138              		.section	.text.Gyro_INT_SetInterruptMode,"ax",%progbits
+ 139              		.align	1
+ 140              		.global	Gyro_INT_SetInterruptMode
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccX9TPZL.s 			page 6
 
 
- 141              	.Ldebug_info0:
- 142 0000 1D010000 		.4byte	0x11d
- 143 0004 0400     		.2byte	0x4
- 144 0006 00000000 		.4byte	.Ldebug_abbrev0
- 145 000a 04       		.byte	0x4
- 146 000b 01       		.uleb128 0x1
- 147 000c 02010000 		.4byte	.LASF20
- 148 0010 0C       		.byte	0xc
- 149 0011 FA010000 		.4byte	.LASF21
- 150 0015 00000000 		.4byte	.LASF22
- 151 0019 00000000 		.4byte	.Ldebug_ranges0+0
- 152 001d 00000000 		.4byte	0
- 153 0021 00000000 		.4byte	.Ldebug_line0
- 154 0025 02       		.uleb128 0x2
- 155 0026 01       		.byte	0x1
- 156 0027 06       		.byte	0x6
- 157 0028 1C020000 		.4byte	.LASF0
- 158 002c 02       		.uleb128 0x2
- 159 002d 01       		.byte	0x1
- 160 002e 08       		.byte	0x8
- 161 002f AB000000 		.4byte	.LASF1
- 162 0033 02       		.uleb128 0x2
- 163 0034 02       		.byte	0x2
- 164 0035 05       		.byte	0x5
- 165 0036 D3010000 		.4byte	.LASF2
- 166 003a 02       		.uleb128 0x2
- 167 003b 02       		.byte	0x2
- 168 003c 07       		.byte	0x7
- 169 003d DB000000 		.4byte	.LASF3
- 170 0041 02       		.uleb128 0x2
- 171 0042 04       		.byte	0x4
- 172 0043 05       		.byte	0x5
- 173 0044 F1010000 		.4byte	.LASF4
- 174 0048 02       		.uleb128 0x2
- 175 0049 04       		.byte	0x4
- 176 004a 07       		.byte	0x7
- 177 004b C9000000 		.4byte	.LASF5
- 178 004f 02       		.uleb128 0x2
- 179 0050 08       		.byte	0x8
- 180 0051 05       		.byte	0x5
- 181 0052 AB010000 		.4byte	.LASF6
- 182 0056 02       		.uleb128 0x2
- 183 0057 08       		.byte	0x8
- 184 0058 07       		.byte	0x7
- 185 0059 94000000 		.4byte	.LASF7
- 186 005d 03       		.uleb128 0x3
- 187 005e 04       		.byte	0x4
- 188 005f 05       		.byte	0x5
- 189 0060 696E7400 		.ascii	"int\000"
- 190 0064 02       		.uleb128 0x2
- 191 0065 04       		.byte	0x4
- 192 0066 07       		.byte	0x7
- 193 0067 F5000000 		.4byte	.LASF8
- 194 006b 04       		.uleb128 0x4
- 195 006c EB010000 		.4byte	.LASF12
- 196 0070 02       		.byte	0x2
- 197 0071 E901     		.2byte	0x1e9
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccyksHLP.s 			page 7
+ 141              		.thumb
+ 142              		.thumb_func
+ 143              		.type	Gyro_INT_SetInterruptMode, %function
+ 144              	Gyro_INT_SetInterruptMode:
+ 145              	.LFB4:
+ 145:Generated_Source\PSoC5/Gyro_INT.c **** 
+ 146:Generated_Source\PSoC5/Gyro_INT.c **** 
+ 147:Generated_Source\PSoC5/Gyro_INT.c **** /* If interrupt is connected for this Pins component */ 
+ 148:Generated_Source\PSoC5/Gyro_INT.c **** #if defined(Gyro_INT_INTSTAT) 
+ 149:Generated_Source\PSoC5/Gyro_INT.c **** 
+ 150:Generated_Source\PSoC5/Gyro_INT.c ****     /*******************************************************************************
+ 151:Generated_Source\PSoC5/Gyro_INT.c ****     * Function Name: Gyro_INT_SetInterruptMode
+ 152:Generated_Source\PSoC5/Gyro_INT.c ****     ****************************************************************************//**
+ 153:Generated_Source\PSoC5/Gyro_INT.c ****     *
+ 154:Generated_Source\PSoC5/Gyro_INT.c ****     * \brief Configures the interrupt mode for each of the Pins component's
+ 155:Generated_Source\PSoC5/Gyro_INT.c ****     *  pins. Alternatively you may set the interrupt mode for all the pins
+ 156:Generated_Source\PSoC5/Gyro_INT.c ****     *  specified in the Pins component.
+ 157:Generated_Source\PSoC5/Gyro_INT.c ****     *
+ 158:Generated_Source\PSoC5/Gyro_INT.c ****     *  <b>Note</b> The interrupt is port-wide and therefore any enabled pin
+ 159:Generated_Source\PSoC5/Gyro_INT.c ****     *  interrupt may trigger it.
+ 160:Generated_Source\PSoC5/Gyro_INT.c ****     *
+ 161:Generated_Source\PSoC5/Gyro_INT.c ****     * \param position
+ 162:Generated_Source\PSoC5/Gyro_INT.c ****     *  The pin position as listed in the Pins component. You may OR these to be 
+ 163:Generated_Source\PSoC5/Gyro_INT.c ****     *  able to configure the interrupt mode of multiple pins within a Pins 
+ 164:Generated_Source\PSoC5/Gyro_INT.c ****     *  component. Or you may use Gyro_INT_INTR_ALL to configure the
+ 165:Generated_Source\PSoC5/Gyro_INT.c ****     *  interrupt mode of all the pins in the Pins component.       
+ 166:Generated_Source\PSoC5/Gyro_INT.c ****     *  - Gyro_INT_0_INTR       (First pin in the list)
+ 167:Generated_Source\PSoC5/Gyro_INT.c ****     *  - Gyro_INT_1_INTR       (Second pin in the list)
+ 168:Generated_Source\PSoC5/Gyro_INT.c ****     *  - ...
+ 169:Generated_Source\PSoC5/Gyro_INT.c ****     *  - Gyro_INT_INTR_ALL     (All pins in Pins component)
+ 170:Generated_Source\PSoC5/Gyro_INT.c ****     *
+ 171:Generated_Source\PSoC5/Gyro_INT.c ****     * \param mode
+ 172:Generated_Source\PSoC5/Gyro_INT.c ****     *  Interrupt mode for the selected pins. Valid options are documented in
+ 173:Generated_Source\PSoC5/Gyro_INT.c ****     *  \ref intrMode.
+ 174:Generated_Source\PSoC5/Gyro_INT.c ****     *
+ 175:Generated_Source\PSoC5/Gyro_INT.c ****     * \return 
+ 176:Generated_Source\PSoC5/Gyro_INT.c ****     *  None
+ 177:Generated_Source\PSoC5/Gyro_INT.c ****     *  
+ 178:Generated_Source\PSoC5/Gyro_INT.c ****     * \sideeffect
+ 179:Generated_Source\PSoC5/Gyro_INT.c ****     *  It is recommended that the interrupt be disabled before calling this 
+ 180:Generated_Source\PSoC5/Gyro_INT.c ****     *  function to avoid unintended interrupt requests. Note that the interrupt
+ 181:Generated_Source\PSoC5/Gyro_INT.c ****     *  type is port wide, and therefore will trigger for any enabled pin on the 
+ 182:Generated_Source\PSoC5/Gyro_INT.c ****     *  port.
+ 183:Generated_Source\PSoC5/Gyro_INT.c ****     *
+ 184:Generated_Source\PSoC5/Gyro_INT.c ****     * \funcusage
+ 185:Generated_Source\PSoC5/Gyro_INT.c ****     *  \snippet Gyro_INT_SUT.c usage_Gyro_INT_SetInterruptMode
+ 186:Generated_Source\PSoC5/Gyro_INT.c ****     *******************************************************************************/
+ 187:Generated_Source\PSoC5/Gyro_INT.c ****     void Gyro_INT_SetInterruptMode(uint16 position, uint16 mode)
+ 188:Generated_Source\PSoC5/Gyro_INT.c ****     {
+ 146              		.loc 1 188 0
+ 147              		.cfi_startproc
+ 148              		@ args = 0, pretend = 0, frame = 0
+ 149              		@ frame_needed = 0, uses_anonymous_args = 0
+ 150              		@ link register save eliminated.
+ 151              	.LVL6:
+ 189:Generated_Source\PSoC5/Gyro_INT.c **** 		if((position & Gyro_INT_0_INTR) != 0u) 
+ 152              		.loc 1 189 0
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccX9TPZL.s 			page 7
 
 
- 198 0073 2C000000 		.4byte	0x2c
- 199 0077 02       		.uleb128 0x2
- 200 0078 04       		.byte	0x4
- 201 0079 04       		.byte	0x4
- 202 007a 8E000000 		.4byte	.LASF9
- 203 007e 02       		.uleb128 0x2
- 204 007f 08       		.byte	0x8
- 205 0080 04       		.byte	0x4
- 206 0081 EE000000 		.4byte	.LASF10
- 207 0085 02       		.uleb128 0x2
- 208 0086 01       		.byte	0x1
- 209 0087 08       		.byte	0x8
- 210 0088 B9010000 		.4byte	.LASF11
- 211 008c 04       		.uleb128 0x4
- 212 008d C4000000 		.4byte	.LASF13
- 213 0091 02       		.byte	0x2
- 214 0092 9302     		.2byte	0x293
- 215 0094 98000000 		.4byte	0x98
- 216 0098 05       		.uleb128 0x5
- 217 0099 6B000000 		.4byte	0x6b
- 218 009d 06       		.uleb128 0x6
- 219 009e 7F000000 		.4byte	.LASF14
- 220 00a2 01       		.byte	0x1
- 221 00a3 39       		.byte	0x39
- 222 00a4 00000000 		.4byte	.LFB0
- 223 00a8 18000000 		.4byte	.LFE0-.LFB0
- 224 00ac 01       		.uleb128 0x1
- 225 00ad 9C       		.byte	0x9c
- 226 00ae D1000000 		.4byte	0xd1
- 227 00b2 07       		.uleb128 0x7
- 228 00b3 79000000 		.4byte	.LASF16
- 229 00b7 01       		.byte	0x1
- 230 00b8 39       		.byte	0x39
- 231 00b9 6B000000 		.4byte	0x6b
- 232 00bd 00000000 		.4byte	.LLST0
- 233 00c1 08       		.uleb128 0x8
- 234 00c2 B9000000 		.4byte	.LASF23
- 235 00c6 01       		.byte	0x1
- 236 00c7 3B       		.byte	0x3b
- 237 00c8 6B000000 		.4byte	0x6b
- 238 00cc 21000000 		.4byte	.LLST1
- 239 00d0 00       		.byte	0
- 240 00d1 06       		.uleb128 0x6
- 241 00d2 90010000 		.4byte	.LASF15
- 242 00d6 01       		.byte	0x1
- 243 00d7 5A       		.byte	0x5a
- 244 00d8 00000000 		.4byte	.LFB1
- 245 00dc 18000000 		.4byte	.LFE1-.LFB1
- 246 00e0 01       		.uleb128 0x1
- 247 00e1 9C       		.byte	0x9c
- 248 00e2 F6000000 		.4byte	0xf6
- 249 00e6 07       		.uleb128 0x7
- 250 00e7 A6010000 		.4byte	.LASF17
- 251 00eb 01       		.byte	0x1
- 252 00ec 5A       		.byte	0x5a
- 253 00ed 6B000000 		.4byte	0x6b
- 254 00f1 39000000 		.4byte	.LLST2
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccyksHLP.s 			page 8
+ 153 0000 0307     		lsls	r3, r0, #28
+ 190:Generated_Source\PSoC5/Gyro_INT.c **** 		{ 
+ 191:Generated_Source\PSoC5/Gyro_INT.c **** 			 Gyro_INT_0_INTTYPE_REG = (uint8)mode; 
+ 154              		.loc 1 191 0
+ 155 0002 42BF     		ittt	mi
+ 156 0004 014B     		ldrmi	r3, .L18
+ 157 0006 C9B2     		uxtbmi	r1, r1
+ 158              	.LVL7:
+ 159 0008 1970     		strbmi	r1, [r3]
+ 160 000a 7047     		bx	lr
+ 161              	.L19:
+ 162              		.align	2
+ 163              	.L18:
+ 164 000c 1B450040 		.word	1073759515
+ 165              		.cfi_endproc
+ 166              	.LFE4:
+ 167              		.size	Gyro_INT_SetInterruptMode, .-Gyro_INT_SetInterruptMode
+ 168              		.section	.text.Gyro_INT_ClearInterrupt,"ax",%progbits
+ 169              		.align	1
+ 170              		.global	Gyro_INT_ClearInterrupt
+ 171              		.thumb
+ 172              		.thumb_func
+ 173              		.type	Gyro_INT_ClearInterrupt, %function
+ 174              	Gyro_INT_ClearInterrupt:
+ 175              	.LFB5:
+ 192:Generated_Source\PSoC5/Gyro_INT.c **** 		}
+ 193:Generated_Source\PSoC5/Gyro_INT.c ****     }
+ 194:Generated_Source\PSoC5/Gyro_INT.c ****     
+ 195:Generated_Source\PSoC5/Gyro_INT.c ****     
+ 196:Generated_Source\PSoC5/Gyro_INT.c ****     /*******************************************************************************
+ 197:Generated_Source\PSoC5/Gyro_INT.c ****     * Function Name: Gyro_INT_ClearInterrupt
+ 198:Generated_Source\PSoC5/Gyro_INT.c ****     ****************************************************************************//**
+ 199:Generated_Source\PSoC5/Gyro_INT.c ****     *
+ 200:Generated_Source\PSoC5/Gyro_INT.c ****     * \brief Clears any active interrupts attached with the component and returns 
+ 201:Generated_Source\PSoC5/Gyro_INT.c ****     *  the value of the interrupt status register allowing determination of which
+ 202:Generated_Source\PSoC5/Gyro_INT.c ****     *  pins generated an interrupt event.
+ 203:Generated_Source\PSoC5/Gyro_INT.c ****     *
+ 204:Generated_Source\PSoC5/Gyro_INT.c ****     * \return 
+ 205:Generated_Source\PSoC5/Gyro_INT.c ****     *  The right-shifted current value of the interrupt status register. Each pin 
+ 206:Generated_Source\PSoC5/Gyro_INT.c ****     *  has one bit set if it generated an interrupt event. For example, bit 0 is 
+ 207:Generated_Source\PSoC5/Gyro_INT.c ****     *  for pin 0 and bit 1 is for pin 1 of the Pins component.
+ 208:Generated_Source\PSoC5/Gyro_INT.c ****     *  
+ 209:Generated_Source\PSoC5/Gyro_INT.c ****     * \sideeffect
+ 210:Generated_Source\PSoC5/Gyro_INT.c ****     *  Clears all bits of the physical port's interrupt status register, not just
+ 211:Generated_Source\PSoC5/Gyro_INT.c ****     *  those associated with the Pins component.
+ 212:Generated_Source\PSoC5/Gyro_INT.c ****     *
+ 213:Generated_Source\PSoC5/Gyro_INT.c ****     * \funcusage
+ 214:Generated_Source\PSoC5/Gyro_INT.c ****     *  \snippet Gyro_INT_SUT.c usage_Gyro_INT_ClearInterrupt
+ 215:Generated_Source\PSoC5/Gyro_INT.c ****     *******************************************************************************/
+ 216:Generated_Source\PSoC5/Gyro_INT.c ****     uint8 Gyro_INT_ClearInterrupt(void)
+ 217:Generated_Source\PSoC5/Gyro_INT.c ****     {
+ 176              		.loc 1 217 0
+ 177              		.cfi_startproc
+ 178              		@ args = 0, pretend = 0, frame = 0
+ 179              		@ frame_needed = 0, uses_anonymous_args = 0
+ 180              		@ link register save eliminated.
+ 218:Generated_Source\PSoC5/Gyro_INT.c ****         return (Gyro_INT_INTSTAT & Gyro_INT_MASK) >> Gyro_INT_SHIFT;
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccX9TPZL.s 			page 8
 
 
- 255 00f5 00       		.byte	0
- 256 00f6 09       		.uleb128 0x9
- 257 00f7 DD010000 		.4byte	.LASF18
- 258 00fb 01       		.byte	0x1
- 259 00fc 71       		.byte	0x71
- 260 00fd 6B000000 		.4byte	0x6b
- 261 0101 00000000 		.4byte	.LFB2
- 262 0105 10000000 		.4byte	.LFE2-.LFB2
- 263 0109 01       		.uleb128 0x1
- 264 010a 9C       		.byte	0x9c
- 265 010b 09       		.uleb128 0x9
- 266 010c BE010000 		.4byte	.LASF19
- 267 0110 01       		.byte	0x1
- 268 0111 8D       		.byte	0x8d
- 269 0112 6B000000 		.4byte	0x6b
- 270 0116 00000000 		.4byte	.LFB3
- 271 011a 10000000 		.4byte	.LFE3-.LFB3
- 272 011e 01       		.uleb128 0x1
- 273 011f 9C       		.byte	0x9c
- 274 0120 00       		.byte	0
- 275              		.section	.debug_abbrev,"",%progbits
- 276              	.Ldebug_abbrev0:
- 277 0000 01       		.uleb128 0x1
- 278 0001 11       		.uleb128 0x11
- 279 0002 01       		.byte	0x1
- 280 0003 25       		.uleb128 0x25
- 281 0004 0E       		.uleb128 0xe
- 282 0005 13       		.uleb128 0x13
- 283 0006 0B       		.uleb128 0xb
- 284 0007 03       		.uleb128 0x3
- 285 0008 0E       		.uleb128 0xe
- 286 0009 1B       		.uleb128 0x1b
- 287 000a 0E       		.uleb128 0xe
- 288 000b 55       		.uleb128 0x55
- 289 000c 17       		.uleb128 0x17
- 290 000d 11       		.uleb128 0x11
- 291 000e 01       		.uleb128 0x1
- 292 000f 10       		.uleb128 0x10
- 293 0010 17       		.uleb128 0x17
- 294 0011 00       		.byte	0
- 295 0012 00       		.byte	0
- 296 0013 02       		.uleb128 0x2
- 297 0014 24       		.uleb128 0x24
- 298 0015 00       		.byte	0
- 299 0016 0B       		.uleb128 0xb
- 300 0017 0B       		.uleb128 0xb
- 301 0018 3E       		.uleb128 0x3e
- 302 0019 0B       		.uleb128 0xb
- 303 001a 03       		.uleb128 0x3
- 304 001b 0E       		.uleb128 0xe
- 305 001c 00       		.byte	0
- 306 001d 00       		.byte	0
- 307 001e 03       		.uleb128 0x3
- 308 001f 24       		.uleb128 0x24
- 309 0020 00       		.byte	0
- 310 0021 0B       		.uleb128 0xb
- 311 0022 0B       		.uleb128 0xb
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccyksHLP.s 			page 9
+ 181              		.loc 1 218 0
+ 182 0000 024B     		ldr	r3, .L21
+ 183 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 219:Generated_Source\PSoC5/Gyro_INT.c ****     }
+ 184              		.loc 1 219 0
+ 185 0004 C0F3C000 		ubfx	r0, r0, #3, #1
+ 186 0008 7047     		bx	lr
+ 187              	.L22:
+ 188 000a 00BF     		.align	2
+ 189              	.L21:
+ 190 000c 83450040 		.word	1073759619
+ 191              		.cfi_endproc
+ 192              	.LFE5:
+ 193              		.size	Gyro_INT_ClearInterrupt, .-Gyro_INT_ClearInterrupt
+ 194              		.text
+ 195              	.Letext0:
+ 196              		.file 2 "Generated_Source\\PSoC5\\cytypes.h"
+ 197              		.section	.debug_info,"",%progbits
+ 198              	.Ldebug_info0:
+ 199 0000 70010000 		.4byte	0x170
+ 200 0004 0400     		.2byte	0x4
+ 201 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 202 000a 04       		.byte	0x4
+ 203 000b 01       		.uleb128 0x1
+ 204 000c 44010000 		.4byte	.LASF24
+ 205 0010 0C       		.byte	0xc
+ 206 0011 3C020000 		.4byte	.LASF25
+ 207 0015 00000000 		.4byte	.LASF26
+ 208 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 209 001d 00000000 		.4byte	0
+ 210 0021 00000000 		.4byte	.Ldebug_line0
+ 211 0025 02       		.uleb128 0x2
+ 212 0026 01       		.byte	0x1
+ 213 0027 06       		.byte	0x6
+ 214 0028 5E020000 		.4byte	.LASF0
+ 215 002c 02       		.uleb128 0x2
+ 216 002d 01       		.byte	0x1
+ 217 002e 08       		.byte	0x8
+ 218 002f C3000000 		.4byte	.LASF1
+ 219 0033 02       		.uleb128 0x2
+ 220 0034 02       		.byte	0x2
+ 221 0035 05       		.byte	0x5
+ 222 0036 15020000 		.4byte	.LASF2
+ 223 003a 02       		.uleb128 0x2
+ 224 003b 02       		.byte	0x2
+ 225 003c 07       		.byte	0x7
+ 226 003d F3000000 		.4byte	.LASF3
+ 227 0041 02       		.uleb128 0x2
+ 228 0042 04       		.byte	0x4
+ 229 0043 05       		.byte	0x5
+ 230 0044 33020000 		.4byte	.LASF4
+ 231 0048 02       		.uleb128 0x2
+ 232 0049 04       		.byte	0x4
+ 233 004a 07       		.byte	0x7
+ 234 004b E1000000 		.4byte	.LASF5
+ 235 004f 02       		.uleb128 0x2
+ 236 0050 08       		.byte	0x8
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccX9TPZL.s 			page 9
 
 
- 312 0023 3E       		.uleb128 0x3e
- 313 0024 0B       		.uleb128 0xb
- 314 0025 03       		.uleb128 0x3
- 315 0026 08       		.uleb128 0x8
- 316 0027 00       		.byte	0
- 317 0028 00       		.byte	0
- 318 0029 04       		.uleb128 0x4
- 319 002a 16       		.uleb128 0x16
- 320 002b 00       		.byte	0
- 321 002c 03       		.uleb128 0x3
- 322 002d 0E       		.uleb128 0xe
- 323 002e 3A       		.uleb128 0x3a
- 324 002f 0B       		.uleb128 0xb
- 325 0030 3B       		.uleb128 0x3b
- 326 0031 05       		.uleb128 0x5
- 327 0032 49       		.uleb128 0x49
- 328 0033 13       		.uleb128 0x13
- 329 0034 00       		.byte	0
- 330 0035 00       		.byte	0
- 331 0036 05       		.uleb128 0x5
- 332 0037 35       		.uleb128 0x35
- 333 0038 00       		.byte	0
- 334 0039 49       		.uleb128 0x49
- 335 003a 13       		.uleb128 0x13
- 336 003b 00       		.byte	0
- 337 003c 00       		.byte	0
- 338 003d 06       		.uleb128 0x6
- 339 003e 2E       		.uleb128 0x2e
- 340 003f 01       		.byte	0x1
- 341 0040 3F       		.uleb128 0x3f
- 342 0041 19       		.uleb128 0x19
- 343 0042 03       		.uleb128 0x3
- 344 0043 0E       		.uleb128 0xe
- 345 0044 3A       		.uleb128 0x3a
- 346 0045 0B       		.uleb128 0xb
- 347 0046 3B       		.uleb128 0x3b
- 348 0047 0B       		.uleb128 0xb
- 349 0048 27       		.uleb128 0x27
- 350 0049 19       		.uleb128 0x19
- 351 004a 11       		.uleb128 0x11
- 352 004b 01       		.uleb128 0x1
- 353 004c 12       		.uleb128 0x12
- 354 004d 06       		.uleb128 0x6
- 355 004e 40       		.uleb128 0x40
- 356 004f 18       		.uleb128 0x18
- 357 0050 9742     		.uleb128 0x2117
- 358 0052 19       		.uleb128 0x19
- 359 0053 01       		.uleb128 0x1
- 360 0054 13       		.uleb128 0x13
- 361 0055 00       		.byte	0
- 362 0056 00       		.byte	0
- 363 0057 07       		.uleb128 0x7
- 364 0058 05       		.uleb128 0x5
- 365 0059 00       		.byte	0
- 366 005a 03       		.uleb128 0x3
- 367 005b 0E       		.uleb128 0xe
- 368 005c 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccyksHLP.s 			page 10
+ 237 0051 05       		.byte	0x5
+ 238 0052 ED010000 		.4byte	.LASF6
+ 239 0056 02       		.uleb128 0x2
+ 240 0057 08       		.byte	0x8
+ 241 0058 07       		.byte	0x7
+ 242 0059 AC000000 		.4byte	.LASF7
+ 243 005d 03       		.uleb128 0x3
+ 244 005e 04       		.byte	0x4
+ 245 005f 05       		.byte	0x5
+ 246 0060 696E7400 		.ascii	"int\000"
+ 247 0064 02       		.uleb128 0x2
+ 248 0065 04       		.byte	0x4
+ 249 0066 07       		.byte	0x7
+ 250 0067 37010000 		.4byte	.LASF8
+ 251 006b 04       		.uleb128 0x4
+ 252 006c 2D020000 		.4byte	.LASF9
+ 253 0070 02       		.byte	0x2
+ 254 0071 E901     		.2byte	0x1e9
+ 255 0073 2C000000 		.4byte	0x2c
+ 256 0077 04       		.uleb128 0x4
+ 257 0078 27010000 		.4byte	.LASF10
+ 258 007c 02       		.byte	0x2
+ 259 007d EA01     		.2byte	0x1ea
+ 260 007f 3A000000 		.4byte	0x3a
+ 261 0083 02       		.uleb128 0x2
+ 262 0084 04       		.byte	0x4
+ 263 0085 04       		.byte	0x4
+ 264 0086 A6000000 		.4byte	.LASF11
+ 265 008a 02       		.uleb128 0x2
+ 266 008b 08       		.byte	0x8
+ 267 008c 04       		.byte	0x4
+ 268 008d 20010000 		.4byte	.LASF12
+ 269 0091 02       		.uleb128 0x2
+ 270 0092 01       		.byte	0x1
+ 271 0093 08       		.byte	0x8
+ 272 0094 FB010000 		.4byte	.LASF13
+ 273 0098 04       		.uleb128 0x4
+ 274 0099 DC000000 		.4byte	.LASF14
+ 275 009d 02       		.byte	0x2
+ 276 009e 9302     		.2byte	0x293
+ 277 00a0 A4000000 		.4byte	0xa4
+ 278 00a4 05       		.uleb128 0x5
+ 279 00a5 6B000000 		.4byte	0x6b
+ 280 00a9 06       		.uleb128 0x6
+ 281 00aa 7F000000 		.4byte	.LASF15
+ 282 00ae 01       		.byte	0x1
+ 283 00af 39       		.byte	0x39
+ 284 00b0 00000000 		.4byte	.LFB0
+ 285 00b4 18000000 		.4byte	.LFE0-.LFB0
+ 286 00b8 01       		.uleb128 0x1
+ 287 00b9 9C       		.byte	0x9c
+ 288 00ba DD000000 		.4byte	0xdd
+ 289 00be 07       		.uleb128 0x7
+ 290 00bf 79000000 		.4byte	.LASF17
+ 291 00c3 01       		.byte	0x1
+ 292 00c4 39       		.byte	0x39
+ 293 00c5 6B000000 		.4byte	0x6b
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccX9TPZL.s 			page 10
 
 
- 369 005d 0B       		.uleb128 0xb
- 370 005e 3B       		.uleb128 0x3b
- 371 005f 0B       		.uleb128 0xb
- 372 0060 49       		.uleb128 0x49
- 373 0061 13       		.uleb128 0x13
- 374 0062 02       		.uleb128 0x2
- 375 0063 17       		.uleb128 0x17
- 376 0064 00       		.byte	0
- 377 0065 00       		.byte	0
- 378 0066 08       		.uleb128 0x8
- 379 0067 34       		.uleb128 0x34
- 380 0068 00       		.byte	0
- 381 0069 03       		.uleb128 0x3
- 382 006a 0E       		.uleb128 0xe
- 383 006b 3A       		.uleb128 0x3a
- 384 006c 0B       		.uleb128 0xb
- 385 006d 3B       		.uleb128 0x3b
- 386 006e 0B       		.uleb128 0xb
- 387 006f 49       		.uleb128 0x49
- 388 0070 13       		.uleb128 0x13
- 389 0071 02       		.uleb128 0x2
- 390 0072 17       		.uleb128 0x17
- 391 0073 00       		.byte	0
- 392 0074 00       		.byte	0
- 393 0075 09       		.uleb128 0x9
- 394 0076 2E       		.uleb128 0x2e
- 395 0077 00       		.byte	0
- 396 0078 3F       		.uleb128 0x3f
- 397 0079 19       		.uleb128 0x19
- 398 007a 03       		.uleb128 0x3
- 399 007b 0E       		.uleb128 0xe
- 400 007c 3A       		.uleb128 0x3a
- 401 007d 0B       		.uleb128 0xb
- 402 007e 3B       		.uleb128 0x3b
- 403 007f 0B       		.uleb128 0xb
- 404 0080 27       		.uleb128 0x27
- 405 0081 19       		.uleb128 0x19
- 406 0082 49       		.uleb128 0x49
- 407 0083 13       		.uleb128 0x13
- 408 0084 11       		.uleb128 0x11
- 409 0085 01       		.uleb128 0x1
- 410 0086 12       		.uleb128 0x12
- 411 0087 06       		.uleb128 0x6
- 412 0088 40       		.uleb128 0x40
- 413 0089 18       		.uleb128 0x18
- 414 008a 9742     		.uleb128 0x2117
- 415 008c 19       		.uleb128 0x19
- 416 008d 00       		.byte	0
- 417 008e 00       		.byte	0
- 418 008f 00       		.byte	0
- 419              		.section	.debug_loc,"",%progbits
- 420              	.Ldebug_loc0:
- 421              	.LLST0:
- 422 0000 00000000 		.4byte	.LVL0
- 423 0004 06000000 		.4byte	.LVL1
- 424 0008 0100     		.2byte	0x1
- 425 000a 50       		.byte	0x50
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccyksHLP.s 			page 11
+ 294 00c9 00000000 		.4byte	.LLST0
+ 295 00cd 08       		.uleb128 0x8
+ 296 00ce D1000000 		.4byte	.LASF27
+ 297 00d2 01       		.byte	0x1
+ 298 00d3 3B       		.byte	0x3b
+ 299 00d4 6B000000 		.4byte	0x6b
+ 300 00d8 21000000 		.4byte	.LLST1
+ 301 00dc 00       		.byte	0
+ 302 00dd 06       		.uleb128 0x6
+ 303 00de D2010000 		.4byte	.LASF16
+ 304 00e2 01       		.byte	0x1
+ 305 00e3 5A       		.byte	0x5a
+ 306 00e4 00000000 		.4byte	.LFB1
+ 307 00e8 18000000 		.4byte	.LFE1-.LFB1
+ 308 00ec 01       		.uleb128 0x1
+ 309 00ed 9C       		.byte	0x9c
+ 310 00ee 02010000 		.4byte	0x102
+ 311 00f2 07       		.uleb128 0x7
+ 312 00f3 E8010000 		.4byte	.LASF18
+ 313 00f7 01       		.byte	0x1
+ 314 00f8 5A       		.byte	0x5a
+ 315 00f9 6B000000 		.4byte	0x6b
+ 316 00fd 39000000 		.4byte	.LLST2
+ 317 0101 00       		.byte	0
+ 318 0102 09       		.uleb128 0x9
+ 319 0103 1F020000 		.4byte	.LASF19
+ 320 0107 01       		.byte	0x1
+ 321 0108 71       		.byte	0x71
+ 322 0109 6B000000 		.4byte	0x6b
+ 323 010d 00000000 		.4byte	.LFB2
+ 324 0111 10000000 		.4byte	.LFE2-.LFB2
+ 325 0115 01       		.uleb128 0x1
+ 326 0116 9C       		.byte	0x9c
+ 327 0117 09       		.uleb128 0x9
+ 328 0118 00020000 		.4byte	.LASF20
+ 329 011c 01       		.byte	0x1
+ 330 011d 8D       		.byte	0x8d
+ 331 011e 6B000000 		.4byte	0x6b
+ 332 0122 00000000 		.4byte	.LFB3
+ 333 0126 10000000 		.4byte	.LFE3-.LFB3
+ 334 012a 01       		.uleb128 0x1
+ 335 012b 9C       		.byte	0x9c
+ 336 012c 06       		.uleb128 0x6
+ 337 012d 06010000 		.4byte	.LASF21
+ 338 0131 01       		.byte	0x1
+ 339 0132 BB       		.byte	0xbb
+ 340 0133 00000000 		.4byte	.LFB4
+ 341 0137 10000000 		.4byte	.LFE4-.LFB4
+ 342 013b 01       		.uleb128 0x1
+ 343 013c 9C       		.byte	0x9c
+ 344 013d 5E010000 		.4byte	0x15e
+ 345 0141 0A       		.uleb128 0xa
+ 346 0142 2E010000 		.4byte	.LASF22
+ 347 0146 01       		.byte	0x1
+ 348 0147 BB       		.byte	0xbb
+ 349 0148 77000000 		.4byte	0x77
+ 350 014c 01       		.uleb128 0x1
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccX9TPZL.s 			page 11
 
 
- 426 000b 06000000 		.4byte	.LVL1
- 427 000f 18000000 		.4byte	.LFE0
- 428 0013 0400     		.2byte	0x4
- 429 0015 F3       		.byte	0xf3
- 430 0016 01       		.uleb128 0x1
- 431 0017 50       		.byte	0x50
- 432 0018 9F       		.byte	0x9f
- 433 0019 00000000 		.4byte	0
- 434 001d 00000000 		.4byte	0
- 435              	.LLST1:
- 436 0021 08000000 		.4byte	.LVL2
- 437 0025 0C000000 		.4byte	.LVL3
- 438 0029 0600     		.2byte	0x6
- 439 002b 73       		.byte	0x73
- 440 002c 00       		.sleb128 0
- 441 002d 09       		.byte	0x9
- 442 002e FE       		.byte	0xfe
- 443 002f 1A       		.byte	0x1a
- 444 0030 9F       		.byte	0x9f
- 445 0031 00000000 		.4byte	0
- 446 0035 00000000 		.4byte	0
- 447              	.LLST2:
- 448 0039 00000000 		.4byte	.LVL4
- 449 003d 06000000 		.4byte	.LVL5
- 450 0041 0100     		.2byte	0x1
- 451 0043 50       		.byte	0x50
- 452 0044 06000000 		.4byte	.LVL5
- 453 0048 18000000 		.4byte	.LFE1
- 454 004c 0400     		.2byte	0x4
- 455 004e F3       		.byte	0xf3
- 456 004f 01       		.uleb128 0x1
- 457 0050 50       		.byte	0x50
- 458 0051 9F       		.byte	0x9f
- 459 0052 00000000 		.4byte	0
- 460 0056 00000000 		.4byte	0
- 461              		.section	.debug_aranges,"",%progbits
- 462 0000 34000000 		.4byte	0x34
- 463 0004 0200     		.2byte	0x2
- 464 0006 00000000 		.4byte	.Ldebug_info0
- 465 000a 04       		.byte	0x4
- 466 000b 00       		.byte	0
- 467 000c 0000     		.2byte	0
- 468 000e 0000     		.2byte	0
- 469 0010 00000000 		.4byte	.LFB0
- 470 0014 18000000 		.4byte	.LFE0-.LFB0
- 471 0018 00000000 		.4byte	.LFB1
- 472 001c 18000000 		.4byte	.LFE1-.LFB1
- 473 0020 00000000 		.4byte	.LFB2
- 474 0024 10000000 		.4byte	.LFE2-.LFB2
- 475 0028 00000000 		.4byte	.LFB3
- 476 002c 10000000 		.4byte	.LFE3-.LFB3
- 477 0030 00000000 		.4byte	0
- 478 0034 00000000 		.4byte	0
- 479              		.section	.debug_ranges,"",%progbits
- 480              	.Ldebug_ranges0:
- 481 0000 00000000 		.4byte	.LFB0
- 482 0004 18000000 		.4byte	.LFE0
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccyksHLP.s 			page 12
+ 351 014d 50       		.byte	0x50
+ 352 014e 07       		.uleb128 0x7
+ 353 014f E8010000 		.4byte	.LASF18
+ 354 0153 01       		.byte	0x1
+ 355 0154 BB       		.byte	0xbb
+ 356 0155 77000000 		.4byte	0x77
+ 357 0159 5A000000 		.4byte	.LLST3
+ 358 015d 00       		.byte	0
+ 359 015e 09       		.uleb128 0x9
+ 360 015f 8E000000 		.4byte	.LASF23
+ 361 0163 01       		.byte	0x1
+ 362 0164 D8       		.byte	0xd8
+ 363 0165 6B000000 		.4byte	0x6b
+ 364 0169 00000000 		.4byte	.LFB5
+ 365 016d 10000000 		.4byte	.LFE5-.LFB5
+ 366 0171 01       		.uleb128 0x1
+ 367 0172 9C       		.byte	0x9c
+ 368 0173 00       		.byte	0
+ 369              		.section	.debug_abbrev,"",%progbits
+ 370              	.Ldebug_abbrev0:
+ 371 0000 01       		.uleb128 0x1
+ 372 0001 11       		.uleb128 0x11
+ 373 0002 01       		.byte	0x1
+ 374 0003 25       		.uleb128 0x25
+ 375 0004 0E       		.uleb128 0xe
+ 376 0005 13       		.uleb128 0x13
+ 377 0006 0B       		.uleb128 0xb
+ 378 0007 03       		.uleb128 0x3
+ 379 0008 0E       		.uleb128 0xe
+ 380 0009 1B       		.uleb128 0x1b
+ 381 000a 0E       		.uleb128 0xe
+ 382 000b 55       		.uleb128 0x55
+ 383 000c 17       		.uleb128 0x17
+ 384 000d 11       		.uleb128 0x11
+ 385 000e 01       		.uleb128 0x1
+ 386 000f 10       		.uleb128 0x10
+ 387 0010 17       		.uleb128 0x17
+ 388 0011 00       		.byte	0
+ 389 0012 00       		.byte	0
+ 390 0013 02       		.uleb128 0x2
+ 391 0014 24       		.uleb128 0x24
+ 392 0015 00       		.byte	0
+ 393 0016 0B       		.uleb128 0xb
+ 394 0017 0B       		.uleb128 0xb
+ 395 0018 3E       		.uleb128 0x3e
+ 396 0019 0B       		.uleb128 0xb
+ 397 001a 03       		.uleb128 0x3
+ 398 001b 0E       		.uleb128 0xe
+ 399 001c 00       		.byte	0
+ 400 001d 00       		.byte	0
+ 401 001e 03       		.uleb128 0x3
+ 402 001f 24       		.uleb128 0x24
+ 403 0020 00       		.byte	0
+ 404 0021 0B       		.uleb128 0xb
+ 405 0022 0B       		.uleb128 0xb
+ 406 0023 3E       		.uleb128 0x3e
+ 407 0024 0B       		.uleb128 0xb
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccX9TPZL.s 			page 12
 
 
- 483 0008 00000000 		.4byte	.LFB1
- 484 000c 18000000 		.4byte	.LFE1
- 485 0010 00000000 		.4byte	.LFB2
- 486 0014 10000000 		.4byte	.LFE2
- 487 0018 00000000 		.4byte	.LFB3
- 488 001c 10000000 		.4byte	.LFE3
- 489 0020 00000000 		.4byte	0
- 490 0024 00000000 		.4byte	0
- 491              		.section	.debug_line,"",%progbits
- 492              	.Ldebug_line0:
- 493 0000 93000000 		.section	.debug_str,"MS",%progbits,1
- 493      02004500 
- 493      00000201 
- 493      FB0E0D00 
- 493      01010101 
- 494              	.LASF22:
- 495 0000 433A5C55 		.ascii	"C:\\Users\\mgnocco\\Documents\\Git\\PSoC5\\PSoC5_FW"
- 495      73657273 
- 495      5C6D676E 
- 495      6F63636F 
- 495      5C446F63 
- 496 002d 5F494D55 		.ascii	"_IMU_LSM6DSRX_LIS2MDL\\LSM6DSRX +lis2mdl_funziona -"
- 496      5F4C534D 
- 496      36445352 
- 496      585F4C49 
- 496      53324D44 
- 497 005f 4E4F4E54 		.ascii	"NONTOCCARE\\Design02.cydsn\000"
- 497      4F434341 
- 497      52455C44 
- 497      65736967 
- 497      6E30322E 
- 498              	.LASF16:
- 499 0079 76616C75 		.ascii	"value\000"
- 499      6500
- 500              	.LASF14:
- 501 007f 4779726F 		.ascii	"Gyro_INT_Write\000"
- 501      5F494E54 
- 501      5F577269 
- 501      746500
- 502              	.LASF9:
- 503 008e 666C6F61 		.ascii	"float\000"
- 503      7400
- 504              	.LASF7:
- 505 0094 6C6F6E67 		.ascii	"long long unsigned int\000"
- 505      206C6F6E 
- 505      6720756E 
- 505      7369676E 
- 505      65642069 
- 506              	.LASF1:
- 507 00ab 756E7369 		.ascii	"unsigned char\000"
- 507      676E6564 
- 507      20636861 
- 507      7200
- 508              	.LASF23:
- 509 00b9 73746174 		.ascii	"staticBits\000"
- 509      69634269 
- 509      747300
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccyksHLP.s 			page 13
+ 408 0025 03       		.uleb128 0x3
+ 409 0026 08       		.uleb128 0x8
+ 410 0027 00       		.byte	0
+ 411 0028 00       		.byte	0
+ 412 0029 04       		.uleb128 0x4
+ 413 002a 16       		.uleb128 0x16
+ 414 002b 00       		.byte	0
+ 415 002c 03       		.uleb128 0x3
+ 416 002d 0E       		.uleb128 0xe
+ 417 002e 3A       		.uleb128 0x3a
+ 418 002f 0B       		.uleb128 0xb
+ 419 0030 3B       		.uleb128 0x3b
+ 420 0031 05       		.uleb128 0x5
+ 421 0032 49       		.uleb128 0x49
+ 422 0033 13       		.uleb128 0x13
+ 423 0034 00       		.byte	0
+ 424 0035 00       		.byte	0
+ 425 0036 05       		.uleb128 0x5
+ 426 0037 35       		.uleb128 0x35
+ 427 0038 00       		.byte	0
+ 428 0039 49       		.uleb128 0x49
+ 429 003a 13       		.uleb128 0x13
+ 430 003b 00       		.byte	0
+ 431 003c 00       		.byte	0
+ 432 003d 06       		.uleb128 0x6
+ 433 003e 2E       		.uleb128 0x2e
+ 434 003f 01       		.byte	0x1
+ 435 0040 3F       		.uleb128 0x3f
+ 436 0041 19       		.uleb128 0x19
+ 437 0042 03       		.uleb128 0x3
+ 438 0043 0E       		.uleb128 0xe
+ 439 0044 3A       		.uleb128 0x3a
+ 440 0045 0B       		.uleb128 0xb
+ 441 0046 3B       		.uleb128 0x3b
+ 442 0047 0B       		.uleb128 0xb
+ 443 0048 27       		.uleb128 0x27
+ 444 0049 19       		.uleb128 0x19
+ 445 004a 11       		.uleb128 0x11
+ 446 004b 01       		.uleb128 0x1
+ 447 004c 12       		.uleb128 0x12
+ 448 004d 06       		.uleb128 0x6
+ 449 004e 40       		.uleb128 0x40
+ 450 004f 18       		.uleb128 0x18
+ 451 0050 9742     		.uleb128 0x2117
+ 452 0052 19       		.uleb128 0x19
+ 453 0053 01       		.uleb128 0x1
+ 454 0054 13       		.uleb128 0x13
+ 455 0055 00       		.byte	0
+ 456 0056 00       		.byte	0
+ 457 0057 07       		.uleb128 0x7
+ 458 0058 05       		.uleb128 0x5
+ 459 0059 00       		.byte	0
+ 460 005a 03       		.uleb128 0x3
+ 461 005b 0E       		.uleb128 0xe
+ 462 005c 3A       		.uleb128 0x3a
+ 463 005d 0B       		.uleb128 0xb
+ 464 005e 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccX9TPZL.s 			page 13
 
 
- 510              	.LASF13:
- 511 00c4 72656738 		.ascii	"reg8\000"
- 511      00
- 512              	.LASF5:
- 513 00c9 6C6F6E67 		.ascii	"long unsigned int\000"
- 513      20756E73 
- 513      69676E65 
- 513      6420696E 
- 513      7400
- 514              	.LASF3:
- 515 00db 73686F72 		.ascii	"short unsigned int\000"
- 515      7420756E 
- 515      7369676E 
- 515      65642069 
- 515      6E7400
- 516              	.LASF10:
- 517 00ee 646F7562 		.ascii	"double\000"
- 517      6C6500
- 518              	.LASF8:
- 519 00f5 756E7369 		.ascii	"unsigned int\000"
- 519      676E6564 
- 519      20696E74 
- 519      00
- 520              	.LASF20:
- 521 0102 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 521      43313120 
- 521      352E342E 
- 521      31203230 
- 521      31363036 
- 522 0135 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 522      20726576 
- 522      6973696F 
- 522      6E203233 
- 522      37373135 
- 523 0168 73202D66 		.ascii	"s -ffunction-sections -ffat-lto-objects\000"
- 523      66756E63 
- 523      74696F6E 
- 523      2D736563 
- 523      74696F6E 
- 524              	.LASF15:
- 525 0190 4779726F 		.ascii	"Gyro_INT_SetDriveMode\000"
- 525      5F494E54 
- 525      5F536574 
- 525      44726976 
- 525      654D6F64 
- 526              	.LASF17:
- 527 01a6 6D6F6465 		.ascii	"mode\000"
- 527      00
- 528              	.LASF6:
- 529 01ab 6C6F6E67 		.ascii	"long long int\000"
- 529      206C6F6E 
- 529      6720696E 
- 529      7400
- 530              	.LASF11:
- 531 01b9 63686172 		.ascii	"char\000"
- 531      00
- 532              	.LASF19:
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccyksHLP.s 			page 14
+ 465 005f 0B       		.uleb128 0xb
+ 466 0060 49       		.uleb128 0x49
+ 467 0061 13       		.uleb128 0x13
+ 468 0062 02       		.uleb128 0x2
+ 469 0063 17       		.uleb128 0x17
+ 470 0064 00       		.byte	0
+ 471 0065 00       		.byte	0
+ 472 0066 08       		.uleb128 0x8
+ 473 0067 34       		.uleb128 0x34
+ 474 0068 00       		.byte	0
+ 475 0069 03       		.uleb128 0x3
+ 476 006a 0E       		.uleb128 0xe
+ 477 006b 3A       		.uleb128 0x3a
+ 478 006c 0B       		.uleb128 0xb
+ 479 006d 3B       		.uleb128 0x3b
+ 480 006e 0B       		.uleb128 0xb
+ 481 006f 49       		.uleb128 0x49
+ 482 0070 13       		.uleb128 0x13
+ 483 0071 02       		.uleb128 0x2
+ 484 0072 17       		.uleb128 0x17
+ 485 0073 00       		.byte	0
+ 486 0074 00       		.byte	0
+ 487 0075 09       		.uleb128 0x9
+ 488 0076 2E       		.uleb128 0x2e
+ 489 0077 00       		.byte	0
+ 490 0078 3F       		.uleb128 0x3f
+ 491 0079 19       		.uleb128 0x19
+ 492 007a 03       		.uleb128 0x3
+ 493 007b 0E       		.uleb128 0xe
+ 494 007c 3A       		.uleb128 0x3a
+ 495 007d 0B       		.uleb128 0xb
+ 496 007e 3B       		.uleb128 0x3b
+ 497 007f 0B       		.uleb128 0xb
+ 498 0080 27       		.uleb128 0x27
+ 499 0081 19       		.uleb128 0x19
+ 500 0082 49       		.uleb128 0x49
+ 501 0083 13       		.uleb128 0x13
+ 502 0084 11       		.uleb128 0x11
+ 503 0085 01       		.uleb128 0x1
+ 504 0086 12       		.uleb128 0x12
+ 505 0087 06       		.uleb128 0x6
+ 506 0088 40       		.uleb128 0x40
+ 507 0089 18       		.uleb128 0x18
+ 508 008a 9742     		.uleb128 0x2117
+ 509 008c 19       		.uleb128 0x19
+ 510 008d 00       		.byte	0
+ 511 008e 00       		.byte	0
+ 512 008f 0A       		.uleb128 0xa
+ 513 0090 05       		.uleb128 0x5
+ 514 0091 00       		.byte	0
+ 515 0092 03       		.uleb128 0x3
+ 516 0093 0E       		.uleb128 0xe
+ 517 0094 3A       		.uleb128 0x3a
+ 518 0095 0B       		.uleb128 0xb
+ 519 0096 3B       		.uleb128 0x3b
+ 520 0097 0B       		.uleb128 0xb
+ 521 0098 49       		.uleb128 0x49
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccX9TPZL.s 			page 14
 
 
- 533 01be 4779726F 		.ascii	"Gyro_INT_ReadDataReg\000"
- 533      5F494E54 
- 533      5F526561 
- 533      64446174 
- 533      61526567 
- 534              	.LASF2:
- 535 01d3 73686F72 		.ascii	"short int\000"
- 535      7420696E 
- 535      7400
- 536              	.LASF18:
- 537 01dd 4779726F 		.ascii	"Gyro_INT_Read\000"
- 537      5F494E54 
- 537      5F526561 
- 537      6400
- 538              	.LASF12:
- 539 01eb 75696E74 		.ascii	"uint8\000"
- 539      3800
- 540              	.LASF4:
- 541 01f1 6C6F6E67 		.ascii	"long int\000"
- 541      20696E74 
- 541      00
- 542              	.LASF21:
- 543 01fa 47656E65 		.ascii	"Generated_Source\\PSoC5\\Gyro_INT.c\000"
- 543      72617465 
- 543      645F536F 
- 543      75726365 
- 543      5C50536F 
- 544              	.LASF0:
- 545 021c 7369676E 		.ascii	"signed char\000"
- 545      65642063 
- 545      68617200 
- 546              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 522 0099 13       		.uleb128 0x13
+ 523 009a 02       		.uleb128 0x2
+ 524 009b 18       		.uleb128 0x18
+ 525 009c 00       		.byte	0
+ 526 009d 00       		.byte	0
+ 527 009e 00       		.byte	0
+ 528              		.section	.debug_loc,"",%progbits
+ 529              	.Ldebug_loc0:
+ 530              	.LLST0:
+ 531 0000 00000000 		.4byte	.LVL0
+ 532 0004 04000000 		.4byte	.LVL1
+ 533 0008 0100     		.2byte	0x1
+ 534 000a 50       		.byte	0x50
+ 535 000b 04000000 		.4byte	.LVL1
+ 536 000f 18000000 		.4byte	.LFE0
+ 537 0013 0400     		.2byte	0x4
+ 538 0015 F3       		.byte	0xf3
+ 539 0016 01       		.uleb128 0x1
+ 540 0017 50       		.byte	0x50
+ 541 0018 9F       		.byte	0x9f
+ 542 0019 00000000 		.4byte	0
+ 543 001d 00000000 		.4byte	0
+ 544              	.LLST1:
+ 545 0021 06000000 		.4byte	.LVL2
+ 546 0025 0E000000 		.4byte	.LVL3
+ 547 0029 0600     		.2byte	0x6
+ 548 002b 73       		.byte	0x73
+ 549 002c 00       		.sleb128 0
+ 550 002d 09       		.byte	0x9
+ 551 002e F7       		.byte	0xf7
+ 552 002f 1A       		.byte	0x1a
+ 553 0030 9F       		.byte	0x9f
+ 554 0031 00000000 		.4byte	0
+ 555 0035 00000000 		.4byte	0
+ 556              	.LLST2:
+ 557 0039 00000000 		.4byte	.LVL4
+ 558 003d 06000000 		.4byte	.LVL5
+ 559 0041 0100     		.2byte	0x1
+ 560 0043 50       		.byte	0x50
+ 561 0044 06000000 		.4byte	.LVL5
+ 562 0048 18000000 		.4byte	.LFE1
+ 563 004c 0400     		.2byte	0x4
+ 564 004e F3       		.byte	0xf3
+ 565 004f 01       		.uleb128 0x1
+ 566 0050 50       		.byte	0x50
+ 567 0051 9F       		.byte	0x9f
+ 568 0052 00000000 		.4byte	0
+ 569 0056 00000000 		.4byte	0
+ 570              	.LLST3:
+ 571 005a 00000000 		.4byte	.LVL6
+ 572 005e 08000000 		.4byte	.LVL7
+ 573 0062 0100     		.2byte	0x1
+ 574 0064 51       		.byte	0x51
+ 575 0065 08000000 		.4byte	.LVL7
+ 576 0069 10000000 		.4byte	.LFE4
+ 577 006d 0400     		.2byte	0x4
+ 578 006f F3       		.byte	0xf3
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccX9TPZL.s 			page 15
+
+
+ 579 0070 01       		.uleb128 0x1
+ 580 0071 51       		.byte	0x51
+ 581 0072 9F       		.byte	0x9f
+ 582 0073 00000000 		.4byte	0
+ 583 0077 00000000 		.4byte	0
+ 584              		.section	.debug_aranges,"",%progbits
+ 585 0000 44000000 		.4byte	0x44
+ 586 0004 0200     		.2byte	0x2
+ 587 0006 00000000 		.4byte	.Ldebug_info0
+ 588 000a 04       		.byte	0x4
+ 589 000b 00       		.byte	0
+ 590 000c 0000     		.2byte	0
+ 591 000e 0000     		.2byte	0
+ 592 0010 00000000 		.4byte	.LFB0
+ 593 0014 18000000 		.4byte	.LFE0-.LFB0
+ 594 0018 00000000 		.4byte	.LFB1
+ 595 001c 18000000 		.4byte	.LFE1-.LFB1
+ 596 0020 00000000 		.4byte	.LFB2
+ 597 0024 10000000 		.4byte	.LFE2-.LFB2
+ 598 0028 00000000 		.4byte	.LFB3
+ 599 002c 10000000 		.4byte	.LFE3-.LFB3
+ 600 0030 00000000 		.4byte	.LFB4
+ 601 0034 10000000 		.4byte	.LFE4-.LFB4
+ 602 0038 00000000 		.4byte	.LFB5
+ 603 003c 10000000 		.4byte	.LFE5-.LFB5
+ 604 0040 00000000 		.4byte	0
+ 605 0044 00000000 		.4byte	0
+ 606              		.section	.debug_ranges,"",%progbits
+ 607              	.Ldebug_ranges0:
+ 608 0000 00000000 		.4byte	.LFB0
+ 609 0004 18000000 		.4byte	.LFE0
+ 610 0008 00000000 		.4byte	.LFB1
+ 611 000c 18000000 		.4byte	.LFE1
+ 612 0010 00000000 		.4byte	.LFB2
+ 613 0014 10000000 		.4byte	.LFE2
+ 614 0018 00000000 		.4byte	.LFB3
+ 615 001c 10000000 		.4byte	.LFE3
+ 616 0020 00000000 		.4byte	.LFB4
+ 617 0024 10000000 		.4byte	.LFE4
+ 618 0028 00000000 		.4byte	.LFB5
+ 619 002c 10000000 		.4byte	.LFE5
+ 620 0030 00000000 		.4byte	0
+ 621 0034 00000000 		.4byte	0
+ 622              		.section	.debug_line,"",%progbits
+ 623              	.Ldebug_line0:
+ 624 0000 B7000000 		.section	.debug_str,"MS",%progbits,1
+ 624      02004500 
+ 624      00000201 
+ 624      FB0E0D00 
+ 624      01010101 
+ 625              	.LASF26:
+ 626 0000 433A5C55 		.ascii	"C:\\Users\\mgnocco\\Documents\\Git\\PSoC5\\PSoC5_FW"
+ 626      73657273 
+ 626      5C6D676E 
+ 626      6F63636F 
+ 626      5C446F63 
+ 627 002d 5F494D55 		.ascii	"_IMU_LSM6DSRX_LIS2MDL\\LSM6DSRX +lis2mdl_funziona -"
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccX9TPZL.s 			page 16
+
+
+ 627      5F4C534D 
+ 627      36445352 
+ 627      585F4C49 
+ 627      53324D44 
+ 628 005f 4E4F4E54 		.ascii	"NONTOCCARE\\Design02.cydsn\000"
+ 628      4F434341 
+ 628      52455C44 
+ 628      65736967 
+ 628      6E30322E 
+ 629              	.LASF17:
+ 630 0079 76616C75 		.ascii	"value\000"
+ 630      6500
+ 631              	.LASF15:
+ 632 007f 4779726F 		.ascii	"Gyro_INT_Write\000"
+ 632      5F494E54 
+ 632      5F577269 
+ 632      746500
+ 633              	.LASF23:
+ 634 008e 4779726F 		.ascii	"Gyro_INT_ClearInterrupt\000"
+ 634      5F494E54 
+ 634      5F436C65 
+ 634      6172496E 
+ 634      74657272 
+ 635              	.LASF11:
+ 636 00a6 666C6F61 		.ascii	"float\000"
+ 636      7400
+ 637              	.LASF7:
+ 638 00ac 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 638      206C6F6E 
+ 638      6720756E 
+ 638      7369676E 
+ 638      65642069 
+ 639              	.LASF1:
+ 640 00c3 756E7369 		.ascii	"unsigned char\000"
+ 640      676E6564 
+ 640      20636861 
+ 640      7200
+ 641              	.LASF27:
+ 642 00d1 73746174 		.ascii	"staticBits\000"
+ 642      69634269 
+ 642      747300
+ 643              	.LASF14:
+ 644 00dc 72656738 		.ascii	"reg8\000"
+ 644      00
+ 645              	.LASF5:
+ 646 00e1 6C6F6E67 		.ascii	"long unsigned int\000"
+ 646      20756E73 
+ 646      69676E65 
+ 646      6420696E 
+ 646      7400
+ 647              	.LASF3:
+ 648 00f3 73686F72 		.ascii	"short unsigned int\000"
+ 648      7420756E 
+ 648      7369676E 
+ 648      65642069 
+ 648      6E7400
+ 649              	.LASF21:
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccX9TPZL.s 			page 17
+
+
+ 650 0106 4779726F 		.ascii	"Gyro_INT_SetInterruptMode\000"
+ 650      5F494E54 
+ 650      5F536574 
+ 650      496E7465 
+ 650      72727570 
+ 651              	.LASF12:
+ 652 0120 646F7562 		.ascii	"double\000"
+ 652      6C6500
+ 653              	.LASF10:
+ 654 0127 75696E74 		.ascii	"uint16\000"
+ 654      313600
+ 655              	.LASF22:
+ 656 012e 706F7369 		.ascii	"position\000"
+ 656      74696F6E 
+ 656      00
+ 657              	.LASF8:
+ 658 0137 756E7369 		.ascii	"unsigned int\000"
+ 658      676E6564 
+ 658      20696E74 
+ 658      00
+ 659              	.LASF24:
+ 660 0144 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 660      43313120 
+ 660      352E342E 
+ 660      31203230 
+ 660      31363036 
+ 661 0177 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 661      20726576 
+ 661      6973696F 
+ 661      6E203233 
+ 661      37373135 
+ 662 01aa 73202D66 		.ascii	"s -ffunction-sections -ffat-lto-objects\000"
+ 662      66756E63 
+ 662      74696F6E 
+ 662      2D736563 
+ 662      74696F6E 
+ 663              	.LASF16:
+ 664 01d2 4779726F 		.ascii	"Gyro_INT_SetDriveMode\000"
+ 664      5F494E54 
+ 664      5F536574 
+ 664      44726976 
+ 664      654D6F64 
+ 665              	.LASF18:
+ 666 01e8 6D6F6465 		.ascii	"mode\000"
+ 666      00
+ 667              	.LASF6:
+ 668 01ed 6C6F6E67 		.ascii	"long long int\000"
+ 668      206C6F6E 
+ 668      6720696E 
+ 668      7400
+ 669              	.LASF13:
+ 670 01fb 63686172 		.ascii	"char\000"
+ 670      00
+ 671              	.LASF20:
+ 672 0200 4779726F 		.ascii	"Gyro_INT_ReadDataReg\000"
+ 672      5F494E54 
+ 672      5F526561 
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccX9TPZL.s 			page 18
+
+
+ 672      64446174 
+ 672      61526567 
+ 673              	.LASF2:
+ 674 0215 73686F72 		.ascii	"short int\000"
+ 674      7420696E 
+ 674      7400
+ 675              	.LASF19:
+ 676 021f 4779726F 		.ascii	"Gyro_INT_Read\000"
+ 676      5F494E54 
+ 676      5F526561 
+ 676      6400
+ 677              	.LASF9:
+ 678 022d 75696E74 		.ascii	"uint8\000"
+ 678      3800
+ 679              	.LASF4:
+ 680 0233 6C6F6E67 		.ascii	"long int\000"
+ 680      20696E74 
+ 680      00
+ 681              	.LASF25:
+ 682 023c 47656E65 		.ascii	"Generated_Source\\PSoC5\\Gyro_INT.c\000"
+ 682      72617465 
+ 682      645F536F 
+ 682      75726365 
+ 682      5C50536F 
+ 683              	.LASF0:
+ 684 025e 7369676E 		.ascii	"signed char\000"
+ 684      65642063 
+ 684      68617200 
+ 685              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

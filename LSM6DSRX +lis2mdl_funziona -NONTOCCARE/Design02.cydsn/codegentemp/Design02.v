@@ -1,6 +1,6 @@
 // ======================================================================
 // Design02.v generated from TopDesign.cysch
-// 10/30/2023 at 17:53
+// 11/02/2023 at 18:38
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -589,6 +589,8 @@ endmodule
 // top
 module top ;
 
+          wire  Net_386;
+          wire  Net_390;
           wire  Net_369;
           wire  Net_368;
           wire  Net_367;
@@ -649,8 +651,8 @@ module top ;
           wire  Net_3;
           wire  Net_2;
           wire  Net_1;
-          wire  Net_373;
           wire  Net_371;
+          wire  Net_373;
           wire  Net_10653;
           wire  Net_10654;
           wire  Net_305;
@@ -1318,25 +1320,24 @@ module top ;
 
 
 	cy_isr_v1_0
-		#(.int_type(2'b01))
+		#(.int_type(2'b00))
 		isr_Acc
 		 (.int_signal(Net_371));
 
 
 	wire [0:0] tmpOE__Acc_INT_net;
 	wire [0:0] tmpIO_0__Acc_INT_net;
-	wire [0:0] tmpINTERRUPT_0__Acc_INT_net;
 	electrical [0:0] tmpSIOVREF__Acc_INT_net;
 
 	cy_psoc3_pins_v1_10
 		#(.id("1f511037-62a9-4bf4-b7d3-5b09673b1919"),
-		  .drive_mode(3'b110),
+		  .drive_mode(3'b011),
 		  .ibuf_enabled(1'b1),
 		  .init_dr_st(1'b0),
 		  .input_clk_en(0),
 		  .input_sync(1'b0),
 		  .input_sync_mode(1'b0),
-		  .intr_mode(2'b00),
+		  .intr_mode(2'b01),
 		  .invert_in_clock(0),
 		  .invert_in_clock_en(0),
 		  .invert_in_reset(0),
@@ -1384,10 +1385,10 @@ module top ;
 		Acc_INT
 		 (.oe(tmpOE__Acc_INT_net),
 		  .y({1'b0}),
-		  .fb({Net_371}),
+		  .fb({Net_390}),
 		  .io({tmpIO_0__Acc_INT_net[0:0]}),
 		  .siovref(tmpSIOVREF__Acc_INT_net),
-		  .interrupt({tmpINTERRUPT_0__Acc_INT_net[0:0]}),
+		  .interrupt({Net_371}),
 		  .in_clock({1'b0}),
 		  .in_clock_en({1'b1}),
 		  .in_reset({1'b0}),
@@ -1406,7 +1407,6 @@ module top ;
 
 	wire [0:0] tmpOE__Gyro_INT_net;
 	wire [0:0] tmpIO_0__Gyro_INT_net;
-	wire [0:0] tmpINTERRUPT_0__Gyro_INT_net;
 	electrical [0:0] tmpSIOVREF__Gyro_INT_net;
 
 	cy_psoc3_pins_v1_10
@@ -1417,7 +1417,7 @@ module top ;
 		  .input_clk_en(0),
 		  .input_sync(1'b0),
 		  .input_sync_mode(1'b0),
-		  .intr_mode(2'b00),
+		  .intr_mode(2'b01),
 		  .invert_in_clock(0),
 		  .invert_in_clock_en(0),
 		  .invert_in_reset(0),
@@ -1465,10 +1465,10 @@ module top ;
 		Gyro_INT
 		 (.oe(tmpOE__Gyro_INT_net),
 		  .y({1'b0}),
-		  .fb({Net_373}),
+		  .fb({Net_386}),
 		  .io({tmpIO_0__Gyro_INT_net[0:0]}),
 		  .siovref(tmpSIOVREF__Gyro_INT_net),
-		  .interrupt({tmpINTERRUPT_0__Gyro_INT_net[0:0]}),
+		  .interrupt({Net_373}),
 		  .in_clock({1'b0}),
 		  .in_clock_en({1'b1}),
 		  .in_reset({1'b0}),

@@ -1,5 +1,5 @@
 -- Project:   Design02
--- Generated: 10/30/2023 17:53:24
+-- Generated: 11/02/2023 18:38:50
 -- PSoC Creator  4.4
 
 ENTITY Design02 IS
@@ -175,7 +175,7 @@ ARCHITECTURE __DEFAULT__ OF Design02 IS
     ATTRIBUTE lib_model OF Acc_INT(0) : LABEL IS "iocell7";
     ATTRIBUTE Location OF Acc_INT(0) : LABEL IS "P0[1]";
     ATTRIBUTE lib_model OF Gyro_INT(0) : LABEL IS "iocell8";
-    ATTRIBUTE Location OF Gyro_INT(0) : LABEL IS "P0[0]";
+    ATTRIBUTE Location OF Gyro_INT(0) : LABEL IS "P3[3]";
     ATTRIBUTE lib_model OF LED(0) : LABEL IS "iocell9";
     ATTRIBUTE Location OF LED(0) : LABEL IS "P2[1]";
     ATTRIBUTE lib_model OF \SPI_IMU:BSPIM:load_rx_data\ : LABEL IS "macrocell1";
@@ -1170,7 +1170,7 @@ BEGIN
 
     Acc_INT:logicalport
         GENERIC MAP(
-            drive_mode => "110",
+            drive_mode => "011",
             ibuf_enabled => "1",
             id => "1f511037-62a9-4bf4-b7d3-5b09673b1919",
             init_dr_st => "0",
@@ -1178,7 +1178,7 @@ BEGIN
             input_clk_en => 0,
             input_sync => "0",
             input_sync_mode => "0",
-            intr_mode => "00",
+            intr_mode => "01",
             invert_in_clock => 0,
             invert_in_clock_en => 0,
             invert_in_reset => 0,
@@ -1237,7 +1237,8 @@ BEGIN
             in_clock_en => open,
             in_reset => open,
             out_clock_en => open,
-            out_reset => open);
+            out_reset => open,
+            interrupt => Net_371);
 
     Acc_INT(0):iocell
         GENERIC MAP(
@@ -1246,11 +1247,10 @@ BEGIN
             oe_sync_mode => 0,
             logicalport => "Acc_INT",
             logicalport_pin_id => 0,
-            io_capabilities => "0000000000000000000000000000000000000000000000000000000000000101")
+            io_capabilities => "0000000000000000000000000001000000000000000000000000000000000001")
         PORT MAP(
             pa_out => Acc_INT(0)__PA,
             oe => open,
-            fb => Net_371,
             pad_in => Acc_INT(0)_PAD,
             in_clock => open,
             in_clock_en => '1',
@@ -1269,7 +1269,7 @@ BEGIN
             input_clk_en => 0,
             input_sync => "0",
             input_sync_mode => "0",
-            intr_mode => "00",
+            intr_mode => "01",
             invert_in_clock => 0,
             invert_in_clock_en => 0,
             invert_in_reset => 0,
@@ -1328,7 +1328,8 @@ BEGIN
             in_clock_en => open,
             in_reset => open,
             out_clock_en => open,
-            out_reset => open);
+            out_reset => open,
+            interrupt => Net_373);
 
     Gyro_INT(0):iocell
         GENERIC MAP(
@@ -1337,11 +1338,10 @@ BEGIN
             oe_sync_mode => 0,
             logicalport => "Gyro_INT",
             logicalport_pin_id => 0,
-            io_capabilities => "0000000000000000000000000000000000000000000000000000000000000101")
+            io_capabilities => "0000000000000000000000000001000000000000000000000000000000000001")
         PORT MAP(
             pa_out => Gyro_INT(0)__PA,
             oe => open,
-            fb => Net_373,
             pad_in => Gyro_INT(0)_PAD,
             in_clock => open,
             in_clock_en => '1',
@@ -1960,7 +1960,7 @@ BEGIN
 
     isr_Acc:interrupt
         GENERIC MAP(
-            int_type => "01",
+            int_type => "00",
             is_nmi => 0)
         PORT MAP(
             interrupt => Net_371,
