@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="LSM6DSRX_prova\Design02\Source Files\source01.c">
 <ExpandedNodeIds>
 <v>LSM6DSRX_prova</v>
 <v>LSM6DSRX_prova\Design02</v>
@@ -43,21 +43,21 @@
 <v>LSM6DSRX_prova\Design02\Generated_Source\PSoC5\UART</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
-<v>LSM6DSRX_prova</v>
-<v>LSM6DSRX_prova\Design02</v>
-<v>LSM6DSRX_prova\Design02\TopDesign</v>
-<v>LSM6DSRX_prova\Design02\Design02.cydwr</v>
-<v>LSM6DSRX_prova\Design02\Design02.cydwr\Pins</v>
-<v>LSM6DSRX_prova\Design02\Design02.cydwr\Analog</v>
-<v>LSM6DSRX_prova\Design02\Design02.cydwr\Clocks</v>
-<v>LSM6DSRX_prova\Design02\Design02.cydwr\Interrupts</v>
-<v>LSM6DSRX_prova\Design02\Design02.cydwr\DMA</v>
-<v>LSM6DSRX_prova\Design02\Design02.cydwr\System</v>
-<v>LSM6DSRX_prova\Design02\Design02.cydwr\Directives</v>
-<v>LSM6DSRX_prova\Design02\Design02.cydwr\Flash Security</v>
 <v>LSM6DSRX_prova\Design02\Design02.cydwr\EEPROM</v>
 <v>LSM6DSRX_prova\Design02\Header Files</v>
 <v>LSM6DSRX_prova\Design02\Header Files\cyapicallbacks.h</v>
+<v>LSM6DSRX_prova\Design02\Header Files\globals.h</v>
+<v>LSM6DSRX_prova\Design02\Header Files\header01.h</v>
+<v>LSM6DSRX_prova\Design02\Header Files\interrupts.h</v>
+<v>LSM6DSRX_prova\Design02\Source Files</v>
+<v>LSM6DSRX_prova\Design02\Source Files\interrupts.c</v>
+<v>LSM6DSRX_prova\Design02\Source Files\main.c</v>
+<v>LSM6DSRX_prova\Design02\Source Files\source01.c</v>
+<v>LSM6DSRX_prova\Design02\Generated_Source</v>
+<v>LSM6DSRX_prova\Design02\Generated_Source\PSoC5</v>
+<v>LSM6DSRX_prova\Design02\Generated_Source\PSoC5\ChipSelect</v>
+<v>LSM6DSRX_prova\Design02\Generated_Source\PSoC5\CLOCK_PWM</v>
+<v>LSM6DSRX_prova\Design02\Generated_Source\PSoC5\cy_boot</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -116,7 +116,6 @@
 <v>LSM6DSRX_prova\Design02\CortexM3\ARM_GCC_541\Debug\Design02.map</v>
 <v>LSM6DSRX_prova\Design02\CortexM3\ARM_GCC_541\Release</v>
 <v>LSM6DSRX_prova\Design02\CortexM3\ARM_GCC_541\Release\Listing Files</v>
-<v>LSM6DSRX_prova\Design02\CortexM3\ARM_GCC_541\Release\Listing Files\Acc_INT.lst</v>
 <v>LSM6DSRX_prova\Design02\CortexM3\ARM_GCC_541\Release\Listing Files\ChipSelect.lst</v>
 <v>LSM6DSRX_prova\Design02\CortexM3\ARM_GCC_541\Release\Listing Files\CLOCK_PWM.lst</v>
 <v>LSM6DSRX_prova\Design02\CortexM3\ARM_GCC_541\Release\Listing Files\Cm3Start.lst</v>
@@ -131,10 +130,7 @@
 <v>LSM6DSRX_prova\Design02\CortexM3\ARM_GCC_541\Release\Listing Files\CySpc.lst</v>
 <v>LSM6DSRX_prova\Design02\CortexM3\ARM_GCC_541\Release\Listing Files\cyutils.lst</v>
 <v>LSM6DSRX_prova\Design02\CortexM3\ARM_GCC_541\Release\Listing Files\FF_STATUS.lst</v>
-<v>LSM6DSRX_prova\Design02\CortexM3\ARM_GCC_541\Release\Listing Files\Gyro_INT.lst</v>
 <v>LSM6DSRX_prova\Design02\CortexM3\ARM_GCC_541\Release\Listing Files\interrupts.lst</v>
-<v>LSM6DSRX_prova\Design02\CortexM3\ARM_GCC_541\Release\Listing Files\isr_Acc.lst</v>
-<v>LSM6DSRX_prova\Design02\CortexM3\ARM_GCC_541\Release\Listing Files\isr_Gyro.lst</v>
 <v>LSM6DSRX_prova\Design02\CortexM3\ARM_GCC_541\Release\Listing Files\LED.lst</v>
 <v>LSM6DSRX_prova\Design02\CortexM3\ARM_GCC_541\Release\Listing Files\main.lst</v>
 <v>LSM6DSRX_prova\Design02\CortexM3\ARM_GCC_541\Release\Listing Files\MISO_SDO.lst</v>
@@ -186,8 +182,6 @@
 <v>LSM6DSRX_prova\Design02\cy_clock_v2_20</v>
 <v>LSM6DSRX_prova\Design02\cy_clock_v2_20\cy_clock_v2_20.pdf</v>
 <v>LSM6DSRX_prova\Design02\cy_constant_v1_0.pdf</v>
-<v>LSM6DSRX_prova\Design02\cy_isr_v1_71</v>
-<v>LSM6DSRX_prova\Design02\cy_isr_v1_71\cy_isr_v1_71.pdf</v>
 <v>LSM6DSRX_prova\Design02\cy_pins_v2_20</v>
 <v>LSM6DSRX_prova\Design02\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
 <v>LSM6DSRX_prova\Design02\cy_srff_v1_0.pdf</v>
@@ -211,12 +205,12 @@
 <v>LSM6DSRX_prova\Design02\cy_clock_v2_20</v>
 <v>LSM6DSRX_prova\Design02\cy_clock_v2_20\cy_clock_v2_20.pdf</v>
 <v>LSM6DSRX_prova\Design02\cy_constant_v1_0.pdf</v>
-<v>LSM6DSRX_prova\Design02\cy_isr_v1_71</v>
-<v>LSM6DSRX_prova\Design02\cy_isr_v1_71\cy_isr_v1_71.pdf</v>
 <v>LSM6DSRX_prova\Design02\cy_pins_v2_20</v>
 <v>LSM6DSRX_prova\Design02\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
 <v>LSM6DSRX_prova\Design02\cy_srff_v1_0.pdf</v>
 <v>LSM6DSRX_prova\Design02\cy_sync_v1_0.pdf</v>
+<v>LSM6DSRX_prova\Design02\CyControlReg_v1_80</v>
+<v>LSM6DSRX_prova\Design02\CyControlReg_v1_80\CyControlReg_v1_80.pdf</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStatesV2>
@@ -231,18 +225,11 @@
 </CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
 <Unloaded />
 <OpenDocs>
+<name v=".\Design02.cydsn\Design02.cydwr" />
 <name v=".\Design02.cydsn\main.c" />
-<name v=".\Design02.cydsn\source01.c" />
-<name v=".\Design02.cydsn\Generated_Source\PSoC5\CyLib.c" />
-<name v=".\Design02.cydsn\header01.h" />
-<name v=".\Design02.cydsn\Generated_Source\PSoC5\Cm3Start.c" />
-<name v=".\Design02.cydsn\Generated_Source\PSoC5\UART.c" />
-<name v=".\Design02.cydsn\Generated_Source\PSoC5\UART.h" />
-<name v=".\Design02.cydsn\Generated_Source\PSoC5\UART_BOOT.c" />
-<name v=".\Design02.cydsn\interrupts.h" />
 <name v=".\Design02.cydsn\interrupts.c" />
 <name v=".\Design02.cydsn\TopDesign\TopDesign.cysch" />
-<name v=".\Design02.cydsn\globals.h" />
+<name v=".\Design02.cydsn\source01.c" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -250,7 +237,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="977, 573" SelectedTabbedMdiWindow="a3fc7ec4-09e3-4df4-9582-bf4e3f207549"><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_IMU_LSM6DSRX_LIS2MDL\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn\main.c" Guid="41863f62-efb6-492a-8bc7-2ac3b3fc099e" /><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_IMU_LSM6DSRX_LIS2MDL\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn\source01.c" Guid="a3fc7ec4-09e3-4df4-9582-bf4e3f207549" /><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_IMU_LSM6DSRX_LIS2MDL\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn\Generated_Source\PSoC5\CyLib.c" Guid="ab0ee608-5e6e-48f6-ac01-0d1629a5d5c6" /><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_IMU_LSM6DSRX_LIS2MDL\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn\header01.h" Guid="8f0721f6-e129-4f46-b78d-75b3420bc57d" /><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_IMU_LSM6DSRX_LIS2MDL\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn\Generated_Source\PSoC5\Cm3Start.c" Guid="4ab609f8-1d4d-48ad-8a3a-50b702e88e59" /><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_IMU_LSM6DSRX_LIS2MDL\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn\Generated_Source\PSoC5\UART.c" Guid="a3fbf738-7ca9-4d9c-9c7a-c4599b3fceea" /><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_IMU_LSM6DSRX_LIS2MDL\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn\Generated_Source\PSoC5\UART.h" Guid="4e39b8be-646d-438c-be4c-d1376b7023ae" /><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_IMU_LSM6DSRX_LIS2MDL\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn\Generated_Source\PSoC5\UART_BOOT.c" Guid="81bcf3ff-04d5-4dcc-8f7c-86fe7d7efbf5" /><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_IMU_LSM6DSRX_LIS2MDL\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn\interrupts.h" Guid="46831796-d2ab-434f-a223-b2bbeaddaf91" /><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_IMU_LSM6DSRX_LIS2MDL\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn\interrupts.c" Guid="90f1dfad-bc6b-4592-8d82-ad3900be5218" /><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_IMU_LSM6DSRX_LIS2MDL\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn\TopDesign\TopDesign.cysch" Guid="db83917e-7e1f-4445-b635-ba1b62cabf1b" /><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_IMU_LSM6DSRX_LIS2MDL\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn\globals.h" Guid="745d89de-5eac-4ebb-872f-2f38244dc6e3" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1109, 573" SelectedTabbedMdiWindow="aa8b2c41-934d-444f-a012-eb709fdd03c6"><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_IMU_LSM6DSRX_LIS2MDL\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn\Design02.cydwr" Guid="19af69f5-1e30-44db-90b1-d3b937c50330" /><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_IMU_LSM6DSRX_LIS2MDL\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn\main.c" Guid="aa8b2c41-934d-444f-a012-eb709fdd03c6" /><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_IMU_LSM6DSRX_LIS2MDL\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn\interrupts.c" Guid="8fdbf11a-6398-4a54-99c9-c215ee664677" /><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_IMU_LSM6DSRX_LIS2MDL\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn\TopDesign\TopDesign.cysch" Guid="beb84533-f801-44e6-8a50-dd43e988c1bd" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="e6c53592-2600-47bd-bb84-e80a1b9fa9d1" /><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_IMU_LSM6DSRX_LIS2MDL\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn\source01.c" Guid="662a79bd-19a5-4244-a8c9-05b0dc8a1257" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="Release" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

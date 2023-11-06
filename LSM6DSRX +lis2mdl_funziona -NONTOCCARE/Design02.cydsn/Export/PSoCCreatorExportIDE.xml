@@ -138,16 +138,6 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MY_TIMER_REG_PM.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\timer_clock.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\timer_clock.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\isr_Acc.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\isr_Acc.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Acc_INT_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Acc_INT.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Acc_INT.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\isr_Gyro.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\isr_Gyro.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Gyro_INT_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Gyro_INT.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Gyro_INT.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\LED_aliases.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\LED.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\LED.h</File>

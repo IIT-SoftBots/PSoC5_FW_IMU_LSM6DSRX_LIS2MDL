@@ -58,16 +58,6 @@
   <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_IMU_LSM6DSRX_LIS2MDL\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn\codegentemp\MY_TIMER_REG.h" value="HEADER;;;;;MY_TIMER_REG" />
   <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_IMU_LSM6DSRX_LIS2MDL\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn\codegentemp\MY_TIMER_REG.c" value="SOURCE_C;CortexM3;;;;MY_TIMER_REG" />
   <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_IMU_LSM6DSRX_LIS2MDL\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn\codegentemp\MY_TIMER_REG_PM.c" value="SOURCE_C;CortexM3;;;;MY_TIMER_REG" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_IMU_LSM6DSRX_LIS2MDL\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn\codegentemp\isr_Acc.c" value="SOURCE_C;CortexM3;;;;isr_Acc" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_IMU_LSM6DSRX_LIS2MDL\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn\codegentemp\isr_Acc.h" value="HEADER;;;;;isr_Acc" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_IMU_LSM6DSRX_LIS2MDL\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn\codegentemp\Acc_INT_aliases.h" value="HEADER;;;;;Acc_INT" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_IMU_LSM6DSRX_LIS2MDL\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn\codegentemp\Acc_INT.c" value="SOURCE_C;CortexM3;;;;Acc_INT" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_IMU_LSM6DSRX_LIS2MDL\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn\codegentemp\Acc_INT.h" value="HEADER;;;;;Acc_INT" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_IMU_LSM6DSRX_LIS2MDL\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn\codegentemp\isr_Gyro.c" value="SOURCE_C;CortexM3;;;;isr_Gyro" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_IMU_LSM6DSRX_LIS2MDL\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn\codegentemp\isr_Gyro.h" value="HEADER;;;;;isr_Gyro" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_IMU_LSM6DSRX_LIS2MDL\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn\codegentemp\Gyro_INT_aliases.h" value="HEADER;;;;;Gyro_INT" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_IMU_LSM6DSRX_LIS2MDL\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn\codegentemp\Gyro_INT.c" value="SOURCE_C;CortexM3;;;;Gyro_INT" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_IMU_LSM6DSRX_LIS2MDL\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn\codegentemp\Gyro_INT.h" value="HEADER;;;;;Gyro_INT" />
   <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_IMU_LSM6DSRX_LIS2MDL\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn\codegentemp\LED_aliases.h" value="HEADER;;;;;LED" />
   <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_IMU_LSM6DSRX_LIS2MDL\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn\codegentemp\LED.c" value="SOURCE_C;CortexM3;;;;LED" />
   <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_IMU_LSM6DSRX_LIS2MDL\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn\codegentemp\LED.h" value="HEADER;;;;;LED" />
