@@ -2,7 +2,7 @@
 --	Conversion of Design02.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Mon Nov 06 17:39:35 2023
+--	Tue Nov 07 12:25:29 2023
 --
 
 USE cypress.cypress.all;
@@ -159,53 +159,11 @@ SIGNAL tmpFB_0__ChipSelect_net_0 : bit;
 SIGNAL tmpIO_0__ChipSelect_net_0 : bit;
 TERMINAL tmpSIOVREF__ChipSelect_net_0 : bit;
 SIGNAL tmpINTERRUPT_0__ChipSelect_net_0 : bit;
-SIGNAL Net_3328 : bit;
-SIGNAL \PACER_TIMER:Net_260\ : bit;
-SIGNAL \PACER_TIMER:Net_266\ : bit;
-SIGNAL Net_3249 : bit;
-SIGNAL \PACER_TIMER:Net_51\ : bit;
-SIGNAL \PACER_TIMER:Net_261\ : bit;
-SIGNAL \PACER_TIMER:Net_57\ : bit;
-SIGNAL Net_44 : bit;
-SIGNAL Net_3264 : bit;
-SIGNAL \PACER_TIMER:Net_102\ : bit;
-SIGNAL cy_srff_1 : bit;
-SIGNAL Net_3240 : bit;
-SIGNAL Net_3018 : bit;
-SIGNAL Net_3334 : bit;
-SIGNAL \RESET_FF:clk\ : bit;
-SIGNAL \RESET_FF:rst\ : bit;
-SIGNAL \RESET_FF:control_out_0\ : bit;
-SIGNAL Net_48 : bit;
-SIGNAL \RESET_FF:control_out_1\ : bit;
-SIGNAL Net_49 : bit;
-SIGNAL \RESET_FF:control_out_2\ : bit;
-SIGNAL Net_50 : bit;
-SIGNAL \RESET_FF:control_out_3\ : bit;
-SIGNAL Net_51 : bit;
-SIGNAL \RESET_FF:control_out_4\ : bit;
-SIGNAL Net_52 : bit;
-SIGNAL \RESET_FF:control_out_5\ : bit;
-SIGNAL Net_53 : bit;
-SIGNAL \RESET_FF:control_out_6\ : bit;
-SIGNAL Net_54 : bit;
-SIGNAL \RESET_FF:control_out_7\ : bit;
-SIGNAL \RESET_FF:control_7\ : bit;
-SIGNAL \RESET_FF:control_6\ : bit;
-SIGNAL \RESET_FF:control_5\ : bit;
-SIGNAL \RESET_FF:control_4\ : bit;
-SIGNAL \RESET_FF:control_3\ : bit;
-SIGNAL \RESET_FF:control_2\ : bit;
-SIGNAL \RESET_FF:control_1\ : bit;
-SIGNAL \RESET_FF:control_0\ : bit;
-SIGNAL \FF_STATUS:status_0\ : bit;
-SIGNAL \FF_STATUS:status_1\ : bit;
-SIGNAL \FF_STATUS:status_2\ : bit;
-SIGNAL \FF_STATUS:status_3\ : bit;
-SIGNAL \FF_STATUS:status_4\ : bit;
-SIGNAL \FF_STATUS:status_5\ : bit;
-SIGNAL \FF_STATUS:status_6\ : bit;
-SIGNAL \FF_STATUS:status_7\ : bit;
+SIGNAL Net_394 : bit;
+SIGNAL tmpOE__Acc_net_0 : bit;
+SIGNAL Net_392 : bit;
+SIGNAL tmpIO_0__Acc_net_0 : bit;
+TERMINAL tmpSIOVREF__Acc_net_0 : bit;
 SIGNAL tmpOE__Rx_1_net_0 : bit;
 SIGNAL Net_301 : bit;
 SIGNAL tmpIO_0__Rx_1_net_0 : bit;
@@ -553,41 +511,6 @@ SIGNAL \UART:BUART:sRX:MODULE_5:gte\ : bit;
 ATTRIBUTE port_state_att of \UART:BUART:sRX:MODULE_5:gte\:SIGNAL IS 2;
 SIGNAL \UART:BUART:sRX:MODULE_5:lte\ : bit;
 ATTRIBUTE port_state_att of \UART:BUART:sRX:MODULE_5:lte\:SIGNAL IS 2;
-SIGNAL Net_10654 : bit;
-SIGNAL \MY_TIMER:Net_260\ : bit;
-SIGNAL \MY_TIMER:Net_266\ : bit;
-SIGNAL Net_10653 : bit;
-SIGNAL \MY_TIMER:Net_51\ : bit;
-SIGNAL \MY_TIMER:Net_261\ : bit;
-SIGNAL \MY_TIMER:Net_57\ : bit;
-SIGNAL Net_357 : bit;
-SIGNAL Net_358 : bit;
-SIGNAL \MY_TIMER:Net_102\ : bit;
-SIGNAL \MY_TIMER_REG:clk\ : bit;
-SIGNAL \MY_TIMER_REG:rst\ : bit;
-SIGNAL \MY_TIMER_REG:control_out_0\ : bit;
-SIGNAL Net_362 : bit;
-SIGNAL \MY_TIMER_REG:control_out_1\ : bit;
-SIGNAL Net_363 : bit;
-SIGNAL \MY_TIMER_REG:control_out_2\ : bit;
-SIGNAL Net_364 : bit;
-SIGNAL \MY_TIMER_REG:control_out_3\ : bit;
-SIGNAL Net_365 : bit;
-SIGNAL \MY_TIMER_REG:control_out_4\ : bit;
-SIGNAL Net_366 : bit;
-SIGNAL \MY_TIMER_REG:control_out_5\ : bit;
-SIGNAL Net_367 : bit;
-SIGNAL \MY_TIMER_REG:control_out_6\ : bit;
-SIGNAL Net_368 : bit;
-SIGNAL \MY_TIMER_REG:control_out_7\ : bit;
-SIGNAL \MY_TIMER_REG:control_7\ : bit;
-SIGNAL \MY_TIMER_REG:control_6\ : bit;
-SIGNAL \MY_TIMER_REG:control_5\ : bit;
-SIGNAL \MY_TIMER_REG:control_4\ : bit;
-SIGNAL \MY_TIMER_REG:control_3\ : bit;
-SIGNAL \MY_TIMER_REG:control_2\ : bit;
-SIGNAL \MY_TIMER_REG:control_1\ : bit;
-SIGNAL \MY_TIMER_REG:control_0\ : bit;
 SIGNAL tmpOE__LED_net_0 : bit;
 SIGNAL tmpFB_0__LED_net_0 : bit;
 SIGNAL tmpIO_0__LED_net_0 : bit;
@@ -606,7 +529,6 @@ SIGNAL \SPI_IMU:BSPIM:dpcounter_one_reg\\D\ : bit;
 SIGNAL \SPI_IMU:BSPIM:mosi_from_dp_reg\\D\ : bit;
 SIGNAL \SPI_IMU:BSPIM:ld_ident\\D\ : bit;
 SIGNAL \SPI_IMU:BSPIM:cnt_enable\\D\ : bit;
-SIGNAL cy_srff_1D : bit;
 SIGNAL \UART:BUART:reset_reg\\D\ : bit;
 SIGNAL \UART:BUART:txn\\D\ : bit;
 SIGNAL \UART:BUART:tx_state_1\\D\ : bit;
@@ -660,10 +582,10 @@ tmpOE__MOSI_SDA_net_0 <=  ('1') ;
 \SPI_IMU:BSPIM:state_2\\D\ <= ((not \SPI_IMU:BSPIM:state_2\ and not \SPI_IMU:BSPIM:state_0\ and not \SPI_IMU:BSPIM:count_4\ and not \SPI_IMU:BSPIM:count_3\ and not \SPI_IMU:BSPIM:count_2\ and not \SPI_IMU:BSPIM:count_0\ and not \SPI_IMU:BSPIM:tx_status_1\ and \SPI_IMU:BSPIM:state_1\ and \SPI_IMU:BSPIM:count_1\)
 	OR (not \SPI_IMU:BSPIM:state_2\ and not \SPI_IMU:BSPIM:count_4\ and not \SPI_IMU:BSPIM:count_3\ and not \SPI_IMU:BSPIM:count_2\ and not \SPI_IMU:BSPIM:count_1\ and \SPI_IMU:BSPIM:state_1\ and \SPI_IMU:BSPIM:state_0\ and \SPI_IMU:BSPIM:count_0\));
 
-\SPI_IMU:BSPIM:state_1\\D\ <= ((not \SPI_IMU:BSPIM:state_2\ and not \SPI_IMU:BSPIM:count_1\ and not \SPI_IMU:BSPIM:count_0\ and \SPI_IMU:BSPIM:state_1\)
+\SPI_IMU:BSPIM:state_1\\D\ <= ((not \SPI_IMU:BSPIM:state_2\ and not \SPI_IMU:BSPIM:count_0\ and \SPI_IMU:BSPIM:state_1\ and \SPI_IMU:BSPIM:tx_status_1\)
+	OR (not \SPI_IMU:BSPIM:state_2\ and not \SPI_IMU:BSPIM:count_1\ and not \SPI_IMU:BSPIM:count_0\ and \SPI_IMU:BSPIM:state_1\)
 	OR (not \SPI_IMU:BSPIM:state_2\ and not \SPI_IMU:BSPIM:state_0\ and \SPI_IMU:BSPIM:state_1\ and \SPI_IMU:BSPIM:count_0\)
 	OR (not \SPI_IMU:BSPIM:state_2\ and \SPI_IMU:BSPIM:state_0\ and \SPI_IMU:BSPIM:count_1\)
-	OR (not \SPI_IMU:BSPIM:state_2\ and not \SPI_IMU:BSPIM:count_0\ and \SPI_IMU:BSPIM:state_1\ and \SPI_IMU:BSPIM:tx_status_1\)
 	OR (not \SPI_IMU:BSPIM:state_1\ and not \SPI_IMU:BSPIM:state_0\ and \SPI_IMU:BSPIM:state_2\)
 	OR (not \SPI_IMU:BSPIM:state_2\ and not \SPI_IMU:BSPIM:state_1\ and \SPI_IMU:BSPIM:state_0\)
 	OR (not \SPI_IMU:BSPIM:state_2\ and \SPI_IMU:BSPIM:state_1\ and \SPI_IMU:BSPIM:count_2\)
@@ -700,9 +622,6 @@ Net_3044D <= ((not \SPI_IMU:BSPIM:state_2\ and not \SPI_IMU:BSPIM:state_1\ and n
 Net_3D <= (\SPI_IMU:BSPIM:state_0\
 	OR not \SPI_IMU:BSPIM:state_1\
 	OR \SPI_IMU:BSPIM:state_2\);
-
-cy_srff_1D <= ((not Net_3334 and cy_srff_1)
-	OR (not Net_3334 and Net_3240));
 
 Net_305 <= (not \UART:BUART:txn\);
 
@@ -1224,47 +1143,80 @@ CLOCK_PWM:cy_clock_v1_0
 		is_digital=>'1')
 	PORT MAP(clock_out=>Net_2334,
 		dig_domain_out=>open);
-\PACER_TIMER:TimerHW\:cy_psoc3_timer_v1_0
-	GENERIC MAP(cy_registers=>"")
-	PORT MAP(clock=>Net_3328,
-		kill=>zero,
-		enable=>tmpOE__MOSI_SDA_net_0,
-		capture=>zero,
-		timer_reset=>zero,
-		tc=>Net_3264,
-		compare=>\PACER_TIMER:Net_261\,
-		interrupt=>\PACER_TIMER:Net_57\);
-timer_clock_1:cy_clock_v1_0
-	GENERIC MAP(cy_registers=>"",
-		id=>"c3b6496a-f866-4de2-b1c7-5e685f719ae1",
-		source_clock_id=>"75C2148C-3656-4d8a-846D-0CAE99AB6FF7",
-		divisor=>0,
-		period=>"0",
-		is_direct=>'1',
-		is_digital=>'1')
-	PORT MAP(clock_out=>Net_3328,
-		dig_domain_out=>open);
-\RESET_FF:Sync:ctrl_reg\:cy_psoc3_control
-	GENERIC MAP(cy_init_value=>"00000000",
-		cy_force_order=>'1',
-		cy_ctrl_mode_1=>"00000000",
-		cy_ctrl_mode_0=>"00000000",
-		cy_ext_reset=>'0')
-	PORT MAP(reset=>zero,
-		clock=>zero,
-		control=>(\RESET_FF:control_7\, \RESET_FF:control_6\, \RESET_FF:control_5\, \RESET_FF:control_4\,
-			\RESET_FF:control_3\, \RESET_FF:control_2\, \RESET_FF:control_1\, Net_3334));
-\FF_STATUS:sts:sts_reg\:cy_psoc3_status
-	GENERIC MAP(cy_force_order=>'1',
-		cy_md_select=>"00000000")
-	PORT MAP(reset=>zero,
-		clock=>Net_3328,
-		status=>(zero, zero, zero, zero,
-			zero, zero, zero, cy_srff_1));
-\Sync_1:genblk1[0]:INST\:cy_psoc3_sync
-	PORT MAP(clock=>Net_3328,
-		sc_in=>Net_3264,
-		sc_out=>Net_3240);
+isr_Acc:cy_isr_v1_0
+	GENERIC MAP(int_type=>"10",
+		is_nmi=>'0')
+	PORT MAP(int_signal=>Net_394);
+Acc:cy_psoc3_pins_v1_10
+	GENERIC MAP(id=>"ff3ce979-4618-4a42-9391-9ace5e0070f8",
+		drive_mode=>"001",
+		ibuf_enabled=>"1",
+		init_dr_st=>"0",
+		input_sync=>"0",
+		input_clk_en=>'0',
+		input_sync_mode=>"0",
+		intr_mode=>"01",
+		invert_in_clock=>'0',
+		invert_in_clock_en=>'0',
+		invert_in_reset=>'0',
+		invert_out_clock=>'0',
+		invert_out_clock_en=>'0',
+		invert_out_reset=>'0',
+		io_voltage=>"",
+		layout_mode=>"CONTIGUOUS",
+		output_conn=>"0",
+		output_sync=>"0",
+		output_clk_en=>'0',
+		output_mode=>"0",
+		output_reset=>'0',
+		output_clock_mode=>"0",
+		oe_sync=>"0",
+		oe_conn=>"0",
+		oe_reset=>'0',
+		pin_aliases=>"",
+		pin_mode=>"I",
+		por_state=>4,
+		sio_group_cnt=>0,
+		sio_hifreq=>"00000000",
+		sio_hyst=>"1",
+		sio_ibuf=>"00000000",
+		sio_info=>"00",
+		sio_obuf=>"00000000",
+		sio_refsel=>"00000000",
+		sio_vtrip=>"00000000",
+		sio_vohsel=>"00000000",
+		slew_rate=>"0",
+		spanning=>'0',
+		sw_only=>'0',
+		vtrip=>"00",
+		width=>1,
+		port_alias_required=>'0',
+		port_alias_group=>"",
+		use_annotation=>"0",
+		pa_in_clock=>-1,
+		pa_in_clock_en=>-1,
+		pa_in_reset=>-1,
+		pa_out_clock=>-1,
+		pa_out_clock_en=>-1,
+		pa_out_reset=>-1,
+		ovt_needed=>"0",
+		ovt_slew_control=>"00",
+		ovt_hyst_trim=>"0",
+		input_buffer_sel=>"00")
+	PORT MAP(oe=>(tmpOE__MOSI_SDA_net_0),
+		y=>(zero),
+		fb=>Net_392,
+		analog=>(open),
+		io=>(tmpIO_0__Acc_net_0),
+		siovref=>(tmpSIOVREF__Acc_net_0),
+		annotation=>(open),
+		in_clock=>zero,
+		in_clock_en=>tmpOE__MOSI_SDA_net_0,
+		in_reset=>zero,
+		out_clock=>zero,
+		out_clock_en=>tmpOE__MOSI_SDA_net_0,
+		out_reset=>zero,
+		interrupt=>Net_394);
 Rx_1:cy_psoc3_pins_v1_10
 	GENERIC MAP(id=>"1425177d-0d0e-4468-8bcc-e638e5509a9b",
 		drive_mode=>"001",
@@ -1718,36 +1670,6 @@ Tx_1:cy_psoc3_pins_v1_10
 		status=>(zero, \UART:BUART:rx_status_5\, \UART:BUART:rx_status_4\, \UART:BUART:rx_status_3\,
 			\UART:BUART:rx_status_2\, zero, zero),
 		interrupt=>Net_304);
-\MY_TIMER:TimerHW\:cy_psoc3_timer_v1_0
-	GENERIC MAP(cy_registers=>"")
-	PORT MAP(clock=>Net_10654,
-		kill=>zero,
-		enable=>tmpOE__MOSI_SDA_net_0,
-		capture=>zero,
-		timer_reset=>Net_10653,
-		tc=>\MY_TIMER:Net_51\,
-		compare=>\MY_TIMER:Net_261\,
-		interrupt=>\MY_TIMER:Net_57\);
-timer_clock:cy_clock_v1_0
-	GENERIC MAP(cy_registers=>"",
-		id=>"920ac626-75fc-42be-bddc-386ba9cec7f2",
-		source_clock_id=>"",
-		divisor=>0,
-		period=>"1000000000",
-		is_direct=>'0',
-		is_digital=>'1')
-	PORT MAP(clock_out=>Net_10654,
-		dig_domain_out=>open);
-\MY_TIMER_REG:Sync:ctrl_reg\:cy_psoc3_control
-	GENERIC MAP(cy_init_value=>"00000000",
-		cy_force_order=>'1',
-		cy_ctrl_mode_1=>"00000000",
-		cy_ctrl_mode_0=>"00000000",
-		cy_ext_reset=>'0')
-	PORT MAP(reset=>zero,
-		clock=>zero,
-		control=>(\MY_TIMER_REG:control_7\, \MY_TIMER_REG:control_6\, \MY_TIMER_REG:control_5\, \MY_TIMER_REG:control_4\,
-			\MY_TIMER_REG:control_3\, \MY_TIMER_REG:control_2\, \MY_TIMER_REG:control_1\, Net_10653));
 LED:cy_psoc3_pins_v1_10
 	GENERIC MAP(id=>"885db6f7-3ba1-4516-b893-286a625edbbe",
 		drive_mode=>"110",
@@ -1870,10 +1792,6 @@ Net_3044:cy_dff
 	PORT MAP(d=>\SPI_IMU:BSPIM:cnt_enable\\D\,
 		clk=>\SPI_IMU:BSPIM:clk_fin\,
 		q=>\SPI_IMU:BSPIM:cnt_enable\);
-cy_srff_1:cy_dff
-	PORT MAP(d=>cy_srff_1D,
-		clk=>Net_3328,
-		q=>cy_srff_1);
 \UART:BUART:reset_reg\:cy_dff
 	PORT MAP(d=>zero,
 		clk=>\UART:BUART:clock_op\,

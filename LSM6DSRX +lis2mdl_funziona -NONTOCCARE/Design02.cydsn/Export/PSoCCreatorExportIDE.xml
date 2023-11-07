@@ -109,14 +109,6 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\cycodeshareimport.ld</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\cycodeshareexport.ld</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\cycodeshareimport.scat</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\PACER_TIMER.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\PACER_TIMER.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\PACER_TIMER_PM.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\RESET_FF.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\RESET_FF.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\RESET_FF_PM.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\FF_STATUS.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\FF_STATUS.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\UART.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\UART.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\UART_PM.c</File>
@@ -130,17 +122,14 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MISO_SDO_aliases.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MISO_SDO.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MISO_SDO.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MY_TIMER.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MY_TIMER.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MY_TIMER_PM.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MY_TIMER_REG.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MY_TIMER_REG.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MY_TIMER_REG_PM.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\timer_clock.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\timer_clock.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\isr_Acc.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\isr_Acc.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\LED_aliases.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\LED.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\LED.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Acc_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Acc.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Acc.h</File>
         </Files>
       </Folder>
       <Folder BuildType="STRICT" Path="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_IMU_LSM6DSRX_LIS2MDL\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn\Export\ARM_GCC_Generic">

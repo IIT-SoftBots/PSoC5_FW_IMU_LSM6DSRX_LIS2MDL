@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="SPI_3W">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="SPI_3W\SPI_3W\TopDesign">
 <ExpandedNodeIds>
 <v>SPI_3W</v>
 <v>SPI_3W\SPI_3W</v>
@@ -53,8 +53,6 @@
 <v>SPI_3W\SPI_3W\SPI_3W.cydwr\Flash Security</v>
 <v>SPI_3W\SPI_3W\SPI_3W.cydwr\EEPROM</v>
 <v>SPI_3W\SPI_3W\Header Files</v>
-<v>SPI_3W\SPI_3W\Header Files\cyapicallbacks.h</v>
-<v>SPI_3W\SPI_3W\Header Files\globals.h</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -122,8 +120,6 @@
 <v>SPI_3W\SPI_3W\CortexM3\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
 <v>SPI_3W\SPI_3W\CortexM3\ARM_GCC_541\Debug\Listing Files\CyDmac.lst</v>
 <v>SPI_3W\SPI_3W\CortexM3\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
-<v>SPI_3W\SPI_3W\CortexM3\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
-<v>SPI_3W\SPI_3W\CortexM3\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -138,6 +134,12 @@
 <v>SPI_3W\SPI_3W\PSoC 5LP Architecture TRM</v>
 <v>SPI_3W\SPI_3W\CY8C58LP Family Datasheet</v>
 <v>SPI_3W\SPI_3W\System Reference Guides</v>
+<v>SPI_3W\SPI_3W\System Reference Guides\cy_boot_v6_10</v>
+<v>SPI_3W\SPI_3W\cy_clock_v2_20.pdf</v>
+<v>SPI_3W\SPI_3W\cy_constant_v1_0.pdf</v>
+<v>SPI_3W\SPI_3W\cy_pins_v2_20</v>
+<v>SPI_3W\SPI_3W\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>SPI_3W\SPI_3W\SPI_Master_v2_50.pdf</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
 <v>SPI_3W</v>
@@ -145,6 +147,12 @@
 <v>SPI_3W\SPI_3W\PSoC 5LP Architecture TRM</v>
 <v>SPI_3W\SPI_3W\CY8C58LP Family Datasheet</v>
 <v>SPI_3W\SPI_3W\System Reference Guides</v>
+<v>SPI_3W\SPI_3W\System Reference Guides\cy_boot_v6_10</v>
+<v>SPI_3W\SPI_3W\cy_clock_v2_20.pdf</v>
+<v>SPI_3W\SPI_3W\cy_constant_v1_0.pdf</v>
+<v>SPI_3W\SPI_3W\cy_pins_v2_20</v>
+<v>SPI_3W\SPI_3W\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>SPI_3W\SPI_3W\SPI_Master_v2_50.pdf</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStatesV2>
@@ -160,6 +168,7 @@
 <Unloaded />
 <OpenDocs>
 <name v=".\SPI_3W.cydsn\main.c" />
+<name v=".\SPI_3W.cydsn\TopDesign\TopDesign.cysch" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -167,7 +176,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="974, 573" SelectedTabbedMdiWindow="ec314d92-1c1c-43c9-b498-18a6e424ae84"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="e6c53592-2600-47bd-bb84-e80a1b9fa9d1" /><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_IMU_LSM6DSRX_LIS2MDL\TEST_LSM6DSRX\Workspace01\SPI_3W.cydsn\main.c" Guid="ec314d92-1c1c-43c9-b498-18a6e424ae84" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1235, 547" SelectedTabbedMdiWindow="91c09096-abaf-4e3d-9101-0dc4d054b39c"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="e6c53592-2600-47bd-bb84-e80a1b9fa9d1" /><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_IMU_LSM6DSRX_LIS2MDL\TEST_LSM6DSRX\Workspace01\SPI_3W.cydsn\main.c" Guid="ec314d92-1c1c-43c9-b498-18a6e424ae84" /><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_IMU_LSM6DSRX_LIS2MDL\TEST_LSM6DSRX\Workspace01\SPI_3W.cydsn\TopDesign\TopDesign.cysch" Guid="91c09096-abaf-4e3d-9101-0dc4d054b39c" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

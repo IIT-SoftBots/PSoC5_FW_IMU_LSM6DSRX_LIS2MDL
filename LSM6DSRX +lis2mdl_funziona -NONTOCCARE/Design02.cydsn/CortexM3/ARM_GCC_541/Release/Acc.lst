@@ -1,0 +1,1045 @@
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccuAxf7M.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"Acc.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.Acc_Write,"ax",%progbits
+  20              		.align	1
+  21              		.global	Acc_Write
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	Acc_Write, %function
+  25              	Acc_Write:
+  26              	.LFB0:
+  27              		.file 1 "Generated_Source\\PSoC5\\Acc.c"
+   1:Generated_Source\PSoC5/Acc.c **** /*******************************************************************************
+   2:Generated_Source\PSoC5/Acc.c **** * File Name: Acc.c  
+   3:Generated_Source\PSoC5/Acc.c **** * Version 2.20
+   4:Generated_Source\PSoC5/Acc.c **** *
+   5:Generated_Source\PSoC5/Acc.c **** * Description:
+   6:Generated_Source\PSoC5/Acc.c **** *  This file contains API to enable firmware control of a Pins component.
+   7:Generated_Source\PSoC5/Acc.c **** *
+   8:Generated_Source\PSoC5/Acc.c **** * Note:
+   9:Generated_Source\PSoC5/Acc.c **** *
+  10:Generated_Source\PSoC5/Acc.c **** ********************************************************************************
+  11:Generated_Source\PSoC5/Acc.c **** * Copyright 2008-2015, Cypress Semiconductor Corporation.  All rights reserved.
+  12:Generated_Source\PSoC5/Acc.c **** * You may use this file only in accordance with the license, terms, conditions, 
+  13:Generated_Source\PSoC5/Acc.c **** * disclaimers, and limitations in the end user license agreement accompanying 
+  14:Generated_Source\PSoC5/Acc.c **** * the software package with which this file was provided.
+  15:Generated_Source\PSoC5/Acc.c **** *******************************************************************************/
+  16:Generated_Source\PSoC5/Acc.c **** 
+  17:Generated_Source\PSoC5/Acc.c **** #include "cytypes.h"
+  18:Generated_Source\PSoC5/Acc.c **** #include "Acc.h"
+  19:Generated_Source\PSoC5/Acc.c **** 
+  20:Generated_Source\PSoC5/Acc.c **** /* APIs are not generated for P15[7:6] on PSoC 5 */
+  21:Generated_Source\PSoC5/Acc.c **** #if !(CY_PSOC5A &&\
+  22:Generated_Source\PSoC5/Acc.c **** 	 Acc__PORT == 15 && ((Acc__MASK & 0xC0) != 0))
+  23:Generated_Source\PSoC5/Acc.c **** 
+  24:Generated_Source\PSoC5/Acc.c **** 
+  25:Generated_Source\PSoC5/Acc.c **** /*******************************************************************************
+  26:Generated_Source\PSoC5/Acc.c **** * Function Name: Acc_Write
+  27:Generated_Source\PSoC5/Acc.c **** ****************************************************************************//**
+  28:Generated_Source\PSoC5/Acc.c **** *
+  29:Generated_Source\PSoC5/Acc.c **** * \brief Writes the value to the physical port (data output register), masking
+  30:Generated_Source\PSoC5/Acc.c **** *  and shifting the bits appropriately. 
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccuAxf7M.s 			page 2
+
+
+  31:Generated_Source\PSoC5/Acc.c **** *
+  32:Generated_Source\PSoC5/Acc.c **** * The data output register controls the signal applied to the physical pin in 
+  33:Generated_Source\PSoC5/Acc.c **** * conjunction with the drive mode parameter. This function avoids changing 
+  34:Generated_Source\PSoC5/Acc.c **** * other bits in the port by using the appropriate method (read-modify-write or
+  35:Generated_Source\PSoC5/Acc.c **** * bit banding).
+  36:Generated_Source\PSoC5/Acc.c **** *
+  37:Generated_Source\PSoC5/Acc.c **** * <b>Note</b> This function should not be used on a hardware digital output pin 
+  38:Generated_Source\PSoC5/Acc.c **** * as it is driven by the hardware signal attached to it.
+  39:Generated_Source\PSoC5/Acc.c **** *
+  40:Generated_Source\PSoC5/Acc.c **** * \param value
+  41:Generated_Source\PSoC5/Acc.c **** *  Value to write to the component instance.
+  42:Generated_Source\PSoC5/Acc.c **** *
+  43:Generated_Source\PSoC5/Acc.c **** * \return 
+  44:Generated_Source\PSoC5/Acc.c **** *  None 
+  45:Generated_Source\PSoC5/Acc.c **** *
+  46:Generated_Source\PSoC5/Acc.c **** * \sideeffect
+  47:Generated_Source\PSoC5/Acc.c **** *  If you use read-modify-write operations that are not atomic; the Interrupt 
+  48:Generated_Source\PSoC5/Acc.c **** *  Service Routines (ISR) can cause corruption of this function. An ISR that 
+  49:Generated_Source\PSoC5/Acc.c **** *  interrupts this function and performs writes to the Pins component data 
+  50:Generated_Source\PSoC5/Acc.c **** *  register can cause corrupted port data. To avoid this issue, you should 
+  51:Generated_Source\PSoC5/Acc.c **** *  either use the Per-Pin APIs (primary method) or disable interrupts around 
+  52:Generated_Source\PSoC5/Acc.c **** *  this function.
+  53:Generated_Source\PSoC5/Acc.c **** *
+  54:Generated_Source\PSoC5/Acc.c **** * \funcusage
+  55:Generated_Source\PSoC5/Acc.c **** *  \snippet Acc_SUT.c usage_Acc_Write
+  56:Generated_Source\PSoC5/Acc.c **** *******************************************************************************/
+  57:Generated_Source\PSoC5/Acc.c **** void Acc_Write(uint8 value)
+  58:Generated_Source\PSoC5/Acc.c **** {
+  28              		.loc 1 58 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+  33              	.LVL0:
+  59:Generated_Source\PSoC5/Acc.c ****     uint8 staticBits = (Acc_DR & (uint8)(~Acc_MASK));
+  34              		.loc 1 59 0
+  35 0000 044A     		ldr	r2, .L2
+  36 0002 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+  37              	.LVL1:
+  60:Generated_Source\PSoC5/Acc.c ****     Acc_DR = staticBits | ((uint8)(value << Acc_SHIFT) & Acc_MASK);
+  38              		.loc 1 60 0
+  39 0004 03F07F03 		and	r3, r3, #127
+  40              	.LVL2:
+  41 0008 43EAC010 		orr	r0, r3, r0, lsl #7
+  42              	.LVL3:
+  43 000c C0B2     		uxtb	r0, r0
+  44 000e 1070     		strb	r0, [r2]
+  45 0010 7047     		bx	lr
+  46              	.L3:
+  47 0012 00BF     		.align	2
+  48              	.L2:
+  49 0014 20510040 		.word	1073762592
+  50              		.cfi_endproc
+  51              	.LFE0:
+  52              		.size	Acc_Write, .-Acc_Write
+  53              		.section	.text.Acc_SetDriveMode,"ax",%progbits
+  54              		.align	1
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccuAxf7M.s 			page 3
+
+
+  55              		.global	Acc_SetDriveMode
+  56              		.thumb
+  57              		.thumb_func
+  58              		.type	Acc_SetDriveMode, %function
+  59              	Acc_SetDriveMode:
+  60              	.LFB1:
+  61:Generated_Source\PSoC5/Acc.c **** }
+  62:Generated_Source\PSoC5/Acc.c **** 
+  63:Generated_Source\PSoC5/Acc.c **** 
+  64:Generated_Source\PSoC5/Acc.c **** /*******************************************************************************
+  65:Generated_Source\PSoC5/Acc.c **** * Function Name: Acc_SetDriveMode
+  66:Generated_Source\PSoC5/Acc.c **** ****************************************************************************//**
+  67:Generated_Source\PSoC5/Acc.c **** *
+  68:Generated_Source\PSoC5/Acc.c **** * \brief Sets the drive mode for each of the Pins component's pins.
+  69:Generated_Source\PSoC5/Acc.c **** * 
+  70:Generated_Source\PSoC5/Acc.c **** * <b>Note</b> This affects all pins in the Pins component instance. Use the
+  71:Generated_Source\PSoC5/Acc.c **** * Per-Pin APIs if you wish to control individual pin's drive modes.
+  72:Generated_Source\PSoC5/Acc.c **** *
+  73:Generated_Source\PSoC5/Acc.c **** * \param mode
+  74:Generated_Source\PSoC5/Acc.c **** *  Mode for the selected signals. Valid options are documented in 
+  75:Generated_Source\PSoC5/Acc.c **** *  \ref driveMode.
+  76:Generated_Source\PSoC5/Acc.c **** *
+  77:Generated_Source\PSoC5/Acc.c **** * \return
+  78:Generated_Source\PSoC5/Acc.c **** *  None
+  79:Generated_Source\PSoC5/Acc.c **** *
+  80:Generated_Source\PSoC5/Acc.c **** * \sideeffect
+  81:Generated_Source\PSoC5/Acc.c **** *  If you use read-modify-write operations that are not atomic, the ISR can
+  82:Generated_Source\PSoC5/Acc.c **** *  cause corruption of this function. An ISR that interrupts this function 
+  83:Generated_Source\PSoC5/Acc.c **** *  and performs writes to the Pins component Drive Mode registers can cause 
+  84:Generated_Source\PSoC5/Acc.c **** *  corrupted port data. To avoid this issue, you should either use the Per-Pin
+  85:Generated_Source\PSoC5/Acc.c **** *  APIs (primary method) or disable interrupts around this function.
+  86:Generated_Source\PSoC5/Acc.c **** *
+  87:Generated_Source\PSoC5/Acc.c **** * \funcusage
+  88:Generated_Source\PSoC5/Acc.c **** *  \snippet Acc_SUT.c usage_Acc_SetDriveMode
+  89:Generated_Source\PSoC5/Acc.c **** *******************************************************************************/
+  90:Generated_Source\PSoC5/Acc.c **** void Acc_SetDriveMode(uint8 mode)
+  91:Generated_Source\PSoC5/Acc.c **** {
+  61              		.loc 1 91 0
+  62              		.cfi_startproc
+  63              		@ args = 0, pretend = 0, frame = 0
+  64              		@ frame_needed = 0, uses_anonymous_args = 0
+  65              		@ link register save eliminated.
+  66              	.LVL4:
+  92:Generated_Source\PSoC5/Acc.c **** 	CyPins_SetPinDriveMode(Acc_0, mode);
+  67              		.loc 1 92 0
+  68 0000 044A     		ldr	r2, .L5
+  69 0002 00F00E00 		and	r0, r0, #14
+  70              	.LVL5:
+  71 0006 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+  72 0008 03F0F103 		and	r3, r3, #241
+  73 000c 1843     		orrs	r0, r0, r3
+  74 000e 1070     		strb	r0, [r2]
+  75 0010 7047     		bx	lr
+  76              	.L6:
+  77 0012 00BF     		.align	2
+  78              	.L5:
+  79 0014 17500040 		.word	1073762327
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccuAxf7M.s 			page 4
+
+
+  80              		.cfi_endproc
+  81              	.LFE1:
+  82              		.size	Acc_SetDriveMode, .-Acc_SetDriveMode
+  83              		.section	.text.Acc_Read,"ax",%progbits
+  84              		.align	1
+  85              		.global	Acc_Read
+  86              		.thumb
+  87              		.thumb_func
+  88              		.type	Acc_Read, %function
+  89              	Acc_Read:
+  90              	.LFB2:
+  93:Generated_Source\PSoC5/Acc.c **** }
+  94:Generated_Source\PSoC5/Acc.c **** 
+  95:Generated_Source\PSoC5/Acc.c **** 
+  96:Generated_Source\PSoC5/Acc.c **** /*******************************************************************************
+  97:Generated_Source\PSoC5/Acc.c **** * Function Name: Acc_Read
+  98:Generated_Source\PSoC5/Acc.c **** ****************************************************************************//**
+  99:Generated_Source\PSoC5/Acc.c **** *
+ 100:Generated_Source\PSoC5/Acc.c **** * \brief Reads the associated physical port (pin status register) and masks 
+ 101:Generated_Source\PSoC5/Acc.c **** *  the required bits according to the width and bit position of the component
+ 102:Generated_Source\PSoC5/Acc.c **** *  instance. 
+ 103:Generated_Source\PSoC5/Acc.c **** *
+ 104:Generated_Source\PSoC5/Acc.c **** * The pin's status register returns the current logic level present on the 
+ 105:Generated_Source\PSoC5/Acc.c **** * physical pin.
+ 106:Generated_Source\PSoC5/Acc.c **** *
+ 107:Generated_Source\PSoC5/Acc.c **** * \return 
+ 108:Generated_Source\PSoC5/Acc.c **** *  The current value for the pins in the component as a right justified number.
+ 109:Generated_Source\PSoC5/Acc.c **** *
+ 110:Generated_Source\PSoC5/Acc.c **** * \funcusage
+ 111:Generated_Source\PSoC5/Acc.c **** *  \snippet Acc_SUT.c usage_Acc_Read  
+ 112:Generated_Source\PSoC5/Acc.c **** *******************************************************************************/
+ 113:Generated_Source\PSoC5/Acc.c **** uint8 Acc_Read(void)
+ 114:Generated_Source\PSoC5/Acc.c **** {
+  91              		.loc 1 114 0
+  92              		.cfi_startproc
+  93              		@ args = 0, pretend = 0, frame = 0
+  94              		@ frame_needed = 0, uses_anonymous_args = 0
+  95              		@ link register save eliminated.
+ 115:Generated_Source\PSoC5/Acc.c ****     return (Acc_PS & Acc_MASK) >> Acc_SHIFT;
+  96              		.loc 1 115 0
+  97 0000 014B     		ldr	r3, .L8
+  98 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 116:Generated_Source\PSoC5/Acc.c **** }
+  99              		.loc 1 116 0
+ 100 0004 C009     		lsrs	r0, r0, #7
+ 101 0006 7047     		bx	lr
+ 102              	.L9:
+ 103              		.align	2
+ 104              	.L8:
+ 105 0008 21510040 		.word	1073762593
+ 106              		.cfi_endproc
+ 107              	.LFE2:
+ 108              		.size	Acc_Read, .-Acc_Read
+ 109              		.section	.text.Acc_ReadDataReg,"ax",%progbits
+ 110              		.align	1
+ 111              		.global	Acc_ReadDataReg
+ 112              		.thumb
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccuAxf7M.s 			page 5
+
+
+ 113              		.thumb_func
+ 114              		.type	Acc_ReadDataReg, %function
+ 115              	Acc_ReadDataReg:
+ 116              	.LFB3:
+ 117:Generated_Source\PSoC5/Acc.c **** 
+ 118:Generated_Source\PSoC5/Acc.c **** 
+ 119:Generated_Source\PSoC5/Acc.c **** /*******************************************************************************
+ 120:Generated_Source\PSoC5/Acc.c **** * Function Name: Acc_ReadDataReg
+ 121:Generated_Source\PSoC5/Acc.c **** ****************************************************************************//**
+ 122:Generated_Source\PSoC5/Acc.c **** *
+ 123:Generated_Source\PSoC5/Acc.c **** * \brief Reads the associated physical port's data output register and masks 
+ 124:Generated_Source\PSoC5/Acc.c **** *  the correct bits according to the width and bit position of the component 
+ 125:Generated_Source\PSoC5/Acc.c **** *  instance. 
+ 126:Generated_Source\PSoC5/Acc.c **** *
+ 127:Generated_Source\PSoC5/Acc.c **** * The data output register controls the signal applied to the physical pin in 
+ 128:Generated_Source\PSoC5/Acc.c **** * conjunction with the drive mode parameter. This is not the same as the 
+ 129:Generated_Source\PSoC5/Acc.c **** * preferred Acc_Read() API because the 
+ 130:Generated_Source\PSoC5/Acc.c **** * Acc_ReadDataReg() reads the data register instead of the status 
+ 131:Generated_Source\PSoC5/Acc.c **** * register. For output pins this is a useful function to determine the value 
+ 132:Generated_Source\PSoC5/Acc.c **** * just written to the pin.
+ 133:Generated_Source\PSoC5/Acc.c **** *
+ 134:Generated_Source\PSoC5/Acc.c **** * \return 
+ 135:Generated_Source\PSoC5/Acc.c **** *  The current value of the data register masked and shifted into a right 
+ 136:Generated_Source\PSoC5/Acc.c **** *  justified number for the component instance.
+ 137:Generated_Source\PSoC5/Acc.c **** *
+ 138:Generated_Source\PSoC5/Acc.c **** * \funcusage
+ 139:Generated_Source\PSoC5/Acc.c **** *  \snippet Acc_SUT.c usage_Acc_ReadDataReg 
+ 140:Generated_Source\PSoC5/Acc.c **** *******************************************************************************/
+ 141:Generated_Source\PSoC5/Acc.c **** uint8 Acc_ReadDataReg(void)
+ 142:Generated_Source\PSoC5/Acc.c **** {
+ 117              		.loc 1 142 0
+ 118              		.cfi_startproc
+ 119              		@ args = 0, pretend = 0, frame = 0
+ 120              		@ frame_needed = 0, uses_anonymous_args = 0
+ 121              		@ link register save eliminated.
+ 143:Generated_Source\PSoC5/Acc.c ****     return (Acc_DR & Acc_MASK) >> Acc_SHIFT;
+ 122              		.loc 1 143 0
+ 123 0000 014B     		ldr	r3, .L11
+ 124 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 144:Generated_Source\PSoC5/Acc.c **** }
+ 125              		.loc 1 144 0
+ 126 0004 C009     		lsrs	r0, r0, #7
+ 127 0006 7047     		bx	lr
+ 128              	.L12:
+ 129              		.align	2
+ 130              	.L11:
+ 131 0008 20510040 		.word	1073762592
+ 132              		.cfi_endproc
+ 133              	.LFE3:
+ 134              		.size	Acc_ReadDataReg, .-Acc_ReadDataReg
+ 135              		.section	.text.Acc_SetInterruptMode,"ax",%progbits
+ 136              		.align	1
+ 137              		.global	Acc_SetInterruptMode
+ 138              		.thumb
+ 139              		.thumb_func
+ 140              		.type	Acc_SetInterruptMode, %function
+ 141              	Acc_SetInterruptMode:
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccuAxf7M.s 			page 6
+
+
+ 142              	.LFB4:
+ 145:Generated_Source\PSoC5/Acc.c **** 
+ 146:Generated_Source\PSoC5/Acc.c **** 
+ 147:Generated_Source\PSoC5/Acc.c **** /* If interrupt is connected for this Pins component */ 
+ 148:Generated_Source\PSoC5/Acc.c **** #if defined(Acc_INTSTAT) 
+ 149:Generated_Source\PSoC5/Acc.c **** 
+ 150:Generated_Source\PSoC5/Acc.c ****     /*******************************************************************************
+ 151:Generated_Source\PSoC5/Acc.c ****     * Function Name: Acc_SetInterruptMode
+ 152:Generated_Source\PSoC5/Acc.c ****     ****************************************************************************//**
+ 153:Generated_Source\PSoC5/Acc.c ****     *
+ 154:Generated_Source\PSoC5/Acc.c ****     * \brief Configures the interrupt mode for each of the Pins component's
+ 155:Generated_Source\PSoC5/Acc.c ****     *  pins. Alternatively you may set the interrupt mode for all the pins
+ 156:Generated_Source\PSoC5/Acc.c ****     *  specified in the Pins component.
+ 157:Generated_Source\PSoC5/Acc.c ****     *
+ 158:Generated_Source\PSoC5/Acc.c ****     *  <b>Note</b> The interrupt is port-wide and therefore any enabled pin
+ 159:Generated_Source\PSoC5/Acc.c ****     *  interrupt may trigger it.
+ 160:Generated_Source\PSoC5/Acc.c ****     *
+ 161:Generated_Source\PSoC5/Acc.c ****     * \param position
+ 162:Generated_Source\PSoC5/Acc.c ****     *  The pin position as listed in the Pins component. You may OR these to be 
+ 163:Generated_Source\PSoC5/Acc.c ****     *  able to configure the interrupt mode of multiple pins within a Pins 
+ 164:Generated_Source\PSoC5/Acc.c ****     *  component. Or you may use Acc_INTR_ALL to configure the
+ 165:Generated_Source\PSoC5/Acc.c ****     *  interrupt mode of all the pins in the Pins component.       
+ 166:Generated_Source\PSoC5/Acc.c ****     *  - Acc_0_INTR       (First pin in the list)
+ 167:Generated_Source\PSoC5/Acc.c ****     *  - Acc_1_INTR       (Second pin in the list)
+ 168:Generated_Source\PSoC5/Acc.c ****     *  - ...
+ 169:Generated_Source\PSoC5/Acc.c ****     *  - Acc_INTR_ALL     (All pins in Pins component)
+ 170:Generated_Source\PSoC5/Acc.c ****     *
+ 171:Generated_Source\PSoC5/Acc.c ****     * \param mode
+ 172:Generated_Source\PSoC5/Acc.c ****     *  Interrupt mode for the selected pins. Valid options are documented in
+ 173:Generated_Source\PSoC5/Acc.c ****     *  \ref intrMode.
+ 174:Generated_Source\PSoC5/Acc.c ****     *
+ 175:Generated_Source\PSoC5/Acc.c ****     * \return 
+ 176:Generated_Source\PSoC5/Acc.c ****     *  None
+ 177:Generated_Source\PSoC5/Acc.c ****     *  
+ 178:Generated_Source\PSoC5/Acc.c ****     * \sideeffect
+ 179:Generated_Source\PSoC5/Acc.c ****     *  It is recommended that the interrupt be disabled before calling this 
+ 180:Generated_Source\PSoC5/Acc.c ****     *  function to avoid unintended interrupt requests. Note that the interrupt
+ 181:Generated_Source\PSoC5/Acc.c ****     *  type is port wide, and therefore will trigger for any enabled pin on the 
+ 182:Generated_Source\PSoC5/Acc.c ****     *  port.
+ 183:Generated_Source\PSoC5/Acc.c ****     *
+ 184:Generated_Source\PSoC5/Acc.c ****     * \funcusage
+ 185:Generated_Source\PSoC5/Acc.c ****     *  \snippet Acc_SUT.c usage_Acc_SetInterruptMode
+ 186:Generated_Source\PSoC5/Acc.c ****     *******************************************************************************/
+ 187:Generated_Source\PSoC5/Acc.c ****     void Acc_SetInterruptMode(uint16 position, uint16 mode)
+ 188:Generated_Source\PSoC5/Acc.c ****     {
+ 143              		.loc 1 188 0
+ 144              		.cfi_startproc
+ 145              		@ args = 0, pretend = 0, frame = 0
+ 146              		@ frame_needed = 0, uses_anonymous_args = 0
+ 147              		@ link register save eliminated.
+ 148              	.LVL6:
+ 189:Generated_Source\PSoC5/Acc.c **** 		if((position & Acc_0_INTR) != 0u) 
+ 149              		.loc 1 189 0
+ 150 0000 0306     		lsls	r3, r0, #24
+ 190:Generated_Source\PSoC5/Acc.c **** 		{ 
+ 191:Generated_Source\PSoC5/Acc.c **** 			 Acc_0_INTTYPE_REG = (uint8)mode; 
+ 151              		.loc 1 191 0
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccuAxf7M.s 			page 7
+
+
+ 152 0002 42BF     		ittt	mi
+ 153 0004 014B     		ldrmi	r3, .L18
+ 154 0006 C9B2     		uxtbmi	r1, r1
+ 155              	.LVL7:
+ 156 0008 1970     		strbmi	r1, [r3]
+ 157 000a 7047     		bx	lr
+ 158              	.L19:
+ 159              		.align	2
+ 160              	.L18:
+ 161 000c 17450040 		.word	1073759511
+ 162              		.cfi_endproc
+ 163              	.LFE4:
+ 164              		.size	Acc_SetInterruptMode, .-Acc_SetInterruptMode
+ 165              		.section	.text.Acc_ClearInterrupt,"ax",%progbits
+ 166              		.align	1
+ 167              		.global	Acc_ClearInterrupt
+ 168              		.thumb
+ 169              		.thumb_func
+ 170              		.type	Acc_ClearInterrupt, %function
+ 171              	Acc_ClearInterrupt:
+ 172              	.LFB5:
+ 192:Generated_Source\PSoC5/Acc.c **** 		}
+ 193:Generated_Source\PSoC5/Acc.c ****     }
+ 194:Generated_Source\PSoC5/Acc.c ****     
+ 195:Generated_Source\PSoC5/Acc.c ****     
+ 196:Generated_Source\PSoC5/Acc.c ****     /*******************************************************************************
+ 197:Generated_Source\PSoC5/Acc.c ****     * Function Name: Acc_ClearInterrupt
+ 198:Generated_Source\PSoC5/Acc.c ****     ****************************************************************************//**
+ 199:Generated_Source\PSoC5/Acc.c ****     *
+ 200:Generated_Source\PSoC5/Acc.c ****     * \brief Clears any active interrupts attached with the component and returns 
+ 201:Generated_Source\PSoC5/Acc.c ****     *  the value of the interrupt status register allowing determination of which
+ 202:Generated_Source\PSoC5/Acc.c ****     *  pins generated an interrupt event.
+ 203:Generated_Source\PSoC5/Acc.c ****     *
+ 204:Generated_Source\PSoC5/Acc.c ****     * \return 
+ 205:Generated_Source\PSoC5/Acc.c ****     *  The right-shifted current value of the interrupt status register. Each pin 
+ 206:Generated_Source\PSoC5/Acc.c ****     *  has one bit set if it generated an interrupt event. For example, bit 0 is 
+ 207:Generated_Source\PSoC5/Acc.c ****     *  for pin 0 and bit 1 is for pin 1 of the Pins component.
+ 208:Generated_Source\PSoC5/Acc.c ****     *  
+ 209:Generated_Source\PSoC5/Acc.c ****     * \sideeffect
+ 210:Generated_Source\PSoC5/Acc.c ****     *  Clears all bits of the physical port's interrupt status register, not just
+ 211:Generated_Source\PSoC5/Acc.c ****     *  those associated with the Pins component.
+ 212:Generated_Source\PSoC5/Acc.c ****     *
+ 213:Generated_Source\PSoC5/Acc.c ****     * \funcusage
+ 214:Generated_Source\PSoC5/Acc.c ****     *  \snippet Acc_SUT.c usage_Acc_ClearInterrupt
+ 215:Generated_Source\PSoC5/Acc.c ****     *******************************************************************************/
+ 216:Generated_Source\PSoC5/Acc.c ****     uint8 Acc_ClearInterrupt(void)
+ 217:Generated_Source\PSoC5/Acc.c ****     {
+ 173              		.loc 1 217 0
+ 174              		.cfi_startproc
+ 175              		@ args = 0, pretend = 0, frame = 0
+ 176              		@ frame_needed = 0, uses_anonymous_args = 0
+ 177              		@ link register save eliminated.
+ 218:Generated_Source\PSoC5/Acc.c ****         return (Acc_INTSTAT & Acc_MASK) >> Acc_SHIFT;
+ 178              		.loc 1 218 0
+ 179 0000 014B     		ldr	r3, .L21
+ 180 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 219:Generated_Source\PSoC5/Acc.c ****     }
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccuAxf7M.s 			page 8
+
+
+ 181              		.loc 1 219 0
+ 182 0004 C009     		lsrs	r0, r0, #7
+ 183 0006 7047     		bx	lr
+ 184              	.L22:
+ 185              		.align	2
+ 186              	.L21:
+ 187 0008 82450040 		.word	1073759618
+ 188              		.cfi_endproc
+ 189              	.LFE5:
+ 190              		.size	Acc_ClearInterrupt, .-Acc_ClearInterrupt
+ 191              		.text
+ 192              	.Letext0:
+ 193              		.file 2 "Generated_Source\\PSoC5\\cytypes.h"
+ 194              		.section	.debug_info,"",%progbits
+ 195              	.Ldebug_info0:
+ 196 0000 70010000 		.4byte	0x170
+ 197 0004 0400     		.2byte	0x4
+ 198 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 199 000a 04       		.byte	0x4
+ 200 000b 01       		.uleb128 0x1
+ 201 000c 69010000 		.4byte	.LASF24
+ 202 0010 0C       		.byte	0xc
+ 203 0011 2F010000 		.4byte	.LASF25
+ 204 0015 13000000 		.4byte	.LASF26
+ 205 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 206 001d 00000000 		.4byte	0
+ 207 0021 00000000 		.4byte	.Ldebug_line0
+ 208 0025 02       		.uleb128 0x2
+ 209 0026 01       		.byte	0x1
+ 210 0027 06       		.byte	0x6
+ 211 0028 31020000 		.4byte	.LASF0
+ 212 002c 02       		.uleb128 0x2
+ 213 002d 01       		.byte	0x1
+ 214 002e 08       		.byte	0x8
+ 215 002f F0000000 		.4byte	.LASF1
+ 216 0033 02       		.uleb128 0x2
+ 217 0034 02       		.byte	0x2
+ 218 0035 05       		.byte	0x5
+ 219 0036 0F020000 		.4byte	.LASF2
+ 220 003a 02       		.uleb128 0x2
+ 221 003b 02       		.byte	0x2
+ 222 003c 07       		.byte	0x7
+ 223 003d 15010000 		.4byte	.LASF3
+ 224 0041 02       		.uleb128 0x2
+ 225 0042 04       		.byte	0x4
+ 226 0043 05       		.byte	0x5
+ 227 0044 28020000 		.4byte	.LASF4
+ 228 0048 02       		.uleb128 0x2
+ 229 0049 04       		.byte	0x4
+ 230 004a 07       		.byte	0x7
+ 231 004b 03010000 		.4byte	.LASF5
+ 232 004f 02       		.uleb128 0x2
+ 233 0050 08       		.byte	0x8
+ 234 0051 05       		.byte	0x5
+ 235 0052 FC010000 		.4byte	.LASF6
+ 236 0056 02       		.uleb128 0x2
+ 237 0057 08       		.byte	0x8
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccuAxf7M.s 			page 9
+
+
+ 238 0058 07       		.byte	0x7
+ 239 0059 D9000000 		.4byte	.LASF7
+ 240 005d 03       		.uleb128 0x3
+ 241 005e 04       		.byte	0x4
+ 242 005f 05       		.byte	0x5
+ 243 0060 696E7400 		.ascii	"int\000"
+ 244 0064 02       		.uleb128 0x2
+ 245 0065 04       		.byte	0x4
+ 246 0066 07       		.byte	0x7
+ 247 0067 5C010000 		.4byte	.LASF8
+ 248 006b 04       		.uleb128 0x4
+ 249 006c 19020000 		.4byte	.LASF9
+ 250 0070 02       		.byte	0x2
+ 251 0071 E901     		.2byte	0x1e9
+ 252 0073 2C000000 		.4byte	0x2c
+ 253 0077 04       		.uleb128 0x4
+ 254 0078 4C010000 		.4byte	.LASF10
+ 255 007c 02       		.byte	0x2
+ 256 007d EA01     		.2byte	0x1ea
+ 257 007f 3A000000 		.4byte	0x3a
+ 258 0083 02       		.uleb128 0x2
+ 259 0084 04       		.byte	0x4
+ 260 0085 04       		.byte	0x4
+ 261 0086 D3000000 		.4byte	.LASF11
+ 262 008a 02       		.uleb128 0x2
+ 263 008b 08       		.byte	0x8
+ 264 008c 04       		.byte	0x4
+ 265 008d 28010000 		.4byte	.LASF12
+ 266 0091 02       		.uleb128 0x2
+ 267 0092 01       		.byte	0x1
+ 268 0093 08       		.byte	0x8
+ 269 0094 0A020000 		.4byte	.LASF13
+ 270 0098 04       		.uleb128 0x4
+ 271 0099 FE000000 		.4byte	.LASF14
+ 272 009d 02       		.byte	0x2
+ 273 009e 9302     		.2byte	0x293
+ 274 00a0 A4000000 		.4byte	0xa4
+ 275 00a4 05       		.uleb128 0x5
+ 276 00a5 6B000000 		.4byte	0x6b
+ 277 00a9 06       		.uleb128 0x6
+ 278 00aa 3D020000 		.4byte	.LASF15
+ 279 00ae 01       		.byte	0x1
+ 280 00af 39       		.byte	0x39
+ 281 00b0 00000000 		.4byte	.LFB0
+ 282 00b4 18000000 		.4byte	.LFE0-.LFB0
+ 283 00b8 01       		.uleb128 0x1
+ 284 00b9 9C       		.byte	0x9c
+ 285 00ba DD000000 		.4byte	0xdd
+ 286 00be 07       		.uleb128 0x7
+ 287 00bf 9D000000 		.4byte	.LASF17
+ 288 00c3 01       		.byte	0x1
+ 289 00c4 39       		.byte	0x39
+ 290 00c5 6B000000 		.4byte	0x6b
+ 291 00c9 00000000 		.4byte	.LLST0
+ 292 00cd 08       		.uleb128 0x8
+ 293 00ce B3000000 		.4byte	.LASF27
+ 294 00d2 01       		.byte	0x1
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccuAxf7M.s 			page 10
+
+
+ 295 00d3 3B       		.byte	0x3b
+ 296 00d4 6B000000 		.4byte	0x6b
+ 297 00d8 21000000 		.4byte	.LLST1
+ 298 00dc 00       		.byte	0
+ 299 00dd 06       		.uleb128 0x6
+ 300 00de 8C000000 		.4byte	.LASF16
+ 301 00e2 01       		.byte	0x1
+ 302 00e3 5A       		.byte	0x5a
+ 303 00e4 00000000 		.4byte	.LFB1
+ 304 00e8 18000000 		.4byte	.LFE1-.LFB1
+ 305 00ec 01       		.uleb128 0x1
+ 306 00ed 9C       		.byte	0x9c
+ 307 00ee 02010000 		.4byte	0x102
+ 308 00f2 07       		.uleb128 0x7
+ 309 00f3 F7010000 		.4byte	.LASF18
+ 310 00f7 01       		.byte	0x1
+ 311 00f8 5A       		.byte	0x5a
+ 312 00f9 6B000000 		.4byte	0x6b
+ 313 00fd 39000000 		.4byte	.LLST2
+ 314 0101 00       		.byte	0
+ 315 0102 09       		.uleb128 0x9
+ 316 0103 1F020000 		.4byte	.LASF19
+ 317 0107 01       		.byte	0x1
+ 318 0108 71       		.byte	0x71
+ 319 0109 6B000000 		.4byte	0x6b
+ 320 010d 00000000 		.4byte	.LFB2
+ 321 0111 0C000000 		.4byte	.LFE2-.LFB2
+ 322 0115 01       		.uleb128 0x1
+ 323 0116 9C       		.byte	0x9c
+ 324 0117 09       		.uleb128 0x9
+ 325 0118 A3000000 		.4byte	.LASF20
+ 326 011c 01       		.byte	0x1
+ 327 011d 8D       		.byte	0x8d
+ 328 011e 6B000000 		.4byte	0x6b
+ 329 0122 00000000 		.4byte	.LFB3
+ 330 0126 0C000000 		.4byte	.LFE3-.LFB3
+ 331 012a 01       		.uleb128 0x1
+ 332 012b 9C       		.byte	0x9c
+ 333 012c 06       		.uleb128 0x6
+ 334 012d BE000000 		.4byte	.LASF21
+ 335 0131 01       		.byte	0x1
+ 336 0132 BB       		.byte	0xbb
+ 337 0133 00000000 		.4byte	.LFB4
+ 338 0137 10000000 		.4byte	.LFE4-.LFB4
+ 339 013b 01       		.uleb128 0x1
+ 340 013c 9C       		.byte	0x9c
+ 341 013d 5E010000 		.4byte	0x15e
+ 342 0141 0A       		.uleb128 0xa
+ 343 0142 53010000 		.4byte	.LASF22
+ 344 0146 01       		.byte	0x1
+ 345 0147 BB       		.byte	0xbb
+ 346 0148 77000000 		.4byte	0x77
+ 347 014c 01       		.uleb128 0x1
+ 348 014d 50       		.byte	0x50
+ 349 014e 07       		.uleb128 0x7
+ 350 014f F7010000 		.4byte	.LASF18
+ 351 0153 01       		.byte	0x1
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccuAxf7M.s 			page 11
+
+
+ 352 0154 BB       		.byte	0xbb
+ 353 0155 77000000 		.4byte	0x77
+ 354 0159 5A000000 		.4byte	.LLST3
+ 355 015d 00       		.byte	0
+ 356 015e 09       		.uleb128 0x9
+ 357 015f 00000000 		.4byte	.LASF23
+ 358 0163 01       		.byte	0x1
+ 359 0164 D8       		.byte	0xd8
+ 360 0165 6B000000 		.4byte	0x6b
+ 361 0169 00000000 		.4byte	.LFB5
+ 362 016d 0C000000 		.4byte	.LFE5-.LFB5
+ 363 0171 01       		.uleb128 0x1
+ 364 0172 9C       		.byte	0x9c
+ 365 0173 00       		.byte	0
+ 366              		.section	.debug_abbrev,"",%progbits
+ 367              	.Ldebug_abbrev0:
+ 368 0000 01       		.uleb128 0x1
+ 369 0001 11       		.uleb128 0x11
+ 370 0002 01       		.byte	0x1
+ 371 0003 25       		.uleb128 0x25
+ 372 0004 0E       		.uleb128 0xe
+ 373 0005 13       		.uleb128 0x13
+ 374 0006 0B       		.uleb128 0xb
+ 375 0007 03       		.uleb128 0x3
+ 376 0008 0E       		.uleb128 0xe
+ 377 0009 1B       		.uleb128 0x1b
+ 378 000a 0E       		.uleb128 0xe
+ 379 000b 55       		.uleb128 0x55
+ 380 000c 17       		.uleb128 0x17
+ 381 000d 11       		.uleb128 0x11
+ 382 000e 01       		.uleb128 0x1
+ 383 000f 10       		.uleb128 0x10
+ 384 0010 17       		.uleb128 0x17
+ 385 0011 00       		.byte	0
+ 386 0012 00       		.byte	0
+ 387 0013 02       		.uleb128 0x2
+ 388 0014 24       		.uleb128 0x24
+ 389 0015 00       		.byte	0
+ 390 0016 0B       		.uleb128 0xb
+ 391 0017 0B       		.uleb128 0xb
+ 392 0018 3E       		.uleb128 0x3e
+ 393 0019 0B       		.uleb128 0xb
+ 394 001a 03       		.uleb128 0x3
+ 395 001b 0E       		.uleb128 0xe
+ 396 001c 00       		.byte	0
+ 397 001d 00       		.byte	0
+ 398 001e 03       		.uleb128 0x3
+ 399 001f 24       		.uleb128 0x24
+ 400 0020 00       		.byte	0
+ 401 0021 0B       		.uleb128 0xb
+ 402 0022 0B       		.uleb128 0xb
+ 403 0023 3E       		.uleb128 0x3e
+ 404 0024 0B       		.uleb128 0xb
+ 405 0025 03       		.uleb128 0x3
+ 406 0026 08       		.uleb128 0x8
+ 407 0027 00       		.byte	0
+ 408 0028 00       		.byte	0
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccuAxf7M.s 			page 12
+
+
+ 409 0029 04       		.uleb128 0x4
+ 410 002a 16       		.uleb128 0x16
+ 411 002b 00       		.byte	0
+ 412 002c 03       		.uleb128 0x3
+ 413 002d 0E       		.uleb128 0xe
+ 414 002e 3A       		.uleb128 0x3a
+ 415 002f 0B       		.uleb128 0xb
+ 416 0030 3B       		.uleb128 0x3b
+ 417 0031 05       		.uleb128 0x5
+ 418 0032 49       		.uleb128 0x49
+ 419 0033 13       		.uleb128 0x13
+ 420 0034 00       		.byte	0
+ 421 0035 00       		.byte	0
+ 422 0036 05       		.uleb128 0x5
+ 423 0037 35       		.uleb128 0x35
+ 424 0038 00       		.byte	0
+ 425 0039 49       		.uleb128 0x49
+ 426 003a 13       		.uleb128 0x13
+ 427 003b 00       		.byte	0
+ 428 003c 00       		.byte	0
+ 429 003d 06       		.uleb128 0x6
+ 430 003e 2E       		.uleb128 0x2e
+ 431 003f 01       		.byte	0x1
+ 432 0040 3F       		.uleb128 0x3f
+ 433 0041 19       		.uleb128 0x19
+ 434 0042 03       		.uleb128 0x3
+ 435 0043 0E       		.uleb128 0xe
+ 436 0044 3A       		.uleb128 0x3a
+ 437 0045 0B       		.uleb128 0xb
+ 438 0046 3B       		.uleb128 0x3b
+ 439 0047 0B       		.uleb128 0xb
+ 440 0048 27       		.uleb128 0x27
+ 441 0049 19       		.uleb128 0x19
+ 442 004a 11       		.uleb128 0x11
+ 443 004b 01       		.uleb128 0x1
+ 444 004c 12       		.uleb128 0x12
+ 445 004d 06       		.uleb128 0x6
+ 446 004e 40       		.uleb128 0x40
+ 447 004f 18       		.uleb128 0x18
+ 448 0050 9742     		.uleb128 0x2117
+ 449 0052 19       		.uleb128 0x19
+ 450 0053 01       		.uleb128 0x1
+ 451 0054 13       		.uleb128 0x13
+ 452 0055 00       		.byte	0
+ 453 0056 00       		.byte	0
+ 454 0057 07       		.uleb128 0x7
+ 455 0058 05       		.uleb128 0x5
+ 456 0059 00       		.byte	0
+ 457 005a 03       		.uleb128 0x3
+ 458 005b 0E       		.uleb128 0xe
+ 459 005c 3A       		.uleb128 0x3a
+ 460 005d 0B       		.uleb128 0xb
+ 461 005e 3B       		.uleb128 0x3b
+ 462 005f 0B       		.uleb128 0xb
+ 463 0060 49       		.uleb128 0x49
+ 464 0061 13       		.uleb128 0x13
+ 465 0062 02       		.uleb128 0x2
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccuAxf7M.s 			page 13
+
+
+ 466 0063 17       		.uleb128 0x17
+ 467 0064 00       		.byte	0
+ 468 0065 00       		.byte	0
+ 469 0066 08       		.uleb128 0x8
+ 470 0067 34       		.uleb128 0x34
+ 471 0068 00       		.byte	0
+ 472 0069 03       		.uleb128 0x3
+ 473 006a 0E       		.uleb128 0xe
+ 474 006b 3A       		.uleb128 0x3a
+ 475 006c 0B       		.uleb128 0xb
+ 476 006d 3B       		.uleb128 0x3b
+ 477 006e 0B       		.uleb128 0xb
+ 478 006f 49       		.uleb128 0x49
+ 479 0070 13       		.uleb128 0x13
+ 480 0071 02       		.uleb128 0x2
+ 481 0072 17       		.uleb128 0x17
+ 482 0073 00       		.byte	0
+ 483 0074 00       		.byte	0
+ 484 0075 09       		.uleb128 0x9
+ 485 0076 2E       		.uleb128 0x2e
+ 486 0077 00       		.byte	0
+ 487 0078 3F       		.uleb128 0x3f
+ 488 0079 19       		.uleb128 0x19
+ 489 007a 03       		.uleb128 0x3
+ 490 007b 0E       		.uleb128 0xe
+ 491 007c 3A       		.uleb128 0x3a
+ 492 007d 0B       		.uleb128 0xb
+ 493 007e 3B       		.uleb128 0x3b
+ 494 007f 0B       		.uleb128 0xb
+ 495 0080 27       		.uleb128 0x27
+ 496 0081 19       		.uleb128 0x19
+ 497 0082 49       		.uleb128 0x49
+ 498 0083 13       		.uleb128 0x13
+ 499 0084 11       		.uleb128 0x11
+ 500 0085 01       		.uleb128 0x1
+ 501 0086 12       		.uleb128 0x12
+ 502 0087 06       		.uleb128 0x6
+ 503 0088 40       		.uleb128 0x40
+ 504 0089 18       		.uleb128 0x18
+ 505 008a 9742     		.uleb128 0x2117
+ 506 008c 19       		.uleb128 0x19
+ 507 008d 00       		.byte	0
+ 508 008e 00       		.byte	0
+ 509 008f 0A       		.uleb128 0xa
+ 510 0090 05       		.uleb128 0x5
+ 511 0091 00       		.byte	0
+ 512 0092 03       		.uleb128 0x3
+ 513 0093 0E       		.uleb128 0xe
+ 514 0094 3A       		.uleb128 0x3a
+ 515 0095 0B       		.uleb128 0xb
+ 516 0096 3B       		.uleb128 0x3b
+ 517 0097 0B       		.uleb128 0xb
+ 518 0098 49       		.uleb128 0x49
+ 519 0099 13       		.uleb128 0x13
+ 520 009a 02       		.uleb128 0x2
+ 521 009b 18       		.uleb128 0x18
+ 522 009c 00       		.byte	0
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccuAxf7M.s 			page 14
+
+
+ 523 009d 00       		.byte	0
+ 524 009e 00       		.byte	0
+ 525              		.section	.debug_loc,"",%progbits
+ 526              	.Ldebug_loc0:
+ 527              	.LLST0:
+ 528 0000 00000000 		.4byte	.LVL0
+ 529 0004 0C000000 		.4byte	.LVL3
+ 530 0008 0100     		.2byte	0x1
+ 531 000a 50       		.byte	0x50
+ 532 000b 0C000000 		.4byte	.LVL3
+ 533 000f 18000000 		.4byte	.LFE0
+ 534 0013 0400     		.2byte	0x4
+ 535 0015 F3       		.byte	0xf3
+ 536 0016 01       		.uleb128 0x1
+ 537 0017 50       		.byte	0x50
+ 538 0018 9F       		.byte	0x9f
+ 539 0019 00000000 		.4byte	0
+ 540 001d 00000000 		.4byte	0
+ 541              	.LLST1:
+ 542 0021 04000000 		.4byte	.LVL1
+ 543 0025 08000000 		.4byte	.LVL2
+ 544 0029 0600     		.2byte	0x6
+ 545 002b 73       		.byte	0x73
+ 546 002c 00       		.sleb128 0
+ 547 002d 08       		.byte	0x8
+ 548 002e 7F       		.byte	0x7f
+ 549 002f 1A       		.byte	0x1a
+ 550 0030 9F       		.byte	0x9f
+ 551 0031 00000000 		.4byte	0
+ 552 0035 00000000 		.4byte	0
+ 553              	.LLST2:
+ 554 0039 00000000 		.4byte	.LVL4
+ 555 003d 06000000 		.4byte	.LVL5
+ 556 0041 0100     		.2byte	0x1
+ 557 0043 50       		.byte	0x50
+ 558 0044 06000000 		.4byte	.LVL5
+ 559 0048 18000000 		.4byte	.LFE1
+ 560 004c 0400     		.2byte	0x4
+ 561 004e F3       		.byte	0xf3
+ 562 004f 01       		.uleb128 0x1
+ 563 0050 50       		.byte	0x50
+ 564 0051 9F       		.byte	0x9f
+ 565 0052 00000000 		.4byte	0
+ 566 0056 00000000 		.4byte	0
+ 567              	.LLST3:
+ 568 005a 00000000 		.4byte	.LVL6
+ 569 005e 08000000 		.4byte	.LVL7
+ 570 0062 0100     		.2byte	0x1
+ 571 0064 51       		.byte	0x51
+ 572 0065 08000000 		.4byte	.LVL7
+ 573 0069 10000000 		.4byte	.LFE4
+ 574 006d 0400     		.2byte	0x4
+ 575 006f F3       		.byte	0xf3
+ 576 0070 01       		.uleb128 0x1
+ 577 0071 51       		.byte	0x51
+ 578 0072 9F       		.byte	0x9f
+ 579 0073 00000000 		.4byte	0
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccuAxf7M.s 			page 15
+
+
+ 580 0077 00000000 		.4byte	0
+ 581              		.section	.debug_aranges,"",%progbits
+ 582 0000 44000000 		.4byte	0x44
+ 583 0004 0200     		.2byte	0x2
+ 584 0006 00000000 		.4byte	.Ldebug_info0
+ 585 000a 04       		.byte	0x4
+ 586 000b 00       		.byte	0
+ 587 000c 0000     		.2byte	0
+ 588 000e 0000     		.2byte	0
+ 589 0010 00000000 		.4byte	.LFB0
+ 590 0014 18000000 		.4byte	.LFE0-.LFB0
+ 591 0018 00000000 		.4byte	.LFB1
+ 592 001c 18000000 		.4byte	.LFE1-.LFB1
+ 593 0020 00000000 		.4byte	.LFB2
+ 594 0024 0C000000 		.4byte	.LFE2-.LFB2
+ 595 0028 00000000 		.4byte	.LFB3
+ 596 002c 0C000000 		.4byte	.LFE3-.LFB3
+ 597 0030 00000000 		.4byte	.LFB4
+ 598 0034 10000000 		.4byte	.LFE4-.LFB4
+ 599 0038 00000000 		.4byte	.LFB5
+ 600 003c 0C000000 		.4byte	.LFE5-.LFB5
+ 601 0040 00000000 		.4byte	0
+ 602 0044 00000000 		.4byte	0
+ 603              		.section	.debug_ranges,"",%progbits
+ 604              	.Ldebug_ranges0:
+ 605 0000 00000000 		.4byte	.LFB0
+ 606 0004 18000000 		.4byte	.LFE0
+ 607 0008 00000000 		.4byte	.LFB1
+ 608 000c 18000000 		.4byte	.LFE1
+ 609 0010 00000000 		.4byte	.LFB2
+ 610 0014 0C000000 		.4byte	.LFE2
+ 611 0018 00000000 		.4byte	.LFB3
+ 612 001c 0C000000 		.4byte	.LFE3
+ 613 0020 00000000 		.4byte	.LFB4
+ 614 0024 10000000 		.4byte	.LFE4
+ 615 0028 00000000 		.4byte	.LFB5
+ 616 002c 0C000000 		.4byte	.LFE5
+ 617 0030 00000000 		.4byte	0
+ 618 0034 00000000 		.4byte	0
+ 619              		.section	.debug_line,"",%progbits
+ 620              	.Ldebug_line0:
+ 621 0000 B0000000 		.section	.debug_str,"MS",%progbits,1
+ 621      02004000 
+ 621      00000201 
+ 621      FB0E0D00 
+ 621      01010101 
+ 622              	.LASF23:
+ 623 0000 4163635F 		.ascii	"Acc_ClearInterrupt\000"
+ 623      436C6561 
+ 623      72496E74 
+ 623      65727275 
+ 623      707400
+ 624              	.LASF26:
+ 625 0013 433A5C55 		.ascii	"C:\\Users\\mgnocco\\Documents\\Git\\PSoC5\\PSoC5_FW"
+ 625      73657273 
+ 625      5C6D676E 
+ 625      6F63636F 
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccuAxf7M.s 			page 16
+
+
+ 625      5C446F63 
+ 626 0040 5F494D55 		.ascii	"_IMU_LSM6DSRX_LIS2MDL\\LSM6DSRX +lis2mdl_funziona -"
+ 626      5F4C534D 
+ 626      36445352 
+ 626      585F4C49 
+ 626      53324D44 
+ 627 0072 4E4F4E54 		.ascii	"NONTOCCARE\\Design02.cydsn\000"
+ 627      4F434341 
+ 627      52455C44 
+ 627      65736967 
+ 627      6E30322E 
+ 628              	.LASF16:
+ 629 008c 4163635F 		.ascii	"Acc_SetDriveMode\000"
+ 629      53657444 
+ 629      72697665 
+ 629      4D6F6465 
+ 629      00
+ 630              	.LASF17:
+ 631 009d 76616C75 		.ascii	"value\000"
+ 631      6500
+ 632              	.LASF20:
+ 633 00a3 4163635F 		.ascii	"Acc_ReadDataReg\000"
+ 633      52656164 
+ 633      44617461 
+ 633      52656700 
+ 634              	.LASF27:
+ 635 00b3 73746174 		.ascii	"staticBits\000"
+ 635      69634269 
+ 635      747300
+ 636              	.LASF21:
+ 637 00be 4163635F 		.ascii	"Acc_SetInterruptMode\000"
+ 637      53657449 
+ 637      6E746572 
+ 637      72757074 
+ 637      4D6F6465 
+ 638              	.LASF11:
+ 639 00d3 666C6F61 		.ascii	"float\000"
+ 639      7400
+ 640              	.LASF7:
+ 641 00d9 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 641      206C6F6E 
+ 641      6720756E 
+ 641      7369676E 
+ 641      65642069 
+ 642              	.LASF1:
+ 643 00f0 756E7369 		.ascii	"unsigned char\000"
+ 643      676E6564 
+ 643      20636861 
+ 643      7200
+ 644              	.LASF14:
+ 645 00fe 72656738 		.ascii	"reg8\000"
+ 645      00
+ 646              	.LASF5:
+ 647 0103 6C6F6E67 		.ascii	"long unsigned int\000"
+ 647      20756E73 
+ 647      69676E65 
+ 647      6420696E 
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccuAxf7M.s 			page 17
+
+
+ 647      7400
+ 648              	.LASF3:
+ 649 0115 73686F72 		.ascii	"short unsigned int\000"
+ 649      7420756E 
+ 649      7369676E 
+ 649      65642069 
+ 649      6E7400
+ 650              	.LASF12:
+ 651 0128 646F7562 		.ascii	"double\000"
+ 651      6C6500
+ 652              	.LASF25:
+ 653 012f 47656E65 		.ascii	"Generated_Source\\PSoC5\\Acc.c\000"
+ 653      72617465 
+ 653      645F536F 
+ 653      75726365 
+ 653      5C50536F 
+ 654              	.LASF10:
+ 655 014c 75696E74 		.ascii	"uint16\000"
+ 655      313600
+ 656              	.LASF22:
+ 657 0153 706F7369 		.ascii	"position\000"
+ 657      74696F6E 
+ 657      00
+ 658              	.LASF8:
+ 659 015c 756E7369 		.ascii	"unsigned int\000"
+ 659      676E6564 
+ 659      20696E74 
+ 659      00
+ 660              	.LASF24:
+ 661 0169 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 661      43313120 
+ 661      352E342E 
+ 661      31203230 
+ 661      31363036 
+ 662 019c 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 662      20726576 
+ 662      6973696F 
+ 662      6E203233 
+ 662      37373135 
+ 663 01cf 73202D66 		.ascii	"s -ffunction-sections -ffat-lto-objects\000"
+ 663      66756E63 
+ 663      74696F6E 
+ 663      2D736563 
+ 663      74696F6E 
+ 664              	.LASF18:
+ 665 01f7 6D6F6465 		.ascii	"mode\000"
+ 665      00
+ 666              	.LASF6:
+ 667 01fc 6C6F6E67 		.ascii	"long long int\000"
+ 667      206C6F6E 
+ 667      6720696E 
+ 667      7400
+ 668              	.LASF13:
+ 669 020a 63686172 		.ascii	"char\000"
+ 669      00
+ 670              	.LASF2:
+ 671 020f 73686F72 		.ascii	"short int\000"
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccuAxf7M.s 			page 18
+
+
+ 671      7420696E 
+ 671      7400
+ 672              	.LASF9:
+ 673 0219 75696E74 		.ascii	"uint8\000"
+ 673      3800
+ 674              	.LASF19:
+ 675 021f 4163635F 		.ascii	"Acc_Read\000"
+ 675      52656164 
+ 675      00
+ 676              	.LASF4:
+ 677 0228 6C6F6E67 		.ascii	"long int\000"
+ 677      20696E74 
+ 677      00
+ 678              	.LASF0:
+ 679 0231 7369676E 		.ascii	"signed char\000"
+ 679      65642063 
+ 679      68617200 
+ 680              	.LASF15:
+ 681 023d 4163635F 		.ascii	"Acc_Write\000"
+ 681      57726974 
+ 681      6500
+ 682              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

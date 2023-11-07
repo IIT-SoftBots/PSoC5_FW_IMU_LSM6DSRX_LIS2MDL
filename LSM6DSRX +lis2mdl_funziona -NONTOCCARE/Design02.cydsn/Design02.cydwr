@@ -267,6 +267,7 @@
       <Data key="e7f51447-5016-4fc1-8c75-593a0f7f6464" value="SCLK" />
       <Data key="e851a3b9-efb8-48be-bbb8-b303b216c393" value="MOSI_SDA" />
       <Data key="ed092b9b-d398-4703-be89-cebf998501f6" value="Tx_1" />
+      <Data key="ff3ce979-4618-4a42-9391-9ace5e0070f8" value="Pin_1" />
     </Group>
   </Group>
   <Group key="EEPROM">
@@ -3417,6 +3418,11 @@
     <Group key="ed092b9b-d398-4703-be89-cebf998501f6">
       <Group key="0">
         <Data key="Port Format" value="12,7" />
+      </Group>
+    </Group>
+    <Group key="ff3ce979-4618-4a42-9391-9ace5e0070f8">
+      <Group key="0">
+        <Data key="Port Format" value="2,7" />
       </Group>
     </Group>
     <Group key="UnAssigned Pins" />

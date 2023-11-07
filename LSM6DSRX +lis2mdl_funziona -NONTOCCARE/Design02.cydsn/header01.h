@@ -106,23 +106,7 @@
 #define LIS2MDL_TEMP_OUT_L_REG         0x6E
 #define LIS2MDL_TEMP_OUT_H_REG         0x6F
 
-extern uint8 SensorHub[6];
-void OneShot_ReadRoutine1(uint8 address, uint8 subaddress,uint8 slave_config);
-void Read(uint8 slave_config);
-void Continuous_ReadRoutine(uint8 address, uint8 subaddress, uint8 slave_config);
-uint8 OneShot_ReadRoutine (uint8 address, uint8 subaddress);
-void OneShot_WriteRoutine (uint8 address, uint8 subaddress, uint8 data);
-void ReadIMU();
-void InitIMU();
-void InitAxelGyro();
-void InitMag();
-void ReadAcc(); //reads acc of IMU n
-void ReadGyro();//reads gyro of IMU n
-void ReadTemp();//reads temperature of IMU n
 uint8 ReadControlRegisterSPI(uint8 address);
 void WriteControlRegisterSPI(uint8 address, uint8 dta);
 
-uint8 ReadControlRegisterI2C(uint8 address);
-void WriteControlRegisterI2C(uint8 address, uint8 dta);
-void ChipSelectorIMU(int n);
 /* [] END OF FILE */
