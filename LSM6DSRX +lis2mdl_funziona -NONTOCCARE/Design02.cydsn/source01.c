@@ -290,7 +290,7 @@ void OneShot_WriteRoutine (uint8 address, uint8 subaddress, uint8 data){
 * Function Name: Read Acc's Data of IMU n
 *********************************************************************************/
 void ReadAcc()
-{   uint8 low=0, high=0;
+{   /*uint8 low=0, high=0;
    
     low=ReadControlRegisterSPI(LSM6DSRX_OUTX_L_A);
     high=ReadControlRegisterSPI(LSM6DSRX_OUTX_H_A);
@@ -313,7 +313,7 @@ void ReadAcc()
 	Accel[4] = high; 
 	Accel[5] = low;
 	low=0;
-    high=0;
+    high=0;*/
 }
 
 
@@ -321,7 +321,7 @@ void ReadAcc()
 * Function Name: Read Gyro's Data of IMU n
 *********************************************************************************/
 void ReadGyro()
-{   uint8 low=0, high=0;
+{   /*uint8 low=0, high=0;
     low=ReadControlRegisterSPI(LSM6DSRX_OUTX_L_G);
     high=ReadControlRegisterSPI(LSM6DSRX_OUTX_H_G);
 	Gyro[0] = high; 
@@ -340,7 +340,7 @@ void ReadGyro()
     high=ReadControlRegisterSPI(LSM6DSRX_OUTZ_H_G);
 	Gyro[4] = high; 
 	Gyro[5] = low;
-	low=0, high=0;
+	low=0, high=0;*/
 }
 
 /*******************************************************************************
@@ -360,7 +360,7 @@ void ReadTemp()
 /*******************************************************************************
 * Function Name: IMU Read
 *********************************************************************************/	
-void ReadIMU(){
+void ReadIMU(){/*
     uint16 tmp = 0, j = 0;
    // uint8 c = 1;
     int16 aux_int16;
@@ -390,7 +390,7 @@ void ReadIMU(){
     
     tmp = Temp[0];
     g_imuNew.temp_value = (int16)(tmp<<8 | Temp[1]);
-    */
+    
     
     aux_int16 = (int16) g_imuNew.accel_value[0];      
     accX1 = ((char*)(&aux_int16))[0];

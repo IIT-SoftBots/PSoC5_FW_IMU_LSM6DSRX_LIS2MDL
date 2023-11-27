@@ -18,9 +18,9 @@ struct st_imu_data {
 };
 
 extern struct st_imu_data g_imu, g_imuNew;
-extern uint8 Mag[6];
-extern uint8 Accel[6];
-extern uint8 Gyro[6];
+extern uint8 Mag[2][10][6];
+extern uint8 Accel[2][10][6];
+extern uint8 Gyro[2][10][6];
 extern uint8 Temp[2];
 
 

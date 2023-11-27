@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: ChipSelect.c  
+* File Name: ChipSelect_1.c  
 * Version 2.20
 *
 * Description:
@@ -15,15 +15,15 @@
 *******************************************************************************/
 
 #include "cytypes.h"
-#include "ChipSelect.h"
+#include "ChipSelect_1.h"
 
 /* APIs are not generated for P15[7:6] on PSoC 5 */
 #if !(CY_PSOC5A &&\
-	 ChipSelect__PORT == 15 && ((ChipSelect__MASK & 0xC0) != 0))
+	 ChipSelect_1__PORT == 15 && ((ChipSelect_1__MASK & 0xC0) != 0))
 
 
 /*******************************************************************************
-* Function Name: ChipSelect_Write
+* Function Name: ChipSelect_1_Write
 ****************************************************************************//**
 *
 * \brief Writes the value to the physical port (data output register), masking
@@ -52,17 +52,17 @@
 *  this function.
 *
 * \funcusage
-*  \snippet ChipSelect_SUT.c usage_ChipSelect_Write
+*  \snippet ChipSelect_1_SUT.c usage_ChipSelect_1_Write
 *******************************************************************************/
-void ChipSelect_Write(uint8 value)
+void ChipSelect_1_Write(uint8 value)
 {
-    uint8 staticBits = (ChipSelect_DR & (uint8)(~ChipSelect_MASK));
-    ChipSelect_DR = staticBits | ((uint8)(value << ChipSelect_SHIFT) & ChipSelect_MASK);
+    uint8 staticBits = (ChipSelect_1_DR & (uint8)(~ChipSelect_1_MASK));
+    ChipSelect_1_DR = staticBits | ((uint8)(value << ChipSelect_1_SHIFT) & ChipSelect_1_MASK);
 }
 
 
 /*******************************************************************************
-* Function Name: ChipSelect_SetDriveMode
+* Function Name: ChipSelect_1_SetDriveMode
 ****************************************************************************//**
 *
 * \brief Sets the drive mode for each of the Pins component's pins.
@@ -85,16 +85,16 @@ void ChipSelect_Write(uint8 value)
 *  APIs (primary method) or disable interrupts around this function.
 *
 * \funcusage
-*  \snippet ChipSelect_SUT.c usage_ChipSelect_SetDriveMode
+*  \snippet ChipSelect_1_SUT.c usage_ChipSelect_1_SetDriveMode
 *******************************************************************************/
-void ChipSelect_SetDriveMode(uint8 mode)
+void ChipSelect_1_SetDriveMode(uint8 mode)
 {
-	CyPins_SetPinDriveMode(ChipSelect_0, mode);
+	CyPins_SetPinDriveMode(ChipSelect_1_0, mode);
 }
 
 
 /*******************************************************************************
-* Function Name: ChipSelect_Read
+* Function Name: ChipSelect_1_Read
 ****************************************************************************//**
 *
 * \brief Reads the associated physical port (pin status register) and masks 
@@ -108,16 +108,16 @@ void ChipSelect_SetDriveMode(uint8 mode)
 *  The current value for the pins in the component as a right justified number.
 *
 * \funcusage
-*  \snippet ChipSelect_SUT.c usage_ChipSelect_Read  
+*  \snippet ChipSelect_1_SUT.c usage_ChipSelect_1_Read  
 *******************************************************************************/
-uint8 ChipSelect_Read(void)
+uint8 ChipSelect_1_Read(void)
 {
-    return (ChipSelect_PS & ChipSelect_MASK) >> ChipSelect_SHIFT;
+    return (ChipSelect_1_PS & ChipSelect_1_MASK) >> ChipSelect_1_SHIFT;
 }
 
 
 /*******************************************************************************
-* Function Name: ChipSelect_ReadDataReg
+* Function Name: ChipSelect_1_ReadDataReg
 ****************************************************************************//**
 *
 * \brief Reads the associated physical port's data output register and masks 
@@ -126,8 +126,8 @@ uint8 ChipSelect_Read(void)
 *
 * The data output register controls the signal applied to the physical pin in 
 * conjunction with the drive mode parameter. This is not the same as the 
-* preferred ChipSelect_Read() API because the 
-* ChipSelect_ReadDataReg() reads the data register instead of the status 
+* preferred ChipSelect_1_Read() API because the 
+* ChipSelect_1_ReadDataReg() reads the data register instead of the status 
 * register. For output pins this is a useful function to determine the value 
 * just written to the pin.
 *
@@ -136,19 +136,19 @@ uint8 ChipSelect_Read(void)
 *  justified number for the component instance.
 *
 * \funcusage
-*  \snippet ChipSelect_SUT.c usage_ChipSelect_ReadDataReg 
+*  \snippet ChipSelect_1_SUT.c usage_ChipSelect_1_ReadDataReg 
 *******************************************************************************/
-uint8 ChipSelect_ReadDataReg(void)
+uint8 ChipSelect_1_ReadDataReg(void)
 {
-    return (ChipSelect_DR & ChipSelect_MASK) >> ChipSelect_SHIFT;
+    return (ChipSelect_1_DR & ChipSelect_1_MASK) >> ChipSelect_1_SHIFT;
 }
 
 
 /* If interrupt is connected for this Pins component */ 
-#if defined(ChipSelect_INTSTAT) 
+#if defined(ChipSelect_1_INTSTAT) 
 
     /*******************************************************************************
-    * Function Name: ChipSelect_SetInterruptMode
+    * Function Name: ChipSelect_1_SetInterruptMode
     ****************************************************************************//**
     *
     * \brief Configures the interrupt mode for each of the Pins component's
@@ -161,12 +161,12 @@ uint8 ChipSelect_ReadDataReg(void)
     * \param position
     *  The pin position as listed in the Pins component. You may OR these to be 
     *  able to configure the interrupt mode of multiple pins within a Pins 
-    *  component. Or you may use ChipSelect_INTR_ALL to configure the
+    *  component. Or you may use ChipSelect_1_INTR_ALL to configure the
     *  interrupt mode of all the pins in the Pins component.       
-    *  - ChipSelect_0_INTR       (First pin in the list)
-    *  - ChipSelect_1_INTR       (Second pin in the list)
+    *  - ChipSelect_1_0_INTR       (First pin in the list)
+    *  - ChipSelect_1_1_INTR       (Second pin in the list)
     *  - ...
-    *  - ChipSelect_INTR_ALL     (All pins in Pins component)
+    *  - ChipSelect_1_INTR_ALL     (All pins in Pins component)
     *
     * \param mode
     *  Interrupt mode for the selected pins. Valid options are documented in
@@ -182,19 +182,19 @@ uint8 ChipSelect_ReadDataReg(void)
     *  port.
     *
     * \funcusage
-    *  \snippet ChipSelect_SUT.c usage_ChipSelect_SetInterruptMode
+    *  \snippet ChipSelect_1_SUT.c usage_ChipSelect_1_SetInterruptMode
     *******************************************************************************/
-    void ChipSelect_SetInterruptMode(uint16 position, uint16 mode)
+    void ChipSelect_1_SetInterruptMode(uint16 position, uint16 mode)
     {
-		if((position & ChipSelect_0_INTR) != 0u) 
+		if((position & ChipSelect_1_0_INTR) != 0u) 
 		{ 
-			 ChipSelect_0_INTTYPE_REG = (uint8)mode; 
+			 ChipSelect_1_0_INTTYPE_REG = (uint8)mode; 
 		}
     }
     
     
     /*******************************************************************************
-    * Function Name: ChipSelect_ClearInterrupt
+    * Function Name: ChipSelect_1_ClearInterrupt
     ****************************************************************************//**
     *
     * \brief Clears any active interrupts attached with the component and returns 
@@ -211,11 +211,11 @@ uint8 ChipSelect_ReadDataReg(void)
     *  those associated with the Pins component.
     *
     * \funcusage
-    *  \snippet ChipSelect_SUT.c usage_ChipSelect_ClearInterrupt
+    *  \snippet ChipSelect_1_SUT.c usage_ChipSelect_1_ClearInterrupt
     *******************************************************************************/
-    uint8 ChipSelect_ClearInterrupt(void)
+    uint8 ChipSelect_1_ClearInterrupt(void)
     {
-        return (ChipSelect_INTSTAT & ChipSelect_MASK) >> ChipSelect_SHIFT;
+        return (ChipSelect_1_INTSTAT & ChipSelect_1_MASK) >> ChipSelect_1_SHIFT;
     }
 
 #endif /* If Interrupts Are Enabled for this Pins component */ 
