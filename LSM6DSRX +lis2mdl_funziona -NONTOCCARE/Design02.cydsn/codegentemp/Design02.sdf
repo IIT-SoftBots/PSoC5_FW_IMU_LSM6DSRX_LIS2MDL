@@ -1,6 +1,6 @@
 (DELAYFILE
  (SDFVERSION "IEEE 1497 4.0")
- (DATE "2024-06-27T13:31:43Z")
+ (DATE "2024-06-27T14:21:57Z")
  (DESIGN "Design02")
  (VENDOR "Cypress Semiconductor")
  (PROGRAM "PSoC Creator")
@@ -361,6 +361,7 @@
     (INTERCONNECT ChipSelect_1\(0\)_PAD ChipSelect_1\(0\).pad_in (0.000:0.000:0.000))
     (INTERCONNECT ChipSelect_2\(0\).pad_out ChipSelect_2\(0\)_PAD (0.000:0.000:0.000))
     (INTERCONNECT ChipSelect_2\(0\)_PAD ChipSelect_2\(0\).pad_in (0.000:0.000:0.000))
+    (INTERCONNECT bottone\(0\)_PAD bottone\(0\).pad_in (0.000:0.000:0.000))
    )
   )
  )

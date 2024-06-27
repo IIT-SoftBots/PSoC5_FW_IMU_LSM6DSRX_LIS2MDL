@@ -1,5 +1,5 @@
 # Design02
-# 2024-06-27 13:31:42Z
+# 2024-06-27 14:21:55Z
 
 # IO_0@[IOP=(1)][IoId=(0)] is reserved: SWDDebugEnabled
 dont_use_io iocell 1 0
@@ -14,7 +14,8 @@ set_io "MISO_SDO(0)" iocell 3 7
 set_io "Rx_1(0)" iocell 12 6
 set_io "Tx_1(0)" iocell 12 7
 set_io "ChipSelect_1(0)" iocell 2 3
-set_io "ChipSelect_2(0)" iocell 2 2
+set_io "ChipSelect_2(0)" iocell 2 1
+set_io "bottone(0)" iocell 2 2
 set_location "\SPI_IMU:BSPIM:load_rx_data\" 0 4 0 0
 set_location "\SPI_IMU:BSPIM:tx_status_0\" 0 3 1 1
 set_location "\SPI_IMU:BSPIM:tx_status_4\" 0 5 1 2

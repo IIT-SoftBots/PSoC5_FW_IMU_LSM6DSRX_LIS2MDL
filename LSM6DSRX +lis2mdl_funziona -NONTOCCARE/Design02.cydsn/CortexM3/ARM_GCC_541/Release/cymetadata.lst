@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 1
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc3EH2sS.s 			page 1
 
 
    1              		.syntax unified
@@ -26,7 +26,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 1
   23              		.global	cy_meta_configecc
   24              		.section	.cyconfigecc,"a",%progbits
   25              		.type	cy_meta_configecc, %object
-  26              		.size	cy_meta_configecc, 2168
+  26              		.size	cy_meta_configecc, 2172
   27              	cy_meta_configecc:
   28 0000 02       		.byte	2
   29 0001 4F       		.byte	79
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 1
   55 001b 40       		.byte	64
   56 001c 3F       		.byte	63
   57 001d 09       		.byte	9
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 2
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc3EH2sS.s 			page 2
 
 
   58 001e 01       		.byte	1
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 1
  112 0054 03       		.byte	3
  113 0055 40       		.byte	64
  114 0056 01       		.byte	1
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 3
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc3EH2sS.s 			page 3
 
 
  115 0057 40       		.byte	64
@@ -173,12 +173,12 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 1
  164 0088 00       		.byte	0
  165 0089 80       		.byte	-128
  166 008a 10       		.byte	16
- 167 008b 04       		.byte	4
+ 167 008b 02       		.byte	2
  168 008c 11       		.byte	17
- 169 008d 1C       		.byte	28
+ 169 008d 1A       		.byte	26
  170 008e 61       		.byte	97
  171 008f 80       		.byte	-128
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 4
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc3EH2sS.s 			page 4
 
 
  172 0090 64       		.byte	100
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 1
  226 00c6 49       		.byte	73
  227 00c7 FF       		.byte	-1
  228 00c8 4A       		.byte	74
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 5
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc3EH2sS.s 			page 5
 
 
  229 00c9 FF       		.byte	-1
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 1
  283 00ff 02       		.byte	2
  284 0100 93       		.byte	-109
  285 0101 26       		.byte	38
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 6
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc3EH2sS.s 			page 6
 
 
  286 0102 94       		.byte	-108
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 1
  340 0138 DF       		.byte	-33
  341 0139 01       		.byte	1
  342 013a 00       		.byte	0
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 7
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc3EH2sS.s 			page 7
 
 
  343 013b 14       		.byte	20
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 1
  397 0171 04       		.byte	4
  398 0172 3C       		.byte	60
  399 0173 10       		.byte	16
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 8
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc3EH2sS.s 			page 8
 
 
  400 0174 3E       		.byte	62
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 1
  454 01aa CA       		.byte	-54
  455 01ab 0E       		.byte	14
  456 01ac CC       		.byte	-52
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 9
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc3EH2sS.s 			page 9
 
 
  457 01ad 9F       		.byte	-97
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 1
  511 01e3 FF       		.byte	-1
  512 01e4 4F       		.byte	79
  513 01e5 01       		.byte	1
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 10
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc3EH2sS.s 			page 10
 
 
  514 01e6 50       		.byte	80
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 1
  568 021c 95       		.byte	-107
  569 021d 10       		.byte	16
  570 021e 98       		.byte	-104
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 11
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc3EH2sS.s 			page 11
 
 
  571 021f 02       		.byte	2
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 1
  625 0255 03       		.byte	3
  626 0256 CF       		.byte	-49
  627 0257 01       		.byte	1
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 12
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc3EH2sS.s 			page 12
 
 
  628 0258 D0       		.byte	-48
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 1
  682 028e 16       		.byte	22
  683 028f 40       		.byte	64
  684 0290 17       		.byte	23
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 13
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc3EH2sS.s 			page 13
 
 
  685 0291 08       		.byte	8
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 1
  739 02c7 01       		.byte	1
  740 02c8 6D       		.byte	109
  741 02c9 2E       		.byte	46
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 14
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc3EH2sS.s 			page 14
 
 
  742 02ca 6E       		.byte	110
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 1
  796 0300 02       		.byte	2
  797 0301 10       		.byte	16
  798 0302 04       		.byte	4
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 15
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc3EH2sS.s 			page 15
 
 
  799 0303 04       		.byte	4
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 1
  853 0339 FF       		.byte	-1
  854 033a 4D       		.byte	77
  855 033b 83       		.byte	-125
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 16
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc3EH2sS.s 			page 16
 
 
  856 033c 4E       		.byte	78
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 1
  910 0372 90       		.byte	-112
  911 0373 01       		.byte	1
  912 0374 94       		.byte	-108
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 17
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc3EH2sS.s 			page 17
 
 
  913 0375 10       		.byte	16
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 1
  967 03ab 22       		.byte	34
  968 03ac 09       		.byte	9
  969 03ad 11       		.byte	17
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 18
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc3EH2sS.s 			page 18
 
 
  970 03ae 0B       		.byte	11
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 1
  1024 03e4 5A       		.byte	90
  1025 03e5 10       		.byte	16
  1026 03e6 5D       		.byte	93
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 19
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc3EH2sS.s 			page 19
 
 
  1027 03e7 04       		.byte	4
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 1
  1081 041d 08       		.byte	8
  1082 041e DE       		.byte	-34
  1083 041f 10       		.byte	16
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 20
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc3EH2sS.s 			page 20
 
 
  1084 0420 EC       		.byte	-20
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 1
  1138 0456 4A       		.byte	74
  1139 0457 FF       		.byte	-1
  1140 0458 4B       		.byte	75
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 21
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc3EH2sS.s 			page 21
 
 
  1141 0459 FF       		.byte	-1
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 1
  1195 048f 12       		.byte	18
  1196 0490 90       		.byte	-112
  1197 0491 03       		.byte	3
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 22
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc3EH2sS.s 			page 22
 
 
  1198 0492 91       		.byte	-111
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 1
  1252 04c8 03       		.byte	3
  1253 04c9 40       		.byte	64
  1254 04ca 06       		.byte	6
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 23
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc3EH2sS.s 			page 23
 
 
  1255 04cb 80       		.byte	-128
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 1
  1309 0501 40       		.byte	64
  1310 0502 41       		.byte	65
  1311 0503 02       		.byte	2
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 24
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc3EH2sS.s 			page 24
 
 
  1312 0504 42       		.byte	66
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 1
  1366 053a 86       		.byte	-122
  1367 053b 01       		.byte	1
  1368 053c 01       		.byte	1
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 25
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc3EH2sS.s 			page 25
 
 
  1369 053d 10       		.byte	16
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 1
  1423 0573 04       		.byte	4
  1424 0574 5B       		.byte	91
  1425 0575 04       		.byte	4
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 26
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc3EH2sS.s 			page 26
 
 
  1426 0576 5C       		.byte	92
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 1
  1480 05ac C2       		.byte	-62
  1481 05ad 05       		.byte	5
  1482 05ae C4       		.byte	-60
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 27
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc3EH2sS.s 			page 27
 
 
  1483 05af 02       		.byte	2
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 1
  1537 05e5 10       		.byte	16
  1538 05e6 EF       		.byte	-17
  1539 05e7 12       		.byte	18
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 28
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc3EH2sS.s 			page 28
 
 
  1540 05e8 00       		.byte	0
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 1
  1594 061e 35       		.byte	53
  1595 061f 10       		.byte	16
  1596 0620 36       		.byte	54
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 29
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc3EH2sS.s 			page 29
 
 
  1597 0621 01       		.byte	1
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 1
  1651 0657 02       		.byte	2
  1652 0658 8F       		.byte	-113
  1653 0659 40       		.byte	64
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 30
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc3EH2sS.s 			page 30
 
 
  1654 065a 90       		.byte	-112
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 1
  1708 0690 D0       		.byte	-48
  1709 0691 07       		.byte	7
  1710 0692 D2       		.byte	-46
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 31
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc3EH2sS.s 			page 31
 
 
  1711 0693 0C       		.byte	12
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 1
  1765 06c9 03       		.byte	3
  1766 06ca 2D       		.byte	45
  1767 06cb 03       		.byte	3
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 32
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc3EH2sS.s 			page 32
 
 
  1768 06cc 2E       		.byte	46
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 1
  1822 0702 AB       		.byte	-85
  1823 0703 0E       		.byte	14
  1824 0704 AC       		.byte	-84
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 33
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc3EH2sS.s 			page 33
 
 
  1825 0705 02       		.byte	2
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 1
  1879 073b 40       		.byte	64
  1880 073c E3       		.byte	-29
  1881 073d 20       		.byte	32
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 34
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc3EH2sS.s 			page 34
 
 
  1882 073e 00       		.byte	0
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 1
  1936 0774 31       		.byte	49
  1937 0775 01       		.byte	1
  1938 0776 33       		.byte	51
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 35
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc3EH2sS.s 			page 35
 
 
  1939 0777 98       		.byte	-104
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 1
  1993 07ad 20       		.byte	32
  1994 07ae 9B       		.byte	-101
  1995 07af 50       		.byte	80
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 36
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc3EH2sS.s 			page 36
 
 
  1996 07b0 9C       		.byte	-100
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 1
  2050 07e6 10       		.byte	16
  2051 07e7 40       		.byte	64
  2052 07e8 96       		.byte	-106
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 37
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc3EH2sS.s 			page 37
 
 
  2053 07e9 04       		.byte	4
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 1
  2107 081f 04       		.byte	4
  2108 0820 84       		.byte	-124
  2109 0821 10       		.byte	16
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 38
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc3EH2sS.s 			page 38
 
 
  2110 0822 96       		.byte	-106
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 1
  2164 0858 80       		.byte	-128
  2165 0859 00       		.byte	0
  2166 085a 80       		.byte	-128
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 39
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc3EH2sS.s 			page 39
 
 
  2167 085b 00       		.byte	0
@@ -2294,495 +2294,499 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 1
  2177 0865 00       		.byte	0
  2178 0866 00       		.byte	0
  2179 0867 00       		.byte	0
- 2180 0868 00       		.byte	0
- 2181 0869 1C       		.byte	28
- 2182 086a 1C       		.byte	28
- 2183 086b 00       		.byte	0
- 2184 086c 1C       		.byte	28
+ 2180 0868 04       		.byte	4
+ 2181 0869 00       		.byte	0
+ 2182 086a 00       		.byte	0
+ 2183 086b 1E       		.byte	30
+ 2184 086c 1A       		.byte	26
  2185 086d 00       		.byte	0
- 2186 086e 00       		.byte	0
+ 2186 086e 1A       		.byte	26
  2187 086f 00       		.byte	0
- 2188 0870 80       		.byte	-128
+ 2188 0870 00       		.byte	0
  2189 0871 00       		.byte	0
  2190 0872 00       		.byte	0
  2191 0873 00       		.byte	0
- 2192 0874 00       		.byte	0
+ 2192 0874 80       		.byte	-128
  2193 0875 00       		.byte	0
  2194 0876 00       		.byte	0
  2195 0877 00       		.byte	0
- 2196              		.section	.cywolatch,"a",%progbits
- 2197              		.type	cy_meta_wonvl, %object
- 2198              		.size	cy_meta_wonvl, 4
- 2199              	cy_meta_wonvl:
- 2200 0000 BC       		.byte	-68
- 2201 0001 90       		.byte	-112
- 2202 0002 AC       		.byte	-84
- 2203 0003 AF       		.byte	-81
- 2204              		.section	.cycustnvl,"a",%progbits
- 2205              		.type	cy_meta_custnvl, %object
- 2206              		.size	cy_meta_custnvl, 4
- 2207              	cy_meta_custnvl:
- 2208 0000 00       		.byte	0
- 2209 0001 00       		.byte	0
- 2210 0002 40       		.byte	64
- 2211 0003 05       		.byte	5
- 2212              		.section	.cymeta,"a",%progbits
- 2213              		.type	cy_metadata, %object
- 2214              		.size	cy_metadata, 12
- 2215              	cy_metadata:
- 2216 0000 00       		.byte	0
- 2217 0001 01       		.byte	1
- 2218 0002 2E       		.byte	46
- 2219 0003 16       		.byte	22
- 2220 0004 10       		.byte	16
- 2221 0005 69       		.byte	105
- 2222 0006 00       		.byte	0
- 2223 0007 01       		.byte	1
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 40
+ 2196 0878 00       		.byte	0
+ 2197 0879 00       		.byte	0
+ 2198 087a 00       		.byte	0
+ 2199 087b 00       		.byte	0
+ 2200              		.section	.cywolatch,"a",%progbits
+ 2201              		.type	cy_meta_wonvl, %object
+ 2202              		.size	cy_meta_wonvl, 4
+ 2203              	cy_meta_wonvl:
+ 2204 0000 BC       		.byte	-68
+ 2205 0001 90       		.byte	-112
+ 2206 0002 AC       		.byte	-84
+ 2207 0003 AF       		.byte	-81
+ 2208              		.section	.cycustnvl,"a",%progbits
+ 2209              		.type	cy_meta_custnvl, %object
+ 2210              		.size	cy_meta_custnvl, 4
+ 2211              	cy_meta_custnvl:
+ 2212 0000 00       		.byte	0
+ 2213 0001 00       		.byte	0
+ 2214 0002 40       		.byte	64
+ 2215 0003 05       		.byte	5
+ 2216              		.section	.cymeta,"a",%progbits
+ 2217              		.type	cy_metadata, %object
+ 2218              		.size	cy_metadata, 12
+ 2219              	cy_metadata:
+ 2220 0000 00       		.byte	0
+ 2221 0001 01       		.byte	1
+ 2222 0002 2E       		.byte	46
+ 2223 0003 16       		.byte	22
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc3EH2sS.s 			page 40
 
 
- 2224 0008 00       		.byte	0
- 2225 0009 00       		.byte	0
- 2226 000a 00       		.byte	0
- 2227 000b 00       		.byte	0
- 2228              		.section	.cyflashprotect,"a",%progbits
- 2229              		.type	cy_meta_flashprotect, %object
- 2230              		.size	cy_meta_flashprotect, 256
- 2231              	cy_meta_flashprotect:
- 2232 0000 00000000 		.space	256
- 2232      00000000 
- 2232      00000000 
- 2232      00000000 
- 2232      00000000 
- 2233              		.text
- 2234              	.Letext0:
- 2235              		.file 1 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
- 2236              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
- 2237              		.file 3 "Generated_Source\\PSoC5\\cymetadata.c"
- 2238              		.section	.debug_info,"",%progbits
- 2239              	.Ldebug_info0:
- 2240 0000 35010000 		.4byte	0x135
- 2241 0004 0400     		.2byte	0x4
- 2242 0006 00000000 		.4byte	.Ldebug_abbrev0
- 2243 000a 04       		.byte	0x4
- 2244 000b 01       		.uleb128 0x1
- 2245 000c 08010000 		.4byte	.LASF17
- 2246 0010 0C       		.byte	0xc
- 2247 0011 F7010000 		.4byte	.LASF18
- 2248 0015 0A000000 		.4byte	.LASF19
- 2249 0019 00000000 		.4byte	.Ldebug_line0
- 2250 001d 02       		.uleb128 0x2
- 2251 001e 01       		.byte	0x1
- 2252 001f 06       		.byte	0x6
- 2253 0020 EB010000 		.4byte	.LASF0
- 2254 0024 03       		.uleb128 0x3
- 2255 0025 00000000 		.4byte	.LASF9
- 2256 0029 01       		.byte	0x1
- 2257 002a 1D       		.byte	0x1d
- 2258 002b 2F000000 		.4byte	0x2f
- 2259 002f 02       		.uleb128 0x2
- 2260 0030 01       		.byte	0x1
- 2261 0031 08       		.byte	0x8
- 2262 0032 A6000000 		.4byte	.LASF1
- 2263 0036 02       		.uleb128 0x2
- 2264 0037 02       		.byte	0x2
- 2265 0038 05       		.byte	0x5
- 2266 0039 D8010000 		.4byte	.LASF2
- 2267 003d 02       		.uleb128 0x2
- 2268 003e 02       		.byte	0x2
- 2269 003f 07       		.byte	0x7
- 2270 0040 C6000000 		.4byte	.LASF3
- 2271 0044 02       		.uleb128 0x2
- 2272 0045 04       		.byte	0x4
- 2273 0046 05       		.byte	0x5
- 2274 0047 E2010000 		.4byte	.LASF4
- 2275 004b 02       		.uleb128 0x2
- 2276 004c 04       		.byte	0x4
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 41
+ 2224 0004 10       		.byte	16
+ 2225 0005 69       		.byte	105
+ 2226 0006 00       		.byte	0
+ 2227 0007 01       		.byte	1
+ 2228 0008 00       		.byte	0
+ 2229 0009 00       		.byte	0
+ 2230 000a 00       		.byte	0
+ 2231 000b 00       		.byte	0
+ 2232              		.section	.cyflashprotect,"a",%progbits
+ 2233              		.type	cy_meta_flashprotect, %object
+ 2234              		.size	cy_meta_flashprotect, 256
+ 2235              	cy_meta_flashprotect:
+ 2236 0000 00000000 		.space	256
+ 2236      00000000 
+ 2236      00000000 
+ 2236      00000000 
+ 2236      00000000 
+ 2237              		.text
+ 2238              	.Letext0:
+ 2239              		.file 1 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 2240              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 2241              		.file 3 "Generated_Source\\PSoC5\\cymetadata.c"
+ 2242              		.section	.debug_info,"",%progbits
+ 2243              	.Ldebug_info0:
+ 2244 0000 35010000 		.4byte	0x135
+ 2245 0004 0400     		.2byte	0x4
+ 2246 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 2247 000a 04       		.byte	0x4
+ 2248 000b 01       		.uleb128 0x1
+ 2249 000c 08010000 		.4byte	.LASF17
+ 2250 0010 0C       		.byte	0xc
+ 2251 0011 F7010000 		.4byte	.LASF18
+ 2252 0015 0A000000 		.4byte	.LASF19
+ 2253 0019 00000000 		.4byte	.Ldebug_line0
+ 2254 001d 02       		.uleb128 0x2
+ 2255 001e 01       		.byte	0x1
+ 2256 001f 06       		.byte	0x6
+ 2257 0020 EB010000 		.4byte	.LASF0
+ 2258 0024 03       		.uleb128 0x3
+ 2259 0025 00000000 		.4byte	.LASF9
+ 2260 0029 01       		.byte	0x1
+ 2261 002a 1D       		.byte	0x1d
+ 2262 002b 2F000000 		.4byte	0x2f
+ 2263 002f 02       		.uleb128 0x2
+ 2264 0030 01       		.byte	0x1
+ 2265 0031 08       		.byte	0x8
+ 2266 0032 A6000000 		.4byte	.LASF1
+ 2267 0036 02       		.uleb128 0x2
+ 2268 0037 02       		.byte	0x2
+ 2269 0038 05       		.byte	0x5
+ 2270 0039 D8010000 		.4byte	.LASF2
+ 2271 003d 02       		.uleb128 0x2
+ 2272 003e 02       		.byte	0x2
+ 2273 003f 07       		.byte	0x7
+ 2274 0040 C6000000 		.4byte	.LASF3
+ 2275 0044 02       		.uleb128 0x2
+ 2276 0045 04       		.byte	0x4
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc3EH2sS.s 			page 41
 
 
- 2277 004d 07       		.byte	0x7
- 2278 004e B4000000 		.4byte	.LASF5
- 2279 0052 02       		.uleb128 0x2
- 2280 0053 08       		.byte	0x8
- 2281 0054 05       		.byte	0x5
- 2282 0055 CA010000 		.4byte	.LASF6
- 2283 0059 02       		.uleb128 0x2
- 2284 005a 08       		.byte	0x8
- 2285 005b 07       		.byte	0x7
- 2286 005c 8F000000 		.4byte	.LASF7
- 2287 0060 04       		.uleb128 0x4
- 2288 0061 04       		.byte	0x4
- 2289 0062 05       		.byte	0x5
- 2290 0063 696E7400 		.ascii	"int\000"
- 2291 0067 02       		.uleb128 0x2
- 2292 0068 04       		.byte	0x4
- 2293 0069 07       		.byte	0x7
- 2294 006a FB000000 		.4byte	.LASF8
- 2295 006e 03       		.uleb128 0x3
- 2296 006f 96010000 		.4byte	.LASF10
- 2297 0073 02       		.byte	0x2
- 2298 0074 18       		.byte	0x18
- 2299 0075 24000000 		.4byte	0x24
- 2300 0079 05       		.uleb128 0x5
- 2301 007a 91000000 		.4byte	0x91
- 2302 007e 8A000000 		.4byte	0x8a
- 2303 0082 06       		.uleb128 0x6
- 2304 0083 8A000000 		.4byte	0x8a
- 2305 0087 7708     		.2byte	0x877
- 2306 0089 00       		.byte	0
- 2307 008a 02       		.uleb128 0x2
- 2308 008b 04       		.byte	0x4
- 2309 008c 07       		.byte	0x7
- 2310 008d C1010000 		.4byte	.LASF11
- 2311 0091 07       		.uleb128 0x7
- 2312 0092 6E000000 		.4byte	0x6e
- 2313 0096 08       		.uleb128 0x8
- 2314 0097 E9000000 		.4byte	.LASF12
- 2315 009b 03       		.byte	0x3
- 2316 009c 1F       		.byte	0x1f
- 2317 009d A7000000 		.4byte	0xa7
- 2318 00a1 05       		.uleb128 0x5
- 2319 00a2 03       		.byte	0x3
- 2320 00a3 00000000 		.4byte	cy_meta_configecc
- 2321 00a7 07       		.uleb128 0x7
- 2322 00a8 79000000 		.4byte	0x79
- 2323 00ac 05       		.uleb128 0x5
- 2324 00ad 91000000 		.4byte	0x91
- 2325 00b1 BC000000 		.4byte	0xbc
- 2326 00b5 09       		.uleb128 0x9
- 2327 00b6 8A000000 		.4byte	0x8a
- 2328 00ba 03       		.byte	0x3
- 2329 00bb 00       		.byte	0
- 2330 00bc 0A       		.uleb128 0xa
- 2331 00bd D9000000 		.4byte	.LASF13
- 2332 00c1 03       		.byte	0x3
- 2333 00c2 3B01     		.2byte	0x13b
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 42
+ 2277 0046 05       		.byte	0x5
+ 2278 0047 E2010000 		.4byte	.LASF4
+ 2279 004b 02       		.uleb128 0x2
+ 2280 004c 04       		.byte	0x4
+ 2281 004d 07       		.byte	0x7
+ 2282 004e B4000000 		.4byte	.LASF5
+ 2283 0052 02       		.uleb128 0x2
+ 2284 0053 08       		.byte	0x8
+ 2285 0054 05       		.byte	0x5
+ 2286 0055 CA010000 		.4byte	.LASF6
+ 2287 0059 02       		.uleb128 0x2
+ 2288 005a 08       		.byte	0x8
+ 2289 005b 07       		.byte	0x7
+ 2290 005c 8F000000 		.4byte	.LASF7
+ 2291 0060 04       		.uleb128 0x4
+ 2292 0061 04       		.byte	0x4
+ 2293 0062 05       		.byte	0x5
+ 2294 0063 696E7400 		.ascii	"int\000"
+ 2295 0067 02       		.uleb128 0x2
+ 2296 0068 04       		.byte	0x4
+ 2297 0069 07       		.byte	0x7
+ 2298 006a FB000000 		.4byte	.LASF8
+ 2299 006e 03       		.uleb128 0x3
+ 2300 006f 96010000 		.4byte	.LASF10
+ 2301 0073 02       		.byte	0x2
+ 2302 0074 18       		.byte	0x18
+ 2303 0075 24000000 		.4byte	0x24
+ 2304 0079 05       		.uleb128 0x5
+ 2305 007a 91000000 		.4byte	0x91
+ 2306 007e 8A000000 		.4byte	0x8a
+ 2307 0082 06       		.uleb128 0x6
+ 2308 0083 8A000000 		.4byte	0x8a
+ 2309 0087 7B08     		.2byte	0x87b
+ 2310 0089 00       		.byte	0
+ 2311 008a 02       		.uleb128 0x2
+ 2312 008b 04       		.byte	0x4
+ 2313 008c 07       		.byte	0x7
+ 2314 008d C1010000 		.4byte	.LASF11
+ 2315 0091 07       		.uleb128 0x7
+ 2316 0092 6E000000 		.4byte	0x6e
+ 2317 0096 08       		.uleb128 0x8
+ 2318 0097 E9000000 		.4byte	.LASF12
+ 2319 009b 03       		.byte	0x3
+ 2320 009c 1F       		.byte	0x1f
+ 2321 009d A7000000 		.4byte	0xa7
+ 2322 00a1 05       		.uleb128 0x5
+ 2323 00a2 03       		.byte	0x3
+ 2324 00a3 00000000 		.4byte	cy_meta_configecc
+ 2325 00a7 07       		.uleb128 0x7
+ 2326 00a8 79000000 		.4byte	0x79
+ 2327 00ac 05       		.uleb128 0x5
+ 2328 00ad 91000000 		.4byte	0x91
+ 2329 00b1 BC000000 		.4byte	0xbc
+ 2330 00b5 09       		.uleb128 0x9
+ 2331 00b6 8A000000 		.4byte	0x8a
+ 2332 00ba 03       		.byte	0x3
+ 2333 00bb 00       		.byte	0
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc3EH2sS.s 			page 42
 
 
- 2334 00c4 CE000000 		.4byte	0xce
- 2335 00c8 05       		.uleb128 0x5
- 2336 00c9 03       		.byte	0x3
- 2337 00ca 00000000 		.4byte	cy_meta_custnvl
- 2338 00ce 07       		.uleb128 0x7
- 2339 00cf AC000000 		.4byte	0xac
- 2340 00d3 0A       		.uleb128 0xa
- 2341 00d4 B3010000 		.4byte	.LASF14
- 2342 00d8 03       		.byte	0x3
- 2343 00d9 4901     		.2byte	0x149
- 2344 00db E5000000 		.4byte	0xe5
- 2345 00df 05       		.uleb128 0x5
- 2346 00e0 03       		.byte	0x3
- 2347 00e1 00000000 		.4byte	cy_meta_wonvl
- 2348 00e5 07       		.uleb128 0x7
- 2349 00e6 AC000000 		.4byte	0xac
- 2350 00ea 05       		.uleb128 0x5
- 2351 00eb 91000000 		.4byte	0x91
- 2352 00ef FA000000 		.4byte	0xfa
- 2353 00f3 09       		.uleb128 0x9
- 2354 00f4 8A000000 		.4byte	0x8a
- 2355 00f8 FF       		.byte	0xff
- 2356 00f9 00       		.byte	0
- 2357 00fa 0A       		.uleb128 0xa
- 2358 00fb 9E010000 		.4byte	.LASF15
- 2359 00ff 03       		.byte	0x3
- 2360 0100 5701     		.2byte	0x157
- 2361 0102 0C010000 		.4byte	0x10c
- 2362 0106 05       		.uleb128 0x5
- 2363 0107 03       		.byte	0x3
- 2364 0108 00000000 		.4byte	cy_meta_flashprotect
- 2365 010c 07       		.uleb128 0x7
- 2366 010d EA000000 		.4byte	0xea
- 2367 0111 05       		.uleb128 0x5
- 2368 0112 91000000 		.4byte	0x91
- 2369 0116 21010000 		.4byte	0x121
- 2370 011a 09       		.uleb128 0x9
- 2371 011b 8A000000 		.4byte	0x8a
- 2372 011f 0B       		.byte	0xb
- 2373 0120 00       		.byte	0
- 2374 0121 0A       		.uleb128 0xa
- 2375 0122 83000000 		.4byte	.LASF16
- 2376 0126 03       		.byte	0x3
- 2377 0127 8401     		.2byte	0x184
- 2378 0129 33010000 		.4byte	0x133
- 2379 012d 05       		.uleb128 0x5
- 2380 012e 03       		.byte	0x3
- 2381 012f 00000000 		.4byte	cy_metadata
- 2382 0133 07       		.uleb128 0x7
- 2383 0134 11010000 		.4byte	0x111
- 2384 0138 00       		.byte	0
- 2385              		.section	.debug_abbrev,"",%progbits
- 2386              	.Ldebug_abbrev0:
- 2387 0000 01       		.uleb128 0x1
- 2388 0001 11       		.uleb128 0x11
- 2389 0002 01       		.byte	0x1
- 2390 0003 25       		.uleb128 0x25
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 43
+ 2334 00bc 0A       		.uleb128 0xa
+ 2335 00bd D9000000 		.4byte	.LASF13
+ 2336 00c1 03       		.byte	0x3
+ 2337 00c2 3C01     		.2byte	0x13c
+ 2338 00c4 CE000000 		.4byte	0xce
+ 2339 00c8 05       		.uleb128 0x5
+ 2340 00c9 03       		.byte	0x3
+ 2341 00ca 00000000 		.4byte	cy_meta_custnvl
+ 2342 00ce 07       		.uleb128 0x7
+ 2343 00cf AC000000 		.4byte	0xac
+ 2344 00d3 0A       		.uleb128 0xa
+ 2345 00d4 B3010000 		.4byte	.LASF14
+ 2346 00d8 03       		.byte	0x3
+ 2347 00d9 4A01     		.2byte	0x14a
+ 2348 00db E5000000 		.4byte	0xe5
+ 2349 00df 05       		.uleb128 0x5
+ 2350 00e0 03       		.byte	0x3
+ 2351 00e1 00000000 		.4byte	cy_meta_wonvl
+ 2352 00e5 07       		.uleb128 0x7
+ 2353 00e6 AC000000 		.4byte	0xac
+ 2354 00ea 05       		.uleb128 0x5
+ 2355 00eb 91000000 		.4byte	0x91
+ 2356 00ef FA000000 		.4byte	0xfa
+ 2357 00f3 09       		.uleb128 0x9
+ 2358 00f4 8A000000 		.4byte	0x8a
+ 2359 00f8 FF       		.byte	0xff
+ 2360 00f9 00       		.byte	0
+ 2361 00fa 0A       		.uleb128 0xa
+ 2362 00fb 9E010000 		.4byte	.LASF15
+ 2363 00ff 03       		.byte	0x3
+ 2364 0100 5801     		.2byte	0x158
+ 2365 0102 0C010000 		.4byte	0x10c
+ 2366 0106 05       		.uleb128 0x5
+ 2367 0107 03       		.byte	0x3
+ 2368 0108 00000000 		.4byte	cy_meta_flashprotect
+ 2369 010c 07       		.uleb128 0x7
+ 2370 010d EA000000 		.4byte	0xea
+ 2371 0111 05       		.uleb128 0x5
+ 2372 0112 91000000 		.4byte	0x91
+ 2373 0116 21010000 		.4byte	0x121
+ 2374 011a 09       		.uleb128 0x9
+ 2375 011b 8A000000 		.4byte	0x8a
+ 2376 011f 0B       		.byte	0xb
+ 2377 0120 00       		.byte	0
+ 2378 0121 0A       		.uleb128 0xa
+ 2379 0122 83000000 		.4byte	.LASF16
+ 2380 0126 03       		.byte	0x3
+ 2381 0127 8501     		.2byte	0x185
+ 2382 0129 33010000 		.4byte	0x133
+ 2383 012d 05       		.uleb128 0x5
+ 2384 012e 03       		.byte	0x3
+ 2385 012f 00000000 		.4byte	cy_metadata
+ 2386 0133 07       		.uleb128 0x7
+ 2387 0134 11010000 		.4byte	0x111
+ 2388 0138 00       		.byte	0
+ 2389              		.section	.debug_abbrev,"",%progbits
+ 2390              	.Ldebug_abbrev0:
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc3EH2sS.s 			page 43
 
 
- 2391 0004 0E       		.uleb128 0xe
- 2392 0005 13       		.uleb128 0x13
- 2393 0006 0B       		.uleb128 0xb
- 2394 0007 03       		.uleb128 0x3
- 2395 0008 0E       		.uleb128 0xe
- 2396 0009 1B       		.uleb128 0x1b
- 2397 000a 0E       		.uleb128 0xe
- 2398 000b 10       		.uleb128 0x10
- 2399 000c 17       		.uleb128 0x17
- 2400 000d 00       		.byte	0
- 2401 000e 00       		.byte	0
- 2402 000f 02       		.uleb128 0x2
- 2403 0010 24       		.uleb128 0x24
- 2404 0011 00       		.byte	0
- 2405 0012 0B       		.uleb128 0xb
- 2406 0013 0B       		.uleb128 0xb
- 2407 0014 3E       		.uleb128 0x3e
- 2408 0015 0B       		.uleb128 0xb
- 2409 0016 03       		.uleb128 0x3
- 2410 0017 0E       		.uleb128 0xe
- 2411 0018 00       		.byte	0
- 2412 0019 00       		.byte	0
- 2413 001a 03       		.uleb128 0x3
- 2414 001b 16       		.uleb128 0x16
- 2415 001c 00       		.byte	0
- 2416 001d 03       		.uleb128 0x3
- 2417 001e 0E       		.uleb128 0xe
- 2418 001f 3A       		.uleb128 0x3a
- 2419 0020 0B       		.uleb128 0xb
- 2420 0021 3B       		.uleb128 0x3b
- 2421 0022 0B       		.uleb128 0xb
- 2422 0023 49       		.uleb128 0x49
- 2423 0024 13       		.uleb128 0x13
- 2424 0025 00       		.byte	0
- 2425 0026 00       		.byte	0
- 2426 0027 04       		.uleb128 0x4
- 2427 0028 24       		.uleb128 0x24
- 2428 0029 00       		.byte	0
- 2429 002a 0B       		.uleb128 0xb
- 2430 002b 0B       		.uleb128 0xb
- 2431 002c 3E       		.uleb128 0x3e
- 2432 002d 0B       		.uleb128 0xb
- 2433 002e 03       		.uleb128 0x3
- 2434 002f 08       		.uleb128 0x8
- 2435 0030 00       		.byte	0
- 2436 0031 00       		.byte	0
- 2437 0032 05       		.uleb128 0x5
- 2438 0033 01       		.uleb128 0x1
- 2439 0034 01       		.byte	0x1
- 2440 0035 49       		.uleb128 0x49
- 2441 0036 13       		.uleb128 0x13
- 2442 0037 01       		.uleb128 0x1
- 2443 0038 13       		.uleb128 0x13
- 2444 0039 00       		.byte	0
- 2445 003a 00       		.byte	0
- 2446 003b 06       		.uleb128 0x6
- 2447 003c 21       		.uleb128 0x21
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 44
+ 2391 0000 01       		.uleb128 0x1
+ 2392 0001 11       		.uleb128 0x11
+ 2393 0002 01       		.byte	0x1
+ 2394 0003 25       		.uleb128 0x25
+ 2395 0004 0E       		.uleb128 0xe
+ 2396 0005 13       		.uleb128 0x13
+ 2397 0006 0B       		.uleb128 0xb
+ 2398 0007 03       		.uleb128 0x3
+ 2399 0008 0E       		.uleb128 0xe
+ 2400 0009 1B       		.uleb128 0x1b
+ 2401 000a 0E       		.uleb128 0xe
+ 2402 000b 10       		.uleb128 0x10
+ 2403 000c 17       		.uleb128 0x17
+ 2404 000d 00       		.byte	0
+ 2405 000e 00       		.byte	0
+ 2406 000f 02       		.uleb128 0x2
+ 2407 0010 24       		.uleb128 0x24
+ 2408 0011 00       		.byte	0
+ 2409 0012 0B       		.uleb128 0xb
+ 2410 0013 0B       		.uleb128 0xb
+ 2411 0014 3E       		.uleb128 0x3e
+ 2412 0015 0B       		.uleb128 0xb
+ 2413 0016 03       		.uleb128 0x3
+ 2414 0017 0E       		.uleb128 0xe
+ 2415 0018 00       		.byte	0
+ 2416 0019 00       		.byte	0
+ 2417 001a 03       		.uleb128 0x3
+ 2418 001b 16       		.uleb128 0x16
+ 2419 001c 00       		.byte	0
+ 2420 001d 03       		.uleb128 0x3
+ 2421 001e 0E       		.uleb128 0xe
+ 2422 001f 3A       		.uleb128 0x3a
+ 2423 0020 0B       		.uleb128 0xb
+ 2424 0021 3B       		.uleb128 0x3b
+ 2425 0022 0B       		.uleb128 0xb
+ 2426 0023 49       		.uleb128 0x49
+ 2427 0024 13       		.uleb128 0x13
+ 2428 0025 00       		.byte	0
+ 2429 0026 00       		.byte	0
+ 2430 0027 04       		.uleb128 0x4
+ 2431 0028 24       		.uleb128 0x24
+ 2432 0029 00       		.byte	0
+ 2433 002a 0B       		.uleb128 0xb
+ 2434 002b 0B       		.uleb128 0xb
+ 2435 002c 3E       		.uleb128 0x3e
+ 2436 002d 0B       		.uleb128 0xb
+ 2437 002e 03       		.uleb128 0x3
+ 2438 002f 08       		.uleb128 0x8
+ 2439 0030 00       		.byte	0
+ 2440 0031 00       		.byte	0
+ 2441 0032 05       		.uleb128 0x5
+ 2442 0033 01       		.uleb128 0x1
+ 2443 0034 01       		.byte	0x1
+ 2444 0035 49       		.uleb128 0x49
+ 2445 0036 13       		.uleb128 0x13
+ 2446 0037 01       		.uleb128 0x1
+ 2447 0038 13       		.uleb128 0x13
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc3EH2sS.s 			page 44
 
 
- 2448 003d 00       		.byte	0
- 2449 003e 49       		.uleb128 0x49
- 2450 003f 13       		.uleb128 0x13
- 2451 0040 2F       		.uleb128 0x2f
- 2452 0041 05       		.uleb128 0x5
- 2453 0042 00       		.byte	0
- 2454 0043 00       		.byte	0
- 2455 0044 07       		.uleb128 0x7
- 2456 0045 26       		.uleb128 0x26
- 2457 0046 00       		.byte	0
- 2458 0047 49       		.uleb128 0x49
- 2459 0048 13       		.uleb128 0x13
- 2460 0049 00       		.byte	0
- 2461 004a 00       		.byte	0
- 2462 004b 08       		.uleb128 0x8
- 2463 004c 34       		.uleb128 0x34
- 2464 004d 00       		.byte	0
- 2465 004e 03       		.uleb128 0x3
- 2466 004f 0E       		.uleb128 0xe
- 2467 0050 3A       		.uleb128 0x3a
- 2468 0051 0B       		.uleb128 0xb
- 2469 0052 3B       		.uleb128 0x3b
- 2470 0053 0B       		.uleb128 0xb
- 2471 0054 49       		.uleb128 0x49
- 2472 0055 13       		.uleb128 0x13
- 2473 0056 3F       		.uleb128 0x3f
- 2474 0057 19       		.uleb128 0x19
- 2475 0058 02       		.uleb128 0x2
- 2476 0059 18       		.uleb128 0x18
- 2477 005a 00       		.byte	0
- 2478 005b 00       		.byte	0
- 2479 005c 09       		.uleb128 0x9
- 2480 005d 21       		.uleb128 0x21
- 2481 005e 00       		.byte	0
- 2482 005f 49       		.uleb128 0x49
- 2483 0060 13       		.uleb128 0x13
- 2484 0061 2F       		.uleb128 0x2f
- 2485 0062 0B       		.uleb128 0xb
- 2486 0063 00       		.byte	0
- 2487 0064 00       		.byte	0
- 2488 0065 0A       		.uleb128 0xa
- 2489 0066 34       		.uleb128 0x34
- 2490 0067 00       		.byte	0
- 2491 0068 03       		.uleb128 0x3
- 2492 0069 0E       		.uleb128 0xe
- 2493 006a 3A       		.uleb128 0x3a
- 2494 006b 0B       		.uleb128 0xb
- 2495 006c 3B       		.uleb128 0x3b
- 2496 006d 05       		.uleb128 0x5
- 2497 006e 49       		.uleb128 0x49
- 2498 006f 13       		.uleb128 0x13
- 2499 0070 3F       		.uleb128 0x3f
- 2500 0071 19       		.uleb128 0x19
- 2501 0072 02       		.uleb128 0x2
- 2502 0073 18       		.uleb128 0x18
- 2503 0074 00       		.byte	0
- 2504 0075 00       		.byte	0
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 45
+ 2448 0039 00       		.byte	0
+ 2449 003a 00       		.byte	0
+ 2450 003b 06       		.uleb128 0x6
+ 2451 003c 21       		.uleb128 0x21
+ 2452 003d 00       		.byte	0
+ 2453 003e 49       		.uleb128 0x49
+ 2454 003f 13       		.uleb128 0x13
+ 2455 0040 2F       		.uleb128 0x2f
+ 2456 0041 05       		.uleb128 0x5
+ 2457 0042 00       		.byte	0
+ 2458 0043 00       		.byte	0
+ 2459 0044 07       		.uleb128 0x7
+ 2460 0045 26       		.uleb128 0x26
+ 2461 0046 00       		.byte	0
+ 2462 0047 49       		.uleb128 0x49
+ 2463 0048 13       		.uleb128 0x13
+ 2464 0049 00       		.byte	0
+ 2465 004a 00       		.byte	0
+ 2466 004b 08       		.uleb128 0x8
+ 2467 004c 34       		.uleb128 0x34
+ 2468 004d 00       		.byte	0
+ 2469 004e 03       		.uleb128 0x3
+ 2470 004f 0E       		.uleb128 0xe
+ 2471 0050 3A       		.uleb128 0x3a
+ 2472 0051 0B       		.uleb128 0xb
+ 2473 0052 3B       		.uleb128 0x3b
+ 2474 0053 0B       		.uleb128 0xb
+ 2475 0054 49       		.uleb128 0x49
+ 2476 0055 13       		.uleb128 0x13
+ 2477 0056 3F       		.uleb128 0x3f
+ 2478 0057 19       		.uleb128 0x19
+ 2479 0058 02       		.uleb128 0x2
+ 2480 0059 18       		.uleb128 0x18
+ 2481 005a 00       		.byte	0
+ 2482 005b 00       		.byte	0
+ 2483 005c 09       		.uleb128 0x9
+ 2484 005d 21       		.uleb128 0x21
+ 2485 005e 00       		.byte	0
+ 2486 005f 49       		.uleb128 0x49
+ 2487 0060 13       		.uleb128 0x13
+ 2488 0061 2F       		.uleb128 0x2f
+ 2489 0062 0B       		.uleb128 0xb
+ 2490 0063 00       		.byte	0
+ 2491 0064 00       		.byte	0
+ 2492 0065 0A       		.uleb128 0xa
+ 2493 0066 34       		.uleb128 0x34
+ 2494 0067 00       		.byte	0
+ 2495 0068 03       		.uleb128 0x3
+ 2496 0069 0E       		.uleb128 0xe
+ 2497 006a 3A       		.uleb128 0x3a
+ 2498 006b 0B       		.uleb128 0xb
+ 2499 006c 3B       		.uleb128 0x3b
+ 2500 006d 05       		.uleb128 0x5
+ 2501 006e 49       		.uleb128 0x49
+ 2502 006f 13       		.uleb128 0x13
+ 2503 0070 3F       		.uleb128 0x3f
+ 2504 0071 19       		.uleb128 0x19
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc3EH2sS.s 			page 45
 
 
- 2505 0076 00       		.byte	0
- 2506              		.section	.debug_aranges,"",%progbits
- 2507 0000 14000000 		.4byte	0x14
- 2508 0004 0200     		.2byte	0x2
- 2509 0006 00000000 		.4byte	.Ldebug_info0
- 2510 000a 04       		.byte	0x4
- 2511 000b 00       		.byte	0
- 2512 000c 0000     		.2byte	0
- 2513 000e 0000     		.2byte	0
- 2514 0010 00000000 		.4byte	0
- 2515 0014 00000000 		.4byte	0
- 2516              		.section	.debug_line,"",%progbits
- 2517              	.Ldebug_line0:
- 2518 0000 3D010000 		.section	.debug_str,"MS",%progbits,1
- 2518      02003701 
- 2518      00000201 
- 2518      FB0E0D00 
- 2518      01010101 
- 2519              	.LASF9:
- 2520 0000 5F5F7569 		.ascii	"__uint8_t\000"
- 2520      6E74385F 
- 2520      7400
- 2521              	.LASF19:
- 2522 000a 433A5C55 		.ascii	"C:\\Users\\mgnocco\\Documents\\Git\\PSoC5\\PSoC5_FW"
- 2522      73657273 
- 2522      5C6D676E 
- 2522      6F63636F 
- 2522      5C446F63 
- 2523 0037 5F494D55 		.ascii	"_IMU_LSM6DSRX_LIS2MDL\\LSM6DSRX +lis2mdl_funziona -"
- 2523      5F4C534D 
- 2523      36445352 
- 2523      585F4C49 
- 2523      53324D44 
- 2524 0069 4E4F4E54 		.ascii	"NONTOCCARE\\Design02.cydsn\000"
- 2524      4F434341 
- 2524      52455C44 
- 2524      65736967 
- 2524      6E30322E 
- 2525              	.LASF16:
- 2526 0083 63795F6D 		.ascii	"cy_metadata\000"
- 2526      65746164 
- 2526      61746100 
- 2527              	.LASF7:
- 2528 008f 6C6F6E67 		.ascii	"long long unsigned int\000"
- 2528      206C6F6E 
- 2528      6720756E 
- 2528      7369676E 
- 2528      65642069 
- 2529              	.LASF1:
- 2530 00a6 756E7369 		.ascii	"unsigned char\000"
- 2530      676E6564 
- 2530      20636861 
- 2530      7200
- 2531              	.LASF5:
- 2532 00b4 6C6F6E67 		.ascii	"long unsigned int\000"
- 2532      20756E73 
- 2532      69676E65 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 46
+ 2505 0072 02       		.uleb128 0x2
+ 2506 0073 18       		.uleb128 0x18
+ 2507 0074 00       		.byte	0
+ 2508 0075 00       		.byte	0
+ 2509 0076 00       		.byte	0
+ 2510              		.section	.debug_aranges,"",%progbits
+ 2511 0000 14000000 		.4byte	0x14
+ 2512 0004 0200     		.2byte	0x2
+ 2513 0006 00000000 		.4byte	.Ldebug_info0
+ 2514 000a 04       		.byte	0x4
+ 2515 000b 00       		.byte	0
+ 2516 000c 0000     		.2byte	0
+ 2517 000e 0000     		.2byte	0
+ 2518 0010 00000000 		.4byte	0
+ 2519 0014 00000000 		.4byte	0
+ 2520              		.section	.debug_line,"",%progbits
+ 2521              	.Ldebug_line0:
+ 2522 0000 3D010000 		.section	.debug_str,"MS",%progbits,1
+ 2522      02003701 
+ 2522      00000201 
+ 2522      FB0E0D00 
+ 2522      01010101 
+ 2523              	.LASF9:
+ 2524 0000 5F5F7569 		.ascii	"__uint8_t\000"
+ 2524      6E74385F 
+ 2524      7400
+ 2525              	.LASF19:
+ 2526 000a 433A5C55 		.ascii	"C:\\Users\\mgnocco\\Documents\\Git\\PSoC5\\PSoC5_FW"
+ 2526      73657273 
+ 2526      5C6D676E 
+ 2526      6F63636F 
+ 2526      5C446F63 
+ 2527 0037 5F494D55 		.ascii	"_IMU_LSM6DSRX_LIS2MDL\\LSM6DSRX +lis2mdl_funziona -"
+ 2527      5F4C534D 
+ 2527      36445352 
+ 2527      585F4C49 
+ 2527      53324D44 
+ 2528 0069 4E4F4E54 		.ascii	"NONTOCCARE\\Design02.cydsn\000"
+ 2528      4F434341 
+ 2528      52455C44 
+ 2528      65736967 
+ 2528      6E30322E 
+ 2529              	.LASF16:
+ 2530 0083 63795F6D 		.ascii	"cy_metadata\000"
+ 2530      65746164 
+ 2530      61746100 
+ 2531              	.LASF7:
+ 2532 008f 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 2532      206C6F6E 
+ 2532      6720756E 
+ 2532      7369676E 
+ 2532      65642069 
+ 2533              	.LASF1:
+ 2534 00a6 756E7369 		.ascii	"unsigned char\000"
+ 2534      676E6564 
+ 2534      20636861 
+ 2534      7200
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc3EH2sS.s 			page 46
 
 
- 2532      6420696E 
- 2532      7400
- 2533              	.LASF3:
- 2534 00c6 73686F72 		.ascii	"short unsigned int\000"
- 2534      7420756E 
- 2534      7369676E 
- 2534      65642069 
- 2534      6E7400
- 2535              	.LASF13:
- 2536 00d9 63795F6D 		.ascii	"cy_meta_custnvl\000"
- 2536      6574615F 
- 2536      63757374 
- 2536      6E766C00 
- 2537              	.LASF12:
- 2538 00e9 63795F6D 		.ascii	"cy_meta_configecc\000"
- 2538      6574615F 
- 2538      636F6E66 
- 2538      69676563 
- 2538      6300
- 2539              	.LASF8:
- 2540 00fb 756E7369 		.ascii	"unsigned int\000"
- 2540      676E6564 
- 2540      20696E74 
- 2540      00
- 2541              	.LASF17:
- 2542 0108 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 2542      43313120 
- 2542      352E342E 
- 2542      31203230 
- 2542      31363036 
- 2543 013b 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 2543      20726576 
- 2543      6973696F 
- 2543      6E203233 
- 2543      37373135 
- 2544 016e 73202D66 		.ascii	"s -ffunction-sections -ffat-lto-objects\000"
- 2544      66756E63 
- 2544      74696F6E 
- 2544      2D736563 
- 2544      74696F6E 
- 2545              	.LASF10:
- 2546 0196 75696E74 		.ascii	"uint8_t\000"
- 2546      385F7400 
- 2547              	.LASF15:
- 2548 019e 63795F6D 		.ascii	"cy_meta_flashprotect\000"
- 2548      6574615F 
- 2548      666C6173 
- 2548      6870726F 
- 2548      74656374 
- 2549              	.LASF14:
- 2550 01b3 63795F6D 		.ascii	"cy_meta_wonvl\000"
- 2550      6574615F 
- 2550      776F6E76 
- 2550      6C00
- 2551              	.LASF11:
- 2552 01c1 73697A65 		.ascii	"sizetype\000"
- 2552      74797065 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2Q7LYI.s 			page 47
+ 2535              	.LASF5:
+ 2536 00b4 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2536      20756E73 
+ 2536      69676E65 
+ 2536      6420696E 
+ 2536      7400
+ 2537              	.LASF3:
+ 2538 00c6 73686F72 		.ascii	"short unsigned int\000"
+ 2538      7420756E 
+ 2538      7369676E 
+ 2538      65642069 
+ 2538      6E7400
+ 2539              	.LASF13:
+ 2540 00d9 63795F6D 		.ascii	"cy_meta_custnvl\000"
+ 2540      6574615F 
+ 2540      63757374 
+ 2540      6E766C00 
+ 2541              	.LASF12:
+ 2542 00e9 63795F6D 		.ascii	"cy_meta_configecc\000"
+ 2542      6574615F 
+ 2542      636F6E66 
+ 2542      69676563 
+ 2542      6300
+ 2543              	.LASF8:
+ 2544 00fb 756E7369 		.ascii	"unsigned int\000"
+ 2544      676E6564 
+ 2544      20696E74 
+ 2544      00
+ 2545              	.LASF17:
+ 2546 0108 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 2546      43313120 
+ 2546      352E342E 
+ 2546      31203230 
+ 2546      31363036 
+ 2547 013b 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 2547      20726576 
+ 2547      6973696F 
+ 2547      6E203233 
+ 2547      37373135 
+ 2548 016e 73202D66 		.ascii	"s -ffunction-sections -ffat-lto-objects\000"
+ 2548      66756E63 
+ 2548      74696F6E 
+ 2548      2D736563 
+ 2548      74696F6E 
+ 2549              	.LASF10:
+ 2550 0196 75696E74 		.ascii	"uint8_t\000"
+ 2550      385F7400 
+ 2551              	.LASF15:
+ 2552 019e 63795F6D 		.ascii	"cy_meta_flashprotect\000"
+ 2552      6574615F 
+ 2552      666C6173 
+ 2552      6870726F 
+ 2552      74656374 
+ 2553              	.LASF14:
+ 2554 01b3 63795F6D 		.ascii	"cy_meta_wonvl\000"
+ 2554      6574615F 
+ 2554      776F6E76 
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc3EH2sS.s 			page 47
 
 
- 2552      00
- 2553              	.LASF6:
- 2554 01ca 6C6F6E67 		.ascii	"long long int\000"
- 2554      206C6F6E 
- 2554      6720696E 
- 2554      7400
- 2555              	.LASF2:
- 2556 01d8 73686F72 		.ascii	"short int\000"
- 2556      7420696E 
- 2556      7400
- 2557              	.LASF4:
- 2558 01e2 6C6F6E67 		.ascii	"long int\000"
- 2558      20696E74 
- 2558      00
- 2559              	.LASF0:
- 2560 01eb 7369676E 		.ascii	"signed char\000"
- 2560      65642063 
- 2560      68617200 
- 2561              	.LASF18:
- 2562 01f7 47656E65 		.ascii	"Generated_Source\\PSoC5\\cymetadata.c\000"
- 2562      72617465 
- 2562      645F536F 
- 2562      75726365 
- 2562      5C50536F 
- 2563              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 2554      6C00
+ 2555              	.LASF11:
+ 2556 01c1 73697A65 		.ascii	"sizetype\000"
+ 2556      74797065 
+ 2556      00
+ 2557              	.LASF6:
+ 2558 01ca 6C6F6E67 		.ascii	"long long int\000"
+ 2558      206C6F6E 
+ 2558      6720696E 
+ 2558      7400
+ 2559              	.LASF2:
+ 2560 01d8 73686F72 		.ascii	"short int\000"
+ 2560      7420696E 
+ 2560      7400
+ 2561              	.LASF4:
+ 2562 01e2 6C6F6E67 		.ascii	"long int\000"
+ 2562      20696E74 
+ 2562      00
+ 2563              	.LASF0:
+ 2564 01eb 7369676E 		.ascii	"signed char\000"
+ 2564      65642063 
+ 2564      68617200 
+ 2565              	.LASF18:
+ 2566 01f7 47656E65 		.ascii	"Generated_Source\\PSoC5\\cymetadata.c\000"
+ 2566      72617465 
+ 2566      645F536F 
+ 2566      75726365 
+ 2566      5C50536F 
+ 2567              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

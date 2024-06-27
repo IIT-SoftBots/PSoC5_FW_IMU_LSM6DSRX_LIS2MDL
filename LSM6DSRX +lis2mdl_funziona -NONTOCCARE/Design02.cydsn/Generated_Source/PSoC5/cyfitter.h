@@ -327,6 +327,40 @@
 #define SPI_IMU_BSPIM_TxStsReg__STATUS_CONTROL_REG CYREG_B0_UDB13_ST_CTL
 #define SPI_IMU_BSPIM_TxStsReg__STATUS_REG CYREG_B0_UDB13_ST
 
+/* bottone */
+#define bottone__0__INTTYPE CYREG_PICU2_INTTYPE2
+#define bottone__0__MASK 0x04u
+#define bottone__0__PC CYREG_PRT2_PC2
+#define bottone__0__PORT 2u
+#define bottone__0__SHIFT 2u
+#define bottone__AG CYREG_PRT2_AG
+#define bottone__AMUX CYREG_PRT2_AMUX
+#define bottone__BIE CYREG_PRT2_BIE
+#define bottone__BIT_MASK CYREG_PRT2_BIT_MASK
+#define bottone__BYP CYREG_PRT2_BYP
+#define bottone__CTL CYREG_PRT2_CTL
+#define bottone__DM0 CYREG_PRT2_DM0
+#define bottone__DM1 CYREG_PRT2_DM1
+#define bottone__DM2 CYREG_PRT2_DM2
+#define bottone__DR CYREG_PRT2_DR
+#define bottone__INP_DIS CYREG_PRT2_INP_DIS
+#define bottone__INTTYPE_BASE CYDEV_PICU_INTTYPE_PICU2_BASE
+#define bottone__LCD_COM_SEG CYREG_PRT2_LCD_COM_SEG
+#define bottone__LCD_EN CYREG_PRT2_LCD_EN
+#define bottone__MASK 0x04u
+#define bottone__PORT 2u
+#define bottone__PRT CYREG_PRT2_PRT
+#define bottone__PRTDSI__CAPS_SEL CYREG_PRT2_CAPS_SEL
+#define bottone__PRTDSI__DBL_SYNC_IN CYREG_PRT2_DBL_SYNC_IN
+#define bottone__PRTDSI__OE_SEL0 CYREG_PRT2_OE_SEL0
+#define bottone__PRTDSI__OE_SEL1 CYREG_PRT2_OE_SEL1
+#define bottone__PRTDSI__OUT_SEL0 CYREG_PRT2_OUT_SEL0
+#define bottone__PRTDSI__OUT_SEL1 CYREG_PRT2_OUT_SEL1
+#define bottone__PRTDSI__SYNC_OUT CYREG_PRT2_SYNC_OUT
+#define bottone__PS CYREG_PRT2_PS
+#define bottone__SHIFT 2u
+#define bottone__SLW CYREG_PRT2_SLW
+
 /* MISO_SDO */
 #define MISO_SDO__0__INTTYPE CYREG_PICU3_INTTYPE7
 #define MISO_SDO__0__MASK 0x80u
@@ -615,11 +649,11 @@
 #define ChipSelect_1__SLW CYREG_PRT2_SLW
 
 /* ChipSelect_2 */
-#define ChipSelect_2__0__INTTYPE CYREG_PICU2_INTTYPE2
-#define ChipSelect_2__0__MASK 0x04u
-#define ChipSelect_2__0__PC CYREG_PRT2_PC2
+#define ChipSelect_2__0__INTTYPE CYREG_PICU2_INTTYPE1
+#define ChipSelect_2__0__MASK 0x02u
+#define ChipSelect_2__0__PC CYREG_PRT2_PC1
 #define ChipSelect_2__0__PORT 2u
-#define ChipSelect_2__0__SHIFT 2u
+#define ChipSelect_2__0__SHIFT 1u
 #define ChipSelect_2__AG CYREG_PRT2_AG
 #define ChipSelect_2__AMUX CYREG_PRT2_AMUX
 #define ChipSelect_2__BIE CYREG_PRT2_BIE
@@ -634,7 +668,7 @@
 #define ChipSelect_2__INTTYPE_BASE CYDEV_PICU_INTTYPE_PICU2_BASE
 #define ChipSelect_2__LCD_COM_SEG CYREG_PRT2_LCD_COM_SEG
 #define ChipSelect_2__LCD_EN CYREG_PRT2_LCD_EN
-#define ChipSelect_2__MASK 0x04u
+#define ChipSelect_2__MASK 0x02u
 #define ChipSelect_2__PORT 2u
 #define ChipSelect_2__PRT CYREG_PRT2_PRT
 #define ChipSelect_2__PRTDSI__CAPS_SEL CYREG_PRT2_CAPS_SEL
@@ -645,7 +679,7 @@
 #define ChipSelect_2__PRTDSI__OUT_SEL1 CYREG_PRT2_OUT_SEL1
 #define ChipSelect_2__PRTDSI__SYNC_OUT CYREG_PRT2_SYNC_OUT
 #define ChipSelect_2__PS CYREG_PRT2_PS
-#define ChipSelect_2__SHIFT 2u
+#define ChipSelect_2__SHIFT 1u
 #define ChipSelect_2__SLW CYREG_PRT2_SLW
 
 /* Control_Reg_1 */

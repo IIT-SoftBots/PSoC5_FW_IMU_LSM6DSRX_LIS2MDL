@@ -40,6 +40,8 @@
 #include "ChipSelect_1.h"
 #include "ChipSelect_2_aliases.h"
 #include "ChipSelect_2.h"
+#include "bottone_aliases.h"
+#include "bottone.h"
 #include "UART_IntClock.h"
 #include "core_cm3_psoc5.h"
 #include "CyDmac.h"

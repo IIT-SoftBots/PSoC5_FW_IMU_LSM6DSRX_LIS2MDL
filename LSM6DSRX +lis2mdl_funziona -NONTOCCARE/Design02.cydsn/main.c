@@ -30,7 +30,11 @@ uint16 tempo[10];
 uint8 j;
 uint8 count;
 uint8 k;
-uint8 var;
+uint8 var = 1;
+
+
+
+
 
 int main()
 {   MY_TIMER_Start();                 
@@ -71,10 +75,17 @@ int main()
     j = 0;
     count =0;
     
-    for(;;)
-    {   t0 = (uint16)MY_TIMER_ReadCounter();
-for (k=0;k<1; k++){
-    Control_Reg_1_Write(0);
+     while(var){
+    var = bottone_Read();
+    UART_PutChar(var);
+    CyDelay(1);}
+    
+    for(;;){
+   
+    
+       t0 = (uint16)MY_TIMER_ReadCounter();
+        for (k=0;k<1; k++){
+        Control_Reg_1_Write(0);
 //      ------------------------------------------------------------------------READ MAG
         do 
         {

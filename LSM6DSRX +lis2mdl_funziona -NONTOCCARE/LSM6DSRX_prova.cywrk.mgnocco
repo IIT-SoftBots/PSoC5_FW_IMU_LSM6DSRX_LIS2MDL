@@ -63,6 +63,7 @@
 <v>LSM6DSRX_prova\Design02\Source Files\source01.c</v>
 <v>LSM6DSRX_prova\Design02\Generated_Source</v>
 <v>LSM6DSRX_prova\Design02\Generated_Source\PSoC5</v>
+<v>LSM6DSRX_prova\Design02\Generated_Source\PSoC5\bottone</v>
 <v>LSM6DSRX_prova\Design02\Generated_Source\PSoC5\ChipSelect_1</v>
 <v>LSM6DSRX_prova\Design02\Generated_Source\PSoC5\ChipSelect_2</v>
 <v>LSM6DSRX_prova\Design02\Generated_Source\PSoC5\CLOCK_PWM</v>
@@ -76,7 +77,6 @@
 <v>LSM6DSRX_prova\Design02\Generated_Source\PSoC5\cy_boot\cmsis_compiler.h</v>
 <v>LSM6DSRX_prova\Design02\Generated_Source\PSoC5\cy_boot\cmsis_gcc.h</v>
 <v>LSM6DSRX_prova\Design02\Generated_Source\PSoC5\cy_boot\core_cm3.h</v>
-<v>LSM6DSRX_prova\Design02\Generated_Source\PSoC5\cy_boot\core_cm3_psoc5.h</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -136,6 +136,7 @@
 <v>LSM6DSRX_prova\Design02\CortexM3\ARM_GCC_541\Debug\Design02.map</v>
 <v>LSM6DSRX_prova\Design02\CortexM3\ARM_GCC_541\Release</v>
 <v>LSM6DSRX_prova\Design02\CortexM3\ARM_GCC_541\Release\Listing Files</v>
+<v>LSM6DSRX_prova\Design02\CortexM3\ARM_GCC_541\Release\Listing Files\bottone.lst</v>
 <v>LSM6DSRX_prova\Design02\CortexM3\ARM_GCC_541\Release\Listing Files\ChipSelect_1.lst</v>
 <v>LSM6DSRX_prova\Design02\CortexM3\ARM_GCC_541\Release\Listing Files\ChipSelect_2.lst</v>
 <v>LSM6DSRX_prova\Design02\CortexM3\ARM_GCC_541\Release\Listing Files\CLOCK_PWM.lst</v>

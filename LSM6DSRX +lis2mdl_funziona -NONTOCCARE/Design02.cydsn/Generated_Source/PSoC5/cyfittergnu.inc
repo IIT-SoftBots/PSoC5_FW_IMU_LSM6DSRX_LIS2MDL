@@ -327,6 +327,40 @@
 .set SPI_IMU_BSPIM_TxStsReg__STATUS_CONTROL_REG, CYREG_B0_UDB13_ST_CTL
 .set SPI_IMU_BSPIM_TxStsReg__STATUS_REG, CYREG_B0_UDB13_ST
 
+/* bottone */
+.set bottone__0__INTTYPE, CYREG_PICU2_INTTYPE2
+.set bottone__0__MASK, 0x04
+.set bottone__0__PC, CYREG_PRT2_PC2
+.set bottone__0__PORT, 2
+.set bottone__0__SHIFT, 2
+.set bottone__AG, CYREG_PRT2_AG
+.set bottone__AMUX, CYREG_PRT2_AMUX
+.set bottone__BIE, CYREG_PRT2_BIE
+.set bottone__BIT_MASK, CYREG_PRT2_BIT_MASK
+.set bottone__BYP, CYREG_PRT2_BYP
+.set bottone__CTL, CYREG_PRT2_CTL
+.set bottone__DM0, CYREG_PRT2_DM0
+.set bottone__DM1, CYREG_PRT2_DM1
+.set bottone__DM2, CYREG_PRT2_DM2
+.set bottone__DR, CYREG_PRT2_DR
+.set bottone__INP_DIS, CYREG_PRT2_INP_DIS
+.set bottone__INTTYPE_BASE, CYDEV_PICU_INTTYPE_PICU2_BASE
+.set bottone__LCD_COM_SEG, CYREG_PRT2_LCD_COM_SEG
+.set bottone__LCD_EN, CYREG_PRT2_LCD_EN
+.set bottone__MASK, 0x04
+.set bottone__PORT, 2
+.set bottone__PRT, CYREG_PRT2_PRT
+.set bottone__PRTDSI__CAPS_SEL, CYREG_PRT2_CAPS_SEL
+.set bottone__PRTDSI__DBL_SYNC_IN, CYREG_PRT2_DBL_SYNC_IN
+.set bottone__PRTDSI__OE_SEL0, CYREG_PRT2_OE_SEL0
+.set bottone__PRTDSI__OE_SEL1, CYREG_PRT2_OE_SEL1
+.set bottone__PRTDSI__OUT_SEL0, CYREG_PRT2_OUT_SEL0
+.set bottone__PRTDSI__OUT_SEL1, CYREG_PRT2_OUT_SEL1
+.set bottone__PRTDSI__SYNC_OUT, CYREG_PRT2_SYNC_OUT
+.set bottone__PS, CYREG_PRT2_PS
+.set bottone__SHIFT, 2
+.set bottone__SLW, CYREG_PRT2_SLW
+
 /* MISO_SDO */
 .set MISO_SDO__0__INTTYPE, CYREG_PICU3_INTTYPE7
 .set MISO_SDO__0__MASK, 0x80
@@ -615,11 +649,11 @@
 .set ChipSelect_1__SLW, CYREG_PRT2_SLW
 
 /* ChipSelect_2 */
-.set ChipSelect_2__0__INTTYPE, CYREG_PICU2_INTTYPE2
-.set ChipSelect_2__0__MASK, 0x04
-.set ChipSelect_2__0__PC, CYREG_PRT2_PC2
+.set ChipSelect_2__0__INTTYPE, CYREG_PICU2_INTTYPE1
+.set ChipSelect_2__0__MASK, 0x02
+.set ChipSelect_2__0__PC, CYREG_PRT2_PC1
 .set ChipSelect_2__0__PORT, 2
-.set ChipSelect_2__0__SHIFT, 2
+.set ChipSelect_2__0__SHIFT, 1
 .set ChipSelect_2__AG, CYREG_PRT2_AG
 .set ChipSelect_2__AMUX, CYREG_PRT2_AMUX
 .set ChipSelect_2__BIE, CYREG_PRT2_BIE
@@ -634,7 +668,7 @@
 .set ChipSelect_2__INTTYPE_BASE, CYDEV_PICU_INTTYPE_PICU2_BASE
 .set ChipSelect_2__LCD_COM_SEG, CYREG_PRT2_LCD_COM_SEG
 .set ChipSelect_2__LCD_EN, CYREG_PRT2_LCD_EN
-.set ChipSelect_2__MASK, 0x04
+.set ChipSelect_2__MASK, 0x02
 .set ChipSelect_2__PORT, 2
 .set ChipSelect_2__PRT, CYREG_PRT2_PRT
 .set ChipSelect_2__PRTDSI__CAPS_SEL, CYREG_PRT2_CAPS_SEL
@@ -645,7 +679,7 @@
 .set ChipSelect_2__PRTDSI__OUT_SEL1, CYREG_PRT2_OUT_SEL1
 .set ChipSelect_2__PRTDSI__SYNC_OUT, CYREG_PRT2_SYNC_OUT
 .set ChipSelect_2__PS, CYREG_PRT2_PS
-.set ChipSelect_2__SHIFT, 2
+.set ChipSelect_2__SHIFT, 1
 .set ChipSelect_2__SLW, CYREG_PRT2_SLW
 
 /* Control_Reg_1 */

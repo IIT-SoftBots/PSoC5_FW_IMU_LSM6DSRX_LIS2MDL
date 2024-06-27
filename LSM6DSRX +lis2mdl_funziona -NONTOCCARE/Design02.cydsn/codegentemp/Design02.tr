@@ -81,8 +81,8 @@ Port Name            Clock to Out  Clock Name:Phase
 -------------------  ------------  ----------------  
 ChipSelect_1(0)_PAD  31225         CLOCK_PWM:R       
 ChipSelect_1(0)_PAD  30208         CyBUS_CLK:R       
-ChipSelect_2(0)_PAD  31399         CLOCK_PWM:R       
-ChipSelect_2(0)_PAD  29806         CyBUS_CLK:R       
+ChipSelect_2(0)_PAD  31503         CLOCK_PWM:R       
+ChipSelect_2(0)_PAD  29910         CyBUS_CLK:R       
 MOSI_SDA(0)_PAD      24899         CLOCK_PWM:R       
 SCLK(0)_PAD          22905         CLOCK_PWM:R       
 Tx_1(0)_PAD          32986         UART_IntClock:R   

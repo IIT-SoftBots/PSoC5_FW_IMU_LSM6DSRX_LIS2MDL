@@ -1939,8 +1939,8 @@ net Net_386
 	switch ":dsiswitch_top@[DSI=(0,4)][side=top]:dsihc_top:87,77_f"
 	switch "IStub-:dsiswitch_top@[DSI=(0,4)][side=top]:dsihc_top:v87+:dsiswitch_top@[DSI=(0,4)][side=top]:dsihc_top:v89+:dsiswitch_top@[DSI=(0,4)][side=top]:dsihc_top:v91"
 	switch "Stub-:dsiswitch_top@[DSI=(0,4)][side=top]:dsihc_top:v87+:dsiswitch_top@[DSI=(0,4)][side=top]:dsihc_top:v89+:dsiswitch_top@[DSI=(0,4)][side=top]:dsihc_top:v91==>:ioport2:inputs1_mux.in_3"
-	switch ":ioport2:inputs1_mux.pin2__pin_input==>:ioport2:pin2.pin_input"
-	term   ":ioport2:pin2.pin_input"
+	switch ":ioport2:inputs1_mux.pin1__pin_input==>:ioport2:pin1.pin_input"
+	term   ":ioport2:pin1.pin_input"
 end Net_386
 net Net_416
 	term   ":udb@[UDB=(0,4)]:controlcell.control_0"

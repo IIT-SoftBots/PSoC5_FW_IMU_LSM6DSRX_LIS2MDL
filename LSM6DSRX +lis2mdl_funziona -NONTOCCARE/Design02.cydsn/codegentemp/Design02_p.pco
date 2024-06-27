@@ -67,11 +67,12 @@ set_io "SCLK(0)" iocell 2 4
 # Note: port 12 is the logical name for port 7
 set_io "Rx_1(0)" iocell 12 6
 set_location "ClockBlock" clockblockcell -1 -1 0
-set_io "ChipSelect_2(0)" iocell 2 2
+set_io "ChipSelect_2(0)" iocell 2 1
 set_location "\PACER_TIMER:TimerHW\" timercell -1 -1 0
 set_location "\RESET_FF:Sync:ctrl_reg\" controlcell 1 2 6 
 # Note: port 12 is the logical name for port 7
 set_io "Tx_1(0)" iocell 12 7
 set_location "\UART:TXInternalInterrupt\" interrupt -1 -1 1
 set_location "\UART:RXInternalInterrupt\" interrupt -1 -1 0
+set_io "bottone(0)" iocell 2 2
 set_location "\MY_TIMER:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\" controlcell 1 4 6 
