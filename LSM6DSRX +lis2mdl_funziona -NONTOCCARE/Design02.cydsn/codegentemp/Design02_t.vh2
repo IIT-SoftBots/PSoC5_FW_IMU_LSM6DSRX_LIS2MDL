@@ -1,5 +1,5 @@
 -- Project:   C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_IMU_LSM6DSRX_LIS2MDL\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn\Design02.cyprj
--- Generated: 11/27/2023 18:31:50
+-- Generated: 06/27/2024 15:31:43
 -- PSoC Creator  4.4
 
 ENTITY Design02 IS

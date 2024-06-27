@@ -48,9 +48,9 @@ int main()
     uint8 i;
     uint8 who;
     UART_Start();
-    Control_Reg_1_Write(2);
-    for (k=0;k<2; k++){
-    Control_Reg_1_Write(k+1);
+    Control_Reg_1_Write(0);
+    for (k=0;k<1; k++){
+    Control_Reg_1_Write(0);
     WriteControlRegisterSPI(LSM6DSRX_CTRL1_XL,0xA0); //104 Hz (normal mode)
     WriteControlRegisterSPI(LSM6DSRX_CTRL3_C,0x40); //104 Hz (normal mode)
     CyDelay(1);
@@ -67,14 +67,14 @@ int main()
     Continuous_ReadRoutine(EXT_SENS_ADDR,LIS2MDL_OUTX_L_REG,0x06);
   }
     
-    Control_Reg_1_Write(3);
+    Control_Reg_1_Write(0);
     j = 0;
     count =0;
     
     for(;;)
     {   t0 = (uint16)MY_TIMER_ReadCounter();
-for (k=0;k<2; k++){
-    Control_Reg_1_Write(k+1);
+for (k=0;k<1; k++){
+    Control_Reg_1_Write(0);
 //      ------------------------------------------------------------------------READ MAG
         do 
         {
@@ -87,8 +87,6 @@ for (k=0;k<2; k++){
             SENS_HUB_ENDOP = ReadControlRegisterSPI(LSM6DSRX_STATUS_MASTER_MAINPAGE);   
         }
         while ((SENS_HUB_ENDOP & 0b00000001) == 0);
-        
-        
 
         WriteControlRegisterSPI(LSM6DSRX_FUNC_CFG_ACCESS, 0x40);   
         CyDelayUs(100);  
@@ -111,7 +109,7 @@ for (k=0;k<2; k++){
             Gyro[k][j][i] = ReadControlRegisterSPI(LSM6DSRX_OUTX_L_G + i);
         }
 }
-        Control_Reg_1_Write(3);
+        Control_Reg_1_Write(0);
 
 //}        
 
@@ -127,7 +125,7 @@ for (k=0;k<2; k++){
         if (j > 9) {
             
             for(count = 0; count < 10; count++){ 
-                for (k=0;k<2;k++){
+                for (k=0;k<1;k++){
                 UART_PutChar(count);
                 UART_PutChar(0);
             
