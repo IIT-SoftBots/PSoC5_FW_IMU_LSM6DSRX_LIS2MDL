@@ -54,8 +54,6 @@
 <v>LSM6DSRX_prova\Design02\Design02.cydwr\Directives</v>
 <v>LSM6DSRX_prova\Design02\Design02.cydwr\Flash Security</v>
 <v>LSM6DSRX_prova\Design02\Design02.cydwr\EEPROM</v>
-<v>LSM6DSRX_prova\Design02\Header Files</v>
-<v>LSM6DSRX_prova\Design02\Header Files\cyapicallbacks.h</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -175,8 +173,6 @@
 <v>LSM6DSRX_prova\Design02\CortexM3\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
 <v>LSM6DSRX_prova\Design02\CortexM3\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
 <v>LSM6DSRX_prova\Design02\CortexM3\ARM_GCC_541\Debug\Listing Files\CyDmac.lst</v>
-<v>LSM6DSRX_prova\Design02\CortexM3\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
-<v>LSM6DSRX_prova\Design02\CortexM3\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -224,8 +220,6 @@
 <v>LSM6DSRX_prova\Design02\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
 <v>LSM6DSRX_prova\Design02\cy_srff_v1_0.pdf</v>
 <v>LSM6DSRX_prova\Design02\cy_sync_v1_0.pdf</v>
-<v>LSM6DSRX_prova\Design02\CyControlReg_v1_80</v>
-<v>LSM6DSRX_prova\Design02\CyControlReg_v1_80\CyControlReg_v1_80.pdf</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStatesV2>
