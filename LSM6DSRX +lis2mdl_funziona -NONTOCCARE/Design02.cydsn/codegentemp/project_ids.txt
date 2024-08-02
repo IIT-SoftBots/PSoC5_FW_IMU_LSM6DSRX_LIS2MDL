@@ -1,6 +1,6 @@
-C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_IMU_LSM6DSRX_LIS2MDL\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn\Design02.cyprj|d83f51d6-f70e-458b-8dc9-1442f3bce8b9
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|c9d1408b-f57c-456b-a165-88cdf10fef92
-C:\Users\mgnocco\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|59900611-ee2b-4011-bf4e-68de43cd7050
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|17aad7b5-99c1-4378-9c91-3ffb2f28b3c9
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|d542f7f8-ef01-4490-a483-8249da67a5c5
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|6f47eb0d-8565-4c6d-9d36-aa1c80d083fd
+C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_IMU_LSM6DSRX_LIS2MDL\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn\Design02.cyprj|04931685-78ab-4171-ba7d-40d995cbbb39
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|5c6262dc-471a-4a5c-bd79-72df246b9a7b
+C:\Users\mgnocco\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|0268f43a-a63b-4ce2-93ff-8f2409d08d20
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|0edba408-0470-4ea8-badc-0e3ceaa58836
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|f90ca9d6-a194-49a8-9297-9c71331a5c34
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|7eb2cd47-0bec-414a-9583-9bc18174df25

@@ -1,8 +1,8 @@
---------------- Build Started: 06/27/2024 16:43:08 Project: Design02, Configuration: ARM GCC 5.4-2016-q2-update Release ---------------
+--------------- Build Started: 08/02/2024 16:49:23 Project: Design02, Configuration: ARM GCC 5.4-2016-q2-update Release ---------------
 The code generation step is up to date.
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Release/main.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Os -c main.c -o .\CortexM3\ARM_GCC_541\Release\main.o
 main.c: In function 'main':
-main.c:53:11: warning: unused variable 'who' [-Wunused-variable]
+main.c:50:11: warning: unused variable 'who' [-Wunused-variable]
      uint8 who;
            ^
 arm-none-eabi-ar.exe -rs .\CortexM3\ARM_GCC_541\Release\Design02.a .\CortexM3\ARM_GCC_541\Release\SCLK.o .\CortexM3\ARM_GCC_541\Release\SPI_IMU.o .\CortexM3\ARM_GCC_541\Release\SPI_IMU_PM.o .\CortexM3\ARM_GCC_541\Release\SPI_IMU_INT.o .\CortexM3\ARM_GCC_541\Release\CLOCK_PWM.o .\CortexM3\ARM_GCC_541\Release\CyDmac.o .\CortexM3\ARM_GCC_541\Release\CyFlash.o .\CortexM3\ARM_GCC_541\Release\CyLib.o .\CortexM3\ARM_GCC_541\Release\cyPm.o .\CortexM3\ARM_GCC_541\Release\CySpc.o .\CortexM3\ARM_GCC_541\Release\cyutils.o .\CortexM3\ARM_GCC_541\Release\cy_em_eeprom.o .\CortexM3\ARM_GCC_541\Release\PACER_TIMER.o .\CortexM3\ARM_GCC_541\Release\PACER_TIMER_PM.o .\CortexM3\ARM_GCC_541\Release\RESET_FF.o .\CortexM3\ARM_GCC_541\Release\RESET_FF_PM.o .\CortexM3\ARM_GCC_541\Release\FF_STATUS.o .\CortexM3\ARM_GCC_541\Release\Control_Reg_1.o .\CortexM3\ARM_GCC_541\Release\Control_Reg_1_PM.o .\CortexM3\ARM_GCC_541\Release\UART.o .\CortexM3\ARM_GCC_541\Release\UART_PM.o .\CortexM3\ARM_GCC_541\Release\UART_INT.o .\CortexM3\ARM_GCC_541\Release\UART_BOOT.o .\CortexM3\ARM_GCC_541\Release\UART_IntClock.o .\CortexM3\ARM_GCC_541\Release\MOSI_SDA.o .\CortexM3\ARM_GCC_541\Release\MISO_SDO.o .\CortexM3\ARM_GCC_541\Release\MY_TIMER.o .\CortexM3\ARM_GCC_541\Release\MY_TIMER_PM.o .\CortexM3\ARM_GCC_541\Release\MY_TIMER_REG.o .\CortexM3\ARM_GCC_541\Release\MY_TIMER_REG_PM.o .\CortexM3\ARM_GCC_541\Release\timer_clock.o .\CortexM3\ARM_GCC_541\Release\ChipSelect_1.o .\CortexM3\ARM_GCC_541\Release\ChipSelect_2.o .\CortexM3\ARM_GCC_541\Release\bottone.o .\CortexM3\ARM_GCC_541\Release\CyBootAsmGnu.o
@@ -13,6 +13,6 @@ No ELF section .cychecksum found, creating one
 Application checksum calculated and stored in ELF section .cychecksum
 Checksum calculated and stored in ELF section .cymeta
 cyelftool.exe -S "C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_IMU_LSM6DSRX_LIS2MDL\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn\CortexM3\ARM_GCC_541\Release\Design02.elf"
-Flash used: 3912 of 262144 bytes (1,5%).
+Flash used: 3856 of 262144 bytes (1,5%).
 SRAM used: 2993 of 65536 bytes (4,6%). Stack: 2048 bytes. Heap: 128 bytes.
---------------- Build Succeeded: 06/27/2024 16:43:10 ---------------
+--------------- Build Succeeded: 08/02/2024 16:49:25 ---------------
