@@ -1,4 +1,4 @@
---------------- Build Started: 08/02/2024 16:49:23 Project: Design02, Configuration: ARM GCC 5.4-2016-q2-update Release ---------------
+--------------- Build Started: 08/02/2024 17:35:22 Project: Design02, Configuration: ARM GCC 5.4-2016-q2-update Release ---------------
 The code generation step is up to date.
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Release/main.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Os -c main.c -o .\CortexM3\ARM_GCC_541\Release\main.o
 main.c: In function 'main':
@@ -13,6 +13,6 @@ No ELF section .cychecksum found, creating one
 Application checksum calculated and stored in ELF section .cychecksum
 Checksum calculated and stored in ELF section .cymeta
 cyelftool.exe -S "C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_IMU_LSM6DSRX_LIS2MDL\LSM6DSRX +lis2mdl_funziona -NONTOCCARE\Design02.cydsn\CortexM3\ARM_GCC_541\Release\Design02.elf"
-Flash used: 3856 of 262144 bytes (1,5%).
-SRAM used: 2993 of 65536 bytes (4,6%). Stack: 2048 bytes. Heap: 128 bytes.
---------------- Build Succeeded: 08/02/2024 16:49:25 ---------------
+Flash used: 3720 of 262144 bytes (1,4%).
+SRAM used: 2985 of 65536 bytes (4,6%). Stack: 2048 bytes. Heap: 128 bytes.
+--------------- Build Succeeded: 08/02/2024 17:35:24 ---------------

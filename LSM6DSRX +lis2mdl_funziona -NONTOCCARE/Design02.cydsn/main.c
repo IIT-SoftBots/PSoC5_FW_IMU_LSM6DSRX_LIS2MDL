@@ -52,18 +52,14 @@ int main()
     Control_Reg_1_Write(0);
     for (k = 0; k < N_DEVICES; k++){
         Control_Reg_1_Write(2);
-        WriteControlRegisterSPI(LSM6DSRX_CTRL1_XL,0xA0); //104 Hz (normal mode)
-        WriteControlRegisterSPI(LSM6DSRX_CTRL3_C,0x40); //104 Hz (normal mode)
-        WriteControlRegisterSPI(LSM6DSRX_CTRL2_G,0xA0); //104 Hz (normal mode)   
-        // WriteControlRegisterSPI(LSM6DSRX_FUNC_CFG_ACCESS, 0x00);
-        CyDelay(100);
+        WriteControlRegisterSPI(LSM6DSRX_CTRL1_XL,0x40); //104 Hz (normal mode)
+        WriteControlRegisterSPI(LSM6DSRX_CTRL3_C,0x40); //BDU
+        WriteControlRegisterSPI(LSM6DSRX_CTRL2_G,0x40); //104 Hz (normal mode)   
         OneShot_ReadRoutine(EXT_SENS_ADDR,LIS2MDL_WHO_AM_I); //LIS2MDL -->valore WHO_AM_I = 64
-        OneShot_WriteRoutine(EXT_SENS_ADDR,LIS2MDL_CFG_REG_A,0x00); //
-        CyDelay(1);
-        OneShot_WriteRoutine(EXT_SENS_ADDR,LIS2MDL_CFG_REG_A,0x00); //
-        OneShot_WriteRoutine(EXT_SENS_ADDR,LIS2MDL_CFG_REG_B,0x02);
-        OneShot_WriteRoutine(EXT_SENS_ADDR,LIS2MDL_CFG_REG_C,0x10);
-        Continuous_ReadRoutine(EXT_SENS_ADDR,LIS2MDL_OUTX_L_REG,0x06);
+        OneShot_WriteRoutine(EXT_SENS_ADDR,LIS2MDL_CFG_REG_A,0x00); //10Hz, continuous mode
+        OneShot_WriteRoutine(EXT_SENS_ADDR,LIS2MDL_CFG_REG_B,0x02); //Offset canc
+        OneShot_WriteRoutine(EXT_SENS_ADDR,LIS2MDL_CFG_REG_C,0x10); //BDU
+        Continuous_ReadRoutine(EXT_SENS_ADDR,LIS2MDL_OUTX_L_REG,0x06); //Read 6 bytes
     }
     
     Control_Reg_1_Write(3);
@@ -121,50 +117,32 @@ int main()
         t1 = (uint16) MY_TIMER_ReadCounter();
         tempo[j] = (uint16)(t0-t1);
     
-        j = j + 1;
-        
-        if (j > 9) {
-            
-            for(count = 0; count < 10; count++){ 
+count = j;
                 for (k = 0; k < N_DEVICES; k++){
-                UART_PutChar(count);
-                UART_PutChar(0);
-            
-                var = (uint8)(tempo[count] & 0xFF);
-                UART_PutChar(var);
-                var = (uint8) (tempo[count] >> 8);
-                UART_PutChar(var);
-                
+              
                 
                 for (i = 0; i < 6; i++){
                     UART_PutChar( Accel[k][count][i]);
                 }
-                
+              
                 for (i = 0 ; i < 6; i++){
                     UART_PutChar( Gyro[k][count][i]);
                 }
-                                    
+                                  
                 for (i = 0; i < 6; i++){
                     UART_PutChar( Mag[k][count][i]);
                 }
                 
-                UART_PutChar('c');
-                UART_PutChar('i');
-                UART_PutChar('a');
+             
                 }
-            }
-           
-            j = 0;
             
-        } 
+           
         
         MY_TIMER_REG_Write(1);
-        
         MY_TIMER_REG_Write(0);
+        CyDelay(100);
 
     }
-    
     return 0;
-    
 }
 /* [] END OF FILE */
