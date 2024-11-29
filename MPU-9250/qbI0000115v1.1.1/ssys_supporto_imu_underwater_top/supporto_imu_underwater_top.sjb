@@ -1,0 +1,6 @@
+# Product version 10.2
+# Build version 4618
+setVersionVar currentJobCore "supporto_imu_underwater_top";
+setVersionVar stlDirectory "C:/Users/Gaspare/Desktop/Aggiornamenti/Elettronica/Scheda qbIM0000115v1.1/qbI0000115v1.1.1/qbI0000115v1.1.1";
+setVersionVar stlPath "C:/Users/Gaspare/Desktop/Aggiornamenti/Elettronica/Scheda qbIM0000115v1.1/qbI0000115v1.1.1/qbI0000115v1.1.1/supporto_imu_underwater_top.stl";
+setVersionVar toolpathFile "supporto_imu_underwater_top.cmb";

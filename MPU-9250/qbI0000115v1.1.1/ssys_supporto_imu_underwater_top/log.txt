@@ -1,0 +1,45 @@
+session {11/22 1:26:46pm > Gaspare opened job C:/ProgramData/Stratasys/FDMControlCenter/10.2/jobs/Gaspare5/Default.sjb.  Insight 10.2 (4618).}
+msg {1:26:47pm > Read 4812 facets in 0:00 from "C:/Users/Gaspare/Desktop/Aggiornamenti/Elettronica/Scheda qbIM0000115v1.1/qbI0000115v1.1.1/qbI0000115v1.1.1/supporto_imu_underwater_top.stl"}
+msg {1:26:48pm > STL comment: solid SUPPORTO_IMU_UNDERWATER_TOP}
+msg {1:26:48pm > Bounding box of this STL X, Y, Z:}
+msg {1:26:48pm >       min = (-7.0000, -7.0000, 0.0000)}
+msg {1:26:48pm >       max = (7.0000, 7.0000, 2.5000)}
+msg {1:26:48pm > Done loading STL file after 2 sec.}
+msg {1:26:55pm > 	Slice height:	0.1778}
+msg {1:26:55pm > Done slicing.}
+msg {1:26:55pm > Supports removed}
+msg {1:26:55pm > 	Support style:	SMART}
+msg {1:26:56pm > Inspecting part curves}
+msg {1:26:56pm > Generating supports}
+msg {1:26:56pm > Done generating supports.}
+msg {1:26:57pm > Done writing boundary curves after 1 sec.}
+msg {1:26:57pm > Saved job:  C:/Users/Gaspare/Desktop/Aggiornamenti/Elettronica/Scheda qbIM0000115v1.1/qbI0000115v1.1.1/qbI0000115v1.1.1/ssys_supporto_imu_underwater_top/supporto_imu_underwater_top.sjb}
+msg {1:26:57pm > 	Part fill style:	One contour /  rasters}
+msg {1:26:57pm > 	Part interior style:	Sparse - high density}
+msg {1:26:57pm > 	Contour width:	0.3556}
+msg {1:26:57pm > 	Part raster width:	0.4064}
+msg {1:26:58pm > Done generating toolpaths after 1 sec.}
+msg {1:26:59pm > CMB moved to envelope center.}
+msg {1:26:59pm > Toolpath Information}
+msg {1:26:59pm > 	Est. build time:	5 min }
+msg {1:26:59pm > 	Model material:	0.351 cm³}
+msg {1:26:59pm > 	Support material:	0.283 cm³}
+msg {1:26:59pm > Done writing CMB file after 1 sec.}
+msg {1:26:59pm > Job Summary}
+msg {1:26:59pm > 	Full job path:	C:/Users/Gaspare/Desktop/Aggiornamenti/Elettronica/Scheda qbIM0000115v1.1/qbI0000115v1.1.1/qbI0000115v1.1.1/ssys_supporto_imu_underwater_top/supporto_imu_underwater_top.sjb}
+msg {1:26:59pm > 	Toolpath file name:	supporto_imu_underwater_top.cmb}
+msg {1:26:59pm > 	Modeler:		Fortus 250mc}
+msg {1:26:59pm > 	Est. build time:	5 min }
+msg {1:26:59pm > 	Model material:	0.351 cm³,	T14,	ABS P430}
+msg {1:26:59pm > 	Support material:	0.283 cm³,	T16,	ABS SR30}
+msg {1:26:59pm > 	Slice height:	0.1778}
+msg {1:26:59pm > 	Part fill style:	One contour /  rasters}
+msg {1:26:59pm > 	Part interior style:	Sparse - high density}
+msg {1:26:59pm > 	Visible surface style:	Enhanced}
+msg {1:26:59pm > 	Support style:	SMART}
+msg {1:26:59pm > 	Contour width:	0.5080}
+msg {1:26:59pm > 	Number of contours:	6.3500}
+msg {1:26:59pm > 	Part interior contours:	0.3556}
+msg {1:26:59pm > 	Part raster width:	0.4064}
+msg {1:26:59pm > 	Application:	Insight 10.2, Build version: 4618}
+msg {1:26:59pm > Saved job:  C:/Users/Gaspare/Desktop/Aggiornamenti/Elettronica/Scheda qbIM0000115v1.1/qbI0000115v1.1.1/qbI0000115v1.1.1/ssys_supporto_imu_underwater_top/supporto_imu_underwater_top.sjb,  approximate build time 5 min }
